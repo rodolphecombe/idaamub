@@ -1,0 +1,938 @@
+#textdomain wesnoth-loi
+[scenario]
+	id="21_Ice_Prison"
+	name= _ "Ice_Prison"
+	map_data="{~add-ons/Legends_of_Idaamub/maps/21_Ice_Prison.map}"
+	victory_when_enemies_defeated=no
+	{TURNS 170 170 170}
+
+	{UNDERGROUND}
+
+	{PLACE_IMAGE scenery/rune1.png 25 13}
+	{PLACE_IMAGE scenery/signpost.png 10 27}
+	{PLACE_IMAGE scenery/ice-cairn.png 10 44}
+
+	[event]
+		name=prestart
+
+		[set_variable]
+			name=scenario_number
+			value=21
+		[/set_variable]
+
+		{VARIABLE teumiuxe_freed 0}
+
+		[objectives]
+			side=1
+			[objective]
+				description= _ "Find Teumiuxe"
+				condition=win
+			[/objective]
+			[objective]
+				description= _ "Death of Io"
+				condition=lose
+			[/objective]
+			{TURNS_RUN_OUT}
+
+			[gold_carryover]
+				bonus=yes
+				carryover_percentage=100
+			[/gold_carryover]
+		[/objectives]
+
+		{LOI_RECALL_ALL 5 5}
+
+	[/event]
+
+	[side]
+		type="Young Man"
+		id=Io
+		name= _ "Io"
+		x=5
+		y=5
+		fog=no
+		shroud=yes
+		side=1
+		canrecruit=yes
+		profile=portraits/Io.png
+		controller=human
+		team_name=heroes
+		user_team_name=_"Heroes"
+		{GOLD -1 -25 -50}
+	[/side]
+
+	[side]
+		no_leader=no
+		fog=no
+		shroud=yes
+		side=2
+		team_name=ice
+		user_team_name=_"Ice Beings"
+		{GOLD 1491 1576 1626}
+		recruit=Ice Swordsman, Ice Bowman, Ice Bat, Ice Crab
+		[unit]
+			canrecruit=yes
+			type="Frozen Lich"
+			x=23
+			y=5
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Bat"
+			x=11
+			y=22
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Bat"
+			x=9
+			y=25
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Monolith Bow"
+			x=20
+			y=4
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Monolith Bow"
+			x=20
+			y=6
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Monolith Sword"
+			x=11
+			y=14
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Monolith Sword"
+			x=11
+			y=15
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Monolith Sword"
+			x=11
+			y=16
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Monolith Sword"
+			x=12
+			y=19
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Monolith Bow"
+			x=8
+			y=23
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Monolith Bow"
+			x=8
+			y=24
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Monolith Bow"
+			x=9
+			y=24
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Monolith Bow"
+			x=13
+			y=25
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Monolith Bow"
+			x=13
+			y=24
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Monolith Bow"
+			x=13
+			y=23
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Bat"
+			x=11
+			y=26
+		[/unit]
+		[unit]
+			ai_special=guardian
+			name="Aerin"
+			type="Ice Bowman"
+			x=10
+			y=20
+		[/unit]
+		[unit]
+			ai_special=guardian
+			name="Raevan"
+			type="Ice Bowman"
+			x=9
+			y=26
+		[/unit]
+		[unit]
+			ai_special=guardian
+			name="Glaraeran"
+			type="Ice Swordsman"
+			x=11
+			y=20
+		[/unit]
+		[unit]
+			ai_special=guardian
+			name="Alyn"
+			type="Ice Swordsman"
+			x=11
+			y=21
+		[/unit]
+		[unit]
+			ai_special=guardian
+			name="Rhygwyryn"
+			type="Ice Swordsman"
+			x=10
+			y=21
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Crab"
+			x=4
+			y=23
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Crab"
+			x=3
+			y=24
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Crab"
+			x=3
+			y=23
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Crab"
+			x=2
+			y=22
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Crab"
+			x=2
+			y=23
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Crab"
+			x=1
+			y=24
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Bat"
+			x=17
+			y=26
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Bat"
+			x=17
+			y=25
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Bat"
+			x=18
+			y=25
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Bat"
+			x=18
+			y=24
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Bat"
+			x=19
+			y=25
+		[/unit]
+		[unit]
+			ai_special=guardian
+			name="Ko’tick"
+			type="Ice Dragonling"
+			x=22
+			y=23
+		[/unit]
+		[unit]
+			ai_special=guardian
+			name="Derrreddoc"
+			type="Ice Swordsman"
+			x=11
+			y=31
+		[/unit]
+		[unit]
+			ai_special=guardian
+			name="Lener"
+			type="Ice Bowman"
+			x=8
+			y=33
+		[/unit]
+		[unit]
+			ai_special=guardian
+			name="Elyr"
+			type="Ice Bowman"
+			x=12
+			y=32
+		[/unit]
+		[unit]
+			ai_special=guardian
+			name="Hagwylyn"
+			type="Ice Bowman"
+			x=11
+			y=32
+		[/unit]
+		[unit]
+			ai_special=guardian
+			name="Ritharry"
+			type="Ice Swordsman"
+			x=12
+			y=31
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Crab"
+			x=9
+			y=30
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Crab"
+			x=8
+			y=29
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Crab"
+			x=6
+			y=31
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Crab"
+			x=11
+			y=35
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Crab"
+			x=8
+			y=32
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Crab"
+			x=9
+			y=31
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Crab"
+			x=12
+			y=35
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Bat"
+			x=13
+			y=31
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Bat"
+			x=8
+			y=31
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Bat"
+			x=10
+			y=30
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Bat"
+			x=11
+			y=29
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Bat"
+			x=10
+			y=29
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Bat"
+			x=10
+			y=28
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Bat"
+			x=13
+			y=30
+		[/unit]
+		[unit]
+			ai_special=guardian
+			name="Kladian Egar"
+			type="Ice Dragonling"
+			x=11
+			y=39
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Crab"
+			x=8
+			y=36
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Crab"
+			x=11
+			y=40
+		[/unit]
+		[unit]
+			ai_special=guardian
+			type="Ice Crab"
+			x=11
+			y=37
+		[/unit]
+		[unit]
+			ai_special=guardian
+			name="Blaeralyn"
+			type="Ice Bowman"
+			x=11
+			y=38
+		[/unit]
+		[unit]
+			ai_special=guardian
+			name="Yrreoryn"
+			type="Ice Bowman"
+			x=10
+			y=37
+		[/unit]
+		[unit]
+			ai_special=guardian
+			name="Hagwynyc"
+			type="Ice Swordsman"
+			x=10
+			y=40
+		[/unit]
+		[unit]
+			ai_special=guardian
+			name="Ider"
+			type="Ice Swordsman"
+			x=7
+			y=37
+		[/unit]
+	[/side]
+
+	[side]
+		no_leader=yes
+		fog=yes
+		shroud=yes
+		side=3
+		team_name=ice
+		user_team_name=_"Trolls"
+		hidden=no
+		[unit]
+			ai_special=guardian
+			name="Gnarg"
+			type="Ice Troll Shaman"
+			x=30
+			y=22
+		[/unit]
+		[unit]
+			ai_special=guardian
+			name="Gark"
+			type="Ice Troll Shaman"
+			x=29
+			y=22
+		[/unit]
+		[unit]
+			ai_special=guardian
+			name="Hoth"
+			type="Ice Troll Shaman"
+			x=29
+			y=21
+		[/unit]
+		[unit]
+			ai_special=guardian
+			name="Krak"
+			type="Ice Troll Shaman"
+			x=28
+			y=21
+		[/unit]
+	[/side]
+
+	[side]
+		no_leader=yes
+        side=4
+        team_name=heroes
+        user_team_name=_"Teumiuxe"
+        ai_algorithm=idle_ai
+        fog=yes
+        hidden=yes
+    [/side]
+
+	[event]
+		name=prestart
+
+		#ifdef HARD
+		[terrain]
+			x=3
+			y=5
+			terrain=Ur
+		[/terrain]
+		[terrain]
+			x=4,4,7
+			y=4,5,5
+			terrain=Ai
+		[/terrain]
+		#endif
+
+		#ifdef NORMAL
+		[terrain]
+			x=3
+			y=5
+			terrain=Ur
+		[/terrain]
+		[terrain]
+			x=7,23,23,8,9
+			y=5,4,6,12,13
+			terrain=Ai
+		[/terrain]
+		#endif
+
+		#ifdef EASY
+		[terrain]
+			x=11
+			y=12
+			terrain=Ur
+		[/terrain]
+		[terrain]
+			x=23,23,24,24,8,9,11
+			y=4,6,4,5,12,13,13
+			terrain=Ai
+		[/terrain]
+		#endif
+	[/event]
+
+	[event]
+		name=start
+
+		[if]
+			[have_unit]
+				id="Lujeje"
+			[/have_unit]
+			[then]
+				[message]
+					speaker=Lujeje
+					message="The magic is getting more dense here. A being of powerful magic must be near."
+				[/message]
+			[/then]
+			[else]
+				[message]
+					speaker=Io
+					message="It is getting colder here. It is as if some magical cold was coming from east."
+				[/message]
+			[/else]
+		[/if]
+		[message]
+			speaker=Io
+			message="Be careful everyone. We must not be far from where Teumiuxe is help prisoner."
+		[/message]
+	[/event]
+
+	[event]
+		name=moveto
+		first_time_only=no
+		[filter]
+			side=1
+			x=25
+			y=13
+		[/filter]
+		{REMOVE_IMAGE 25 13}
+		{PLACE_IMAGE scenery/rune1-glow.png 25 13}
+		[sound]
+			name=heal.wav
+		[/sound]
+		[message]
+			speaker=unit
+			message= _ "I feel a healing energy filling me."
+		[/message]
+		[heal_unit]
+			[filter]
+				side=1
+				x=25
+				y=13
+			[/filter]
+			amount=10
+		[/heal_unit]
+		[delay]
+			time=700
+		[/delay]
+		{REMOVE_IMAGE 25 13}
+		{PLACE_IMAGE scenery/rune1.png 25 13}
+	[/event]
+
+	[event]
+		name=moveto
+		first_time_only=no
+		[filter]
+			side=1
+			x=10
+			y=27
+		[/filter]
+
+		[message]
+			speaker=narrator
+			image="scenery/signpost.png"
+			message= _ "North: Udxatfe 
+South: Abxoowbu’s trading post"
+		[/message]
+
+		[allow_undo]
+		[/allow_undo]
+	[/event]
+	[event]
+		name=moveto
+		first_time_only=no
+		[filter]
+			side=1
+			x=9,9,10,10,11,11
+			y=44,45,43,45,44,45
+		[/filter]
+		[if]
+			[variable]
+				name=teumiuxe_freed
+				equals=0
+			[/variable]
+			[then]
+				[sound]
+					name=vent2.ogg
+				[/sound]
+				{FLASH_WHITE ()}
+				[delay]
+					time=700
+				[/delay]
+				{FLASH_WHITE ()}
+				[delay]
+					time=700
+				[/delay]
+				{FLASH_WHITE ()}
+				[delay]
+					time=700
+				[/delay]
+				{FLASH_WHITE ()}
+				[delay]
+					time=700
+				[/delay]
+				{FLASH_WHITE ()}
+				[delay]
+					time=700
+				[/delay]
+				[sound]
+					name=ice-break.ogg
+				[/sound]
+				{FLASH_WHITE ({REMOVE_IMAGE 10 44}
+				[unit]
+					side=4
+					id=Teumiuxe
+					name=Teumiuxe
+					[variables]
+						hero=yes
+					[/variables]
+					type=White Mage
+					x=10 
+					y=44
+				[/unit])}
+				{VARIABLE teumiuxe_freed 1}
+				[fire_event]
+					name=teumiuxe_talk
+				[/fire_event]
+			[/then]
+			[elseif]
+				[have_unit]
+					id="Teumiuxe"
+					side=4
+				[/have_unit]
+				[then]
+					[fire_event]
+						name=teumiuxe_talk
+					[/fire_event]
+				[/then]
+			[/elseif]
+		[/if]
+	[/event]
+
+	[event]
+		name=teumiuxe_talk
+		first_time_only=no
+		[message]
+			speaker=narrator
+			message="What to say?"
+			[option]
+				message=Who are you?
+				[command]
+					[message]
+						speaker=Teumiuxe
+						message="I'm Teumiuxe, the great mage of the 10th legion, third in line for the throne."
+					[/message]
+					[fire_event]
+						name=teumiuxe_talk
+						[primary_unit]
+							x,y=$x1,$y1
+						[/primary_unit]
+					[/fire_event]
+				[/command]
+			[/option]
+			[option]
+				message="What are you doing here ?"
+				[command]
+					[message]
+						speaker=Teumiuxe
+						message="I’ve been hanging for… "
+					[/message]
+					[message]
+						speaker=Teumiuxe
+						message="How much… "
+					[/message]
+					[message]
+						speaker=Io
+						message="A bit less than a month."
+					[/message]
+					[message]
+						speaker=Teumiuxe
+						message="Nearly a month, now? This is surprising! "
+					[/message]
+					[message]
+						speaker=Teumiuxe
+						message="The power of the ice trolls has really grown. I should have paid more attention to them. "
+					[/message]
+					[message]
+						speaker=Teumiuxe
+						message="Damn, I should have seen that coming!"
+					[/message]
+					[fire_event]
+						name=teumiuxe_talk
+						[primary_unit]
+							x,y=$x1,$y1
+						[/primary_unit]
+					[/fire_event]
+				[/command]
+			[/option]
+			[option]
+				message="Do you know what happened while you were prisoner?"
+				[command]
+					[message]
+						speaker=Teumiuxe
+						message="Tell me."
+					[/message]
+					[if]
+						[have_unit]
+							id="Csia"
+						[/have_unit]
+						[then]
+							[message]
+								speaker=Csia
+								message="Orcs are pillaging the High Arable Lands as well as the surroundings of Zei. Zei has been attacked and pillaged too."
+							[/message]
+							[message]
+								speaker=Csia
+								message="Someone taught the orcs how to animate the dead and ancient threats are awakening."
+							[/message]
+						[/then]
+						[else]
+							[message]
+								speaker=Csia
+								message="Orcs are pillaging the High Arable Lands as well the surroundings of Zei. Zei has been attacked and pillaged too."
+							[/message]
+							[message]
+								speaker=Csia
+								message="Someone taught the orcs how to animate the dead and there are human-sized spiders in Uvju's cross."
+							[/message]
+						[/else]
+					[/if]
+					[message]
+						speaker=Teumiuxe
+						message="Those responsible of this violence are looking for my protection staff. "
+					[/message]
+					[message]
+						speaker=Io
+						message="Your staff?! "
+					[/message]
+					[message]
+						speaker=Teumiuxe
+						message="Yes, this is what they are interested in. "
+					[/message]
+					[message]
+						speaker=Io
+						message="Is this what they were looking for in Zei?"
+					[/message]
+					[message]
+						speaker=Teumiuxe
+						message="Probably. They think it has powers it hasn’t, but it remains a terrible weapon in the wrong hands. "
+					[/message]
+					[message]
+						speaker=Teumiuxe
+						message="It must be found back!"
+					[/message]
+					[fire_event]
+						name=teumiuxe_talk
+						[primary_unit]
+							x,y=$x1,$y1
+						[/primary_unit]
+					[/fire_event]
+				[/command]
+			[/option]
+			[option]
+				message="Can we do something for you?"
+				[command]
+					[message]
+						speaker=Teumiuxe
+						message="I’m still too weak to go get my protection staff by myself but, if you help me, we should be able to find it together. Will you?"
+						[option]
+							message="Of course. How could we refuse your help?"
+							[command]
+								[if]
+									[variable]
+										name=$party_members.length
+										equals=8
+									[/variable]
+									[then]
+										[fire_event]
+											name=party_full
+										[/fire_event]
+									[/then]
+									[else]
+										[modify_unit]
+											[filter]
+												id=Teumiuxe
+											[/filter]
+											side=1
+										[/modify_unit]
+										[allow_recruit]
+											side=1
+											type=White Mage
+										[/allow_recruit]
+										{VARIABLE party_members[$party_members.length].id Teumiuxe}
+										[message]
+											speaker=Teumiuxe
+											message= _ "This is a good choice. Let’s end the mess I started."
+										[/message]
+										[message]
+											speaker=narrator
+											message="You can now recruit white mages."
+										[/message]
+									[/else]
+								[/if]
+							[/command]
+						[/option]
+						[option]
+							message="You'd better go back to safety to Udxatfe. We will find it for you."
+							[command]
+								[message]
+									speaker=Teumiuxe
+									message= _ "Don’t you see what is happening? The fate of the whole kingdom is at stake."
+								[/message]
+								[message]
+									speaker=Teumiuxe
+									message= _ "If you don’t have the guts to help me save all these people, I’ll find someone who do."
+								[/message]
+							[/command]
+						[/option]
+					[/message]
+				[/command]
+			[/option]
+		[/message]
+	[/event]
+
+	[event]
+		name=moveto
+		first_time_only=yes
+		[filter]
+			side=1
+			x=10
+			y=48
+		[/filter]
+		[message]
+			speaker=narrator
+			message= _ "The great mage having succeeded in freeing himself from its ice grave, it is clear now that a maleficent spirit manipulates the forces rampaging the kingdom."
+		[/message]		
+		[message]
+			speaker=narrator
+			message= _ "Our heroes went looking for clues on the hide of the protection staff."
+		[/message]	
+		[message]
+			speaker=narrator
+			message= _ "TO BE CONTINUED"
+		[/message]
+		[endlevel]
+			result=victory
+			bonus=yes
+			{NEW_GOLD_CARRYOVER 100}
+		[/endlevel]
+	[/event]
+
+	[event]
+		name=enter_hex
+		first_time_only=yes
+		[filter]
+			side=1
+			x=23
+			y=9
+		[/filter]
+		[unit]
+			name="Baddec"
+			id="Baddec"
+			type="Ice Master Bowman"
+			side=2
+			x=10
+			y=12
+			canrecruit=yes
+		[/unit]
+		[modify_side]
+			side=2
+			{QUANTITY gold 662 718 764}
+		[/modify_side]
+
+	[/event]
+
+	[event]
+        name=victory
+        {CLEAR_VARIABLE teumiuxe_freed}
+    [/event]
+
+	{DROPS 20 0 (staff,bow,axe) yes 2,3}
+
+	{DISABLE_NEGATIVE_INCOME 1}
+
+	{GLOBAL_EVENTS}
+
+[/scenario]
+
+
+
+
