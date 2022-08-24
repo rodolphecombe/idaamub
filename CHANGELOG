@@ -162,3 +162,12 @@ Corrected Arch Mage not being able to pick up books.
 Corrected a bug with mind raid. 
 Corrected some typos.
 Split scenario 21 in 21 and 22 and improved them. 
+
+0.5.3
+Reworked shops.
+Corrected some typos thanks to Dragon-Friend.
+Removed obsolete modify_unit in scenario 2 and 3.
+
+0.6.0
+Corrected recruitment books not working.
+Modified several objectives.
