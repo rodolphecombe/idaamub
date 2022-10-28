@@ -176,3 +176,7 @@ Improved help menu.
 Added a HEALING_RUNE macro.
 Added a white mage in EASY at the entrance of Uvju's cross to help the player.
 Added a food mechanism.
+
+0.6.1
+Corrected a few bugs with Raffolk.
+Now take into account horses level up.
