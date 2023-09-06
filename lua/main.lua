@@ -6,19 +6,19 @@ loti.util = {}
 -- Syntax sugar to make GUI2 dialogs more compact, e.g. T.column, T.row, etc.
 T = wml.tag
 
-wesnoth.dofile("~add-ons/Legend_of_the_Invincibles/lua/debug.lua")
-wesnoth.dofile("~add-ons/Legend_of_the_Invincibles/lua/utils.lua")
-wesnoth.dofile("~add-ons/Legend_of_the_Invincibles/lua/items.lua")
+wesnoth.dofile("~add-ons/LotI_Era/lua/debug.lua")
+wesnoth.dofile("~add-ons/LotI_Era/lua/utils.lua")
+wesnoth.dofile("~add-ons/LotI_Era/lua/items.lua")
 wesnoth.dofile("~add-ons/Legends_of_Idaamub/lua/inventory/dialog.lua")
-wesnoth.dofile("~add-ons/Legend_of_the_Invincibles/lua/unitdata.lua")
-wesnoth.dofile("~add-ons/Legend_of_the_Invincibles/lua/crafting.lua")
-wesnoth.dofile("~add-ons/Legend_of_the_Invincibles/lua/titles.lua")
-wesnoth.dofile("~add-ons/Legend_of_the_Invincibles/lua/redeem.lua")
-wesnoth.dofile("~add-ons/Legend_of_the_Invincibles/lua/stats.lua")
+wesnoth.dofile("~add-ons/LotI_Era/lua/unitdata.lua")
+wesnoth.dofile("~add-ons/LotI_Era/lua/crafting.lua")
+wesnoth.dofile("~add-ons/LotI_Era/lua/titles.lua")
+wesnoth.dofile("~add-ons/LotI_Era/lua/redeem.lua")
+wesnoth.dofile("~add-ons/LotI_Era/lua/stats.lua")
 
---! #textdomain "wesnoth-loti"
+--! #textdomain "wesnoth-loti-era"
 
-local _ = wesnoth.textdomain "wesnoth-loti"
+local _ = wesnoth.textdomain "wesnoth-loti-era"
 
 local helper = wesnoth.require "lua/helper.lua"
 

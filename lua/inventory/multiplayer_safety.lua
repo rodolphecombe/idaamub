@@ -1,4 +1,4 @@
---! #textdomain "wesnoth-loti"
+--! #textdomain "wesnoth-loti-era"
 --
 -- Methods that synchronize actions made in the Inventory dialog (e.g. "Unequip item")
 -- by one player with other players (in a multiplayer game) to prevent OoS (out of sync).
@@ -16,7 +16,7 @@
 -- For Bob, mpsafety:synchronize() does nothing, because we remember that it was Bob
 -- who used the Inventory dialog (so we know that Bob already did these operations).
 --
-local _ = wesnoth.textdomain "wesnoth-loti"
+local _ = wesnoth.textdomain "wesnoth-loti-era"
 local helper = wesnoth.require "lua/helper.lua"
 
 local mpsafety = {}
