@@ -1,9 +1,9 @@
---! #textdomain "wesnoth-loti"
+--! #textdomain "wesnoth-loti-era"
 --
 -- "Items on the unit" tab of the inventory dialog.
 --
 
-local _ = wesnoth.textdomain "wesnoth-loti"
+local _ = wesnoth.textdomain "wesnoth-loti-era"
 local helper = wesnoth.require "lua/helper.lua"
 local util = wesnoth.require "./misc.lua"
 

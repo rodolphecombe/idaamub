@@ -1,9 +1,9 @@
---! #textdomain "wesnoth-loti"
+--! #textdomain "wesnoth-loti-era"
 --
 -- "Item storage" tab of the inventory dialog.
 --
 
-local _ = wesnoth.textdomain "wesnoth-loti"
+local _ = wesnoth.textdomain "wesnoth-loti-era"
 
 local listbox_id = "storage_listbox"
 local inventory_dialog -- Set below
