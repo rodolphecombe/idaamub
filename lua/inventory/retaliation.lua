@@ -1,9 +1,9 @@
---! #textdomain "wesnoth-loti"
+--! #textdomain "wesnoth-loti-era"
 --
 -- "Select weapons for retaliation" tab of the inventory dialog.
 --
 
-local _ = wesnoth.textdomain "wesnoth-loti"
+local _ = wesnoth.textdomain "wesnoth-loti-era"
 local helper = wesnoth.require "lua/helper.lua"
 
 -- Ordered array of indexes of attacks (positions in unit.attacks array)
