@@ -1,9 +1,9 @@
---! #textdomain "wesnoth-loti"
+--! #textdomain "wesnoth-loti-era"
 --
 -- Implementation of the "display inventory" dialog (shows items currently on the unit).
 --
 
-local _ = wesnoth.textdomain "wesnoth-loti"
+local _ = wesnoth.textdomain "wesnoth-loti-era"
 local helper = wesnoth.require "lua/helper.lua"
 
 -- These Lua files are loaded as plugins.
