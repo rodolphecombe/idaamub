@@ -194,6 +194,9 @@ Better dialogs and less typos thanks to Dragon-Friend.
 Added more explanation on equipment in scenario 1.
 Recruitement is now limited to 10 units.
 Fixed broken healing rune.
+Now using LotI Modification instead of Legends of the Invincibles as dependency.
 
-0.6.5 (maintenance)
-Fixed experience potions not working.
+0.6.5
+Switched from Healing Runes to Oasis and Fountain of Youth
+Fixed (again) the mini-quest of scenario 4
+Fixed end event of scenario 4.
