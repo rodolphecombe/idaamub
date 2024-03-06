@@ -8,7 +8,7 @@ T = wml.tag
 
 wesnoth.dofile("~add-ons/LotI_Era/lua/debug.lua")
 wesnoth.dofile("~add-ons/LotI_Era/lua/utils.lua")
-wesnoth.dofile("~add-ons/LotI_Era/lua/items.lua")
+wesnoth.dofile("~add-ons/Legends_of_Idaamub/lua/items.lua")
 wesnoth.dofile("~add-ons/Legends_of_Idaamub/lua/inventory/dialog.lua")
 wesnoth.dofile("~add-ons/LotI_Era/lua/unitdata.lua")
 wesnoth.dofile("~add-ons/LotI_Era/lua/crafting.lua")
