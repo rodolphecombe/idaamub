@@ -177,20 +177,20 @@ Added a HEALING_RUNE macro.
 Added a white mage in EASY at the entrance of Uvju's cross to help the player.
 Added a food mechanism.
 
-0.6.1
+0.6.1 (maintenance)
 Corrected a few bugs with Raffolk.
 Now take into account horses level up.
 Added some dialog for bonus victories.
 Added food objectives where they were forgotten.
 
-0.6.2
+0.6.2 (maintenance)
 Up to date with latest LotI
 
-0.6.3
+0.6.3 (maintenance)
 Added back a mini-quest that had disappeared from scenario 6.
 Better dialogs and less typos thanks to Dragon-Friend.
 
-0.6.4
+0.6.4 (maintenance)
 Added more explanation on equipment in scenario 1.
 Recruitement is now limited to 10 units.
 Fixed broken healing rune.
