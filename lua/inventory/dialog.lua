@@ -4,7 +4,6 @@
 --
 
 local _ = wesnoth.textdomain "wesnoth-loti-era"
-local helper = wesnoth.require "lua/helper.lua"
 
 -- These Lua files are loaded as plugins.
 -- They receive an "inventory_dialog" object as parameter,
@@ -17,6 +16,9 @@ local PLUGINS_LIST = { "multiplayer_safety", "items", "retaliation", "storage", 
 -- Only one tab is visible at a time.
 -- Another tab can be opened via goto_tab("id_of_new_tab").
 local tabs = {}
+
+-- Wesnoth dialog object, available only in preshow() and postshow()
+local currentlyOpenedDialog
 
 -- Various callbacks that can be installed by plugins.
 local install_callback_functions = {}
@@ -31,22 +33,22 @@ local inventory_dialog = {}
 inventory_dialog.add_tab = function(tab)
 	-- Sanity checks.
 	if not tab.id then
-		helper.wml_error('inventory_dialog.add_tab: missing parameter "id"')
+		wml.error('inventory_dialog.add_tab: missing parameter "id"')
 	elseif type(tab.grid) ~= "function" then
-		helper.wml_error('inventory_dialog.add_tab: parameter "grid" is not a function.')
+		wml.error('inventory_dialog.add_tab: parameter "grid" is not a function.')
 	elseif type(tab.onshow) ~= "function" then
-		helper.wml_error('inventory_dialog.add_tab: parameter "onshow" is not a function.')
+		wml.error('inventory_dialog.add_tab: parameter "onshow" is not a function.')
 	end
 
 	tabs[tab.id] = { grid = tab.grid, onshow = tab.onshow }
 end
 
--- Queue install_function() to be called when it's good time to use wesnoth.set_dialog_callback(inventory_dialog).
+-- Queue install_function() to be called when it's good time to set callbacks for buttons, etc.
 inventory_dialog.install_callbacks = function(install_function)
 	table.insert(install_callback_functions, install_function)
 end
 
--- Queue register_function() to be called when it's good time to use wesnoth.add_widget_definition().
+-- Queue register_function() to be called when it's good time to use gui.add_widget_definition().
 inventory_dialog.register_widgets = function(register_function)
 	table.insert(register_widget_functions, register_function)
 end
@@ -61,7 +63,7 @@ end
 -- NOTE: this callback is deleted after use. You should call catch_enter_or_ok() from onshow().
 -- NOTE: this replaces the existing callback (if any).
 inventory_dialog.catch_enter_or_ok = function(field_id, enter_callback)
-	-- This will be used if wesnoth.show_dialog() exits with return value
+	-- This will be used if gui.show_dialog() exits with return value
 	-- that means either "OK was clicked" or "Enter was pressed".
 	enter_or_ok_catcher = {
 		field_id = field_id,
@@ -91,28 +93,28 @@ inventory_dialog.goto_tab = function(tab_id, ...)
 	local tab = tabs[tab_id]
 	if not tab then
 		-- Trying to hide ALL widgets in a dialog would crash Wesnoth.
-		helper.wml_error("Error: goto_tab: tab \"" .. tab_id .. "\" doesn't exist.")
+		wml.error("Error: goto_tab: tab \"" .. tab_id .. "\" doesn't exist.")
 	end
 
 	-- Show the new tab.
-	wesnoth.set_dialog_visible(true, tab_id)
+	currentlyOpenedDialog[tab_id].visible = true
 
 	-- Hide the other tabs.
 	for othertab_id in pairs(tabs) do
 		if othertab_id ~= tab_id then
-			wesnoth.set_dialog_visible(false, othertab_id)
+			currentlyOpenedDialog[othertab_id].visible = false
 		end
 	end
 
 	-- Recalculate all fields on this tab (via onshow callback),
 	-- plus the "unit name" field (which is global for all tabs).
-	tab.onshow(unit, ...)
+	tab.onshow(currentlyOpenedDialog,unit, ...)
 
 	-- Show "unit name" header everywhere except the blank and recall tabs.
 	if tab_id == "blank_tab" or tab_id == "recall_tab" then
-		wesnoth.set_dialog_visible(false, "unit_name")
+		currentlyOpenedDialog["unit_name"].visible = false
 	else
-		wesnoth.set_dialog_visible(true, "unit_name")
+		currentlyOpenedDialog["unit_name"].visible = true
 
 		local unit_name = "<span size='large' weight='bold'>" .. unit.name ..
 			"</span> <span color='#88FCA0' size='large'>" .. unit.__cfg['language_name'] .. "</span>"
@@ -120,7 +122,7 @@ inventory_dialog.goto_tab = function(tab_id, ...)
 			unit_name = unit_name .. " (" .. _"on the recall list" .. ")"
 		end
 
-		wesnoth.set_dialog_value(unit_name, "unit_name")
+		currentlyOpenedDialog["unit_name"].label = unit_name
 	end
 end
 
@@ -144,14 +146,14 @@ local function register_widgets()
 end
 
 -- NOTE: the only reason we call this function here is because it's very convenient for debugging
--- (any errors in add_widget_definition() are discovered before the map is even loaded)
--- When the widgets are completely implemented, this function will only be called from get_dialog_widget().
+-- (any errors in gui.add_widget_definition() are discovered before the map is even loaded)
+-- When the widgets are completely implemented, this function will only be called from get_dialog_definition().
 register_widgets()
 
 -- Construct the unit-independent WML of Inventory dialog.
 -- Note: this only creates the widget. It gets populated with data in open_inventory_dialog().
--- Returns: WML table, as expected by the first parameter of wesnoth.show_dialog().
-local function get_dialog_widget()
+-- Returns: WML table, as expected by the first parameter of gui.show_dialog().
+local function get_dialog_definition()
 	register_widgets()
 
 	-- Get widget that contains all tabs.
@@ -164,7 +166,7 @@ local function get_dialog_widget()
 		for tab_id, tab in pairs(tabs) do
 			local grid = tab.grid()
 			if type(grid) ~= "table" or grid[1] ~= "grid" then
-				helper.wml_error("tab " .. tab_id .. ": grid() function didn't return a [grid] tag.")
+				wml.error("tab " .. tab_id .. ": grid() function didn't return a [grid] tag.")
 			end
 
 			table.insert(row_wrapped_tabs, wml.tag.row { wml.tag.column {
@@ -203,11 +205,12 @@ end
 inventory_dialog.reopen_unsynced = function(unit, ...)
 	local goto_tab_params = table.pack(...)
 
-	local function preshow()
+	local function preshow(dialog)
 		inventory_dialog.is_opened = true -- Following goto_tab() calls won't reopen the dialog
+		currentlyOpenedDialog = dialog
 
 		for _, func in ipairs(install_callback_functions) do
-			func()
+			func(dialog)
 		end
 
 		-- We don't set current_unit variable before this point,
@@ -218,13 +221,13 @@ inventory_dialog.reopen_unsynced = function(unit, ...)
 		inventory_dialog.goto_tab(table.unpack(goto_tab_params))
 	end
 
-	local function postshow()
+	local function postshow(dialog)
 		if enter_or_ok_catcher then
 			-- Ensure that "Enter or OK" callback receives the value of requested widget,
 			-- because the widget will no longer be available when this callback gets called
 			-- (we won't know that Enter was pressed until show_dialog() returns,
 			-- but the dialog will already be closed when this happens).
-			local param = wesnoth.get_dialog_value(enter_or_ok_catcher.field_id)
+			local param = dialog[enter_or_ok_catcher.field_id].selected_index
 			local orig_callback = enter_or_ok_catcher.callback
 
 			enter_or_ok_catcher.callback = function()
@@ -233,7 +236,7 @@ inventory_dialog.reopen_unsynced = function(unit, ...)
 		end
 	end
 
-	local retval = wesnoth.show_dialog(get_dialog_widget(), preshow, postshow)
+	local retval = gui.show_dialog(get_dialog_definition(), preshow, postshow)
 	inventory_dialog.is_opened = false -- Further attempts to open_tab() will reopen the dialog
 
 	unit = inventory_dialog.current_unit -- Allow "recall" tab to select another unit
@@ -266,7 +269,7 @@ end
 local function open_inventory_dialog(unit)
 	--inventory_dialog.mpsafety =
 
-	local result = wesnoth.synchronize_choice(function()
+	local result = wesnoth.sync.evaluate_single(function()
 		inventory_dialog.reopen_unsynced(unit)
 
 		-- Tell other players what changed (which items were equipped, etc.).
@@ -278,11 +281,22 @@ local function open_inventory_dialog(unit)
 end
 
 -- Tag [show_inventory] displays the inventory dialog for the unit.
--- Unit is identified by passing "cfg" parameter to wesnoth.get_units().
+-- Unit is identified by passing "cfg" parameter to wesnoth.units.find_on_map().
 function wesnoth.wml_actions.show_inventory(cfg)
-	local units = wesnoth.get_units(cfg)
+	local units = wesnoth.units.find_on_map(cfg)
 	if #units < 1 then
-		helper.wml_error("[show_inventory]: no units found.")
+		wml.error("[show_inventory]: no units found.")
 	end
 	open_inventory_dialog(units[1])
+end
+
+
+function wesnoth.wml_actions.item_pick_menu_inventory(cfg)
+	local units = wesnoth.units.find_on_map(cfg)
+	if #units < 1 then
+		wml.error("[item_pick_menu_inventory]: no units found.")
+	end
+
+	-- just add actions to mpsafety queue
+	loti.util.item_pick_menu(inventory_dialog.mpsafety, units[1])
 end
