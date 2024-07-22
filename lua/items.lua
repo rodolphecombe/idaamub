@@ -76,6 +76,19 @@ loti.item.storage.add = function(item_number, crafted_sort)
 		side.gold = side.gold + item.gold_quantity
 		return
 	end
+	if item.sort == "food" then
+		local has_food = wml.variables["food_counter"]
+		local units = wesnoth.units.find_on_map(cfg)
+		if #units < 1 then
+			wml.error("storage.add: no units found.")
+		end
+		if has_food>0 then
+			wesnoth.fire("message", { speaker = units[1].id , message=_ "I found some food." })
+		else
+			wesnoth.fire("message", { speaker = units[1].id , message=_ "I sure needed that." })
+		end
+		return
+	end
 
 	local list = wml.variables["item_storage"] or {}
 
@@ -111,7 +124,63 @@ loti.item.storage.remove = function(item_number, crafted_sort)
 	end
 
 	wml.variables["item_storage"] = list
-	wesnoth.fire_event("removed from storage")
+	wesnoth.fire_event("removed from storage") -- where is it used?
+end
+
+loti.item.storage.transmute = function(item_number, crafted_sort)
+	local list = wml.variables["item_storage"] or {}
+
+	for index, elem in ipairs(list) do
+		if not crafted_sort or elem[1] == crafted_sort then
+			if elem[2].type == item_number then
+				local object = loti.item.type[item_number]
+				local description = loti.item.describe_item(item_number, crafted_sort)
+				local gold_created = math.floor(object.price/10)
+				local res = gui.show_narration ({
+								title = object.name,
+								portrait = object.image,
+								message = description .. "\n\n" .. _"Transmute this item for "..gold_created.." gold?"
+							}, {_"Transmute", _"No"})
+				if res ==1 then
+					local side = wesnoth.sides[wesnoth.current.side]
+					side.gold = side.gold + gold_created
+					table.remove(list, index)
+					break -- Only one item should be removed.
+				end
+			end
+		end
+	end
+
+	wml.variables["item_storage"] = list
+	wesnoth.fire_event("removed from storage") -- where is it used?
+end
+
+loti.item.storage.sell = function(item_number, crafted_sort)
+	local list = wml.variables["item_storage"] or {}
+
+	for index, elem in ipairs(list) do
+		if not crafted_sort or elem[1] == crafted_sort then
+			if elem[2].type == item_number then
+				local object = loti.item.type[item_number]
+				local description = loti.item.describe_item(item_number, crafted_sort)
+				local gold_created = math.floor(object.price/3)
+				local res = gui.show_narration ({
+								title = object.name,
+								portrait = object.image,
+								message = description .. "\n\n" .. _"Sell this item for "..gold_created.." gold?"
+							}, {_"Sell", _"No"})
+				if res ==1 then
+					local side = wesnoth.sides[wesnoth.current.side]
+					side.gold = side.gold + gold_created
+					table.remove(list, index)
+					break -- Only one item should be removed.
+				end
+			end
+		end
+	end
+
+	wml.variables["item_storage"] = list
+	wesnoth.fire_event("removed from storage") -- where is it used?
 end
 
 -- Get the list of all items in the storage.
@@ -322,6 +391,46 @@ loti.item.on_unit.remove = function(unit, item_number, crafted_sort, skip_update
 	end
 end
 
+-- Transmute one item from unit
+loti.item.on_unit.transmute = function(unit, item_number, crafted_sort, skip_update)
+	local object = loti.item.type[item_number]
+	local description = loti.item.describe_item(item_number, crafted_sort)
+	local gold_created = math.floor(object.value/10)
+	local res = gui.show_narration ({
+					title = object.name,
+					portrait = object.image,
+					message = description .. "\n\n" .. _"Transmute this item for "..gold_created.." gold?"
+				}, {_"Transmute", _"No"})
+	if res ==1 then
+		local side = wesnoth.sides[wesnoth.current.side]
+		side.gold = side.gold + gold_created
+		loti.item.on_unit.remove(unit, item_number, crafted_sort, skip_update)
+		loti.item.storage.add(item_number, crafted_sort)
+		
+		wesnoth.fire_event("unequip", unit)
+	end
+end
+
+-- Sell one item from unit
+loti.item.on_unit.sell = function(unit, item_number, crafted_sort, skip_update)
+	local object = loti.item.type[item_number]
+	local description = loti.item.describe_item(item_number, crafted_sort)
+	local gold_created = math.floor(object.value/3)
+	local res = gui.show_narration ({
+					title = object.name,
+					portrait = object.image,
+					message = description .. "\n\n" .. _"Sell this item for "..gold_created.." gold?"
+				}, {_"Sell", _"No"})
+	if res ==1 then
+		local side = wesnoth.sides[wesnoth.current.side]
+		side.gold = side.gold + gold_created
+		loti.item.on_unit.remove(unit, item_number, crafted_sort, skip_update)
+		loti.item.storage.add(item_number, crafted_sort)
+		
+		wesnoth.fire_event("unequip", unit)
+	end
+end
+
 -------------------------------------------------------------------------------
 -- loti.item.on_the_ground: methods to work with items lying on the ground
 -------------------------------------------------------------------------------
@@ -372,7 +481,8 @@ end
 
 -- Place item on the ground at coordinates (x,y).
 -- Optional parameter crafted_sort: if present, overrides item_sort of the item.
-loti.item.on_the_ground.add = function(item_number, x, y, crafted_sort)
+-- Optional parameter turn: if present, overrides current turn.
+loti.item.on_the_ground.add = function(item_number, x, y, crafted_sort, turn)
 	local record = {
 		type = item_number,
 		x = x,
@@ -381,6 +491,9 @@ loti.item.on_the_ground.add = function(item_number, x, y, crafted_sort)
 	}
 	if crafted_sort then
 		record.sort = crafted_sort
+	end
+	if turn then
+		record.turn = turn
 	end
 
 	local list = wml.array_access.get("items")
@@ -398,7 +511,7 @@ loti.item.on_the_ground.add = function(item_number, x, y, crafted_sort)
 
 	if wml.variables["allied_sides"] then
 		wesnoth.add_event_handler {
-			id = "ie" .. x .. y,
+			id = "ie" .. x .. "|" .. y,
 			name = "moveto",
 			first_time_only = "no",
 			wml.tag.filter {
@@ -426,7 +539,7 @@ loti.item.on_the_ground.add = function(item_number, x, y, crafted_sort)
 	-- (see PLACE_ITEM_EVENT for WML version)
 	-- this is a LEGACY version, which uses the "controller" side filter
 		wesnoth.add_event_handler {
-			id = "ie" .. x .. y,
+			id = "ie" .. x .. "|" .. y,
 			name = "moveto",
 			first_time_only = "no",
 			wml.tag.filter {
@@ -492,6 +605,108 @@ loti.item.on_the_ground.remove = function(item_number, x, y, crafted_sort)
 	end
 end
 
+loti.item.on_the_ground.transmute = function(item_number, x, y, crafted_sort)
+	local list = wml.array_access.get("items")
+	local same_items_found = 0 -- Count the number of items on the same hex.
+
+	local index_to_transmute = nil
+	local item = nil
+	for index, elem in ipairs(list) do
+		if (elem.x == x) and (elem.y == y) and (elem.type == item_number) then
+			-- here is the change in order to be able to pass crafted_sort even for non crafted items
+			-- simplifies logic a bit
+			if (loti.item.type[elem.type].sort == crafted_sort) or (elem.sort == crafted_sort) then
+				index_to_transmute = index
+				item = loti.item.type[elem.type]
+				same_items_found = same_items_found + 1
+			end
+		end
+	end
+	
+	if not index_to_transmute then
+		return
+	end
+	
+	if not item then
+		return
+	end
+
+	local description = loti.item.describe_item(item_number, crafted_sort)
+	local gold_created = math.floor(item.price/10)
+	local res = gui.show_narration ({
+					title = item.name,
+					portrait = item.image,
+					message = description .. "\n\n" .. _"Transmute this item for "..gold_created.." gold?"
+				}, {_"Transmute", _"No"})
+	if res ==1 then
+		local side = wesnoth.sides[wesnoth.current.side]
+		side.gold = side.gold + gold_created
+		table.remove(list, index_to_transmute)
+		wml.array_access.set("items", list)
+
+		-- Remove the image from the map,
+		-- but only if this hex doesn't have other items of the same type.
+		if same_items_found == 1 then
+			wesnoth.wml_actions.remove_item {
+				x = x,
+				y = y,
+				image = loti.item.type[item_number].image
+			}
+		end
+	end
+end
+
+loti.item.on_the_ground.sell = function(item_number, x, y, crafted_sort)
+	local list = wml.array_access.get("items")
+	local same_items_found = 0 -- Count the number of items on the same hex.
+
+	local index_to_sell = nil
+	local item = nil
+	for index, elem in ipairs(list) do
+		if (elem.x == x) and (elem.y == y) and (elem.type == item_number) then
+			-- here is the change in order to be able to pass crafted_sort even for non crafted items
+			-- simplifies logic a bit
+			if (loti.item.type[elem.type].sort == crafted_sort) or (elem.sort == crafted_sort) then
+				index_to_sell = index
+				item = loti.item.type[elem.type]
+				same_items_found = same_items_found + 1
+			end
+		end
+	end
+	
+	if not index_to_sell then
+		return
+	end
+	
+	if not item then
+		return
+	end
+
+	local description = loti.item.describe_item(item_number, crafted_sort)
+	local gold_created = math.floor(item.price/3)
+	local res = gui.show_narration ({
+					title = item.name,
+					portrait = item.image,
+					message = description .. "\n\n" .. _"Sell this item for "..gold_created.." gold?"
+				}, {_"Sell", _"No"})
+	if res ==1 then
+		local side = wesnoth.sides[wesnoth.current.side]
+		side.gold = side.gold + gold_created
+		table.remove(list, index_to_sell)
+		wml.array_access.set("items", list)
+
+		-- Remove the image from the map,
+		-- but only if this hex doesn't have other items of the same type.
+		if same_items_found == 1 then
+			wesnoth.wml_actions.remove_item {
+				x = x,
+				y = y,
+				image = loti.item.type[item_number].image
+			}
+		end
+	end
+end
+
 -- Get the list of all items on the ground at coordinates (x,y).
 -- Returns: Lua array, each element is item_number.
 loti.item.on_the_ground.list = function(x, y)
@@ -546,7 +761,7 @@ end
 loti.item.util.take_item_from_unit = function(unit, item_number, crafted_sort, skip_update)
 	loti.item.on_unit.remove(unit, item_number, crafted_sort, skip_update)
 	loti.item.storage.add(item_number, crafted_sort)
-	wesnoth.fire_event("unequip", unit.x, unit.y)
+	wesnoth.fire_event("unequip", unit)
 end
 
 -- Remove one item from storage, then open "Pick up item" dialog on behalf of unit.
@@ -554,7 +769,7 @@ end
 loti.item.util.get_item_from_storage = function(unit, item_number, crafted_sort)
 	loti.item.storage.remove(item_number, crafted_sort)
 	loti.item.on_the_ground.add(item_number, unit.x, unit.y, crafted_sort)
-	wesnoth.fire_event("item pick", unit.x, unit.y)
+	wesnoth.fire_event("item pick", unit)
 end
 
 -------------------------------------------------------------------------------
@@ -574,11 +789,15 @@ end
 -- Generate the description of an item
 loti.item.describe_item = function(number, sort, set_items)
 	local item = loti.unit.item_with_set_effects(number, set_items, sort)
-	if item.description then
+	if item.description_override then
 		-- This item has constant (non-calculated) description.
 		-- For example, this can be a gem or an item like Book of Courage
 		-- ("Unit becomes fearless" instead of the calculated description).
-		return item.description
+		local descr = item.description_override
+		if item.flavour then
+			descr = descr .. "\n<span color='#808080'><i>" .. item.flavour .. "</i></span>"
+		end
+		return descr
 	end
 
 	local desc = {}
@@ -596,7 +815,7 @@ loti.item.describe_item = function(number, sort, set_items)
 		if variable then
 			if variable > 0 then
 				table.insert(desc, "<span color='green'>" .. _"Damage increased by " .. tostring(variable) .. ending)
-			else
+			elseif variable < 0 then
 				table.insert(desc, "<span color='red'>" .. _"Damage decreased by " .. tostring(variable * -1) .. ending)
 			end
 		end
@@ -821,10 +1040,10 @@ loti.item.describe_item = function(number, sort, set_items)
 				describe("unwalkable", _"above unwalkable places")
 				describe("impassable", _"through impassable walls")
 			elseif effect.apply_to == "alignment" then
-				if effect.alignment == "chaotic" then line = "<span color='yellow'>" .. _"Sets alignment to chaotic" .. "</span>"
-				elseif effect.alignment == "liminal" then line = "<span color='yellow'>" .. _"Sets alignment to liminal" .. "</span>"
-				elseif effect.alignment == "lawful" then line = "<span color='yellow'>" .. _"Sets alignment to lawful" .. "</span>"
-				elseif effect.alignment == "neutral" then line = "<span color='yellow'>" .. _"Sets alignment to neutral" .. "</span>" end
+				if effect.set == "chaotic" then line = "<span color='yellow'>" .. _"Sets alignment to chaotic" .. "</span>"
+				elseif effect.set == "liminal" then line = "<span color='yellow'>" .. _"Sets alignment to liminal" .. "</span>"
+				elseif effect.set == "lawful" then line = "<span color='yellow'>" .. _"Sets alignment to lawful" .. "</span>"
+				elseif effect.set == "neutral" then line = "<span color='yellow'>" .. _"Sets alignment to neutral" .. "</span>" end
 			elseif effect.apply_to == "bonus_attack" then
 				line = "<span color='green'>" .. _"Bonus attack: " .. effect.description .. "</span>"
 			elseif effect.apply_to == "status" and effect.add == "not_living" then
@@ -887,7 +1106,7 @@ function wesnoth.wml_actions.random_item(cfg)
 	if cfg.variable then
 		wml.variables[cfg.variable] = generated
 	else
-		loti.item.on_the_ground.add(generated, cfg.x, cfg.y)
+		loti.item.on_the_ground.add(generated, cfg.x, cfg.y, nil, cfg.turn)
 	end
 end
 
