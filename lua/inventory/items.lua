@@ -4,7 +4,6 @@
 --
 
 local _ = wesnoth.textdomain "wesnoth-loti-era"
-local helper = wesnoth.require "lua/helper.lua"
 local util = wesnoth.require "./misc.lua"
 
 local inventory_dialog -- Set below
@@ -17,7 +16,7 @@ local inventory_config = {
 		{
 			id = "storage",
 			label = _"Item storage",
-			onclick = function(unit)
+			onclick = function(unit) -- luacheck: ignore 212/unit
 				inventory_dialog.goto_tab("storage_tab")
 			end
 		},
@@ -27,22 +26,22 @@ local inventory_config = {
 			onsubmit = function(unit)
 				-- This may be a unit on recall list, so make sure that "unit" variable
 				-- (which is needed in unit_information_part_1()) gets populated anyway.
-				wesnoth.set_variable("unit", unit.__cfg)
+				wml.variables["unit"] = unit.__cfg
 				wesnoth.fire_event("unit information", unit)
-				wesnoth.set_variable("unit", nil)
+				wml.variables["unit"] = nil
 			end,
 		},
 		{ spacer = true },
 		{
 			id = "retaliation",
 			label = _"Select weapons for retaliation",
-			onclick = function(unit) inventory_dialog.goto_tab("retaliation_tab") end
+			onclick = function(unit) inventory_dialog.goto_tab("retaliation_tab") end -- luacheck: ignore 212/unit
 		},
 		{
 			id = "unequip_all",
 			label = _"Unequip (store) all items",
 			onclick = function(unit)
-				if wesnoth.confirm(_"Are you sure? All items of this unit will be placed into the item storage.") then
+				if gui.confirm(_"Are you sure? All items of this unit will be placed into the item storage.") then
 					inventory_dialog.mpsafety:queue({ command = "undress", unit = unit })
 					inventory_dialog.goto_tab("items_tab") -- redraw, items are no longer in the slots
 				end
@@ -51,28 +50,28 @@ local inventory_config = {
 		{
 			id = "recall_list_items",
 			label = _"Items on units on the recall list",
-			onclick = function(unit) inventory_dialog.goto_tab("recall_tab") end
+			onclick = function(unit) inventory_dialog.goto_tab("recall_tab") end -- luacheck: ignore 212/unit
 		},
 		{ spacer = true },
 		{
 			id = "ground_items",
-			label = _"Items on the ground",
+			label = _"Pick up items on the ground",
 			onsubmit = function(unit)
-				wesnoth.fire_event("item_pick", unit.x, unit.y)
+				wesnoth.fire_event("item_pick_inventory", unit)
 			end
 		}
 	},
 
 	-- Called when clicking on action_buttons which don't have onsubmit/onclick callbacks.
-	default_button_callback = function(unit, button_id)
-		helper.wml_error("Button " .. button_id .. " is not yet implemented.")
+	default_button_callback = function(unit, button_id) -- luacheck: ignore 212/unit
+		wml.error("Button " .. button_id .. " is not yet implemented.")
 	end
 }
 
 -- Array of slots, in order added via get_slot_widget().
 -- Each element is the item_sort of this slot.
 -- E.g. { "amulet", "weapon", "gauntlets", ... }
--- Element #5 can be found by id "slot5" in wesnoth.set_dialog_*() methods.
+-- Element #5 can be found as dialog["slot5"].
 -- NOTE: this array is unit-independent, meaning that exact weapons (e.g. sword or spear)
 -- are unknown. This array will list them as a pseudo-sort "weapon".
 -- Unit-specific weapon sort can be determined from the sort_by_slot_id[] array, see below.
@@ -112,7 +111,7 @@ local function get_tab()
 	-- so the slots can't be used to show orbs or books (they need another widget).
 	local function get_slot_widget(item_sort)
 		if item_sort == "limited" then
-			helper.wml_error("get_slot_widget(): books/orbs are not supported.")
+			wml.error("get_slot_widget(): books/orbs are not supported.")
 		end
 
 		table.insert(slots, item_sort)
@@ -153,7 +152,7 @@ local function get_tab()
 		}
 	end
 
-	-- Prepare the layout structure for wesnoth.show_dialog().
+	-- Prepare the layout structure for gui.show_dialog().
 	local slots_grid = wml.tag.grid {
 		-- Slots (one per item_sort), arranged in a predetermined order
 		-- (e.g. helm is the top-middle item, and boots are bottom-middle).
@@ -266,7 +265,7 @@ end
 
 -- Callback that updates the "items on this unit" tab whenever it is shown.
 -- Note: see get_tab() for internal structure of this tab.
-local function onshow(unit)
+local function onshow(dialog, unit)
 	local equippable_sorts = loti.util.list_equippable_sorts(unit)
 
 	-- Determine sorts of equippable weapons, e.g. { "sword", "spear", "staff" }.
@@ -303,11 +302,9 @@ local function onshow(unit)
 
 		-- Ensure that empty slots don't have any images.
 		-- This is needed when we redraw the dialog after "Unequip all items".
-		wesnoth.set_dialog_value("", slot_id, "item_image")
-
-		if wesnoth.set_dialog_tooltip then -- Not yet in Wesnoth 1.14
-			wesnoth.set_dialog_tooltip("", slot_id, "item_image")
-		end
+		local slot = dialog[slot_id]
+		slot.item_image.label = ''
+		slot.item_image.tooltip = ''
 
 		local default_text = ""
 		if equippable_sorts[item_sort] then
@@ -315,18 +312,18 @@ local function onshow(unit)
 			default_text = util.NO_ITEM_TEXT[item_sort]
 
 			if not default_text then
-				helper.wml_error("NO_ITEM_TEXT is not defined for item_sort=" .. item_sort)
+				wml.error("NO_ITEM_TEXT is not defined for item_sort=" .. item_sort)
 				default_text = util.NO_ITEM_TEXT["default"]
 			end
 
-			wesnoth.set_dialog_visible(true, slot_id)
+			slot.visible = true
 		else
 			-- Can't equip this item (e.g. boots for a Ghost), so hide this slot.
 			-- Note: if this is a leftover slot, it will become visible later, but only if needed.
-			wesnoth.set_dialog_visible(false, slot_id)
+			slot.visible = false
 		end
 
-		wesnoth.set_dialog_value(default_text, slot_id, "item_name")
+		slot.item_name.label = default_text
 	end
 
 	-- Array of equipped items, can be passed to describe_item() to show set bonuses
@@ -342,38 +339,35 @@ local function onshow(unit)
 
 		local slot_id = slot_id_by_sort[item.sort]
 		if not slot_id then
-			helper.wml_error("Error: found item of type=" .. item.sort ..
+			wml.error("Error: found item of type=" .. item.sort ..
 				", but the inventory screen doesn't have a slot for this type.")
 		end
 
-		wesnoth.set_dialog_value(item.name, slot_id, "item_name")
-		wesnoth.set_dialog_value(item.image, slot_id, "item_image")
-
-		if wesnoth.set_dialog_tooltip then -- Not yet in Wesnoth 1.14
-			local description = loti.item.describe_item(item.number, item.sort, set_items)
-			wesnoth.set_dialog_tooltip(description, slot_id, "item_image")
-		end
+		local slot = dialog[slot_id]
+		slot.item_name.label = item.name
+		slot.item_image.label = item.image
+		slot.item_image.tooltip = loti.item.describe_item(item.number, item.sort, set_items)
 
 		-- Unhide the slot (leftover slots are hidden by default).
-		wesnoth.set_dialog_visible(true, slot_id)
+		slot.visible = true
 	end
 
 	-- Disable action buttons that aren't applicable.
 	-- For example, units on recall list can't pick items from the ground.
 	local present = unit.valid ~= "recall"
 	for _, button_id in ipairs({ "storage", "ground_items" }) do
-		wesnoth.set_dialog_active(present, button_id)
+		dialog[button_id].enabled = present
 	end
 
-	-- Disable "Items on the ground" button if the unit isn't standing on any items.
+	-- Disable "Pick up items on the ground" button if the unit isn't standing on any items.
 	if present then
 		local lying_items = loti.item.on_the_ground.list(unit.x, unit.y)
-		wesnoth.set_dialog_active(#lying_items > 0, "ground_items")
+		dialog.ground_items.enabled = ( #lying_items > 0 )
 	end
 
 	-- Disable "Items on units on the recall list" if none of those units have items.
-	local geared_recall_units = wesnoth.get_recall_units({ trait = "geared" })
-	wesnoth.set_dialog_active(#geared_recall_units > 0, "recall_list_items")
+	local geared_recall_units = wesnoth.units.find_on_recall({ trait = "geared" })
+	dialog.recall_list_items.enabled = ( #geared_recall_units > 0 )
 end
 
 -- Last button that was clicked. Note: buttons with "onclick" are intentionally ignored.
@@ -381,26 +375,24 @@ end
 local clicked_button_id = nil
 
 -- Install callbacks for all action buttons, slots, etc.
-local function callbacks_install_function()
+local function callbacks_install_function(dialog)
 	-- Callbacks of action buttons.
 	for _, button in ipairs(inventory_config.action_buttons) do
 		if not button.spacer then
 			if button.onsubmit then
 				-- onsubmit callbacks are only called after the dialog is closed.
 				-- The only thing we need here is to remember clicked_button_id.
-				wesnoth.set_dialog_callback(
-					function() clicked_button_id = button.id end,
-					button.id
-				)
+				dialog[button.id].on_button_click = function()
+					clicked_button_id = button.id
+				end
 			else
 				-- Normal onclick callback (this button doesn't close the dialog).
 				local callback = button.onclick or inventory_config.default_button_callback
 
 				-- Note: we additionally pass Unit and button ID as parameters to callback.
-				wesnoth.set_dialog_callback(
-					function() callback(inventory_dialog.current_unit, button.id) end,
-					button.id
-				)
+				dialog[button.id].on_button_click = function()
+					callback(inventory_dialog.current_unit, button.id)
+				end
 			end
 		end
 	end
@@ -409,15 +401,15 @@ local function callbacks_install_function()
 	for index, _ in ipairs(slots) do
 		local slot_id = "slot" .. index
 
-		-- When we call set_dialog_callback(), we don't yet know the exact item_sort,
+		-- When we set "on_button_click", we don't yet know the exact item_sort,
 		-- because for different units the "weapon" slot means different item_sorts,
 		-- and we don't yet know which unit will be displayed.
 		-- So we'll determine item_sort later, when the callback gets called,
 		-- because at this point sort_by_slot_id[] array will be populated.
-		wesnoth.set_dialog_callback(function()
+		dialog[slot_id].item_image.on_button_click = function()
 			local item_sort = sort_by_slot_id[slot_id]
 			inventory_config.slot_callback(item_sort)
-		end, slot_id, "item_image")
+		end
 	end
 end
 
@@ -494,7 +486,7 @@ local function register_slot_widget()
 		}
 	}
 
-	wesnoth.add_widget_definition("button", "item_slot_button", definition)
+	gui.add_widget_definition("button", "item_slot_button", definition)
 end
 
 -- Register custom GUI widget "itemlabel": label with fixed width/height.
@@ -533,7 +525,7 @@ local function register_itemlabel_widget()
 		}
 	}
 
-	wesnoth.add_widget_definition("label", "itemlabel", definition)
+	gui.add_widget_definition("label", "itemlabel", definition)
 end
 
 -- Run onsubmit callback, assuming that the dialog was closed by click on the action button.

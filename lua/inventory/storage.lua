@@ -43,58 +43,247 @@ local function get_tab()
 		}
 	}
 
-	-- Equip button + dropdown menu with "Drop" and "Destroy" buttons (for item in storage)
-	local equip_dropdown_buttons = wml.tag.grid {
-		wml.tag.row {
-			wml.tag.column {
-				wml.tag.button {
-					id = "equip",
-					label = _"Equip",
-					return_value_id = "ok"
-				}
-			},
-			wml.tag.column {
-				border = "left",
-				border_size = 2,
-				wml.tag.menu_button {
-					id = "storage_dropdown_menu",
-					definition = "dropdown_menu_thin",
-					wml.tag.option {
-						label = _"Drop to the ground"
+	local can_transmute = wesnoth.eval_conditional {
+	  { "have_unit", { side = 1, ability = "transmutation" } }
+	}
+	local can_sell = wml.variables["is_on_shop"]
+	-- Equip button + dropdown menu with "Transmute", "Sell", "Drop" and "Destroy" buttons (for item in storage)
+	local equip_dropdown_buttons = nil
+	if can_transmute then
+		if can_sell then
+			equip_dropdown_buttons = wml.tag.grid {
+				wml.tag.row {
+					wml.tag.column {
+						wml.tag.button {
+							id = "equip",
+							label = _"Equip",
+							return_value_id = "ok"
+						}
 					},
-					wml.tag.option {
-						label = _"Nothing"
+					wml.tag.column {
+						border = "left",
+						border_size = 2,
+						wml.tag.menu_button {
+							id = "storage_dropdown_menu",
+							definition = "dropdown_menu_thin",
+							wml.tag.option {
+								label = _"Transmute"
+							},
+							wml.tag.option {
+								label = _"Sell"
+							},wml.tag.option {
+								label = _"Drop to the ground"
+							},
+							wml.tag.option {
+								label = _"Nothing"
+							}
+						}
 					}
 				}
 			}
-		}
-	}
-
-	-- Unequip button + dropdown menu with "Drop" and "Destroy" buttons (for item on unit)
-	local unequip_dropdown_buttons = wml.tag.grid {
-		wml.tag.row {
-			wml.tag.column {
-				wml.tag.button {
-					id = "unequip",
-					label = _"Unequip"
-				}
-			},
-			wml.tag.column {
-				border = "left",
-				border_size = 2,
-				wml.tag.menu_button {
-					id = "unequip_dropdown_menu",
-					definition = "dropdown_menu_thin",
-					wml.tag.option {
-						label = _"Drop to the ground"
+		else
+			equip_dropdown_buttons = wml.tag.grid {
+				wml.tag.row {
+					wml.tag.column {
+						wml.tag.button {
+							id = "equip",
+							label = _"Equip",
+							return_value_id = "ok"
+						}
 					},
-					wml.tag.option {
-						label = _"Nothing"
+					wml.tag.column {
+						border = "left",
+						border_size = 2,
+						wml.tag.menu_button {
+							id = "storage_dropdown_menu",
+							definition = "dropdown_menu_thin",
+							wml.tag.option {
+								label = _"Transmute"
+							},wml.tag.option {
+								label = _"Drop to the ground"
+							},
+							wml.tag.option {
+								label = _"Nothing"
+							}
+						}
 					}
 				}
 			}
-		}
-	}
+		end
+	else
+		if can_sell then
+			equip_dropdown_buttons = wml.tag.grid {
+				wml.tag.row {
+					wml.tag.column {
+						wml.tag.button {
+							id = "equip",
+							label = _"Equip",
+							return_value_id = "ok"
+						}
+					},
+					wml.tag.column {
+						border = "left",
+						border_size = 2,
+						wml.tag.menu_button {
+							id = "storage_dropdown_menu",
+							definition = "dropdown_menu_thin",
+							wml.tag.option {
+								label = _"Sell"
+							},wml.tag.option {
+								label = _"Drop to the ground"
+							},
+							wml.tag.option {
+								label = _"Nothing"
+							}
+						}
+					}
+				}
+			}
+		else
+			equip_dropdown_buttons = wml.tag.grid {
+				wml.tag.row {
+					wml.tag.column {
+						wml.tag.button {
+							id = "equip",
+							label = _"Equip",
+							return_value_id = "ok"
+						}
+					},
+					wml.tag.column {
+						border = "left",
+						border_size = 2,
+						wml.tag.menu_button {
+							id = "storage_dropdown_menu",
+							definition = "dropdown_menu_thin",
+							wml.tag.option {
+								label = _"Drop to the ground"
+							},
+							wml.tag.option {
+								label = _"Nothing"
+							}
+						}
+					}
+				}
+			}
+		end
+	end
+		
+	-- Unequip button + dropdown menu with "Transmute", "Sell", "Drop" and "Destroy" buttons (for item on unit)
+	local unequip_dropdown_buttons = nil
+	if can_transmute then
+		if can_sell then
+			unequip_dropdown_buttons = wml.tag.grid {
+				wml.tag.row {
+					wml.tag.column {
+						wml.tag.button {
+							id = "unequip",
+							label = _"Unequip"
+						}
+					},
+					wml.tag.column {
+						border = "left",
+						border_size = 2,
+						wml.tag.menu_button {
+							id = "unequip_dropdown_menu",
+							definition = "dropdown_menu_thin",
+							wml.tag.option {
+								label = _"Transmute"
+							},
+							wml.tag.option {
+								label = _"Sell"
+							},wml.tag.option {
+								label = _"Drop to the ground"
+							},
+							wml.tag.option {
+								label = _"Nothing"
+							}
+						}
+					}
+				}
+			}
+		else
+			unequip_dropdown_buttons = wml.tag.grid {
+				wml.tag.row {
+					wml.tag.column {
+						wml.tag.button {
+							id = "unequip",
+							label = _"Unequip"
+						}
+					},
+					wml.tag.column {
+						border = "left",
+						border_size = 2,
+						wml.tag.menu_button {
+							id = "unequip_dropdown_menu",
+							definition = "dropdown_menu_thin",
+							wml.tag.option {
+								label = _"Transmute"
+							},wml.tag.option {
+								label = _"Drop to the ground"
+							},
+							wml.tag.option {
+								label = _"Nothing"
+							}
+						}
+					}
+				}
+			}
+		end
+	else
+		if can_sell then
+			unequip_dropdown_buttons = wml.tag.grid {
+				wml.tag.row {
+					wml.tag.column {
+						wml.tag.button {
+							id = "unequip",
+							label = _"Unequip"
+						}
+					},
+					wml.tag.column {
+						border = "left",
+						border_size = 2,
+						wml.tag.menu_button {
+							id = "unequip_dropdown_menu",
+							definition = "dropdown_menu_thin",
+							wml.tag.option {
+								label = _"Sell"
+							},wml.tag.option {
+								label = _"Drop to the ground"
+							},
+							wml.tag.option {
+								label = _"Nothing"
+							}
+						}
+					}
+				}
+			}
+		else
+			unequip_dropdown_buttons = wml.tag.grid {
+				wml.tag.row {
+					wml.tag.column {
+						wml.tag.button {
+							id = "unequip",
+							label = _"Unequip"
+						}
+					},
+					wml.tag.column {
+						border = "left",
+						border_size = 2,
+						wml.tag.menu_button {
+							id = "unequip_dropdown_menu",
+							definition = "dropdown_menu_thin",
+							wml.tag.option {
+								label = _"Drop to the ground"
+							},
+							wml.tag.option {
+								label = _"Nothing"
+							}
+						}
+					}
+				}
+			}
+		end
+	end
 
 	local yesno_buttons = wml.tag.grid {
 		wml.tag.row {
@@ -251,7 +440,7 @@ local function register_dropdown_widget()
 		}
 	}
 
-	wesnoth.add_widget_definition("menu_button", "dropdown_menu_thin", definition)
+	gui.add_widget_definition("menu_button", "dropdown_menu_thin", definition)
 end
 
 local listbox_row = 0
@@ -264,12 +453,12 @@ local function is_too_progressed()
 	end
 
 	local unit = inventory_dialog.current_unit
-	local terrain = wesnoth.get_terrain(unit.x, unit.y)
+	local terrain = wesnoth.current.map[unit]
 	if string.sub(terrain, 1, 1) == "C" or string.sub(terrain, 1, 1) == "K" then
 		return false
 	end
 
-	if wesnoth.get_variable("turn_number") <= 2 then
+	if wml.variables["turn_number"] <= 2 then
 		return false
 	end
 
@@ -279,35 +468,43 @@ end
 -- Unhide the main listbox and focus on it.
 -- Explain absence of listbox when Item Storage is empty.
 -- Note: it's good for performance for listbox to be hidden until completely populated,
--- so that it won't be unnecessarily redrawn on every set_dialog_value().
-local function unhide_listbox()
+-- so that it won't be unnecessarily redrawn on every modification of "label".
+local function unhide_listbox(dialog)
 	if not shown_items[1] then
 		if is_too_progressed() then
-			wesnoth.set_dialog_value(_"Cannot access item storage after turn 2 outside a castle.", "storage_header")
+			dialog.storage_header.label = _"Cannot access item storage after turn 2 outside a castle."
 		else
-			wesnoth.set_dialog_value(_"Item storage is empty.", "storage_header")
+			dialog.storage_header.label = _"Item storage is empty."
 		end
 		return
 	end
 
-	wesnoth.set_dialog_value(_"In the item storage:", "storage_header")
+	dialog.storage_header.label = _"In the item storage:"
 
 	-- Unhide/focus.
-	wesnoth.set_dialog_visible(true, listbox_id)
-	wesnoth.set_dialog_focus(listbox_id)
+	dialog[listbox_id].visible = true
+	dialog[listbox_id]:focus()
 end
 
 -- Show the menu that selects subsection of Item Storage: "sword", "spear", etc.
-local function show_item_sorts()
+local function show_item_sorts(dialog)
 	local sorts = loti.item.storage.list_sorts()
 	local too_progressed = is_too_progressed()
-	for item_sort, count in pairs(sorts) do
-		if not too_progressed or item_sort == "potion" or item_sort == "limited" then
+
+        local a = {}
+        for n in pairs(sorts) do table.insert(a, n) end
+        table.sort(a)
+
+	local item_sort, count
+        for i in ipairs(a) do
+	    item_sort=a[i]
+            count=sorts[a[i]]
+		if not too_progressed or item_sort == "potion" then
 			-- TODO: print human-readable translatable name of item_sort.
 			local text = item_sort .. " (" .. count .. ")"
 
 			listbox_row = listbox_row + 1
-			wesnoth.set_dialog_value(text, listbox_id, listbox_row, "storage_text")
+			dialog[listbox_id][listbox_row].storage_text.label = text
 
 			-- For callback of "View" to know which item_sort was selected.
 			shown_items[listbox_row] = item_sort
@@ -315,15 +512,15 @@ local function show_item_sorts()
 	end
 
 	-- Listbox is completely populated, can show it now.
-	unhide_listbox()
+	unhide_listbox(dialog)
 
 	-- Unhide "View" button.
 	local empty = not shown_items[1]
-	wesnoth.set_dialog_visible(not empty, "view")
+	dialog.view.visible = not empty
 
 	-- Hide "Equip" button and dropdown menu (not applicable).
-	wesnoth.set_dialog_visible(false, "equip")
-	wesnoth.set_dialog_visible(false, "storage_dropdown_menu")
+	dialog.equip.visible = false
+	dialog.storage_dropdown_menu.visible = false
 
 	-- Handler for View button (shown in the menu of all item sorts,
 	-- navigates to specific section of Item Storage, e.g. "polearm").
@@ -388,27 +585,29 @@ end
 
 -- Callback that updates "Item storage" tab whenever it is shown.
 -- Note: see get_tab() for internal structure of this tab.
-local function onshow(unit, item_sort)
+local function onshow(dialog, unit, item_sort)
+	local listbox = dialog[listbox_id]
+
 	-- Clear the form. Keep the listbox hidden until populated.
-	wesnoth.set_dialog_visible(false, listbox_id)
+	listbox.visible = false
 	if listbox_row > 0 then
-		wesnoth.remove_dialog_item(1, 0, listbox_id)
+		listbox:remove_items_at(1, 0)
 		listbox_row = 0
 	end
 
 	-- Hide optional widgets until we know that they are needed.
-	wesnoth.set_dialog_visible(false, "current_item")
-	wesnoth.set_dialog_visible(false, "unequip")
-	wesnoth.set_dialog_visible(false, "unequip_dropdown_menu")
-	wesnoth.set_dialog_visible(false, "view")
-	wesnoth.set_dialog_visible(false, "noequip_reason")
+	dialog.current_item.visible = false
+	dialog.unequip.visible = false
+	dialog.unequip_dropdown_menu.visible = false
+	dialog.view.visible = false
+	dialog.noequip_reason.visible = false
 
 	-- Record things that will be needed in Equip/Unequip callbacks.
 	shown_item_sort = item_sort
 	shown_items = {}
 
 	if not item_sort then
-		return show_item_sorts()
+		return show_item_sorts(dialog)
 	end
 
 	-- Remember whether the items of this sort can be equipped.
@@ -426,22 +625,20 @@ local function onshow(unit, item_sort)
 	local item = loti.item.on_unit.find(unit, item_sort)
 	if item then
 		local text = _"Currently equipped: " .. get_item_description(item, 1, set_items)
-		wesnoth.set_dialog_value(text, "current_item")
+		dialog.current_item.label = text
 
 		-- Show/hide fields related to current item
-		wesnoth.set_dialog_visible(true, "current_item")
-		wesnoth.set_dialog_visible(true, "unequip")
+		dialog.current_item.visible = true
 
-		-- Note: Drop/Destroy dropdown menu near Unequip button is not yet supported in Tutorial,
-		-- so we just leave it hidden.
-		if not loti.during_tutorial then
-			wesnoth.set_dialog_visible(true, "unequip_dropdown_menu")
+		if item_sort ~= "potion" then
+			dialog.unequip.visible = true
 		end
 	end
 
 	-- Show all stored items of the selected item_sort.
 	if not is_too_progressed() or item_sort == "potion" or item_sort == "limited" then
 		local types = loti.item.storage.list_items(item_sort)
+
 
 		-- Sort the items by name by creating { item_name = item_number, ... } table,
 		-- then creating an array of { item_name1, item_name2, ... },
@@ -464,7 +661,7 @@ local function onshow(unit, item_sort)
 			listbox_row = listbox_row + 1
 
 			local text = get_item_description(loti.item.type[item_number], count, set_items)
-			wesnoth.set_dialog_value(text, listbox_id, listbox_row, "storage_text")
+			listbox[listbox_row].storage_text.label = text
 
 			-- For callback of "Equip" to know which item was selected.
 			shown_items[listbox_row] = item_number
@@ -479,13 +676,13 @@ local function onshow(unit, item_sort)
 	-- True if Equip operation is allowed, false otherwise.
 	local can_equip = not empty and present and type_is_equippable or override_unequippability[item_sort] == true
 
-	wesnoth.set_dialog_visible(can_equip, "equip")
+	dialog.equip.visible = can_equip
 	if string.match(item_sort, "potion") then
-		wesnoth.set_dialog_value("Use", "equip")
+		dialog.equip.label = _"Use"
 	else
-		wesnoth.set_dialog_value("Equip", "equip")
+		dialog.equip.label = _"Equip"
 	end
-	wesnoth.set_dialog_visible(not empty and present, "storage_dropdown_menu")
+	dialog.storage_dropdown_menu.visible = not empty and present
 
 	if can_equip then
 		-- Handler for Equip button.
@@ -499,22 +696,18 @@ local function onshow(unit, item_sort)
 			pronoun = _"she"
 		end
 
-		wesnoth.set_dialog_value(
-			_"This unit is currently not on the battlefield,\nso " .. pronoun ..
-			_" can't take new items from the storage.",
-			"noequip_reason")
-		wesnoth.set_dialog_visible(true, "noequip_reason")
+		dialog.noequip_reason.label = _"This unit is currently not on the battlefield,\nso " .. pronoun ..
+			_" can't take new items from the storage."
+		dialog.noequip_reason.visible = true
 	elseif not type_is_equippable then
 		-- Explain that Equip is not allowed because this is a wrong type of weapon.
-		wesnoth.set_dialog_value(
-			_"This unit can't equip such items.\n" ..
-			_"They are unworthy of a mighty " .. unit.__cfg['language_name'] .. ".",
-			"noequip_reason")
-		wesnoth.set_dialog_visible(true, "noequip_reason")
+		dialog.noequip_reason.label = _"This unit can't equip such items.\n" ..
+			_"They are unworthy of a mighty " .. unit.__cfg['language_name'] .. "."
+		dialog.noequip_reason.visible = true
 	end
 
 	-- Listbox is completely populated, can show it now.
-	unhide_listbox()
+	unhide_listbox(dialog)
 end
 
 -- Handler for the "Unequip" button.
@@ -526,7 +719,7 @@ local function unequip()
 			_"If you unequip it, this unit won't be able to equip it again.\n\n" ..
 			_"Do you still want to unequip it?"
 
-		if not wesnoth.confirm(are_you_sure) then
+		if not gui.confirm(are_you_sure) then
 			return
 		end
 	end
@@ -537,18 +730,40 @@ end
 
 -- Determine selected element of the listbox.
 -- Used in handlers of "Equip" and "View" buttons.
-local function get_selected_item()
-	local selected_index = wesnoth.get_dialog_value(listbox_id)
+local function get_selected_item(dialog)
+	local selected_index = dialog[listbox_id].selected_index
 	return shown_items[selected_index]
 end
 
 -- Handler for "Drop to the ground" button.
-local function drop_item()
+local function drop_item(dialog)
 	-- Remove item from storage and place it on the ground.
 	inventory_dialog.mpsafety:queue({
 		command = "drop",
 		unit = inventory_dialog.current_unit, -- Only for coordinates where to drop
-		number = get_selected_item(),
+		number = get_selected_item(dialog),
+		sort = shown_item_sort
+	})
+	inventory_dialog.goto_tab("items_tab")
+end
+
+local function transmute_item(dialog)
+	-- Remove item from storage and transmute it.
+	inventory_dialog.mpsafety:queue({
+		command = "transmute",
+		unit = inventory_dialog.current_unit, -- Only for coordinates where to drop
+		number = get_selected_item(dialog),
+		sort = shown_item_sort
+	})
+	inventory_dialog.goto_tab("items_tab")
+end
+
+local function sell_item(dialog)
+	-- Remove item from storage and sell it.
+	inventory_dialog.mpsafety:queue({
+		command = "sell",
+		unit = inventory_dialog.current_unit, -- Only for coordinates where to drop
+		number = get_selected_item(dialog),
 		sort = shown_item_sort
 	})
 	inventory_dialog.goto_tab("items_tab")
@@ -569,14 +784,40 @@ local function unequip_drop()
 	inventory_dialog.goto_tab("items_tab")
 end
 
+local function unequip_transmute()
+	-- Remove item from unit and place it on the ground.
+	local unit = inventory_dialog.current_unit
+	local item = loti.item.on_unit.find(unit, shown_item_sort)
+
+	inventory_dialog.mpsafety:queue({
+		command = "unequip_transmute",
+		unit = unit,
+		number = item.number,
+		sort = item.sort
+	})
+	inventory_dialog.goto_tab("items_tab")
+end
+
+local function unequip_sell()
+	-- Remove item from unit and place it on the ground.
+	local unit = inventory_dialog.current_unit
+	local item = loti.item.on_unit.find(unit, shown_item_sort)
+
+	inventory_dialog.mpsafety:queue({
+		command = "unequip_sell",
+		unit = unit,
+		number = item.number,
+		sort = item.sort
+	})
+	inventory_dialog.goto_tab("items_tab")
+end
+
 -- Add this tab to the dialog.
 
 return function(provided_inventory_dialog)
 	-- Place this interface into the file-scope local variable,
 	-- because some code above needs inventory_dialog.goto_tab(), etc.
-
 	inventory_dialog = provided_inventory_dialog
-	local unit = inventory_dialog.current_unit
 
 	inventory_dialog.add_tab {
 		id = "storage_tab",
@@ -598,47 +839,136 @@ return function(provided_inventory_dialog)
 	local overrides = loti.config.inventory
 	overrides.override_unequippability = override_unequippability
 
-	inventory_dialog.install_callbacks(function()
+	inventory_dialog.install_callbacks(function(dialog)
 		-- Callback for Unequip button.
-		wesnoth.set_dialog_callback(overrides.unequip or unequip, "unequip")
+		dialog.unequip.on_button_click = overrides.unequip or unequip
 
 		-- Callback for "Close" button.
-		wesnoth.set_dialog_callback(
-			function()
-				inventory_dialog.catch_enter_or_ok(listbox_id, function() end)
-				if overrides.close_storage then
-					overrides.close_storage()
+		dialog.close_storage.on_button_click = function()
+			inventory_dialog.catch_enter_or_ok(listbox_id, function() end)
+			if overrides.close_storage then
+				overrides.close_storage()
+			else
+				inventory_dialog.goto_tab("items_tab")
+			end
+		end
+		
+		local can_transmute = wesnoth.eval_conditional {
+			  { "have_unit", { side = 1, ability = "transmutation" } }
+			}
+		local can_sell = wml.variables["is_on_shop"]
+		-- Handler for Equip dropdown menu actions: "Drop item" (for item in storage).
+		dialog.storage_dropdown_menu.on_modified = function()
+			if can_transmute then
+				if can_sell then
+					if dialog.storage_dropdown_menu.selected_index == 1 then
+						-- First option on the menu
+						if overrides.transmute_item then
+							overrides.transmute_item(dialog)
+						else
+							transmute_item(dialog)
+						end
+					elseif dialog.storage_dropdown_menu.selected_index == 2 then
+						-- Second option on the menu
+						if overrides.sell_item then
+							overrides.sell_item(dialog)
+						else
+							sell_item(dialog)
+						end
+					elseif dialog.storage_dropdown_menu.selected_index == 3 then
+						-- Third option on the menu
+						if overrides.drop_item then
+							overrides.drop_item(dialog)
+						else
+							drop_item(dialog)
+						end
+					end
 				else
-					inventory_dialog.goto_tab("items_tab")
-				end
-			end,
-			"close_storage"
-		)
-
-		-- Handler for Equip dropdown menu actions: "Drop item" and "Destroy item" (for item in storage).
-		wesnoth.set_dialog_callback(function()
-			-- Note: value of the "dropdown menu" widget with only 2 items
-			-- is false for option #1 and true for option #2.
-			if not wesnoth.get_dialog_value("storage_dropdown_menu") then
-				-- First option on the menu
-				if overrides.drop_item then
-					overrides.drop_item()
-				else
-					drop_item()
+					if dialog.storage_dropdown_menu.selected_index == 1 then
+						-- First option on the menu
+						if overrides.transmute_item then
+							overrides.transmute_item(dialog)
+						else
+							transmute_item(dialog)
+						end
+					elseif dialog.storage_dropdown_menu.selected_index == 2 then
+						-- Second option on the menu
+						if overrides.drop_item then
+							overrides.drop_item(dialog)
+						else
+							drop_item(dialog)
+						end
+					end
 				end
 			else
+				if can_sell then
+					if dialog.storage_dropdown_menu.selected_index == 1 then
+						-- First option on the menu
+						if overrides.sell_item then
+							overrides.sell_item(dialog)
+						else
+							sell_item(dialog)
+						end
+					elseif dialog.storage_dropdown_menu.selected_index == 2 then
+						-- Second option on the menu
+						if overrides.drop_item then
+							overrides.drop_item(dialog)
+						else
+							drop_item(dialog)
+						end
+					end
+				else
+					if dialog.storage_dropdown_menu.selected_index == 1 then
+						-- First option on the menu
+						if overrides.drop_item then
+							overrides.drop_item(dialog)
+						else
+							drop_item(dialog)
+						end
+					end
+				end
 			end
-		end, "storage_dropdown_menu")
+		end
 
-		-- Handler for dropdown menu actions: "Drop item" and "Destroy item" (for item on unit).
-		wesnoth.set_dialog_callback(function()
-			-- Note: value of the "dropdown menu" widget with only 2 items
-			-- is false for option #1 and true for option #2.
-			if not wesnoth.get_dialog_value("unequip_dropdown_menu") then
-				-- First option on the menu
-				unequip_drop()
+		-- Handler for dropdown menu actions: "Drop item"(for item on unit).
+		dialog.unequip_dropdown_menu.on_modified = function()
+			if can_transmute then
+				if can_sell then
+					if dialog.unequip_dropdown_menu.selected_index == 1 then
+						-- First option on the menu
+						unequip_transmute()
+					elseif dialog.unequip_dropdown_menu.selected_index == 2 then
+						-- Second option on the menu
+						unequip_sell()
+					elseif dialog.unequip_dropdown_menu.selected_index == 3 then
+						-- Third option on the menu
+						unequip_drop()
+					end
+				else
+					if dialog.unequip_dropdown_menu.selected_index == 1 then
+						-- First option on the menu
+						unequip_transmute()
+					elseif dialog.unequip_dropdown_menu.selected_index == 2 then
+						-- Second option on the menu
+						unequip_drop()
+					end
+				end
 			else
+				if can_sell then
+					if dialog.unequip_dropdown_menu.selected_index == 1 then
+						-- First option on the menu
+						unequip_sell()
+					elseif dialog.unequip_dropdown_menu.selected_index == 2 then
+						-- Second option on the menu
+						unequip_drop()
+					end
+				else
+					if dialog.unequip_dropdown_menu.selected_index == 1 then
+						-- First option on the menu
+						unequip_drop()
+					end
+				end
 			end
-		end, "unequip_dropdown_menu")
+		end
 	end)
 end
