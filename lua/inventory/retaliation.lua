@@ -4,7 +4,7 @@
 --
 
 local _ = wesnoth.textdomain "wesnoth-loti-era"
-local helper = wesnoth.require "lua/helper.lua"
+local mpsafety
 
 -- Ordered array of indexes of attacks (positions in unit.attacks array)
 -- for attacks affected by the shown checkboxes.
@@ -47,6 +47,7 @@ local function get_tab()
 				wml.tag.column {
 					horizontal_grow = true,
 					wml.tag.toggle_panel {
+						id = "attack_checkbox",
 						definition = "checklist",
 						listbox_template
 					}
@@ -118,16 +119,17 @@ local function register_checklist_widget()
 		}
 	}
 
-	wesnoth.add_widget_definition("toggle_panel", "checklist", definition)
+	gui.add_widget_definition("toggle_panel", "checklist", definition)
 end
 
 -- Callback that updates "Select weapons for retaliation" tab whenever it is shown.
 -- Note: see get_tab() for internal structure of this tab.
-local function onshow(unit)
-	local listbox_id = "retaliation_listbox"
+local function onshow(dialog, unit)
+	local listbox = dialog["retaliation_listbox"]
 
 	-- Ensure than no rows are selected.
-	wesnoth.set_dialog_value({}, listbox_id)
+	listbox:remove_items_at(1, 0)
+
 	retaliation_checkboxes = {}
 
 	for index, attack in ipairs(unit.attacks) do
@@ -138,7 +140,7 @@ local function onshow(unit)
 			-- Double-check that this attack was disabled via this dialog.
 			-- If not, this is likely an attack like whirlwind or redeem,
 			-- and we shouldn't show it on the list at all.
-			for _, disable_record in ipairs(helper.get_variable_array("disabled_defences", unit)) do
+			for _, disable_record in ipairs(wml.array_access.get("disabled_defences", unit)) do
 				-- Note when comparing: "index" is Lua array index (starts with 1),
 				-- while order is C++ array index (starts with 0).
 				if disable_record.order + 1 == index then
@@ -151,70 +153,56 @@ local function onshow(unit)
 		if allowed or not attack_only then
 			table.insert(retaliation_checkboxes, index)
 			local checkbox_id = #retaliation_checkboxes
-
 			local text = attack.description .. ": " .. attack.damage .. "-" .. attack.number .. " " .. attack.type
 
-			wesnoth.set_dialog_value(text, listbox_id, checkbox_id, "attack_name")
+			listbox[checkbox_id]["attack_name"].label = text
 
-			-- This is a multiselect listbox,
-			-- each set_dialog_value() selects an additional row.
 			if allowed then
-				wesnoth.set_dialog_value(checkbox_id, listbox_id)
+				listbox[checkbox_id]["attack_checkbox"].selected = true
 			end
 		end
 	end
 end
 
 -- Callback that submits the form of "Select weapons for retaliation" tab.
-local function onsave(unit)
-	local listbox_id = "retaliation_listbox"
-	local is_selected = {} -- { checkbox_id1 => 1, checkbox_id2 => 1, ... }
+local function onsave(dialog, unit)
+	local listbox = dialog["retaliation_listbox"]
 
-	-- Determine which checkboxes are selected.
-	-- This is a multiselect listbox, so get_dialog_value() has a second return value.
-	local _, listbox_values = wesnoth.get_dialog_value(listbox_id)
-	for _, checkbox_id in pairs(listbox_values) do
-		is_selected[checkbox_id] = 1
-	end
-
-	-- Save changes (if any) and go back to the Items tab.
-	local disabled_defences = {}
+	-- Enqueue changes to the mpsafety and go back to the Items tab.
+	local operation = {}
 	for checkbox_id, attack_index in ipairs(retaliation_checkboxes) do
-		if is_selected[checkbox_id] then
-			unit.attacks[attack_index].defense_weight = 1
-		else
-			unit.attacks[attack_index].defense_weight = 0
-
-			-- Add to unit.variables.disabled_defences, so that we would later know
-			-- that this is not an "attack only by design" weapon.
-			table.insert(disabled_defences, {
-				name = unit.attacks[attack_index].name,
-				order = attack_index - 1 -- Backward compatibility with WML dialog
-			})
+		local weight_cycle = 0
+		if listbox[checkbox_id]["attack_checkbox"].selected then
+			weight_cycle = 1
 		end
+		table.insert(operation, wml.tag.attack{
+			index = attack_index,
+			weight = weight_cycle
+		})
 	end
-
-	helper.set_variable_array("disabled_defences", disabled_defences, unit)
+	operation.command = "set_attacks_retal"
+	operation.unit = unit
+	mpsafety:queue(operation)
 end
-
 
 -- Add this tab to the dialog.
 
 return function(inventory_dialog)
+	mpsafety = inventory_dialog.mpsafety
 	inventory_dialog.add_tab {
 		id = "retaliation_tab",
 		grid = get_tab,
 		onshow = onshow
 	}
 
-	inventory_dialog.install_callbacks(function()
+	inventory_dialog.install_callbacks(function(dialog)
 		-- Callback for "Save" button.
-		wesnoth.set_dialog_callback(function()
+		dialog.retaliation_save.on_button_click = function()
 			-- Unit is not yet known when the callback is installed,
 			-- but it will already be known when it is called.
-			onsave(inventory_dialog.current_unit)
+			onsave(dialog, inventory_dialog.current_unit)
 			inventory_dialog.goto_tab("items_tab")
-		end, "retaliation_save")
+		end
 	end)
 
 	inventory_dialog.register_widgets(register_checklist_widget)

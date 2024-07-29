@@ -8,23 +8,22 @@ T = wml.tag
 
 wesnoth.dofile("~add-ons/LotI_Era/lua/debug.lua")
 wesnoth.dofile("~add-ons/LotI_Era/lua/utils.lua")
-wesnoth.dofile("~add-ons/LotI_Era/lua/items.lua")
+wesnoth.dofile("~add-ons/Legends_of_Idaamub/lua/items.lua")
+wesnoth.dofile("~add-ons/Legends_of_Idaamub/lua/item_pick.lua")
 wesnoth.dofile("~add-ons/Legends_of_Idaamub/lua/inventory/dialog.lua")
 wesnoth.dofile("~add-ons/LotI_Era/lua/unitdata.lua")
 wesnoth.dofile("~add-ons/LotI_Era/lua/crafting.lua")
 wesnoth.dofile("~add-ons/LotI_Era/lua/titles.lua")
 wesnoth.dofile("~add-ons/LotI_Era/lua/redeem.lua")
-wesnoth.dofile("~add-ons/LotI_Era/lua/stats.lua")
+wesnoth.dofile("~add-ons/Legends_of_Idaamub/lua/stats.lua")
 
 --! #textdomain "wesnoth-loti-era"
 
 local _ = wesnoth.textdomain "wesnoth-loti-era"
 
-local helper = wesnoth.require "lua/helper.lua"
-
-local old_unit_status = wesnoth.theme_items.unit_status
-function wesnoth.theme_items.unit_status()
-     local u = wesnoth.get_displayed_unit()
+local old_unit_status = wesnoth.interface.game_display.unit_status
+function wesnoth.interface.game_display.unit_status()
+     local u = wesnoth.interface.get_displayed_unit()
      if not u then return {} end
      local s = old_unit_status()
      if u.status.infected then
@@ -43,12 +42,15 @@ function wesnoth.theme_items.unit_status()
 end
 
 function wesnoth.wml_actions.get_unit_resistance(cfg)
-	local damage_type = cfg.damage_type or helper.wml_error "[get_unit_resistance] has no damage type specified"
+	local damage_type = cfg.damage_type or wml.error "[get_unit_resistance] has no damage type specified"
 	local to_variable = cfg.to_variable or "resistance_obtained"
-	local unit = wesnoth.get_units(cfg)[1] or wesnoth.set_variable( to_variable , 100 ) --It's mainly used for weapon specials, and the target might be already killed
+	local unit = wesnoth.units.find_on_map(cfg)[1]
 	if unit then
-		local result = wesnoth.unit_resistance( unit, damage_type )
-		wesnoth.set_variable( to_variable , result )
+		local result = 100 - wesnoth.units.resistance_against( unit, damage_type )
+		wml.variables[to_variable] = result
+	else
+		--It's mainly used for weapon specials, and the target might be already killed
+		wml.variables[to_variable] = 100
 	end
 end
 
@@ -63,44 +65,7 @@ function wesnoth.wml_actions.award_extra_experience(cfg)
 		end
 	end
 	if not added then
-		helper.wml_error "[award_extra_experience] missing mandatory experience= variable"
-	end
-	if added == 0 then
-		return
-	end
-	for i = 1,#units do
-		local unit = units[i].__cfg
-		if cfg.defer then
-			local variables = wml.get_child(unit, "variables")
-			if variables.lua_delayed_exp then
-				variables.lua_delayed_exp = variables.lua_delayed_exp + added
-			else
-				variables.lua_delayed_exp = added
-			end -- The exp will be added by an event when combat ends
-		else
-			unit.experience = unit.experience + added
-		end
-		wesnoth.units.to_map(unit)
-		if unit.experience >= unit.max_experience then
-			wesnoth.wml_actions.store_unit{ { "filter", { id = unit.id }}, variable = "level_store" }
-			wesnoth.wml_actions.unstore_unit{ variable = "level_store", find_vacant = false }
-			wesnoth.wml_actions.clear_variable{ name = "level_store" }
-		end
-	end
-end
-
-function wesnoth.wml_actions.award_extra_experience(cfg)
-	local units = wesnoth.units.find_on_map(cfg)
-	local added = cfg.experience
-	if cfg.death_of_level then
-		if cfg.death_of_level == 0 then
-			added = 4
-		else
-			added = cfg.death_of_level * 8
-		end
-	end
-	if not added then
-		helper.wml_error "[award_extra_experience] missing mandatory experience= variable"
+		wml.error "[award_extra_experience] missing mandatory experience= variable"
 	end
 	if added == 0 then
 		return
@@ -133,23 +98,23 @@ function wesnoth.wml_actions.harm_unit_loti(cfg)
 
 	-- These two functions were copied from wml-tags.lua too
 	local function start_var_scope(name)
-		local var = helper.get_variable_array(name) --containers and arrays
-		if #var == 0 then var = wesnoth.get_variable(name) end --scalars (and nil/empty)
-		wesnoth.set_variable(name)
+		local var = wml.array_access.get(name) --containers and arrays
+		if #var == 0 then var = wml.variables[name] end --scalars (and nil/empty)
+		wml.variables[name] = nil
 		return var
 	end
 	local function end_var_scope(name, var)
-		wesnoth.set_variable(name)
+		wml.variables[name] = nil
 		if type(var) == "table" then
-			helper.set_variable_array(name, var)
+			wml.array_access.set(name, var)
 		else
-			wesnoth.set_variable(name, var)
+			wml.variables[name] = var
 		end
 	end
 
-	local filter = helper.get_child(cfg, "filter") or helper.wml_error("[harm_unit_loti] missing required [filter] tag")
+	local filter = wml.get_child(cfg, "filter") or wml.error("[harm_unit_loti] missing required [filter] tag")
 	-- we need to use shallow_literal field, to avoid raising an error if $this_unit (not yet assigned) is used
-	if not cfg.__shallow_literal.amount then helper.wml_error("[harm_unit_loti] has missing required amount= attribute") end
+	if not cfg.__shallow_literal.amount then wml.error("[harm_unit_loti] has missing required amount= attribute") end
 	local variable = cfg.variable -- kept out of the way to avoid problems
 	local _ = wesnoth.textdomain "wesnoth"
 	local harmer
@@ -163,31 +128,30 @@ function wesnoth.wml_actions.harm_unit_loti(cfg)
 
 	local this_unit = start_var_scope("this_unit")
 
-	for index, unit_to_harm in ipairs(wesnoth.get_units(filter)) do
+	for index, unit_to_harm in ipairs(wesnoth.units.find_on_map(filter)) do
 		if unit_to_harm.valid then
 			-- block to support $this_unit
-			wesnoth.set_variable ( "this_unit" ) -- clearing this_unit
-			wesnoth.set_variable("this_unit", unit_to_harm.__cfg) -- cfg field needed
+			wml.variables["this_unit"] = unit_to_harm.__cfg -- cfg field needed
 			local amount = tonumber(cfg.amount)
 			local animate = cfg.animate -- attacker and defender are special values
 			local delay = cfg.delay or 500
 			local fire_event = cfg.fire_event
-			local primary_attack = helper.get_child(cfg, "primary_attack")
-			local secondary_attack = helper.get_child(cfg, "secondary_attack")
-			local harmer_filter = helper.get_child(cfg, "filter_second")
+			local primary_attack = wml.get_child(cfg, "primary_attack")
+			local secondary_attack = wml.get_child(cfg, "secondary_attack")
+			local harmer_filter = wml.get_child(cfg, "filter_second")
 			local resistance_multiplier = tonumber(cfg.resistance_multiplier) or 1
-			if harmer_filter then harmer = wesnoth.get_units(harmer_filter)[1] end
+			if harmer_filter then harmer = wesnoth.units.find_on_map(harmer_filter)[1] end
 			-- end of block to support $this_unit
 
 			if animate then
 				if animate ~= "defender" and harmer and harmer.valid then
-					wesnoth.scroll_to_tile(harmer.x, harmer.y, true)
+					wesnoth.interface.scroll_to_hex(harmer.x, harmer.y, true)
 					wesnoth.wml_actions.animate_unit( { flag = "attack", hits = true, { "filter", { id = harmer.id } },
 						{ "primary_attack", primary_attack },
 						{ "secondary_attack", secondary_attack }, with_bars = true,
 						{ "facing", { x = unit_to_harm.x, y = unit_to_harm.y } } } )
 				end
-				wesnoth.scroll_to_tile(unit_to_harm.x, unit_to_harm.y, true)
+				wesnoth.interface.scroll_to_hex(unit_to_harm.x, unit_to_harm.y, true)
 			end
 
 			-- the two functions below are taken straight from the C++ engine, util.cpp and actions.cpp, with a few unuseful parts removed
@@ -223,7 +187,7 @@ function wesnoth.wml_actions.harm_unit_loti(cfg)
 			local damage = calculate_damage( amount,
 							 ( cfg.alignment or "neutral" ),
 							 wesnoth.get_time_of_day( { unit_to_harm.x, unit_to_harm.y, true } ).lawful_bonus,
-							 wesnoth.unit_resistance( unit_to_harm, cfg.damage_type or "dummy" ),
+							 100 - wesnoth.units.resistance_against( unit_to_harm, cfg.damage_type or "dummy" ),
 							 resistance_multiplier
 						       )
 
@@ -248,7 +212,7 @@ function wesnoth.wml_actions.harm_unit_loti(cfg)
 				add_tab = true
 
 				if animate and sound then -- for unhealable, that has no sound
-					wesnoth.play_sound (sound)
+					wesnoth.audio.play(sound)
 				end
 			end
 
@@ -260,8 +224,8 @@ function wesnoth.wml_actions.harm_unit_loti(cfg)
 			set_status("unhealable", _"unhealable", _"female^unhealable")
 
 			-- Extract unit and put it back to update animation if status was changed
-			wesnoth.extract_unit(unit_to_harm)
-			wesnoth.put_unit(unit_to_harm, unit_to_harm.x, unit_to_harm.y)
+			wesnoth.units.extract(unit_to_harm)
+			wesnoth.units.to_map(unit_to_harm, unit_to_harm.x, unit_to_harm.y)
 
 			if add_tab then
 				text = string.format("%s%s", "\t", text)
@@ -281,7 +245,7 @@ function wesnoth.wml_actions.harm_unit_loti(cfg)
 			end
 
 			if not unit_to_harm.hidden then
-				wesnoth.float_label( unit_to_harm.x, unit_to_harm.y, string.format( "<span foreground='red'>%s</span>", text ) )
+				wesnoth.interface.float_label( unit_to_harm.x, unit_to_harm.y, string.format( "<span foreground='red'>%s</span>", text ) )
 			end
 
 			if unit_to_harm.hitpoints < 1 then
@@ -297,41 +261,44 @@ function wesnoth.wml_actions.harm_unit_loti(cfg)
 			end
 
 			if animate then
-				wesnoth.delay(delay)
+				wesnoth.interface.delay(delay)
 			end
 
 			if variable then
-				wesnoth.set_variable(string.format("%s[%d]", variable, math.floor(index - 1)), { harm_amount = damage })
+				local variable_name = string.format("%s[%d]", variable, math.floor(index - 1))
+				wml.variables[variable_name] = { harm_amount = damage }
 			end
 		end
 
 		wesnoth.wml_actions.redraw {}
 	end
 
-	wesnoth.set_variable ( "this_unit" ) -- clearing this_unit
+	wml.variables["this_unit"] = nil -- clearing this_unit
 	end_var_scope("this_unit", this_unit)
 end
+
+local _ = wesnoth.textdomain "wesnoth-loi"
 
 -- Compute any "special" state that a unit may have.
 -- The vast majority of units won't have anything reported by this section.
 local function unit_information_part_1()
-    local max_devour_count = wesnoth.get_variable("unit.variables.max_devour_count")
-    local devour_count = wesnoth.get_variable("unit.variables.devour_count")
-    local max_redeem_count = wesnoth.get_variable("unit.variables.max_redeem_count")
-    local redeem_count = wesnoth.get_variable("unit.variables.redeem_count")
-    local max_lesser_redeem_count = wesnoth.get_variable("unit.variables.max_lesser_redeem_count")
-    local lesser_redeem_count = wesnoth.get_variable("unit.variables.lesser_redeem_count")
-    local starving = wesnoth.get_variable("unit.variables.starving")
-    local from_the_ashes_used = wesnoth.get_variable("unit.variables.from_the_ashes_used")
-    local from_the_ashes_cooldown = wesnoth.get_variable("unit.variables.from_the_ashes_cooldown")
-    local wrath = wesnoth.get_variable("unit.variables.wrath_intensity")
+    local max_devour_count = wml.variables["unit.variables.max_devour_count"]
+    local devour_count = wml.variables["unit.variables.devour_count"]
+    local max_redeem_count = wml.variables["unit.variables.max_redeem_count"]
+    local redeem_count = wml.variables["unit.variables.redeem_count"]
+    local max_lesser_redeem_count = wml.variables["unit.variables.max_lesser_redeem_count"]
+    local lesser_redeem_count = wml.variables["unit.variables.lesser_redeem_count"]
+    local starving = wml.variables["unit.variables.starving"]
+    local from_the_ashes_used = wml.variables["unit.variables.from_the_ashes_used"]
+    local from_the_ashes_cooldown = wml.variables["unit.variables.from_the_ashes_cooldown"]
+    local wrath = wml.variables["unit.variables.wrath_intensity"]
 
     local result = ""
     local span = "<span font_weight='bold'>"
     result = result .. span .. _"Hitpoints:</span> "
-    .. string.format("%u/%u", wesnoth.get_variable("unit.hitpoints"), wesnoth.get_variable("unit.max_hitpoints")) .. " \n"
+    .. string.format("%u/%u", wml.variables["unit.hitpoints"], wml.variables["unit.max_hitpoints"]) .. " \n"
     result = result .. span .. _"Experience:</span> "
-    .. string.format("%u/%u", wesnoth.get_variable("unit.experience"), wesnoth.get_variable("unit.max_experience")) .. " \n"
+    .. string.format("%u/%u", wml.variables["unit.experience"], wml.variables["unit.max_experience"]) .. " \n"
     if max_devour_count ~= nil and max_devour_count > 0 then
       result = result .. span .. _"Soul eater score:</span> "
       .. string.format("%u/%u", devour_count, max_devour_count) .. " \n"
@@ -362,8 +329,9 @@ local function unit_information_part_1()
       end
     end
 
-    wesnoth.set_variable("desc_prefix", result)
+    wml.variables["desc_prefix"] = result
 end
+
 
 -- Some fairly tricky code to make a nicely formatted list of a unit's
 -- attacks.  Most of the code is straightforward, but the specials parsing
@@ -439,10 +407,10 @@ local function unit_information_part_2()
       end
 
       local range
+      local dmgType = _"werd damage type"
+      local _ = wesnoth.textdomain "wesnoth"
       if attack["range"] == "melee" then range = _"melee"
       elseif attack["range"] == "ranged" then range = _"ranged" end
-
-      local dmgType = _"werd damage type"
       if attack["type"] == "blade" then dmgType = _"blade"
       elseif attack["type"] == "impact" then dmgType = _"impact"
       elseif attack["type"] == "pierce" then dmgType = _"pierce"
@@ -459,7 +427,7 @@ local function unit_information_part_2()
 
     -- An attack special is reported only if it has a valid "name" field.
     local function get_attack_specials(attack)
-      local specials = helper.get_child(attack, "specials")
+      local specials = wml.get_child(attack, "specials")
       local result_table = {}
 
       for _, v in pairs(specials) do
@@ -473,7 +441,8 @@ local function unit_information_part_2()
          elseif special_name == "dummy" and special_data["suck"] ~= nil then
            if attack["type"] == "blade"
            or attack["type"] == "pierce"
-           or attack["type"] == "impact" then
+           or attack["type"] == "impact"
+           or attack["type"] == "arcane"  then
              special = "suck " .. tostring(special_data["suck"])
            end
          elseif special_name == "dummy" and special_data["devastating_blow"] ~= nil then
@@ -510,7 +479,7 @@ local function unit_information_part_2()
 
     -- The entry point for this code block: a function to list all of a unit's attacks.
     local function list_attacks()
-      local attacks = helper.get_variable_array("unit.attack")
+      local attacks = wml.array_access.get("unit.attack")
       local result = ""
       for _, v in ipairs(attacks) do
         result = result .. list_one_attack(v)
@@ -526,7 +495,7 @@ local function unit_information_part_2()
       return result
     end
 
-    wesnoth.set_variable("attacks_list", list_attacks())
+    wml.variables["attacks_list"] = list_attacks()
 end
 
 -- Creates a cleaned up list of a unit's abilities
@@ -550,7 +519,7 @@ local function unit_information_part_3()
     end
 
     local function list_abilities()
-      local abilities = wesnoth.get_variable("unit.abilities")
+      local abilities = wml.variables["unit.abilities"]
       local result_list = {}
       if abilities ~= nil then
         for _, v in ipairs(abilities) do
@@ -565,39 +534,42 @@ local function unit_information_part_3()
       end
     end
 
-    wesnoth.set_variable("abilities_list", list_abilities())
+    wml.variables["abilities_list"] = list_abilities()
 end
 
 -- Create the resistances and penetrations table.  Monospace fonts are key
 -- here to ensure that the columns of our "table" line up properly, since each
 -- character takes up the same amount of space.
+
+local _ = wesnoth.textdomain "wesnoth-loti-era"
+
 local function unit_information_part_4()
   local function form_one_line(type)
-    local resist = 100 - wesnoth.get_variable("unit.resistance." .. type)
+    local resist = 100 - wml.variables["unit.resistance." .. type]
     local penetrate = 0
-    local resistances = helper.get_variable_array("unit.abilities.resistance")
+    local resistances = wml.array_access.get("unit.abilities.resistance")
 
     for _, v in ipairs(resistances) do
       if (v["id"] == type .. "_penetrate") then
         penetrate = v["sub"]
       end
     end
-    return string.format("%6d%%       %6d%%</span> \n", math.floor(resist), math.floor(penetrate))
+    return string.format("%6d%%				%6d%%</span> \n", math.floor(resist), math.floor(penetrate))
   end
 
-  local result = _"<span font_family='monospace' weight='bold' color='#60A0FF'>"
-  ..                               _"    Damage      Resistance    Penetration</span> \n"
-  .. _"<span font_family='monospace'>    Blade       " .. form_one_line("blade")
-  .. _"<span font_family='monospace'>    Pierce      " .. form_one_line("pierce")
-  .. _"<span font_family='monospace'>    Impact      " .. form_one_line("impact")
-  .. _"<span font_family='monospace'>    Fire        " .. form_one_line("fire")
-  .. _"<span font_family='monospace'>    Cold        " .. form_one_line("cold")
-  .. _"<span font_family='monospace'>    Arcane      " .. form_one_line("arcane")
+  local result = "<span font_family='monospace' weight='bold' color='#60A0FF'>"
+  ..                               _"	Damage			Resistance			Penetration</span> \n"
+  .. "<span font_family='monospace'>	" .. _"Blade				" .. form_one_line("blade")
+  .. "<span font_family='monospace'>	" .. _"Pierce				" .. form_one_line("pierce")
+  .. "<span font_family='monospace'>	" .. _"Impact				" .. form_one_line("impact")
+  .. "<span font_family='monospace'>	" .. _"Fire				" .. form_one_line("fire")
+  .. "<span font_family='monospace'>	" .. _"Cold				" .. form_one_line("cold")
+  .. "<span font_family='monospace'>	" .. _"Arcane				" .. form_one_line("arcane")
 
   -- Remove the last newline, just to make things compact
   result = string.sub(tostring(result), 1, -2)
 
-  wesnoth.set_variable("resistances_list", result)
+  wml.variables["resistances_list"] = result
 end
 
 -- Create the terrain resistance and defence table.  Monospace fonts are key
@@ -605,35 +577,39 @@ end
 -- character takes up the same amount of space.
 local function unit_information_part_5()
   local function form_one_line(type)
-    local defence = 100 - (wesnoth.get_variable("unit.defense." .. type) or 0)
-    local cost = wesnoth.get_variable("unit.movement_costs." .. type)
+    local defence = 100 - (wml.variables["unit.defense." .. type] or 0)
+    local cost = wml.variables["unit.movement_costs." .. type]
     if cost == nil then
-	return "    none      inaccessible</span> \n"
+	return "   none		inaccessible</span> \n"
     end
-    return string.format("%6d%%       %6d</span> \n", math.floor(defence), math.floor(cost))
+    if defence > 100 then -- def cap
+	    return string.format("%6d%% cap		%6d</span> \n", math.floor(200 - defence), math.floor(cost))
+    else
+	    return string.format("%6d%%			%6d</span> \n", math.floor(defence), math.floor(cost))
+    end
   end
 
-  local result = _"<span font_family='monospace' weight='bold' color='#60A0FF'>"
-  ..                               _"    Location              Defence     Movement cost</span> \n"
-  .. _"<span font_family='monospace'>In forests              " .. form_one_line("forest")
-  .. _"<span font_family='monospace'>In frozen places        " .. form_one_line("frozen")
-  .. _"<span font_family='monospace'>On flat terrains        " .. form_one_line("flat")
-  .. _"<span font_family='monospace'>In caves                " .. form_one_line("cave")
-  .. _"<span font_family='monospace'>In mushroom grooves     " .. form_one_line("fungus")
-  .. _"<span font_family='monospace'>In villages             " .. form_one_line("village")
-  .. _"<span font_family='monospace'>In castles              " .. form_one_line("castle")
-  .. _"<span font_family='monospace'>In shallow waters       " .. form_one_line("shallow_water")
-  .. _"<span font_family='monospace'>On coastal reefs        " .. form_one_line("reef")
-  .. _"<span font_family='monospace'>In deep water           " .. form_one_line("deep_water")
-  .. _"<span font_family='monospace'>On hills                " .. form_one_line("hills")
-  .. _"<span font_family='monospace'>On mountains            " .. form_one_line("mountains")
-  .. _"<span font_family='monospace'>On sands                " .. form_one_line("sand")
-  .. _"<span font_family='monospace'>Above unwalkable places " .. form_one_line("unwalkable")
-  .. _"<span font_family='monospace'>Inside impassable walls " .. form_one_line("impassable")
+  local result = "<span font_family='monospace' weight='bold' color='#60A0FF'>"
+  ..                               _"	Location				Defence		Movement cost</span> \n"
+  .. "<span font_family='monospace'>" .. _"In forests				" .. form_one_line("forest")
+  .. "<span font_family='monospace'>" .. _"In frozen places		" .. form_one_line("frozen")
+  .. "<span font_family='monospace'>" .. _"On flat terrains		" .. form_one_line("flat")
+  .. "<span font_family='monospace'>" .. _"In caves					" .. form_one_line("cave")
+  .. "<span font_family='monospace'>" .. _"In mushroom grooves	" .. form_one_line("fungus")
+  .. "<span font_family='monospace'>" .. _"In villages				" .. form_one_line("village")
+  .. "<span font_family='monospace'>" .. _"In castles				" .. form_one_line("castle")
+  .. "<span font_family='monospace'>" .. _"In shallow waters		" .. form_one_line("shallow_water")
+  .. "<span font_family='monospace'>" .. _"On coastal reefs		" .. form_one_line("reef")
+  .. "<span font_family='monospace'>" .. _"In deep water			" .. form_one_line("deep_water")
+  .. "<span font_family='monospace'>" .. _"On hills					" .. form_one_line("hills")
+  .. "<span font_family='monospace'>" .. _"On mountains				" .. form_one_line("mountains")
+  .. "<span font_family='monospace'>" .. _"On sands					" .. form_one_line("sand")
+  .. "<span font_family='monospace'>" .. _"Above unwalkable places" .. form_one_line("unwalkable")
+  .. "<span font_family='monospace'>" .. _"Inside impassable walls" .. form_one_line("impassable")
 
   -- Remove the last newline, just to make things compact
   result = string.sub(tostring(result), 1, -2)
-  wesnoth.set_variable("defences_list", result)
+  wml.variables["defences_list"] = result
 end
 
 function wesnoth.wml_actions.unit_information_parts_1_to_5()
@@ -649,7 +625,7 @@ function wesnoth.wml_actions.unit_information_part_6()
     -- unit's advancements and the number of times it took each of them.
     -- AMLA advancements, and soul eating choices
     local function list_amla()
-      local advances = helper.get_variable_array("unit.modifications.advancement")
+      local advances = wml.array_access.get("unit.modifications.advancement")
       local result_amla = ""
       local result_soul = ""
       local result_table = {}
@@ -659,7 +635,7 @@ function wesnoth.wml_actions.unit_information_part_6()
             .. tostring(v.description) .. " <span color='#A0A0A0'>"
             --.. "(" .. tostring(v.id) .. ")"
 	    .. "</span>\n"
-        elseif result_amla ~= "" or (helper.get_child(v, "effect") and helper.get_child(v, "effect").name == "redeem") then
+        elseif result_amla ~= "" or (wml.get_child(v, "effect") and wml.get_child(v, "effect").name == "redeem") then
             -- We wait until result_amla is not empty, because some soul eating
             -- advancements are automatically set when Preserved Liches are
             -- created (scenarios1/10_The_Poison, scenarios6/01_The_Awakening)
@@ -672,14 +648,14 @@ function wesnoth.wml_actions.unit_information_part_6()
         end
       end
       if result_soul ~= "" then
-        result_soul = "<span size='large' weight='bold'>Soul eating/redeem/books advancement paths:</span>\n" .. result_soul
+        result_soul = _"<span size='large' weight='bold'>Soul eating/redeem/books advancement paths:</span>\n" .. result_soul
       end
       return result_amla, result_soul
     end
 
     local result_amla, result_soul = list_amla()
-    wesnoth.set_variable("advancements_taken", result_amla)
-    wesnoth.set_variable("soul_eating", result_soul)
+    wml.variables["advancements_taken"] = result_amla
+    wml.variables["soul_eating"] = result_soul
 end
 
 local function clear_advancements(unit)
@@ -695,36 +671,36 @@ end
 local loti_needs_advance = nil
 
 function wesnoth.wml_actions.pre_advance_stuff(cfg)
---    wesnoth.message("pre_advance_stuff")
-    local unit = wesnoth.get_units(cfg)[1].__cfg
-    local a = helper.get_child(unit, "advancement")
-    local t = wesnoth.get_variable("side_number")
+--    wesnoth.interface.add_chat_message("pre_advance_stuff")
+    local unit = wesnoth.units.find_on_map(cfg)[1].__cfg
+    local a = wml.get_child(unit, "advancement")
+    local t = wml.variables["side_number"]
     if t == unit.side then
         if a ~= nil and a.id == "backup_amla" then
             unit = clear_advancements(unit)
-            local u = wesnoth.create_unit { type = "Advancing" .. unit.type }
+            local u = wesnoth.units.create { type = "Advancing" .. unit.type }
             for _, v in ipairs(u.__cfg) do
                 if v[1] == "advancement" then
                     table.insert(unit, v)
                 end
             end
-            local v = helper.get_child(unit, "variables")
+            local v = wml.get_child(unit, "variables")
             v.achieved_amla = true
-            wesnoth.put_unit(unit)
+            wesnoth.units.to_map(unit)
             loti_needs_advance = true
         end
     else
-        local v = helper.get_child(unit, "variables")
+        local v = wml.get_child(unit, "variables")
         v.may_need_respec = true
 	unit.hitpoints = unit.max_hitpoints
-        wesnoth.put_unit(unit)
+        wesnoth.units.to_map(unit)
     end
 end
 
 function wesnoth.wml_actions.advance_stuff(cfg)
---    wesnoth.message("advance_stuff")
-    local unit = wesnoth.get_units(cfg)[1].__cfg
-    local m = helper.get_child(unit, "modifications")
+--    wesnoth.interface.add_chat_message("advance_stuff")
+    local unit = wesnoth.units.find_on_map(cfg)[1].__cfg
+    local m = wml.get_child(unit, "modifications")
 
 	local function clear_potions()
 		for i = #m, 1, -1 do
@@ -736,14 +712,14 @@ function wesnoth.wml_actions.advance_stuff(cfg)
 
     if loti_needs_advance == nil then
         if unit.type == "Elvish Assassin" then
---	    wesnoth.message("is assassin")
+--	    wesnoth.interface.add_chat_message("is assassin")
             local a = { "advancement", { max_times = 1, always_display = true, id = "execution", image = "attacks/bow-elven-magic.png", strict_amla = true, require_amla="",
                 { "effect", { apply_to = "remove_attack", name = "execution" }},
                 { "effect", { apply_to = "bonus_attack", name = "execution", description = _"execution", icon = "attacks/bow-elven-magic.png", range = "ranged", defense_weight = "0", damage = "-40", merge = true, force_original_attack = "longbow" }}
             }}
             table.insert(m, a)
 	    clear_potions()
-            wesnoth.put_unit(unit)
+            wesnoth.units.to_map(unit)
         end
         return
     end
@@ -754,7 +730,7 @@ function wesnoth.wml_actions.advance_stuff(cfg)
 		unit[i][2] = {}
 	end
     end
-    wesnoth.put_unit(unit)
+    wesnoth.units.to_map(unit)
     loti_needs_advance = nil
 end
 
@@ -777,9 +753,9 @@ suffix=face|bones|tooth|skin|ribs|soul|scratch|knuckle|femur
 function wesnoth.wml_actions.check_unit_title(cfg)
 	local u
 	if cfg.variable then
-		u = wesnoth.get_variable(cfg.variable)
+		u = wml.variables[cfg.variable]
 	else
-		local units = wesnoth.get_units(cfg)
+		local units = wesnoth.units.find_on_map(cfg)
 		if #units < 1 then
 			return
 		end
@@ -788,7 +764,7 @@ function wesnoth.wml_actions.check_unit_title(cfg)
 	if not u or not u.race or u.race == "" then
 		return
 	end
-	local unit_variables = helper.get_child(u, "variables")
+	local unit_variables = wml.get_child(u, "variables")
 
 	-- Check if the unit should be given a title
 	if unit_variables.been_given_title or u.unrenamable then
@@ -796,28 +772,50 @@ function wesnoth.wml_actions.check_unit_title(cfg)
 	end
 	unit_variables.been_given_title = true
 
-	-- If the unit has no name, give it one
-	if u.name == "" then
-		if not u.advances_to or u.advances_to == "null" or u.advances_to == "" then
-			if u.race == "undead" then
-				u.name = undead_names()
-			else
-				u.name = nameless_generator()
-			end
-		end
-	end
-
 	local deserves = false
 	if u.canrecruit then
 		deserves = true
-	elseif (u.overlays and u.overlays:find("misc/hero%-icon%.png")) or (u.ellipse and u.ellipse:find("misc/ellipse%-hero")) then
-		deserves = true
+	elseif u.modifications then
+		for i = 1,#u.modifications do
+			if u.modifications[i][1] == "object" then
+				for j = 1,#u.modifications[i][2] do
+					if u.modifications[i][2][j][1] == "effect" then
+						local effect = u.modifications[i][2][j][2]
+						if u.modifications[i][2][j][2].apply_to == "overlay" then
+							local overlays;
+							if effect.add then
+								overlays = effect.add
+							end
+							if effect.replace then
+								overlays = effect.replace
+							end
+							if overlays:find("misc/hero%-icon%.png") then
+								deserves = true
+							end
+						end
+					end
+				end
+			end
+		end
+
+		if u.ellipse and u.ellipse:find("misc/ellipse%-hero") then
+			deserves = true
+		end
 	end
 	if u.race == "demon-loti" or u.race == "demon lord-loti" or u.race == "demon-loti-secret" or u.race == "imp-loti" then
 		deserves = false
 	end
 
 	if deserves then
+		-- If the unit has no name, give it one
+		if u.name == "" then
+			if u.race == "undead" then
+				u.name = undead_names()
+			else
+				u.name = nameless_generator()
+			end
+		end
+
 		local flavour = loti.util.get_unit_flavour(u)
 
 		-- Make legacy affect flavour, even unset one
@@ -832,7 +830,7 @@ function wesnoth.wml_actions.check_unit_title(cfg)
 				end
 			end
 		end
-		local modifications = helper.get_child(u, "modifications")
+		local modifications = wml.get_child(u, "modifications")
 		for i = 1,#modifications do
 			if modifications[i][1] == "advancement" then
 				local name = modifications[i][2].id
@@ -859,9 +857,9 @@ function wesnoth.wml_actions.check_unit_title(cfg)
 	end
 
 	if cfg.variable then
-		wesnoth.set_variable(cfg.variable, u)
+		wml.variables[cfg.variable] = u
 	else
-		wesnoth.put_unit(u)
+		wesnoth.units.to_map(u)
 	end
 end
 
@@ -875,7 +873,7 @@ function loti.util.list_equippable_sorts(unit)
 		return { potion = 1 }
 	end
 
-	-- Everyone can equip rings/amulets and use potions.
+	-- Everyone can equip rings/amulets/cloaks and use potions/books.
 	local can_equip = { ring = 1, amulet = 1, potion = 1}
 
 	-- All corporeal beings except bats can wear armour.
@@ -890,79 +888,27 @@ function loti.util.list_equippable_sorts(unit)
 	end
 
 	if unit.type=="Young Man"
-	then
-		can_equip.dagger = 1
-		can_equip.mace = 1
-		can_equip.spear = 1
-	end
+       then
+               can_equip.dagger = 1
+               can_equip.mace = 1
+               can_equip.spear = 1
+       end
 
-	if ( unit.type=="Dune Apothecary" or unit.type=="Dune Rover" or unit.type=="Dune Explorer" or unit.type=="Dune Ranger" or unit.type=="Dune Soldier" or unit.type=="Dune Spearguard" or unit.type=="Dune Spearmaster" or unit.type=="Dune Swordsman" or unit.type=="Dune Blademaster" or unit.type=="Dwarvish Arcanister" or unit.type=="Dwarvish Fighter" or unit.type=="Dwarvish Steelclad" or unit.type=="Dwarvish Lord" or unit.type=="Dwarvish Guardsman" or unit.type=="Dwarvish Stalwart" or unit.type=="Dwarvish Sentinel" or unit.type=="Dwarvish Runemaster" or unit.type=="Elvish Fighter" or unit.type=="Elvish Captain" or unit.type=="Elvish Marshal" or unit.type=="Cavalryman" or unit.type=="Dragoon" or unit.type=="Cavalier" or unit.type=="Heavy Infantryman" or unit.type=="Shock Trooper" or unit.type=="Iron Mauler" or unit.type=="Spearman" or unit.type=="Swordsman" or unit.type=="Royal Guard" or unit.type=="Royal Warrior" or unit.type=="Sergeant" or unit.type=="Lieutenant" or unit.type=="General" or unit.type=="Grand Marshal" or unit.type=="Merman Hoplite" or unit.type=="Naga Fighter" or unit.type=="Saurian Ambusher" or unit.type=="Saurian Flanker" or unit.type=="Chocobone" or unit.type=="Revenant" or unit.type=="Draug" or unit.type=="Silver Shield" or unit.type=="Pikeman" or unit.type=="Guardian" or unit.type=="Guard" or unit.type=="Shield Guard" or unit.type=="Legion Archer" or unit.type=="Legion Longbowman" or unit.type=="Legion Elite Longbowman" or unit.type=="Legion Horseman" or unit.type=="Legion Knight" or unit.type=="Legion Cavalier" or unit.type=="Legion Soldier" or unit.type=="Legion Swordsman" or unit.type=="Legion Champion" or unit.type=="Legion Spearman" or unit.type=="Legion Halberdier" or unit.type=="Legion Executioner" or unit.type=="Legion Trooper" or unit.type=="Legion Guardian" or unit.type=="Legion Sentinel" or unit.type=="Naga Guardian" or unit.type=="Naga Warden" or unit.type=="Naga Sentinel" or unit.type=="Chevalier" or unit.type=="Crusader" or unit.type=="Sentry" or unit.type=="Custodian" or unit.type=="Boar Rider" or unit.type=="Boar Knight" or unit.type=="Boar Cataphract" or unit.type=="Rouser" or unit.type=="Overlord" or unit.type=="Gallant Carapace" or unit.type=="Warrior Carapace" or unit.type=="Guard" or unit.type=="Protector" or unit.type=="Captain" or unit.type=="Chieftain" or unit.type=="Death Baron" or unit.type=="Skeleton Rider" or unit.type=="Bone Knight")
-	then
-		can_equip.shield = 1
-	end
+       if ( unit.type=="Dune Apothecary" or unit.type=="Dune Rover" or unit.type=="Dune Explorer" or unit.type=="Dune Ranger" or unit.type=="Dune Soldier" or unit.type=="Dune Spearguard" or unit.type=="Dune Spearmaster" or unit.type=="Dune Swordsman" or unit.type=="Dune Blademaster" or unit.type=="Dwarvish Arcanister" or unit.type=="Dwarvish Fighter" or unit.type=="Dwarvish Steelclad" or unit.type=="Dwarvish Lord" or unit.type=="Dwarvish Guardsman" or unit.type=="Dwarvish Stalwart" or unit.type=="Dwarvish Sentinel" or unit.type=="Dwarvish Runemaster" or unit.type=="Elvish Fighter" or unit.type=="Elvish Captain" or unit.type=="Elvish Marshal" or unit.type=="Cavalryman" or unit.type=="Dragoon" or unit.type=="Cavalier" or unit.type=="Heavy Infantryman" or unit.type=="Shock Trooper" or unit.type=="Iron Mauler" or unit.type=="Spearman" or unit.type=="Swordsman" or unit.type=="Royal Guard" or unit.type=="Royal Warrior" or unit.type=="Sergeant" or unit.type=="Lieutenant" or unit.type=="General" or unit.type=="Grand Marshal" or unit.type=="Merman Hoplite" or unit.type=="Naga Fighter" or unit.type=="Saurian Ambusher" or unit.type=="Saurian Flanker" or unit.type=="Chocobone" or unit.type=="Revenant" or unit.type=="Draug" or unit.type=="Silver Shield" or unit.type=="Pikeman" or unit.type=="Guardian" or unit.type=="Guard" or unit.type=="Shield Guard" or unit.type=="Legion Archer" or unit.type=="Legion Longbowman" or unit.type=="Legion Elite Longbowman" or unit.type=="Legion Horseman" or unit.type=="Legion Knight" or unit.type=="Legion Cavalier" or unit.type=="Legion Soldier" or unit.type=="Legion Swordsman" or unit.type=="Legion Champion" or unit.type=="Legion Spearman" or unit.type=="Legion Halberdier" or unit.type=="Legion Executioner" or unit.type=="Legion Trooper" or unit.type=="Legion Guardian" or unit.type=="Legion Sentinel" or unit.type=="Naga Guardian" or unit.type=="Naga Warden" or unit.type=="Naga Sentinel" or unit.type=="Chevalier" or unit.type=="Crusader" or unit.type=="Sentry" or unit.type=="Custodian" or unit.type=="Boar Rider" or unit.type=="Boar Knight" or unit.type=="Boar Cataphract" or unit.type=="Rouser" or unit.type=="Overlord" or unit.type=="Gallant Carapace" or unit.type=="Warrior Carapace" or unit.type=="Guard" or unit.type=="Protector" or unit.type=="Captain" or unit.type=="Chieftain" or unit.type=="Death Baron" or unit.type=="Skeleton Rider" or unit.type=="Bone Knight")
+       then
+               can_equip.shield = 1
+       end
 
-	if ( unit.type == "Elvish shaman" or unit.type == "Young Man" or unit.type == "Elvish Druid" or unit.type == "Elvish Shyde" or unit.type == "Elvish Sorceress" or unit.type == "Elvish Enchantress" or unit.type == "Elvish Sylph" or unit.type == "Dark Adept" or unit.type == "Dark Sorcerer" or unit.type == "Lich" or unit.type == "Necromancer" or unit.type == "Elder Mage" or unit.type == "Scholar" or unit.type == "Mage" or unit.type == "Red Mage" or unit.type == "Arch Mage" or unit.type == "Great Mage" or unit.type == "Silver Mage" or unit.type == "White Mage" or unit.type == "Mage of Light" or unit.type == "Mermaid Initiate" or unit.type == "Mermaid Enchantress" or unit.type == "Mermaid Siren" or unit.type == "Mermaid Priestess" or unit.type == "Mermaid Diviner" or unit.type == "Saurian Augur" or unit.type == "Saurian Oracle" or unit.type == "Saurian Soothsayer" or unit.type == "Troll Shaman" or unit.type == "Ancient Lich" or unit.type == "Adept" or unit.type == "Enchantress" or unit.type == "Sorceress" or unit.type == "Forest Mage" or unit.type == "Mage of Nature" or unit.type == "Tempest mage" or unit.type == "Mage of Storms" or unit.type == "Adept of Light" or unit.type == "Cleric" or unit.type == "Prophetess of Light" or unit.type == "Shaman" or unit.type == "Mystic" or unit.type == "Warlock" or unit.type == "Elder" or unit.type == "Orcish Shaman" or unit.type == "Orcish Warlock" or unit.type == "Orcish Sorcerer" or unit.type == "Shadow Initiate" or unit.type == "Shadow Mage" or unit.type == "Shadow Lord" or unit.type == "Wizard" or unit.type == "Sorcerer" or unit.type == "Empyrean Druid" or unit.type == "Moon Cleric" or unit.type == "Moon Enchantress" or unit.type == "Sun Priestess" or unit.type == "Sun Sorceress" or unit.type == "Elvish Acolyte" or unit.type == "Elvish Ascetic" or unit.type == "Elvish Mystic" or unit.type == "Elvish Avatar" or unit.type == "Sprite" or unit.type == "Fire Faerie" or unit.type == "Dryad" or unit.type == "Forest Spirit" or unit.type == "Initiate" or unit.type == "Deathmastere" or unit.type == "Lich Lord" or unit.type == "Elder Lich Lord" or unit.type == "Blood Apprentice" or unit.type == "Blood Manipulator" or unit.type == "Blood Apprentice" or unit.type == "Sangel" or unit.type == "Flesh Artisan" or unit.type == "Sire" or unit.type == "Methusalem" or unit.type == "Heretic" or unit.type == "Warmonger" or unit.type == "Scribe" or unit.type == "Savant" or unit.type == "Arbiter" or unit.type == "Rune Forger" or unit.type == "Seeker" or unit.type == "Pathfinder" or unit.type == "Skyrunner" or unit.type == "Strombringer" or unit.type == "Prophetess" or unit.type == "Ascendant" )
-	then
-		can_equip.limited = 1
-	end
+       if ( unit.type == "Elvish shaman" or unit.type == "Young Man" or unit.type == "Elvish Druid" or unit.type == "Elvish Shyde" or unit.type == "Elvish Sorceress" or unit.type == "Elvish Enchantress" or unit.type == "Elvish Sylph" or unit.type == "Dark Adept" or unit.type == "Dark Sorcerer" or unit.type == "Lich" or unit.type == "Necromancer" or unit.type == "Elder Mage" or unit.type == "Scholar" or unit.type == "Mage" or unit.type == "Red Mage" or unit.type == "Arch Mage" or unit.type == "Great Mage" or unit.type == "Silver Mage" or unit.type == "White Mage" or unit.type == "Mage of Light" or unit.type == "Mermaid Initiate" or unit.type == "Mermaid Enchantress" or unit.type == "Mermaid Siren" or unit.type == "Mermaid Priestess" or unit.type == "Mermaid Diviner" or unit.type == "Saurian Augur" or unit.type == "Saurian Oracle" or unit.type == "Saurian Soothsayer" or unit.type == "Troll Shaman" or unit.type == "Ancient Lich" or unit.type == "Adept" or unit.type == "Enchantress" or unit.type == "Sorceress" or unit.type == "Forest Mage" or unit.type == "Mage of Nature" or unit.type == "Tempest mage" or unit.type == "Mage of Storms" or unit.type == "Adept of Light" or unit.type == "Cleric" or unit.type == "Prophetess of Light" or unit.type == "Shaman" or unit.type == "Mystic" or unit.type == "Warlock" or unit.type == "Elder" or unit.type == "Orcish Shaman" or unit.type == "Orcish Warlock" or unit.type == "Orcish Sorcerer" or unit.type == "Shadow Initiate" or unit.type == "Shadow Mage" or unit.type == "Shadow Lord" or unit.type == "Wizard" or unit.type == "Sorcerer" or unit.type == "Empyrean Druid" or unit.type == "Moon Cleric" or unit.type == "Moon Enchantress" or unit.type == "Sun Priestess" or unit.type == "Sun Sorceress" or unit.type == "Elvish Acolyte" or unit.type == "Elvish Ascetic" or unit.type == "Elvish Mystic" or unit.type == "Elvish Avatar" or unit.type == "Sprite" or unit.type == "Fire Faerie" or unit.type == "Dryad" or unit.type == "Forest Spirit" or unit.type == "Initiate" or unit.type == "Deathmastere" or unit.type == "Lich Lord" or unit.type == "Elder Lich Lord" or unit.type == "Blood Apprentice" or unit.type == "Blood Manipulator" or unit.type == "Blood Apprentice" or unit.type == "Sangel" or unit.type == "Flesh Artisan" or unit.type == "Sire" or unit.type == "Methusalem" or unit.type == "Heretic" or unit.type == "Warmonger" or unit.type == "Scribe" or unit.type == "Savant" or unit.type == "Arbiter" or unit.type == "Rune Forger" or unit.type == "Seeker" or unit.type == "Pathfinder" or unit.type == "Skyrunner" or unit.type == "Strombringer" or unit.type == "Prophetess" or unit.type == "Ascendant" )
+       then
+               can_equip.limited = 1
+       end
 
 	-- Analyze the list of attacks. Allow weapons that are logical for this unit.
 	for attack in pairs(loti.util.list_attacks(unit)) do
-		if attack:match("sword$") or attack == "saber"
-			or attack == "war talon" or attack == "war blade"
-			or attack == "mberserk" or attack == "whirlwind"
-			or attack == "spectral blades"
-				then can_equip.sword = 1
-
-		elseif attack:match("axe$") or attack == "berserker frenzy"
-			then can_equip.axe = 1
-
-		elseif attack:match("staff$")
-			then can_equip.staff = 1
-
-		elseif attack == "crossbow" or attack == "slurbow"
-			then can_equip.xbow = 1
-
-		elseif attack:match("bow$") 
-			then can_equip.bow = 1
-
-		elseif attack == "dagger"
-			then can_equip.dagger = 1
-
-		elseif attack == "knife" or attack == "throwing knives"
-			then can_equip.knife = 1
-
-		elseif attack == "mace" or attack == "mace-spiked"
-			or attack == "morning star" or attack == "club"
-			or attack == "flail" or attack == "scourge"
-			or attack == "mace_berserk" or attack == "hammer"
-			or attack == "hammer_runic"
-				then can_equip.mace = 1
-
-		elseif attack == "halberd" or attack == "scythe"
-			or attack == "scythe-whirlwind"
-			then can_equip.polearm = 1
-
-		elseif attack:match("claws$")
-			then can_equip.claws = 1
-
-		elseif attack == "sling" or attack == "bolas" or attack == "net"
-			then can_equip.sling = 1
-
-		elseif attack == "touch" or attack == "baneblade"
-			or attack == "faerie touch" or attack == "vine"
-			or attack == "torch"
-				then can_equip.essence = 1
-
-		elseif attack == "thunderstick" or attack == "dragonstaff"
-			then can_equip.thunderstick = 1
-
-
-		elseif attack == "spear" or attack == "javelin"
-			or attack == "lance" or attack == "spike"
-			or attack == "pike" or attack == "trident"
-			or attack == "trident-blade" or attack == "pitchfork"
-				then can_equip.spear = 1
+		local weapon_type = loti.item.weapon_bindings[attack]
+		if weapon_type then
+			can_equip[weapon_type] = 1
 		end
 	end
 
@@ -980,81 +926,75 @@ function loti.util.list_equippable_sorts(unit)
 		can_equip.staff = 1
 	end
 
-		-- Return the list of equippable item sorts for this unit
+	-- Return the list of equippable item sorts for this unit
 	return can_equip
 end
 
--- Check if certain unit can equip certain item.
--- Item is passed as cfg.item_number parameter (numeric ID of the item).
--- Unit is identified by cfg.find_in parameter (e.g. find_in=secondary_unit).
--- Result is either 1 (which means "can equip") or error string that explains why it can't be equipped.
--- Result is placed into Wesnoth variable cfg.to_variable.
-function wesnoth.wml_actions.can_equip_item(cfg)
-	local to_variable = cfg.to_variable or "can_take"
+function loti.util.can_equip_item(unit, number, sort)
+	local result = nil
 
-	local units = wesnoth.get_units(cfg)
-	if #units < 1 then
-		helper.wml_error("[can_equip_item]: no units found, may need find_in= parameter.")
-	end
-
-	local unit = units[1]
-	local item = wesnoth.get_variable("item_list.object[" .. cfg.item_number .. "]")
-	local result = 1
-
-	if not loti.util.list_equippable_sorts(unit)[item.sort] then
+	if not loti.util.list_equippable_sorts(unit)[sort] then
 		result = _"This unit can't equip this item."
 
 		-- More specific error
-		if item.sort == "armour"
+		if sort == "armour"
 			then result = _"This unit cannot wear armours."
-		elseif item.sort == "helm"
+		elseif sort == "helm"
 			then result = _"This unit cannot wear armours, not even helms."
-		elseif item.sort == "gauntlet"
+		elseif sort == "gauntlet"
 			then result = _"This unit cannot wear armours, not even gauntlets."
-		elseif item.sort == "boots"
+		elseif sort == "boots"
 			then result = _"This unit cannot wear armours, not even boots. It's a sad person, having to walk barefoot all the time..."
-		elseif item.sort == "ring"
+		elseif sort == "ring"
 			then result = _"This unit cannot wear rings. It might make marriage problematic."
-		elseif item.sort == "amulet"
+		elseif sort == "amulet"
 			then result = _"This unit cannot wear amulets."
 		elseif item.sort == "shield"
-			then result = _"This unit cannot wear shields. It needs both its hands."
-		elseif item.sort == "sword"
+            then result = _"This unit cannot wear shields. It needs both its hands."
+		elseif sort == "sword"
 			then result = _"This unit cannot use swords."
-		elseif item.sort == "axe"
+		elseif sort == "axe"
 			then result = _"This unit cannot use axes."
-		elseif item.sort == "bow"
+		elseif sort == "bow"
 			then result = _"This unit cannot use bows."
-		elseif item.sort == "staff"
+		elseif sort == "staff"
 			then result = _"This unit cannot use staves."
-		elseif item.sort == "xbow"
+		elseif sort == "xbow"
 			then result = _"This unit cannot use crossbows."
-		elseif item.sort == "dagger"
+		elseif sort == "dagger"
 			then result = _"This unit cannot use daggers. Probably prefers more honest combat tactics."
-		elseif item.sort == "knife"
+		elseif sort == "knife"
 			then result = _"This unit cannot throw knives."
-		elseif item.sort == "mace"
+		elseif sort == "mace"
 			then result = _"This unit cannot use maces."
-		elseif item.sort == "polearm"
+		elseif sort == "polearm"
 			then result = _"This unit cannot use polearms."
-		elseif item.sort == "claws"
+		elseif sort == "claws"
 			then result = _"This unit cannot use metal claws."
-		elseif item.sort == "sling"
+		elseif sort == "sling"
 			then result = _"This unit cannot use slings."
-		elseif item.sort == "essence"
+		elseif sort == "essence"
 			then result = _"This unit cannot use otherworldly essences."
-		elseif item.sort == "thunderstick"
+		elseif sort == "thunderstick"
 			then result = _"This unit cannot use weapons that are so advanced."
-		elseif item.sort == "spear"
+		elseif sort == "spear"
 			then result = _"This unit cannot use spears. Seems to prefer more advanced weapons."
 		end
 	end
 
-	-- TODO: (when item.sort == "limited") check for "already has this book" here, not in WML
-
-	wesnoth.set_variable(to_variable, result);
+	local objects = wml.array_access.get("unit.modifications.object")
+	-- TODO: this disables picking a book twice from the ground, but not from the storage
+	if sort == "limited" then
+		local error_limited = _"This unit already has this limited item."
+		for _, v in pairs(objects) do
+			if v.number == number then
+				result = error_limited
+				break
+			end
+		end
+	end
+	return result
 end
-
 --
 -- Utility function for [can_equip_item] and get_unit_flavour().
 -- List the names of all attacks (e.g. "chill tempest") of a certain unit.
@@ -1065,7 +1005,7 @@ end
 function loti.util.list_attacks(unit)
 	-- Normalize to Lua unit object (to get unit.attacks)
 	if type(unit) == "table" then
-		unit = wesnoth.get_unit(unit.id)
+		unit = wesnoth.units.get(unit.id)
 	end
 
 	local has_attack = {}
