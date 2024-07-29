@@ -47,7 +47,7 @@ local function get_tab()
 	  { "have_unit", { side = 1, ability = "transmutation" } }
 	}
 	local can_sell = wml.variables["is_on_shop"]
-	-- Equip button + dropdown menu with "Transmute", "Sell", "Drop" and "Destroy" buttons (for item in storage)
+	-- Equip button + dropdown menu with "Transmute", "Sell", and "Drop" buttons (for item in storage)
 	local equip_dropdown_buttons = nil
 	if can_transmute then
 		if can_sell then
@@ -168,7 +168,7 @@ local function get_tab()
 		end
 	end
 		
-	-- Unequip button + dropdown menu with "Transmute", "Sell", "Drop" and "Destroy" buttons (for item on unit)
+	-- Unequip button + dropdown menu with "Transmute", "Sell", and "Drop" buttons (for item on unit)
 	local unequip_dropdown_buttons = nil
 	if can_transmute then
 		if can_sell then

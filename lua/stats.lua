@@ -40,7 +40,6 @@ function wesnoth.update_stats(original)
 	if not wml.get_child(original, "resistance") or not wml.get_child(original, "movement_costs") or not wml.get_child(original, "defense") then
 		return original -- Fake unit
 	end
-
 	local hitpoints_ratio = original.hitpoints / original.max_hitpoints
 
 	-- PART II: Cleanup
@@ -93,9 +92,12 @@ function wesnoth.update_stats(original)
 	for i, item in ipairs(visible_modifications) do -- Update objects to reflect set effects and update items
 		if item[1] == "object" and item[2].number and item[2].sort then
 			visible_modifications[i][2] = loti.unit.item_with_set_effects(item[2].number, set_items, item[2].sort)
-
-			-- Legacy field: used by WML menu "Items" to show "Remove item" options
-			visible_modifications[i][2].description = loti.item.describe_item(item[2].number, item[2].sort, set_items)
+			-- extract anything we won't NEED to save in the unit
+			for k,v in pairs(visible_modifications[i][2]) do
+				if type(v) ~= "table" and k ~= "name" and k ~= "number" and k ~= "sort" then
+					visible_modifications[i][2][k] = nil
+				end
+			end
 		end
 	end
 
@@ -105,7 +107,6 @@ function wesnoth.update_stats(original)
 	visible_modifications = wml.get_child(remade, "modifications")
 	vars.updated = true
 	vars.geared = geared
-
 	-- Remove temporary dummy attacks
 	for i = #remade,1,-1 do
 		if remade[i][1] == "attack" and remade[i][2].temporary == true then
@@ -275,7 +276,7 @@ function wesnoth.update_stats(original)
 				weap.icon = bonuses.icon
 			end
 			if bonuses.suck > 0 then
-				table.insert(wml.get_child(weap, "specials"), { "dummy", { id = "suck", name = (_"suck ($amount)"):vformat{amount = bonuses.suck}, description = (_"Sucks $amount health on each successful hit."):vformat{amount = bonuses.suck}, suck = bonuses.suck }})
+				table.insert(wml.get_child(weap, "specials"), { "dummy", { id = "suck", name = (_"suck ($amount)"):vformat{amount = bonuses.suck}, description = (_"Sucks $amount health on each successful hit with blade, pierce, impact or arcane damage."):vformat{amount = bonuses.suck}, suck = bonuses.suck }})
 			end
 			if bonuses.merge == true then
 				weap.damage = weap.damage * weap.number
@@ -334,9 +335,25 @@ function wesnoth.update_stats(original)
 		table.insert(remade, remade_abilities)
 	end
 
+	local has_penetrations = false
+	local penetrate_special = "penetrate_" .. original.id
 	for i = 1,#damage_type_list do
 		if penetrations[damage_type_list[i]] > 0 then
-			table.insert(remade_abilities, { "resistance", { id = resist_penetrate_list[i], sub = penetrations[damage_type_list[i]], max_value = 80, affect_enemies = true, affect_allies = false, affect_self = false, apply_to = damage_type_list[i], { "affect_adjacent", { adjacent = "n,ne,se,s,sw,nw" }}}})
+			table.insert(remade_abilities, { "resistance", { id = resist_penetrate_list[i], sub = penetrations[damage_type_list[i]], max_value = 80, affect_enemies = true, affect_allies = false, affect_self = false, apply_to = damage_type_list[i], { "affect_adjacent", { adjacent = "n,ne,se,s,sw,nw" }}, { "filter_second_weapon", { special_id = penetrate_special }}}})
+			has_penetrations = true
+		end
+	end
+
+	if has_penetrations then
+		for i = 1,#remade do
+			if remade[i][1] == "attack" then
+				local specials = wml.get_child(remade[i][2], "specials")
+				if specials == nil then
+					table.insert(remade[i][2], {"specials", { }})
+					specials = wml.get_child(remade[i][2], "specials")
+				end
+				table.insert(specials, {"dummy", { id = penetrate_special}})
+			end
 		end
 	end
 
@@ -368,9 +385,6 @@ function wesnoth.update_stats(original)
 		-- LEGACY
 		if eff.apply_to == "alignment" and eff.alignment then
 			remade.alignment = eff.alignment
-		end
-		if eff.apply_to == "variation" and eff.name then
-			remade.variation = eff.name
 		end
 		if eff.apply_to == "loyal" then
 			is_loyal = true
@@ -591,50 +605,28 @@ function wesnoth.update_stats(original)
 		if best_backstab then
 			table.insert(specials, best_backstab)
 		end
-		local wrath_intensity = 0
-		if vars.wrath == true then
-			wrath_intensity = vars.wrath_intensity
-		end
-		table.insert(specials, { "damage", { id = "latent_wrath", apply_to = "self", add = wrath_intensity }})
 	end
 
-	-- PART VIII: Apply visual effects
+	-- PART VIII: Abilities
+	local function keep_buildup_ability(name, ability_type)
+		local latent_special = wml.get_child(wml.get_child(original, "abilities"), ability_type, name)
+		if latent_special ~= nil then
+			table.insert(wml.get_child(remade, "abilities"), { ability_type, latent_special })
+		end
+	end
+	keep_buildup_ability("latent_wrath", "damage")
+	keep_buildup_ability("latent_resolve", "resistance")
+	keep_buildup_ability("latent_elusiveness", "chance_to_hit")
+	keep_buildup_ability("latent_precision", "chance_to_hit")
+	keep_buildup_ability("latent_briskness", "attacks")
+
+	-- PART IX: Apply visual effects
 	if #visual_effects > 0 then
 		local visual_obj = { visual_provider = true }
 		for i = 1,#visual_effects do
 			table.insert(visual_obj, { "effect", visual_effects[i] })
 		end
 		table.insert(visible_modifications, { "object", visual_obj})
-	end
-
-	-- Make some abilities have a visual effect
-	for i = 1,#remade_abilities do
-		local ability = remade_abilities[i][2]
-		local name = remade_abilities[i][1]
-		if name == "illuminates" then
-			if ability.value > 0 then
-				remade.halo = "halo/illuminates-aura.png"
-			elseif ability.value < 0 then
-				remade.halo = "halo/darkens-aura.png"
-			end
-		elseif name == "berserk" and ability.id == "berserk_leadership" then
-			remade.halo = "misc/berserk-1.png:100,misc/berserk-2.png:100,misc/berserk-3.png:100,misc/berserk-2.png:100"
-		elseif name == "damage" and ability.id == "charge_leadership" then
-			remade.halo = "misc/charge-1.png:100,misc/charge-2.png:100,misc/charge-3.png:100,misc/charge-2.png:100"
-		elseif name == "poison" and ability.id == "poison_leadership" then
-			remade.halo = "misc/poison-1.png:200,misc/poison-2.png:200,misc/poison-3.png:200,misc/poison-2.png:200"
-		elseif name == "firststrike" and ability.id == "firststrike_leadership" then
-			remade.halo = "misc/firststrike-1.png:100,misc/firststrike-2.png:100,misc/firststrike-3.png:100"
-		elseif name == "damage" and ability.id == "backstab_leadership" then
-			remade.halo = "misc/backstab-1.png:200,misc/backstab-2.png:200,misc/backstab-3.png:200,misc/backstab-2.png:200"
-		elseif name == "chance_to_hit" and ability.id == "marksman_leadership" then
-			remade.halo = "misc/marksman-1.png:100,misc/marksman-2.png:100,misc/marksman-3.png:100,misc/marksman-2.png:100"
-		elseif name == "drains" and ability.id == "drain_leadership" then
-			remade.halo = "misc/drain-1.png:200,misc/drain-2.png:200,misc/drain-3.png:200,misc/drain-2.png:200"
-		elseif name == "dummy" and ability.id == "northfrost aura" then
-			remade.halo = "halo/blizzard-1.png~O(40%):100,halo/blizzard-2.png~O(40%):100,halo/blizzard-3.png~O(40%):100"
-
-		end
 	end
 
 	local new_overlays = {}
@@ -659,26 +651,14 @@ function wesnoth.update_stats(original)
 	if sorts_owned.potion then
 		table.insert(new_overlays, "misc/flamesword-overlay.png")
 	end
-	if sorts_owned.amulet or sorts_owned.ring or sorts_owned.cloak or sorts_owned.limited then
+	if sorts_owned.amulet or sorts_owned.ring or sorts_owned.shield or sorts_owned.limited then
 		table.insert(new_overlays, "misc/orb-overlay.png")
-	end
-	local has_leadership_item = false
-	for _, eff in loti.unit.effects(remade) do
-		if eff.apply_to == "new_ability" then
-			local abilities = wml.get_child(eff, "abilities")
-			if abilities and wml.get_child(abilities, "leadership") then
-				has_leadership_item = true
-			end
-		end
-	end
-	if has_leadership_item then
-		table.insert(new_overlays, "misc/fist-overlay.png")
 	end
 	local overlays_object = { "object", { visual_provider = true, { "effect", { apply_to = "overlay", add = table.concat(new_overlays, ",")}}}}
 	table.insert(visible_modifications, overlays_object)
 
 
-	-- PART IX: Some final changes
+	-- PART X: Some final changes
 	for i = #vars,1,-1 do
 		if vars[i][1] == "disabled_defences" then
 			local found = false
@@ -695,6 +675,14 @@ function wesnoth.update_stats(original)
 	end
 	table.insert(events_to_fire, 1, "post stats update")
 
+	-- Ensure that the legacy advancements are unreachable before the proper advancement was chosen
+	for i = 1,#visible_modifications do
+		if visible_modifications[i][1] == "advancement" and visible_modifications[i][2].id == "awareness_dummy" then
+			table.insert(visible_modifications, {"advancement", { id = "awareness" }})
+			break
+		end
+	end
+
 	local new_advances_to = {}
 	for t in string.gmatch(remade.advances_to, "[^%s,][^,]*") do
 		if not string.match(t, "Advancing") then
@@ -702,13 +690,13 @@ function wesnoth.update_stats(original)
 		end
 	end
 	remade.advances_to = table.concat(new_advances_to, ",")
-
-	-- PART X: Call WML hooks
+	-- PART XI: Call WML hooks
 	for i = 1,#events_to_fire do
 		remade = call_event_on_unit(remade, events_to_fire[i])
 	end
 	-- Restore unit from variable after the WML hooks.
 	wesnoth.wml_actions.unstore_unit { variable = "updated", find_vacant = "no", check_passability = false }
+	wesnoth.wml_actions.modify_unit {{ "filter", { id = original.id }} }
 	return remade
 end
 

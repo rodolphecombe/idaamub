@@ -7,8 +7,8 @@ wesnoth.require("inventory/multiplayer_safety")(item_picker)
 
 --- actions:
 --- 0 is equip/use, 1 is to store, 2 is to transmute, 3 is to sell, 4 is to leave on the ground
-local function show_picking_dialogue(item, sort, replaced_item, cant_equip, count)
-	local description = loti.item.describe_item(item.number, sort)
+local function show_picking_dialogue(item, sort, replaced_item, cant_equip, count, set_items)
+	local description = loti.item.describe_item(item.number, sort, set_items)
 	local can_transmute = wesnoth.eval_conditional {
 	  { "have_unit", { side = 1, ability = "transmutation" } }
 	}
@@ -244,6 +244,7 @@ function loti.util.item_pick_menu (mpsafety, unit)
 
 			local count = loti.item.storage.list_items(sort)[number] or 0
 
+			local set_items = loti.unit.list_unit_item_numbers(unit.__cfg)
 			local result = show_picking_dialogue(item, sort, replaced_item, why_cant_equip, count)
 			if result == 0 then
 				mpsafety:queue({

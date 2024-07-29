@@ -14,32 +14,12 @@ wesnoth.dofile("~add-ons/Legends_of_Idaamub/lua/inventory/dialog.lua")
 wesnoth.dofile("~add-ons/LotI_Era/lua/unitdata.lua")
 wesnoth.dofile("~add-ons/LotI_Era/lua/crafting.lua")
 wesnoth.dofile("~add-ons/LotI_Era/lua/titles.lua")
-wesnoth.dofile("~add-ons/LotI_Era/lua/redeem.lua")
+wesnoth.dofile("~add-ons/LotI_Era/lua/recall.lua")
 wesnoth.dofile("~add-ons/Legends_of_Idaamub/lua/stats.lua")
 
 --! #textdomain "wesnoth-loti-era"
 
 local _ = wesnoth.textdomain "wesnoth-loti-era"
-
-local old_unit_status = wesnoth.interface.game_display.unit_status
-function wesnoth.interface.game_display.unit_status()
-     local u = wesnoth.interface.get_displayed_unit()
-     if not u then return {} end
-     local s = old_unit_status()
-     if u.status.infected then
-         table.insert(s, { "element", {
-             image = "misc/infected.png",
-             tooltip = _"infected: This unit is infected. It will become undead after death, unless cured by a healer or by standing on a village."
-         } })
-     end
-     if u.status.incinerated then
-	 table.insert(s, { "element", {
-	     image = "misc/incinerated.png",
-	     tooltip = _"in flames: This unit is in flames. It will lose 16 HP per turn, unless cured by a healer or by standing on a village."
-	} })
-     end
-     return s
-end
 
 function wesnoth.wml_actions.get_unit_resistance(cfg)
 	local damage_type = cfg.damage_type or wml.error "[get_unit_resistance] has no damage type specified"
@@ -136,6 +116,8 @@ function wesnoth.wml_actions.harm_unit_loti(cfg)
 			local animate = cfg.animate -- attacker and defender are special values
 			local delay = cfg.delay or 500
 			local fire_event = cfg.fire_event
+			local kill = true
+			if cfg.kill ~= nil then kill = cfg.kill end
 			local primary_attack = wml.get_child(cfg, "primary_attack")
 			local secondary_attack = wml.get_child(cfg, "secondary_attack")
 			local harmer_filter = wml.get_child(cfg, "filter_second")
@@ -186,19 +168,24 @@ function wesnoth.wml_actions.harm_unit_loti(cfg)
 
 			local damage = calculate_damage( amount,
 							 ( cfg.alignment or "neutral" ),
-							 wesnoth.get_time_of_day( { unit_to_harm.x, unit_to_harm.y, true } ).lawful_bonus,
+							 wesnoth.schedule.get_illumination( { unit_to_harm.x, unit_to_harm.y } ).lawful_bonus,
 							 100 - wesnoth.units.resistance_against( unit_to_harm, cfg.damage_type or "dummy" ),
 							 resistance_multiplier
 						       )
 
 			if unit_to_harm.hitpoints <= damage then
-				damage = unit_to_harm.hitpoints
+				if kill then
+					damage = unit_to_harm.hitpoints
+				else
+					damage = unit_to_harm.hitpoints - 1
+				end
 			end
 
 			unit_to_harm.hitpoints = unit_to_harm.hitpoints - damage
 			local text = string.format("%d%s", math.floor(damage), "\n")
 			local add_tab = false
-			local gender = unit_to_harm.__cfg.gender
+			local unit_to_harm_copy = unit_to_harm.__cfg
+			local gender = unit_to_harm_copy.gender
 
 			local function set_status(name, male_string, female_string, sound)
 				if not cfg[name] or unit_to_harm.status[name] then return end
@@ -227,6 +214,21 @@ function wesnoth.wml_actions.harm_unit_loti(cfg)
 			wesnoth.units.extract(unit_to_harm)
 			wesnoth.units.to_map(unit_to_harm, unit_to_harm.x, unit_to_harm.y)
 
+			if harmer then
+				local old_damage_inflicted = start_var_scope("damage_inflicted")
+				wml.variables["damage_inflicted"] = damage
+				wml.variables["harm_unit_trigger"] = true
+				if cfg.fire_attacker_hits then
+					wesnoth.game_events.fire("attacker hits", harmer.x, harmer.y, unit_to_harm.x, unit_to_harm.y, { wml.tag.first(primary_attack), wml.tag.second(secondary_attack) })
+				end
+				if cfg.fire_defender_hits then
+					wesnoth.game_events.fire("defender hits", unit_to_harm.x, unit_to_harm.y, harmer.x, harmer.y, { wml.tag.first(secondary_attack), wml.tag.second(primary_attack) })
+				end
+				wml.variables["harm_unit_trigger"] = nil
+				wml.variables["damage_inflicted"] = nil
+				end_var_scope("damage_inflicted", old_damage_inflicted)
+			end
+
 			if add_tab then
 				text = string.format("%s%s", "\t", text)
 			end
@@ -244,20 +246,33 @@ function wesnoth.wml_actions.harm_unit_loti(cfg)
 				end
 			end
 
-			if not unit_to_harm.hidden then
-				wesnoth.interface.float_label( unit_to_harm.x, unit_to_harm.y, string.format( "<span foreground='red'>%s</span>", text ) )
-			end
-
-			if unit_to_harm.hitpoints < 1 then
-				local uth_cfg = unit_to_harm.__cfg
-				if harmer then
-					wesnoth.wml_actions.award_extra_experience{ id = harmer.id, death_of_level = uth_cfg.level, defer = true }
+			if #wesnoth.units.find_on_map({ id = unit_to_harm_copy.id}) > 0 then -- Verify that the unit wasn't removed
+				if not unit_to_harm.hidden then
+					wesnoth.interface.float_label( unit_to_harm.x, unit_to_harm.y, string.format( "<span foreground='red'>%s</span>", text ) )
 				end
-				wesnoth.wml_actions.kill({
-					id = unit_to_harm.id,
-					animate = toboolean( animate ),
-					fire_event = toboolean(toboolean(fire_event))
-				})
+
+				if unit_to_harm.hitpoints < 1 then
+					local uth_cfg = unit_to_harm.__cfg
+					local secondary_unit = nil
+					wml.variables["harm_unit_trigger"] = true
+					if harmer then
+						wesnoth.wml_actions.award_extra_experience{ id = harmer.id, death_of_level = uth_cfg.level, defer = true }
+						secondary_unit = { "secondary_unit", { id=harmer.id }}
+						wesnoth.game_events.fire("last breath", unit_to_harm.x, unit_to_harm.y, harmer.x, harmer.y)
+					else
+						wesnoth.game_events.fire("last breath", unit_to_harm.x, unit_to_harm.y)
+					end
+					local after_events = wesnoth.units.get(uth_cfg.id)
+					if after_events and after_events.hitpoints < 1 then -- For the case if something revived the unit
+						wesnoth.wml_actions.kill({
+							id = unit_to_harm.id,
+							animate = toboolean( animate ),
+							fire_event = toboolean(toboolean(fire_event)),
+							secondary_unit
+						})
+					end
+					wml.variables["harm_unit_trigger"] = nil
+				end
 			end
 
 			if animate then
@@ -291,7 +306,9 @@ local function unit_information_part_1()
     local starving = wml.variables["unit.variables.starving"]
     local from_the_ashes_used = wml.variables["unit.variables.from_the_ashes_used"]
     local from_the_ashes_cooldown = wml.variables["unit.variables.from_the_ashes_cooldown"]
-    local wrath = wml.variables["unit.variables.wrath_intensity"]
+    local wrath = nil
+    local latent_wrath = wml.get_child(wml.get_child(wml.variables["unit"], "abilities"), "damage", "latent_wrath")
+    if latent_wrath ~= nil then wrath = latent_wrath.add end
 
     local result = ""
     local span = "<span font_weight='bold'>"
@@ -873,12 +890,12 @@ function loti.util.list_equippable_sorts(unit)
 		return { potion = 1 }
 	end
 
-	-- Everyone can equip rings/amulets/cloaks and use potions/books.
+	-- Everyone can equip rings/amulets and use potions.
 	local can_equip = { ring = 1, amulet = 1, potion = 1}
 
 	-- All corporeal beings except bats can wear armour.
 	if not ( unit_type == "Ghost" or unit_type == "Wraith" or unit_type == "Spectre"
-		or unit_type == "Shadow" or unit_type == "Nightgaunt" or unit_type == "Dark Shade"
+		or unit_type == "Shadow" or unit_type == "Nightgaunt" or unit_type == "Dark Shade" or unit_type == "Reaper"
 		or unit_type:match(" Bat$") )
 	then
 		can_equip.armour = 1
@@ -916,12 +933,12 @@ function loti.util.list_equippable_sorts(unit)
 	if unit_type == "Lich" or unit_type == "09 Ancient Lich" or unit_type == "Lich King"
 		or unit_type == "Demilich" or unit_type == "Infernal Knight"
 		or unit_type == "Dark Adept" or unit_type == "Elvish Shyde"
-		or unit_type == "Elvish Seer" or unit_type == "Elvish Sylph"
+		or unit_type == "Elvish Seer" or unit_type == "Elvish Sylph" or unit_type == "Elvish Sylph LotI"
 		or unit_type == "Celestial Messenger" or unit_type == "Prophet"
 		or unit_type == "Mage of Light" or unit_type == "Stormrider"
 		or unit_type == "Sword Mage" or unit_type == "Knight of Magic"
 		or unit_type == "Warlock" or unit_type == "Faerie Incarnation"
-		or unit_type == "Elvish Overlord" or unit_type == "Lethalia_lich_weakened"
+		or unit_type == "Elvish Overlord"
 	then
 		can_equip.staff = 1
 	end
@@ -1016,4 +1033,210 @@ function loti.util.list_attacks(unit)
 	end
 
 	return has_attack
+end
+
+-- [unit_status_semaphore]
+--
+-- first call with action=incr will save original value and set status
+-- last call with action=decr (count=0) will restore original value
+--
+-- unit.variables.statuses.foo.original_value, where foo is a status like 'unhealable' - stores original value to restore when all custom actions are done messing with this status
+-- unit.variables.statuses.foo.count  - counts the number of custom actions that currently need this status set
+function wesnoth.wml_actions.unit_status_semaphore(cfg)
+	local debug = cfg.debug or false
+	if debug and not debug then print("shut up luacheck") end
+	local unit_id = cfg.id or wml.error("[unit_status_semaphore]: missing required id=")
+	local status = cfg.status or wml.error("[unit_status_semaphore]: missing required status=")
+	local action = cfg.action or wml.error("[unit_status_semaphore]: missing required action=")
+
+	if debug then wesnoth.interface.add_chat_message(string.format("[unit_status_semaphore]: <%s>, %s, %s",unit_id,status,action)) end
+	-- under certain circumstances (probably when attack is interrupted, like a kill with disintegrate or Argan running in Old Friend) unit may be empty
+	if unit_id == "" then return end
+	local unit = wesnoth.units.get(unit_id).__cfg
+	local vars = wml.get_child(unit, "variables")
+	local statuses = wml.get_child(vars, "statuses")
+	local current = {}
+	local had_current = false
+	if statuses ~= nil then
+		current = wml.get_child(statuses, status)
+		if current == nil then
+			current = {}
+		else
+			had_current = true
+		end
+	end
+	if action == "clear" then -- just clear, do not reset to original value
+		if statuses ~= nil then
+			if status == "all" then
+				wml.remove_child(vars, "statuses")
+			else
+				wml.remove_child(statuses, status)
+				if #statuses == 0 then wml.remove_child(vars, "statuses") end
+			end
+		end
+	elseif action == "reset" then  -- clear and reset to original value
+		if statuses == nil then
+			wml.error("[unit_status_semaphore]: reset failed to find any original values")
+		else
+			if status == "all" then
+				for s in wml.child_range(vars, "statuses") do
+					wml.get_child(unit, "status")[s] = current.original_value
+					wml.remove_child(statuses, s)
+				end
+			else
+				if current == nil then
+					wml.error(string.format("[unit_status_semaphore]: reset failed to find original value for %s",status))
+				else
+					wml.get_child(unit, "status")[status] = current.original_value
+					wml.remove_child(statuses, status)
+				end
+			end
+			if #statuses == 0 then wml.remove_child(vars, "statuses") end
+		end
+	elseif action == "get_count" then
+		local variable = cfg.variable or wml.error("[unit_status_semaphore]: get_count requires variable=")
+		wml.variables[variable] = current.count
+	elseif action == "get_original" then
+		local variable = cfg.variable or wml.error("[unit_status_semaphore]: get_original requires variable=")
+                wml.variables[variable] = current.original_value
+	elseif action == "incr" then
+		if current == nil or current.count == nil or current.count == 0 then
+			current.count = 1
+			current.original_value = wml.get_child(unit, "status")[status]
+			wml.get_child(unit, "status")[status] = true
+		else
+			current.count = current.count + 1
+		end
+		if statuses == nil then
+			statuses = {}
+			table.insert(statuses, { status, current } )
+			table.insert(vars, { "statuses", statuses } )
+		else
+			if not had_current then table.insert(statuses, { status, current } ) end
+		end
+	elseif action == "decr" then
+		if statuses == nil or current == nil or current.count == nil or current.count == 0 then
+			wml.error("[unit_status_semaphore]: Cannot decrement nil/0 value")
+		else
+			current.count = current.count - 1
+			if current.count == 0 then
+				wml.get_child(unit, "status")[status] = current.original_value
+				wml.remove_child(statuses, status)
+				if #statuses == 0 then wml.remove_child(vars, "statuses") end
+			end
+		end
+	else
+		wml.error(string.format("[unit_status_semaphore]: Unknown action: %s", action))
+	end
+	wesnoth.units.to_map(unit)
+end
+
+local function set_buildup_ability_intensity(cfg, tag_name, ability_type, ability_id, get_intensity, generate_ability_func)
+	local debug = cfg.debug or false
+	local unit_id = cfg.id or wml.error(tag_name .. ": missing required id=")
+	local unit_base = wesnoth.units.find({ id = unit_id})[1]
+	local unit = unit_base.__cfg
+	local abilities = wml.get_child(unit, "abilities")
+	local latent_ability = wml.get_child(abilities, ability_type, ability_id)
+	local intensity = 0
+	if latent_ability ~= nil then
+		intensity = get_intensity(latent_ability)
+	end
+	if debug then wesnoth.interface.add_chat_message(string.format(tag_name .. ": intensity was %d", intensity)) end
+	if cfg.set ~= nil then intensity = cfg.set end
+	if cfg.div ~= nil then
+		if math.abs(intensity) <= 1 then
+			intensity = 0
+		else
+			intensity = intensity / cfg.div
+			if intensity > 0 then
+				intensity = math.floor(intensity)
+			else
+				intensity = math.ceil(intensity)
+			end
+		end
+	end
+	if cfg.add ~= nil then intensity = intensity + cfg.add end
+	if cfg.sub ~= nil then intensity = intensity - cfg.sub end
+	if debug then wesnoth.interface.add_chat_message(string.format(tag_name .. ": \tintensity is %d", intensity)) end
+	if intensity == 0 then
+		if debug then wesnoth.interface.add_chat_message(string.format(tag_name .. ": intensity == %d, removing ability", intensity)) end
+		local _,index = wml.find_child(abilities, ability_type, { id = ability_id })
+		if index ~= nil then
+			if debug then wesnoth.interface.add_chat_message(string.format(tag_name .. ": found id=" .. ability_id .. " at position %d", index)) end
+			table.remove(abilities,index)
+		else
+			if debug then wesnoth.interface.add_chat_message(string.format(tag_name .. ": no id=" .. ability_id .. " found")) end
+		end
+	else
+		if latent_ability == nil then
+			if debug then wesnoth.interface.add_chat_message(string.format(tag_name .. ": Didn't find the ability, creating with add = %d", intensity)) end
+			table.insert(abilities, generate_ability_func(intensity))
+		else
+			if debug then wesnoth.interface.add_chat_message(string.format(tag_name .. ": Found the ability, setting add = %d", intensity)) end
+			for i=1,#abilities do
+				if abilities[i][1] == ability_type and abilities[i][2].id == ability_id then
+					abilities[i] = generate_ability_func(intensity)
+				end
+			end
+		end
+	end
+	if debug then wesnoth.interface.add_chat_message(string.format(tag_name .. ": %s %s", unit.id, unit_base.valid)) end
+	if unit_base.valid == "recall" then
+		wesnoth.units.to_recall(unit)
+	elseif unit_base.valid == "map" then
+		wesnoth.units.to_map(unit)
+	else
+		wml.error(string.format(tag_name .. ": Failed to find location for %s (%s)", unit.id, unit_base.valid))
+	end
+end
+
+function wesnoth.wml_actions.set_wrath_intensity(cfg)
+	local function get_wrath_intensity(ability)
+		return ability.add
+	end
+	local function generate_wrath_ability(intensity)
+		return { "damage", { id = "latent_wrath", apply_to = "self", add = intensity }}
+	end
+	set_buildup_ability_intensity(cfg, "[set_wrath_intensity]", "damage", "latent_wrath", get_wrath_intensity, generate_wrath_ability)
+end
+
+function wesnoth.wml_actions.set_resolve_intensity(cfg)
+	local function get_resolve_intensity(ability)
+		return ability.add
+	end
+	local function generate_resolve_ability(intensity)
+		return { "resistance", { id = "latent_resolve", affect_self = true, affect_allies = false, max_value = 90, add = intensity }}
+	end
+	set_buildup_ability_intensity(cfg, "[set_resolve_intensity]", "resistance", "latent_resolve", get_resolve_intensity, generate_resolve_ability)
+end
+
+function wesnoth.wml_actions.set_elusiveness_intensity(cfg)
+	local function get_elusiveness_intensity(ability)
+		return ability.sub
+	end
+	local function generate_elusiveness_ability(intensity)
+		return { "chance_to_hit", { id = "latent_elusiveness", apply_to = "opponent", sub = intensity }}
+	end
+	set_buildup_ability_intensity(cfg, "[set_elusiveness_intensity]", "chance_to_hit", "latent_elusiveness", get_elusiveness_intensity, generate_elusiveness_ability)
+end
+
+function wesnoth.wml_actions.set_precision_intensity(cfg)
+	local function get_precision_intensity(ability)
+		return ability.add
+	end
+	local function generate_precision_ability(intensity)
+		return { "chance_to_hit", { id = "latent_precision", apply_to = "self", add = intensity }}
+	end
+	set_buildup_ability_intensity(cfg, "[set_precision_intensity]", "chance_to_hit", "latent_precision", get_precision_intensity, generate_precision_ability)
+end
+
+function wesnoth.wml_actions.set_briskness_intensity(cfg)
+	local function get_briskness_intensity(ability)
+		return ability.add
+	end
+	local function generate_briskness_ability(intensity)
+		return { "attacks", { id = "latent_briskness", apply_to = "self", add = intensity }}
+	end
+	set_buildup_ability_intensity(cfg, "[set_briskness_intensity]", "attacks", "latent_briskness", get_briskness_intensity, generate_briskness_ability)
 end
