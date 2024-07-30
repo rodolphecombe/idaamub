@@ -119,7 +119,6 @@ local function show_picking_dialogue(item, sort, replaced_item, cant_equip, coun
 					portrait = item.image,
 					message = description .. "\n\n" .. "<span color='red'>" .. cant_equip .. "</span>"
 				}, {_"Store it. Currently having "..count.._" such items stored.", _"Sell it. Currently having "..count.._" such items stored.", _"Leave it on the ground."})
-				wesnoth.interface.add_chat_message(res)
 				if res == 1 then
 					return 1
 				elseif res == 2 then

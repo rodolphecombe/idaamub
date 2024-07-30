@@ -78,14 +78,10 @@ loti.item.storage.add = function(item_number, crafted_sort)
 	end
 	if item.sort == "food" then
 		local has_food = wml.variables["food_counter"]
-		local units = wesnoth.units.find_on_map(cfg)
-		if #units < 1 then
-			wml.error("storage.add: no units found.")
-		end
 		if has_food>0 then
-			wesnoth.fire("message", { speaker = units[1].id , message=_ "I found some food." })
+			wesnoth.fire("message", { x = "$x1", y = "$y1" , message=_ "I found some food." })
 		else
-			wesnoth.fire("message", { speaker = units[1].id , message=_ "I sure needed that." })
+			wesnoth.fire("message", {  x = "$x1", y = "$y1" , message=_ "I sure needed that." })
 		end
 		return
 	end
@@ -129,6 +125,62 @@ loti.item.storage.remove = function(item_number, crafted_sort)
 
 	wml.variables["item_storage"] = list
 	wesnoth.game_events.fire("removed from storage")
+end
+
+loti.item.storage.transmute = function(item_number, crafted_sort)
+	local list = wml.variables["item_storage"] or {}
+
+	for index, elem in ipairs(list) do
+		if not crafted_sort or elem[1] == crafted_sort then
+			if elem[2].type == item_number then
+				local object = loti.item.type[item_number]
+				local description = loti.item.describe_item(item_number, crafted_sort)
+				local gold_created = math.floor(object.price/10)
+				local res = gui.show_narration ({
+								title = object.name,
+								portrait = object.image,
+								message = description .. "\n\n" .. _"Transmute this item for "..gold_created.." gold?"
+							}, {_"Transmute", _"No"})
+				if res ==1 then
+					local side = wesnoth.sides[wesnoth.current.side]
+					side.gold = side.gold + gold_created
+					table.remove(list, index)
+					break -- Only one item should be removed.
+				end
+			end
+		end
+	end
+
+	wml.variables["item_storage"] = list
+	wesnoth.fire_event("removed from storage") -- where is it used?
+end
+
+loti.item.storage.sell = function(item_number, crafted_sort)
+	local list = wml.variables["item_storage"] or {}
+
+	for index, elem in ipairs(list) do
+		if not crafted_sort or elem[1] == crafted_sort then
+			if elem[2].type == item_number then
+				local object = loti.item.type[item_number]
+				local description = loti.item.describe_item(item_number, crafted_sort)
+				local gold_created = math.floor(object.price/3)
+				local res = gui.show_narration ({
+								title = object.name,
+								portrait = object.image,
+								message = description .. "\n\n" .. _"Sell this item for "..gold_created.." gold?"
+							}, {_"Sell", _"No"})
+				if res ==1 then
+					local side = wesnoth.sides[wesnoth.current.side]
+					side.gold = side.gold + gold_created
+					table.remove(list, index)
+					break -- Only one item should be removed.
+				end
+			end
+		end
+	end
+
+	wml.variables["item_storage"] = list
+	wesnoth.fire_event("removed from storage") -- where is it used?
 end
 
 -- Get the list of all items in the storage.
