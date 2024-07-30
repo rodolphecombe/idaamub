@@ -78,14 +78,10 @@ loti.item.storage.add = function(item_number, crafted_sort)
 	end
 	if item.sort == "food" then
 		local has_food = wml.variables["food_counter"]
-		local units = wesnoth.units.find_on_map(cfg)
-		if #units < 1 then
-			wml.error("storage.add: no units found.")
-		end
 		if has_food>0 then
-			wesnoth.fire("message", { speaker = units[1].id , message=_ "I found some food." })
+			wesnoth.fire("message", { x = "$x1", y = "$y1" , message=_ "I found some food." })
 		else
-			wesnoth.fire("message", { speaker = units[1].id , message=_ "I sure needed that." })
+			wesnoth.fire("message", {  x = "$x1", y = "$y1" , message=_ "I sure needed that." })
 		end
 		return
 	end
