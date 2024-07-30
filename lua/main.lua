@@ -966,7 +966,7 @@ function loti.util.can_equip_item(unit, number, sort)
 			then result = _"This unit cannot wear rings. It might make marriage problematic."
 		elseif sort == "amulet"
 			then result = _"This unit cannot wear amulets."
-		elseif item.sort == "shield"
+		elseif sort == "shield"
             then result = _"This unit cannot wear shields. It needs both its hands."
 		elseif sort == "sword"
 			then result = _"This unit cannot use swords."
