@@ -211,5 +211,8 @@ Reworked AI recruiting behavior
 0.8
 Port to 1.18
 
-0.8.1
+0.8.1 (maintenance)
 Fixed several bugs
+
+0.8.2 (maintenance)
+Fixed scenario_number in scenario 10
