@@ -9,7 +9,7 @@ wesnoth.require("inventory/multiplayer_safety")(item_picker)
 --- 0 is equip/use, 1 is to store, 2 is to transmute, 3 is to sell, 4 is to leave on the ground
 local function show_picking_dialogue(item, sort, replaced_item, cant_equip, count, set_items)
 	local description = loti.item.describe_item(item.number, sort, set_items)
-	local can_transmute = wesnoth.eval_conditional {
+	local can_transmute = wml.eval_conditional {
 	  { "have_unit", { side = 1, ability = "transmutation" } }
 	}
 	local can_sell = wml.variables["is_on_shop"]
