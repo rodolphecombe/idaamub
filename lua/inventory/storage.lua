@@ -43,7 +43,7 @@ local function get_tab()
 		}
 	}
 
-	local can_transmute = wesnoth.eval_conditional {
+	local can_transmute = wml.eval_conditional {
 	  { "have_unit", { side = 1, ability = "transmutation" } }
 	}
 	local can_sell = wml.variables["is_on_shop"]
@@ -853,7 +853,7 @@ return function(provided_inventory_dialog)
 			end
 		end
 		
-		local can_transmute = wesnoth.eval_conditional {
+		local can_transmute = wml.eval_conditional {
 			  { "have_unit", { side = 1, ability = "transmutation" } }
 			}
 		local can_sell = wml.variables["is_on_shop"]
