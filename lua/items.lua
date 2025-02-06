@@ -79,9 +79,9 @@ loti.item.storage.add = function(item_number, crafted_sort)
 	if item.sort == "food" then
 		local has_food = wml.variables["food_counter"]
 		if has_food>0 then
-			wesnoth.fire("message", { x = "$x1", y = "$y1" , message=_ "I found some food." })
+			wml.fire("message", { x = "$x1", y = "$y1" , message=_ "I found some food." })
 		else
-			wesnoth.fire("message", {  x = "$x1", y = "$y1" , message=_ "I sure needed that." })
+			wml.fire("message", {  x = "$x1", y = "$y1" , message=_ "I sure needed that." })
 		end
 		return
 	end
@@ -102,7 +102,7 @@ loti.item.storage.add = function(item_number, crafted_sort)
 	table.sort(list, compare_entries)
 	wml.variables["item_storage"] = list
 	if wesnoth.current_version() < wesnoth.version "1.17.0" then
-		wesnoth.fire_event("added to storage")
+		wesnoth.game_events.fire("added to storage")
 	else
 		wesnoth.game_events.fire("added to storage")
 	end
@@ -152,7 +152,7 @@ loti.item.storage.transmute = function(item_number, crafted_sort)
 	end
 
 	wml.variables["item_storage"] = list
-	wesnoth.fire_event("removed from storage") -- where is it used?
+	wesnoth.game_events.fire("removed from storage") -- where is it used?
 end
 
 loti.item.storage.sell = function(item_number, crafted_sort)
@@ -180,7 +180,7 @@ loti.item.storage.sell = function(item_number, crafted_sort)
 	end
 
 	wml.variables["item_storage"] = list
-	wesnoth.fire_event("removed from storage") -- where is it used?
+	wesnoth.game_events.fire("removed from storage") -- where is it used?
 end
 
 -- Get the list of all items in the storage.
@@ -415,7 +415,7 @@ loti.item.on_unit.transmute = function(unit, item_number, crafted_sort, skip_upd
 		loti.item.on_unit.remove(unit, item_number, crafted_sort, skip_update)
 		loti.item.storage.add(item_number, crafted_sort)
 		
-		wesnoth.fire_event("unequip", unit)
+		wesnoth.game_events.fire("unequip", unit)
 	end
 end
 
@@ -435,7 +435,7 @@ loti.item.on_unit.sell = function(unit, item_number, crafted_sort, skip_update)
 		loti.item.on_unit.remove(unit, item_number, crafted_sort, skip_update)
 		loti.item.storage.add(item_number, crafted_sort)
 		
-		wesnoth.fire_event("unequip", unit)
+		wesnoth.game_events.fire("unequip", unit)
 	end
 end
 
