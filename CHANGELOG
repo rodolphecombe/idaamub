@@ -222,9 +222,11 @@ Fixed help menu not showing
 0.8.3 (maintenance)
 Improved several books.
 
-0.8.4
+0.8.4 (maintenance)
 Adding healing overlay in scenario 34.
 Fixed a broken item in scenario 31.
 Fixed missing units in scenario 27 and updated the map. 
 Added Caribe units.
 Improved dialogs.
+Restored description of complex objects.
+Fixed several books.
