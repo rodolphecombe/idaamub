@@ -58,7 +58,7 @@ Fixed shields.
 Added unit Vuedres Spider.
 
 0.2.3 (maintenance)
-Added ABILITY_FRIGHTENING.
+Added ABILITY_FRIGHTENING_LOI.
 Fixed a bug in scenario 6.
 
 0.2.4 (maintenance)
@@ -68,7 +68,7 @@ Modified scenario 4.
 Removed enemy keep in scenario 1.
 Removed the usage of NEUTRAL_SIDE in scenario 2 as it is incompatible with victory_when_enemies_defeated=yes.
 Added an object to Io for the management of the portrait.
-Added ABILITY_IMMOBILISATION.
+Added ABILITY_IMMOBILISATION_LOI.
 
 0.2.6 (maintenance)
 Removed depreciated NEUTRAL_SIDE and replaced it by list of team_name

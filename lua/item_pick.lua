@@ -10,7 +10,7 @@ wesnoth.require("inventory/multiplayer_safety")(item_picker)
 local function show_picking_dialogue(item, sort, replaced_item, cant_equip, count, set_items)
 	local description = loti.item.describe_item(item.number, sort, set_items)
 	local can_transmute = wml.eval_conditional {
-	  { "have_unit", { side = 1, ability = "transmutation" } }
+	  { "have_unit", { side = 1, ability = "transmutation loi" } }
 	}
 	local can_sell = wml.variables["is_on_shop"]
 	if item.sort == "potion" then

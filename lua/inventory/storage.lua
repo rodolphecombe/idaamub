@@ -44,7 +44,7 @@ local function get_tab()
 	}
 
 	local can_transmute = wml.eval_conditional {
-	  { "have_unit", { side = 1, ability = "transmutation" } }
+	  { "have_unit", { side = 1, ability = "transmutation_loi" } }
 	}
 	local can_sell = wml.variables["is_on_shop"]
 	-- Equip button + dropdown menu with "Transmute", "Sell", and "Drop" buttons (for item in storage)
@@ -854,7 +854,7 @@ return function(provided_inventory_dialog)
 		end
 		
 		local can_transmute = wml.eval_conditional {
-			  { "have_unit", { side = 1, ability = "transmutation" } }
+			  { "have_unit", { side = 1, ability = "transmutation loi" } }
 			}
 		local can_sell = wml.variables["is_on_shop"]
 		-- Handler for Equip dropdown menu actions: "Drop item" (for item in storage).
