@@ -233,3 +233,7 @@ Fixed several books.
 
 0.8.5 (maintenance)
 Now using custom spiders, scorpion and rat by Renlie_Cocoa and levers by Duncan Dill
+
+0.9
+Chapter 5 added.
+Custom units, abilities and special now use an unique id.

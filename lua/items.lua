@@ -517,63 +517,35 @@ loti.item.on_the_ground.add = function(item_number, x, y, crafted_sort, turn)
 		halo = loti.item.halo
 	}
 
-	if wml.variables["allied_sides"] then
-		wesnoth.game_events.add_wml {
-			id = "ie" .. x .. "|" .. y,
-			name = "moveto",
-			first_time_only = "no",
-			wml.tag.filter {
-				x = x,
-				y = y,
-				side = wml.variables["allied_sides"],
-				wml.tag["not"] {
-					wml.tag.filter_wml {
-						wml.tag.variables {
-							cant_pick = "yes"
-						}
+	wesnoth.game_events.add_wml {
+		id = "ie" .. x .. "|" .. y,
+		name = "moveto",
+		first_time_only = "no",
+		wml.tag.filter {
+			x = x,
+			y = y,
+			wml.tag["not"] {
+				wml.tag.filter_wml {
+					wml.tag.variables {
+						cant_pick = "yes"
 					}
-				},
-			},
-			wml.tag.fire_event {
-				name = "item_pick",
-				wml.tag.primary_unit {
-					x = x,
-					y = y
-				}
-			}
-		}
-	else
-	-- Enable "pick item" event when some unit walks onto this hex.
-	-- (see PLACE_ITEM_EVENT for WML version)
-	-- this is a LEGACY version, which uses the "controller" side filter
-		wesnoth.game_events.add_wml {
-			id = "ie" .. x .. "|" .. y,
-			name = "moveto",
-			first_time_only = "no",
-			wml.tag.filter {
-				x = x,
-				y = y,
-				wml.tag["not"] {
-					wml.tag.filter_wml {
-						wml.tag.variables {
-							cant_pick = "yes"
-						}
-					}
-				},
-				wml.tag.filter_side {
-					controller = "human"
 				}
 			},
-			wml.tag.fire_event {
-				name = "item_pick",
-				wml.tag.primary_unit {
-					x = x,
-					y = y
-				}
+			wml.tag.filter_side {
+				wml.tag["not"] {
+					side = dropping_side
+				},
+				controller = "human"
+			}
+		},
+		wml.tag.fire_event {
+			name = "item_pick",
+			wml.tag.primary_unit {
+				x = x,
+				y = y
 			}
 		}
-
-	end
+	}
 	wesnoth.game_events.fire("item drop", x, y) -- where is it used?
 end
 
