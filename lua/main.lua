@@ -1,3 +1,5 @@
+local utils = wesnoth.require "wml-utils"
+
 -- Some libraries place utility functions into this array,
 -- e.g. loti.item.storage.add()
 loti = {}
@@ -73,24 +75,7 @@ end
 
 function wesnoth.wml_actions.harm_unit_loti(cfg)
 	-- Most of this is pasted from core, but I needed to do some edits that could not have been done without this unpleasant violation of the DRY (Don't Repeat Yourself) rule
-	-- To be honest, there are parts I don't even understand
 	-- It's meant to harm units but give experience only on kill, works only when used by weapon specials
-
-	-- These two functions were copied from wml-tags.lua too
-	local function start_var_scope(name)
-		local var = wml.array_access.get(name) --containers and arrays
-		if #var == 0 then var = wml.variables[name] end --scalars (and nil/empty)
-		wml.variables[name] = nil
-		return var
-	end
-	local function end_var_scope(name, var)
-		wml.variables[name] = nil
-		if type(var) == "table" then
-			wml.array_access.set(name, var)
-		else
-			wml.variables[name] = var
-		end
-	end
 
 	local filter = wml.get_child(cfg, "filter") or wml.error("[harm_unit_loti] missing required [filter] tag")
 	-- we need to use shallow_literal field, to avoid raising an error if $this_unit (not yet assigned) is used
@@ -106,7 +91,7 @@ function wesnoth.wml_actions.harm_unit_loti(cfg)
 		else return false end
 	end
 
-	local this_unit = start_var_scope("this_unit")
+	local this_unit <close> = utils.scoped_var("this_unit") --luacheck: no unused
 
 	for index, unit_to_harm in ipairs(wesnoth.units.find_on_map(filter)) do
 		if unit_to_harm.valid then
@@ -215,7 +200,7 @@ function wesnoth.wml_actions.harm_unit_loti(cfg)
 			wesnoth.units.to_map(unit_to_harm, unit_to_harm.x, unit_to_harm.y)
 
 			if harmer then
-				local old_damage_inflicted = start_var_scope("damage_inflicted")
+				local old_damage_inflicted <close> = utils.scoped_var("damage_inflicted") --luacheck: no unused
 				wml.variables["damage_inflicted"] = damage
 				wml.variables["harm_unit_trigger"] = true
 				if cfg.fire_attacker_hits then
@@ -225,8 +210,6 @@ function wesnoth.wml_actions.harm_unit_loti(cfg)
 					wesnoth.game_events.fire("defender hits", unit_to_harm.x, unit_to_harm.y, harmer.x, harmer.y, { wml.tag.first(secondary_attack), wml.tag.second(primary_attack) })
 				end
 				wml.variables["harm_unit_trigger"] = nil
-				wml.variables["damage_inflicted"] = nil
-				end_var_scope("damage_inflicted", old_damage_inflicted)
 			end
 
 			if add_tab then
@@ -267,7 +250,7 @@ function wesnoth.wml_actions.harm_unit_loti(cfg)
 						wesnoth.wml_actions.kill({
 							id = unit_to_harm.id,
 							animate = toboolean( animate ),
-							fire_event = toboolean(toboolean(fire_event)),
+							fire_event = toboolean(fire_event),
 							secondary_unit
 						})
 					end
@@ -287,9 +270,6 @@ function wesnoth.wml_actions.harm_unit_loti(cfg)
 
 		wesnoth.wml_actions.redraw {}
 	end
-
-	wml.variables["this_unit"] = nil -- clearing this_unit
-	end_var_scope("this_unit", this_unit)
 end
 
 local _ = wesnoth.textdomain "wesnoth-loi"
@@ -464,7 +444,7 @@ local function unit_information_part_2()
            end
          elseif special_name == "dummy" and special_data["devastating_blow"] ~= nil then
            special = tostring(special_data["devastating_blow"]) .. "% devastating blow"
-         elseif special_name == "dummy" and special_data["lethargy"] ~= nil then
+         elseif special_name == "dummy" and special_data["lethargy_loti"] ~= nil then
            special = "lethargy"
          end
          if special ~= nil and special ~= "" then
@@ -728,7 +708,7 @@ function wesnoth.wml_actions.advance_stuff(cfg)
 	end
 
     if loti_needs_advance == nil then
-        if unit.type == "Elvish Assassin" then
+        if unit.type == "Elvish Assassin LotI" then
 --	    wesnoth.interface.add_chat_message("is assassin")
             local a = { "advancement", { max_times = 1, always_display = true, id = "execution", image = "attacks/bow-elven-magic.png", strict_amla = true, require_amla="",
                 { "effect", { apply_to = "remove_attack", name = "execution" }},
@@ -895,7 +875,7 @@ function loti.util.list_equippable_sorts(unit)
 
 	-- All corporeal beings except bats can wear armour.
 	if not ( unit_type == "Ghost" or unit_type == "Wraith" or unit_type == "Spectre"
-		or unit_type == "Shadow" or unit_type == "Nightgaunt" or unit_type == "Dark Shade" or unit_type == "Reaper"
+		or unit_type == "Shadow" or unit_type == "Nightgaunt" or unit_type == "Dark Shade LotI" or unit_type == "Reaper LotI"
 		or unit_type:match(" Bat$") )
 	then
 		can_equip.armour = 1
@@ -916,7 +896,7 @@ function loti.util.list_equippable_sorts(unit)
                can_equip.shield = 1
        end
 
-       if ( unit.type == "Elvish shaman" or unit.type == "Young Man LoI" or unit.type == "Elvish Druid" or unit.type == "Elvish Shyde" or unit.type == "Elvish Sorceress" or unit.type == "Elvish Enchantress" or unit.type == "Elvish Sylph" or unit.type == "Dark Adept" or unit.type == "Dark Sorcerer" or unit.type == "Lich" or unit.type == "Necromancer" or unit.type == "Elder Mage" or unit.type == "Scholar LoI" or unit.type == "Mage" or unit.type == "Red Mage" or unit.type == "Arch Mage" or unit.type == "Great Mage" or unit.type == "Silver Mage" or unit.type == "White Mage" or unit.type == "Mage of Light" or unit.type == "Mermaid Initiate" or unit.type == "Mermaid Enchantress" or unit.type == "Mermaid Siren" or unit.type == "Mermaid Priestess" or unit.type == "Mermaid Diviner" or unit.type == "Saurian Augur" or unit.type == "Saurian Oracle" or unit.type == "Saurian Soothsayer" or unit.type == "Troll Shaman" or unit.type == "Ancient Lich" or unit.type == "Adept" or unit.type == "Enchantress" or unit.type == "Sorceress" or unit.type == "Forest Mage" or unit.type == "Mage of Nature" or unit.type == "Tempest mage" or unit.type == "Mage of Storms" or unit.type == "Adept of Light" or unit.type == "Cleric" or unit.type == "Prophetess of Light" or unit.type == "Shaman" or unit.type == "Mystic" or unit.type == "Warlock" or unit.type == "Elder" or unit.type == "Orcish Shaman" or unit.type == "Orcish Warlock" or unit.type == "Orcish Sorcerer" or unit.type == "Shadow Initiate" or unit.type == "Shadow Mage" or unit.type == "Shadow Lord" or unit.type == "Wizard" or unit.type == "Sorcerer" or unit.type == "Empyrean Druid" or unit.type == "Moon Cleric" or unit.type == "Moon Enchantress" or unit.type == "Sun Priestess" or unit.type == "Sun Sorceress" or unit.type == "Elvish Acolyte" or unit.type == "Elvish Ascetic" or unit.type == "Elvish Mystic" or unit.type == "Elvish Avatar" or unit.type == "Sprite" or unit.type == "Fire Faerie" or unit.type == "Dryad" or unit.type == "Forest Spirit" or unit.type == "Initiate" or unit.type == "Deathmastere" or unit.type == "Lich Lord" or unit.type == "Elder Lich Lord" or unit.type == "Blood Apprentice" or unit.type == "Blood Manipulator" or unit.type == "Blood Apprentice" or unit.type == "Sangel" or unit.type == "Flesh Artisan" or unit.type == "Sire" or unit.type == "Methusalem" or unit.type == "Heretic" or unit.type == "Warmonger" or unit.type == "Scribe" or unit.type == "Savant" or unit.type == "Arbiter" or unit.type == "Rune Forger" or unit.type == "Seeker" or unit.type == "Pathfinder" or unit.type == "Skyrunner" or unit.type == "Strombringer" or unit.type == "Prophetess" or unit.type == "Ascendant" )
+       if ( unit.type == "Elvish Shaman" or unit.type == "Young Man LoI" or unit.type == "Elvish Druid" or unit.type == "Elvish Shyde" or unit.type == "Elvish Sorceress" or unit.type == "Elvish Enchantress" or unit.type == "Elvish Sylph" or unit.type == "Dark Adept" or unit.type == "Dark Sorcerer" or unit.type == "Lich" or unit.type == "Necromancer" or unit.type == "Elder Mage" or unit.type == "Scholar LoI" or unit.type == "Mage" or unit.type == "Red Mage" or unit.type == "Arch Mage" or unit.type == "Great Mage" or unit.type == "Silver Mage" or unit.type == "White Mage" or unit.type == "Mage of Light" or unit.type == "Mermaid Initiate" or unit.type == "Mermaid Enchantress" or unit.type == "Mermaid Siren" or unit.type == "Mermaid Priestess" or unit.type == "Mermaid Diviner" or unit.type == "Saurian Augur" or unit.type == "Saurian Oracle" or unit.type == "Saurian Soothsayer" or unit.type == "Troll Shaman" or unit.type == "Ancient Lich" or unit.type == "Adept" or unit.type == "Enchantress" or unit.type == "Sorceress" or unit.type == "Forest Mage" or unit.type == "Mage of Nature" or unit.type == "Tempest mage" or unit.type == "Mage of Storms" or unit.type == "Adept of Light" or unit.type == "Cleric" or unit.type == "Prophetess of Light" or unit.type == "Shaman" or unit.type == "Mystic" or unit.type == "Warlock" or unit.type == "Elder" or unit.type == "Orcish Shaman" or unit.type == "Orcish Warlock" or unit.type == "Orcish Sorcerer" or unit.type == "Shadow Initiate" or unit.type == "Shadow Mage" or unit.type == "Shadow Lord" or unit.type == "Wizard" or unit.type == "Sorcerer" or unit.type == "Empyrean Druid" or unit.type == "Moon Cleric" or unit.type == "Moon Enchantress" or unit.type == "Sun Priestess" or unit.type == "Sun Sorceress" or unit.type == "Elvish Acolyte" or unit.type == "Elvish Ascetic" or unit.type == "Elvish Mystic" or unit.type == "Elvish Avatar" or unit.type == "Sprite" or unit.type == "Fire Faerie" or unit.type == "Dryad" or unit.type == "Forest Spirit" or unit.type == "Initiate" or unit.type == "Deathmastere" or unit.type == "Lich Lord" or unit.type == "Elder Lich Lord" or unit.type == "Blood Apprentice" or unit.type == "Blood Manipulator" or unit.type == "Blood Apprentice" or unit.type == "Sangel" or unit.type == "Flesh Artisan" or unit.type == "Sire" or unit.type == "Methusalem" or unit.type == "Heretic" or unit.type == "Warmonger" or unit.type == "Scribe" or unit.type == "Savant" or unit.type == "Arbiter" or unit.type == "Rune Forger" or unit.type == "Seeker" or unit.type == "Pathfinder" or unit.type == "Skyrunner" or unit.type == "Strombringer" or unit.type == "Prophetess" or unit.type == "Ascendant" )
        then
                can_equip.limited = 1
        end
@@ -930,15 +910,15 @@ function loti.util.list_equippable_sorts(unit)
 	end
 
 	-- Some magician-like units can carry a staff (even if they don't attack with it).
-	if unit_type == "Lich" or unit_type == "09 Ancient Lich" or unit_type == "Lich King"
-		or unit_type == "Demilich" or unit_type == "Infernal Knight"
+	if unit_type == "Lich" or unit_type == "09 Ancient Lich" or unit_type == "Lich King LotI"
+		or unit_type == "Demilich LotI" or unit_type == "Infernal Knight LotI"
 		or unit_type == "Dark Adept" or unit_type == "Elvish Shyde"
-		or unit_type == "Elvish Seer" or unit_type == "Elvish Sylph" or unit_type == "Elvish Sylph LotI"
-		or unit_type == "Celestial Messenger" or unit_type == "Prophet"
+		or unit_type == "Elvish Seer LotI" or unit_type == "Elvish Sylph" or unit_type == "Elvish Sylph LotI"
+		or unit_type == "Celestial Messenger LotI" or unit_type == "Prophet LotI"
 		or unit_type == "Mage of Light" or unit_type == "Stormrider"
-		or unit_type == "Sword Mage" or unit_type == "Knight of Magic"
-		or unit_type == "Warlock" or unit_type == "Faerie Incarnation"
-		or unit_type == "Elvish Overlord"
+		or unit_type == "Sword Mage LotI" or unit_type == "Knight of Magic LotI"
+		or unit_type == "Warlock LotI" or unit_type == "Faerie Incarnation LotI"
+		or unit_type == "Elvish Overlord LotI"
 	then
 		can_equip.staff = 1
 	end
@@ -966,8 +946,8 @@ function loti.util.can_equip_item(unit, number, sort)
 			then result = _"This unit cannot wear rings. It might make marriage problematic."
 		elseif sort == "amulet"
 			then result = _"This unit cannot wear amulets."
-		elseif sort == "shield"
-            then result = _"This unit cannot wear shields. It needs both its hands."
+		elseif sort == "cloak"
+			then result = _"This unit cannot wear cloaks. Winter is not coming, fortunately."
 		elseif sort == "sword"
 			then result = _"This unit cannot use swords."
 		elseif sort == "axe"
@@ -1135,6 +1115,9 @@ local function set_buildup_ability_intensity(cfg, tag_name, ability_type, abilit
 	local debug = cfg.debug or false
 	local unit_id = cfg.id or wml.error(tag_name .. ": missing required id=")
 	local unit_base = wesnoth.units.find({ id = unit_id})[1]
+	if unit_base == nil then
+		return
+	end
 	local unit = unit_base.__cfg
 	local abilities = wml.get_child(unit, "abilities")
 	local latent_ability = wml.get_child(abilities, ability_type, ability_id)
@@ -1239,4 +1222,40 @@ function wesnoth.wml_actions.set_briskness_intensity(cfg)
 		return { "attacks", { id = "latent_briskness", apply_to = "self", add = intensity }}
 	end
 	set_buildup_ability_intensity(cfg, "[set_briskness_intensity]", "attacks", "latent_briskness", get_briskness_intensity, generate_briskness_ability)
+end
+
+function wesnoth.wml_actions.knockback(cfg)
+	local knocker = wesnoth.units.find(wml.get_child(cfg, "filter_second"))[1]
+	local all_knocked = wesnoth.units.find(wml.get_child(cfg, "filter"))
+	local max_distance = cfg.distance or 1
+	for i = 1,#all_knocked do
+		local knocked = all_knocked[i]
+		if knocked ~= nil then
+			local direction = knocked.facing
+			if knocker ~= nil then
+				direction = wesnoth.map.get_relative_dir(knocker, knocked)
+			end
+			local target = wesnoth.map.get(knocked)
+			local last_acceptable_target = target
+			for distance = 1, max_distance do --luacheck: no unused
+				local adj = {};
+				adj["n"], adj["ne"], adj["se"], adj["s"], adj["sw"], adj["nw"] = wesnoth.map.get_adjacent_hexes(target)
+				local potential_target = adj[direction]
+				if wesnoth.current.map:on_board(potential_target) then
+					local terrain = wesnoth.map.get(potential_target).terrain
+					if knocked:movement_on(terrain) > knocked.max_moves then
+						break -- Impassable, can't be knocked through
+					end
+				else
+					break -- Can't be knocked out of the map
+				end
+				target = potential_target
+				local occupier = wesnoth.units.find_on_map{x = potential_target.x, y = potential_target.y}
+				if #occupier == 0 then
+					last_acceptable_target = potential_target
+				end
+			end
+			knocked:to_map(last_acceptable_target.x, last_acceptable_target.y)
+		end
+	end
 end
