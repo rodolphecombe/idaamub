@@ -58,7 +58,7 @@ Fixed shields.
 Added unit Vuedres Spider.
 
 0.2.3 (maintenance)
-Added ABILITY_FRIGHTENING.
+Added ABILITY_FRIGHTENING_LOI.
 Fixed a bug in scenario 6.
 
 0.2.4 (maintenance)
@@ -68,7 +68,7 @@ Modified scenario 4.
 Removed enemy keep in scenario 1.
 Removed the usage of NEUTRAL_SIDE in scenario 2 as it is incompatible with victory_when_enemies_defeated=yes.
 Added an object to Io for the management of the portrait.
-Added ABILITY_IMMOBILISATION.
+Added ABILITY_IMMOBILISATION_LOI.
 
 0.2.6 (maintenance)
 Removed depreciated NEUTRAL_SIDE and replaced it by list of team_name
@@ -230,3 +230,8 @@ Added Caribe units.
 Improved dialogs.
 Restored description of complex objects.
 Fixed several books.
+
+0.8.5 (maintenance)
+Now using custom spiders, scorpion and rat by Renlie_Cocoa and levers by Duncan Dill
+Fixed death of an unit breaking auto-recalled.
+Fixed party being able to be coposed of more than eight units.
