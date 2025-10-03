@@ -233,6 +233,8 @@ Fixed several books.
 
 0.8.5 (maintenance)
 Now using custom spiders, scorpion and rat by Renlie_Cocoa and levers by Duncan Dill
+Fixed death of an unit breaking auto-recalled.
+Fixed party being able to be coposed of more than eight units.
 
 0.9
 Chapter 5 added.
