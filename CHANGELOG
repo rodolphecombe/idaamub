@@ -238,4 +238,4 @@ Fixed party being able to be composed of more than eight units.
 
 0.9
 Chapter 5 added.
-Custom units, abilities and special now use an unique id.
+Custom units and macros now use an unique id.
