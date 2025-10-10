@@ -253,3 +253,6 @@ Fixed experience potions (again).
 
 0.9.4
 Fixed experience potion (until next time).
+
+0.9.5
+Fixed some end events triggering only for the first unit. 
