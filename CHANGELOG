@@ -253,3 +253,8 @@ Fixed experience potions (again).
 
 0.9.4
 Fixed experience potion (until next time).
+Fixed some end events triggering only for the first unit.
+
+0.9.5
+Reduce Ubidaiubua cost.
+Increase turn limit for novice difficulty for two scenarios.
