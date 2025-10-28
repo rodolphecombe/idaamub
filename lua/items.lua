@@ -79,9 +79,9 @@ loti.item.storage.add = function(item_number, crafted_sort)
 	if item.sort == "food" then
 		local has_food = wml.variables["food_counter"]
 		if has_food>0 then
-			wesnoth.fire("message", { x = "$x1", y = "$y1" , message=_ "I found some food." })
+			wml.fire("message", { x = "$x1", y = "$y1" , message=_ "I found some food." })
 		else
-			wesnoth.fire("message", {  x = "$x1", y = "$y1" , message=_ "I sure needed that." })
+			wml.fire("message", {  x = "$x1", y = "$y1" , message=_ "I sure needed that." })
 		end
 		return
 	end
@@ -102,7 +102,7 @@ loti.item.storage.add = function(item_number, crafted_sort)
 	table.sort(list, compare_entries)
 	wml.variables["item_storage"] = list
 	if wesnoth.current_version() < wesnoth.version "1.17.0" then
-		wesnoth.fire_event("added to storage")
+		wesnoth.game_events.fire("added to storage")
 	else
 		wesnoth.game_events.fire("added to storage")
 	end
@@ -152,7 +152,7 @@ loti.item.storage.transmute = function(item_number, crafted_sort)
 	end
 
 	wml.variables["item_storage"] = list
-	wesnoth.fire_event("removed from storage") -- where is it used?
+	wesnoth.game_events.fire("removed from storage") -- where is it used?
 end
 
 loti.item.storage.sell = function(item_number, crafted_sort)
@@ -180,7 +180,7 @@ loti.item.storage.sell = function(item_number, crafted_sort)
 	end
 
 	wml.variables["item_storage"] = list
-	wesnoth.fire_event("removed from storage") -- where is it used?
+	wesnoth.game_events.fire("removed from storage") -- where is it used?
 end
 
 -- Get the list of all items in the storage.
@@ -241,7 +241,7 @@ loti.item.type = {
 	-- Returns Lua table { item_number1 = object1, ... }
 	_reload = function()
 		local cache = {}
-		local data_loader = wesnoth.unit_types["Item Data Loader"].__cfg
+		local data_loader = wesnoth.unit_types["Item Data Loader LotI"].__cfg
 		local all_known_types = wml.get_child(data_loader, "advancement")
 		for _, item in ipairs(all_known_types) do
 			cache[item[2].number] = item[2]
@@ -415,7 +415,7 @@ loti.item.on_unit.transmute = function(unit, item_number, crafted_sort, skip_upd
 		loti.item.on_unit.remove(unit, item_number, crafted_sort, skip_update)
 		loti.item.storage.add(item_number, crafted_sort)
 		
-		wesnoth.fire_event("unequip", unit)
+		wesnoth.game_events.fire("unequip", unit)
 	end
 end
 
@@ -435,7 +435,7 @@ loti.item.on_unit.sell = function(unit, item_number, crafted_sort, skip_update)
 		loti.item.on_unit.remove(unit, item_number, crafted_sort, skip_update)
 		loti.item.storage.add(item_number, crafted_sort)
 		
-		wesnoth.fire_event("unequip", unit)
+		wesnoth.game_events.fire("unequip", unit)
 	end
 end
 
@@ -517,63 +517,35 @@ loti.item.on_the_ground.add = function(item_number, x, y, crafted_sort, turn)
 		halo = loti.item.halo
 	}
 
-	if wml.variables["allied_sides"] then
-		wesnoth.game_events.add_wml {
-			id = "ie" .. x .. "|" .. y,
-			name = "moveto",
-			first_time_only = "no",
-			wml.tag.filter {
-				x = x,
-				y = y,
-				side = wml.variables["allied_sides"],
-				wml.tag["not"] {
-					wml.tag.filter_wml {
-						wml.tag.variables {
-							cant_pick = "yes"
-						}
+	wesnoth.game_events.add_wml {
+		id = "ie" .. x .. "|" .. y,
+		name = "moveto",
+		first_time_only = "no",
+		wml.tag.filter {
+			x = x,
+			y = y,
+			wml.tag["not"] {
+				wml.tag.filter_wml {
+					wml.tag.variables {
+						cant_pick = "yes"
 					}
-				},
-			},
-			wml.tag.fire_event {
-				name = "item_pick",
-				wml.tag.primary_unit {
-					x = x,
-					y = y
-				}
-			}
-		}
-	else
-	-- Enable "pick item" event when some unit walks onto this hex.
-	-- (see PLACE_ITEM_EVENT for WML version)
-	-- this is a LEGACY version, which uses the "controller" side filter
-		wesnoth.game_events.add_wml {
-			id = "ie" .. x .. "|" .. y,
-			name = "moveto",
-			first_time_only = "no",
-			wml.tag.filter {
-				x = x,
-				y = y,
-				wml.tag["not"] {
-					wml.tag.filter_wml {
-						wml.tag.variables {
-							cant_pick = "yes"
-						}
-					}
-				},
-				wml.tag.filter_side {
-					controller = "human"
 				}
 			},
-			wml.tag.fire_event {
-				name = "item_pick",
-				wml.tag.primary_unit {
-					x = x,
-					y = y
-				}
+			wml.tag.filter_side {
+				wml.tag["not"] {
+					side = dropping_side
+				},
+				controller = "human"
+			}
+		},
+		wml.tag.fire_event {
+			name = "item_pick",
+			wml.tag.primary_unit {
+				x = x,
+				y = y
 			}
 		}
-
-	end
+	}
 	wesnoth.game_events.fire("item drop", x, y) -- where is it used?
 end
 
@@ -844,34 +816,34 @@ loti.item.describe_item = function(number, sort, set_items)
 	if item.sort == "weaponword" then
 		is_weapon = true
 	end
-	local function describe_attacks_modification(variable, ending_more, ending_plus_one, ending_fewer, ending_minus_one)
+	local function describe_attacks_modification(variable, format_more, format_plus_one, format_fewer, format_minus_one)
 		if variable then
-			local ending = ending_fewer
+			local format = format_fewer
 			local color = "red"
 			if variable > 1 then
-				ending = ending_more
+				format = format_more
 				color = "green"
 			elseif variable == 1 then
-				ending = ending_plus_one
+				format = format_plus_one
 				color = "green"
 			elseif variable == -1 then
-				ending = ending_minus_one
+				format = format_minus_one
 				color = "red"
 			end
 
-			table.insert(desc, "<span color='" .. color .. "'>" .. math.abs(variable) .. ending .. " </span>")
+			table.insert(desc, "<span color='" .. color .. "'>" .. string.format(format, math.abs(variable)) .. " </span>")
 		end
 	end
 	if is_weapon then
 		describe_attacks_modification(item.attacks,
-			_"% more attacks", _"% more attacks", _"% fewer attacks", _"% fewer attacks")
+			_"%d%% more attacks", _"%d%% more attacks", _"%d%% fewer attacks", _"%d%% fewer attacks")
 	else
 		describe_attacks_modification(item.attacks,
-			_" more attacks", _" more attack", _" fewer attacks", _" fewer attack")
+			_"%d more attacks", _"%d more attack", _"%d fewer attacks", _"%d fewer attack")
 	end
 
 	describe_attacks_modification(item.attacks_plus,
-		_" more attacks", _" more attack", _" fewer attacks", _" fewer attack")
+		_"%d more attacks", _"%d more attack", _"d% fewer attacks", _"%d fewer attack")
 
 	if item.merge then
 		table.insert(desc, "<span color='green'>" .. _"Merges attacks" .. "</span>")

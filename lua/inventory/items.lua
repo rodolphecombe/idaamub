@@ -28,7 +28,7 @@ local inventory_config = {
 				-- (which is needed in unit_information_part_1()) gets populated anyway.
 				wml.variables["unit"] = unit.__cfg
 				if wesnoth.current_version() < wesnoth.version "1.17.0" then
-					wesnoth.fire_event("unit information", unit)
+					wesnoth.game_events.fire("unit information", unit)
 				else
 					wesnoth.game_events.fire("unit information", unit)
 				end
@@ -62,7 +62,7 @@ local inventory_config = {
 			label = _"Pick up items on the ground",
 			onsubmit = function(unit)
 				if wesnoth.current_version() < wesnoth.version "1.17.0" then
-					wesnoth.fire_event("item_pick_inventory", unit)
+					wesnoth.game_events.fire("item_pick_inventory", unit)
 				else
 					wesnoth.game_events.fire("item_pick_inventory", unit)
 				end
