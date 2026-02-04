@@ -260,3 +260,9 @@ Increase turn limit for novice difficulty for two scenarios.
 
 0.9.6 (maintenance)
 Cancelling a purchase now brings back to the menu.
+
+0.9.7 (maintenance)
+Add missing LoI suffix to Young Giant Spider in several places.
+Fix help menu.
+Increase starting gold for chapter 1 in challenging difficulty.
+Fix non-orc units being of side 2 in scenario 3.
