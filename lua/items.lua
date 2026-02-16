@@ -139,7 +139,7 @@ loti.item.storage.transmute = function(item_number, crafted_sort)
 				local res = gui.show_narration ({
 								title = object.name,
 								portrait = object.image,
-								message = description .. "\n\n" .. _"Transmute this item for "..gold_created.." gold?"
+								message = description .. "\n\n" .. _"Transmute this item for "..gold_created.._" gold?"
 							}, {_"Transmute", _"No"})
 				if res ==1 then
 					local side = wesnoth.sides[wesnoth.current.side]
@@ -167,7 +167,7 @@ loti.item.storage.sell = function(item_number, crafted_sort)
 				local res = gui.show_narration ({
 								title = object.name,
 								portrait = object.image,
-								message = description .. "\n\n" .. _"Sell this item for "..gold_created.." gold?"
+								message = description .. "\n\n" .. _"Sell this item for "..gold_created.._" gold?"
 							}, {_"Sell", _"No"})
 				if res ==1 then
 					local side = wesnoth.sides[wesnoth.current.side]
@@ -407,7 +407,7 @@ loti.item.on_unit.transmute = function(unit, item_number, crafted_sort, skip_upd
 	local res = gui.show_narration ({
 					title = object.name,
 					portrait = object.image,
-					message = description .. "\n\n" .. _"Transmute this item for "..gold_created.." gold?"
+					message = description .. "\n\n" .. _"Transmute this item for "..gold_created.._" gold?"
 				}, {_"Transmute", _"No"})
 	if res ==1 then
 		local side = wesnoth.sides[wesnoth.current.side]
@@ -427,7 +427,7 @@ loti.item.on_unit.sell = function(unit, item_number, crafted_sort, skip_update)
 	local res = gui.show_narration ({
 					title = object.name,
 					portrait = object.image,
-					message = description .. "\n\n" .. _"Sell this item for "..gold_created.." gold?"
+					message = description .. "\n\n" .. _"Sell this item for "..gold_created.._" gold?"
 				}, {_"Sell", _"No"})
 	if res ==1 then
 		local side = wesnoth.sides[wesnoth.current.side]
@@ -616,7 +616,7 @@ loti.item.on_the_ground.transmute = function(item_number, x, y, crafted_sort)
 	local res = gui.show_narration ({
 					title = item.name,
 					portrait = item.image,
-					message = description .. "\n\n" .. _"Transmute this item for "..gold_created.." gold?"
+					message = description .. "\n\n" .. _"Transmute this item for "..gold_created.._" gold?"
 				}, {_"Transmute", _"No"})
 	if res ==1 then
 		local side = wesnoth.sides[wesnoth.current.side]
@@ -667,7 +667,7 @@ loti.item.on_the_ground.sell = function(item_number, x, y, crafted_sort)
 	local res = gui.show_narration ({
 					title = item.name,
 					portrait = item.image,
-					message = description .. "\n\n" .. _"Sell this item for "..gold_created.." gold?"
+					message = description .. "\n\n" .. _"Sell this item for "..gold_created.._" gold?"
 				}, {_"Sell", _"No"})
 	if res ==1 then
 		local side = wesnoth.sides[wesnoth.current.side]
