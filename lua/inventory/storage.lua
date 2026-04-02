@@ -50,6 +50,7 @@ local function get_tab()
 	-- Equip button + dropdown menu with "Transmute", "Sell", and "Drop" buttons (for item in storage)
 	local equip_dropdown_buttons = nil
 	if can_transmute then
+		local _ = wesnoth.textdomain "wesnoth-loi"
 		if can_sell then
 			equip_dropdown_buttons = wml.tag.grid {
 				wml.tag.row {
@@ -110,8 +111,10 @@ local function get_tab()
 				}
 			}
 		end
+		local _ = wesnoth.textdomain "wesnoth-loti-era"
 	else
 		if can_sell then
+			local _ = wesnoth.textdomain "wesnoth-loi"
 			equip_dropdown_buttons = wml.tag.grid {
 				wml.tag.row {
 					wml.tag.column {
@@ -139,6 +142,7 @@ local function get_tab()
 					}
 				}
 			}
+			local _ = wesnoth.textdomain "wesnoth-loti-era"
 		else
 			equip_dropdown_buttons = wml.tag.grid {
 				wml.tag.row {
@@ -171,6 +175,7 @@ local function get_tab()
 	-- Unequip button + dropdown menu with "Transmute", "Sell", and "Drop" buttons (for item on unit)
 	local unequip_dropdown_buttons = nil
 	if can_transmute then
+		local _ = wesnoth.textdomain "wesnoth-loi"
 		if can_sell then
 			unequip_dropdown_buttons = wml.tag.grid {
 				wml.tag.row {
@@ -229,8 +234,10 @@ local function get_tab()
 				}
 			}
 		end
+		local _ = wesnoth.textdomain "wesnoth-loti-era"
 	else
 		if can_sell then
+			local _ = wesnoth.textdomain "wesnoth-loi"
 			unequip_dropdown_buttons = wml.tag.grid {
 				wml.tag.row {
 					wml.tag.column {
@@ -257,6 +264,7 @@ local function get_tab()
 					}
 				}
 			}
+			local _ = wesnoth.textdomain "wesnoth-loti-era"
 		else
 			unequip_dropdown_buttons = wml.tag.grid {
 				wml.tag.row {

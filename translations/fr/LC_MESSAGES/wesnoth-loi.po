@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wesnoth-loi\n"
 "Report-Msgid-Bugs-To: https://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2026-03-23 11:10\n"
-"PO-Revision-Date: 2026-03-23 11:24+0100\n"
+"POT-Creation-Date: 2026-03-23 13:56\n"
+"PO-Revision-Date: 2026-03-23 14:00+0100\n"
 "Last-Translator: Rodolphe Combe-Colas\n"
 "Language-Team: fr\n"
 "MIME-Version: 1.0\n"
@@ -64,172 +64,280 @@ msgstr "Stimulant"
 msgid "Dark times await Idaamub. After a long period of peace between races, orcs have begun to attack peasant villages. But, in the shadows, a dark presence pulls the strings. Travel through Idaamub to prevent it from falling into chaos."
 msgstr "Des années sombres attendent Idaamub. Après une longue période de paix entre les races, les orcs ont commencé a attaqué des villages de paysans. Mais, dans les ténèbres, une sombre présence tire les ficelles. Voyagez à travers Idaamub pour l'empêcher de sombrer dans le chaos."
 
+#. [lua]: wesnoth.wml_actions.loti_item_type
+#: .\lua\items.lua:143
+#: .\lua\items.lua:415
+#: .\lua\items.lua:628
+msgid "Transmute this item for "
+msgstr "Transmuter cet objet pour "
+
+#. [lua]: wesnoth.wml_actions.loti_item_type
+#: .\lua\items.lua:143
+#: .\lua\items.lua:173
+#: .\lua\items.lua:415
+#: .\lua\items.lua:437
+#: .\lua\items.lua:628
+#: .\lua\items.lua:681
+msgid " gold?"
+msgstr " d'or ?"
+
+#. [lua]: wesnoth.wml_actions.loti_item_type
+#: .\lua\items.lua:144
+#: .\lua\items.lua:416
+#: .\lua\items.lua:629
+#: .\lua\inventory\storage.lua:71
+#: .\lua\inventory\storage.lua:102
+#: .\lua\inventory\storage.lua:195
+#: .\lua\inventory\storage.lua:225
+msgid "Transmute"
+msgstr "Transmuter"
+
+#. [lua]: wesnoth.wml_actions.loti_item_type
+#: .\lua\items.lua:144
+#: .\lua\items.lua:174
+#: .\lua\items.lua:416
+#: .\lua\items.lua:438
+#: .\lua\items.lua:629
+#: .\lua\items.lua:682
+msgid "No"
+msgstr "Non"
+
+#. [lua]: wesnoth.wml_actions.loti_item_type
+#: .\lua\items.lua:173
+#: .\lua\items.lua:437
+#: .\lua\items.lua:681
+msgid "Sell this item for "
+msgstr "Vendre cet objet pour "
+
+#. [lua]: wesnoth.wml_actions.loti_item_type
+#. [option]
+#: .\lua\items.lua:174
+#: .\lua\items.lua:438
+#: .\lua\items.lua:682
+#: .\lua\inventory\storage.lua:74
+#: .\lua\inventory\storage.lua:134
+#: .\lua\inventory\storage.lua:198
+#: .\lua\inventory\storage.lua:256
+#: .\scenarios\chapter2\06_Zei.cfg:887
+#: .\scenarios\chapter2\06_Zei.cfg:2242
+#: .\scenarios\chapter2\11_Qyizu.cfg:1368
+#: .\scenarios\chapter3\17_Udxatfe.cfg:1530
+#: .\scenarios\chapter3\17_Udxatfe.cfg:1982
+#: .\scenarios\chapter4\23_Abxoowbus_Trading_Post.cfg:632
+#: .\scenarios\chapter4\28_Travelers.cfg:713
+#: .\scenarios\chapter4\28_Travelers.cfg:1549
+#: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1329
+#: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1265
+msgid "Sell"
+msgstr "Vendre"
+
 #: .\lua\item_pick.lua:22
 #: .\lua\item_pick.lua:39
 #: .\lua\item_pick.lua:56
-#: .\lua\item_pick.lua:71
 msgid "Use this potion?"
 msgstr "Utiliser cette potion?"
 
 #: .\lua\item_pick.lua:23
 #: .\lua\item_pick.lua:40
 #: .\lua\item_pick.lua:57
-#: .\lua\item_pick.lua:72
 msgid "Use it."
 msgstr "L'utiliser."
 
 #: .\lua\item_pick.lua:23
 #: .\lua\item_pick.lua:40
 #: .\lua\item_pick.lua:57
-#: .\lua\item_pick.lua:72
-#: .\lua\item_pick.lua:91
-#: .\lua\item_pick.lua:106
-#: .\lua\item_pick.lua:121
-#: .\lua\item_pick.lua:134
-#: .\lua\item_pick.lua:151
-#: .\lua\item_pick.lua:168
-#: .\lua\item_pick.lua:185
-#: .\lua\item_pick.lua:200
+#: .\lua\item_pick.lua:93
+#: .\lua\item_pick.lua:108
+#: .\lua\item_pick.lua:123
+#: .\lua\item_pick.lua:155
+#: .\lua\item_pick.lua:172
+#: .\lua\item_pick.lua:189
 msgid "Store it. Currently having "
 msgstr "Stocker. Vous avez actuellement "
 
 #: .\lua\item_pick.lua:23
 #: .\lua\item_pick.lua:40
 #: .\lua\item_pick.lua:57
-#: .\lua\item_pick.lua:72
-#: .\lua\item_pick.lua:91
-#: .\lua\item_pick.lua:106
-#: .\lua\item_pick.lua:121
-#: .\lua\item_pick.lua:134
-#: .\lua\item_pick.lua:151
-#: .\lua\item_pick.lua:168
-#: .\lua\item_pick.lua:185
-#: .\lua\item_pick.lua:200
+#: .\lua\item_pick.lua:93
+#: .\lua\item_pick.lua:108
+#: .\lua\item_pick.lua:123
+#: .\lua\item_pick.lua:155
+#: .\lua\item_pick.lua:172
+#: .\lua\item_pick.lua:189
 msgid " such items stored."
 msgstr " objets identiques en stock."
 
 #: .\lua\item_pick.lua:23
 #: .\lua\item_pick.lua:40
-#: .\lua\item_pick.lua:91
-#: .\lua\item_pick.lua:106
-#: .\lua\item_pick.lua:151
-#: .\lua\item_pick.lua:168
+#: .\lua\item_pick.lua:93
+#: .\lua\item_pick.lua:108
+#: .\lua\item_pick.lua:155
+#: .\lua\item_pick.lua:172
 msgid "Transmute it to gold. Currently having "
 msgstr "Transmuter en or. Vous avez actuellement "
 
 #: .\lua\item_pick.lua:23
 #: .\lua\item_pick.lua:57
-#: .\lua\item_pick.lua:91
-#: .\lua\item_pick.lua:121
-#: .\lua\item_pick.lua:151
-#: .\lua\item_pick.lua:185
+#: .\lua\item_pick.lua:93
+#: .\lua\item_pick.lua:123
+#: .\lua\item_pick.lua:155
+#: .\lua\item_pick.lua:189
 msgid "Sell it. Currently having "
 msgstr "Vendre. Vous avez actuellement "
 
 #: .\lua\item_pick.lua:23
 #: .\lua\item_pick.lua:40
 #: .\lua\item_pick.lua:57
-#: .\lua\item_pick.lua:72
-#: .\lua\item_pick.lua:91
-#: .\lua\item_pick.lua:106
-#: .\lua\item_pick.lua:121
-#: .\lua\item_pick.lua:134
-#: .\lua\item_pick.lua:151
-#: .\lua\item_pick.lua:168
-#: .\lua\item_pick.lua:185
-#: .\lua\item_pick.lua:200
+#: .\lua\item_pick.lua:93
+#: .\lua\item_pick.lua:108
+#: .\lua\item_pick.lua:123
+#: .\lua\item_pick.lua:155
+#: .\lua\item_pick.lua:172
+#: .\lua\item_pick.lua:189
 msgid "Leave it on the ground."
 msgstr "Laisser au sol."
 
-#: .\lua\item_pick.lua:150
-#: .\lua\item_pick.lua:167
-#: .\lua\item_pick.lua:184
-#: .\lua\item_pick.lua:199
+#: .\lua\item_pick.lua:154
+#: .\lua\item_pick.lua:171
+#: .\lua\item_pick.lua:188
 msgid "Item of the same type that will be unequipped: "
 msgstr "Objet du même type qui sera déséquipé :"
 
-#: .\lua\item_pick.lua:150
-#: .\lua\item_pick.lua:167
-#: .\lua\item_pick.lua:184
-#: .\lua\item_pick.lua:199
+#: .\lua\item_pick.lua:154
+#: .\lua\item_pick.lua:171
+#: .\lua\item_pick.lua:188
 msgid "Take this item?"
 msgstr "Prendre cet objet?"
 
-#: .\lua\item_pick.lua:151
-#: .\lua\item_pick.lua:168
-#: .\lua\item_pick.lua:185
-#: .\lua\item_pick.lua:200
+#: .\lua\item_pick.lua:155
+#: .\lua\item_pick.lua:172
+#: .\lua\item_pick.lua:189
 msgid "Take it."
 msgstr "Prendre."
 
-#: .\lua\item_pick.lua:214
-msgid "irrelevant"
-msgstr "sans objet"
+#: .\lua\inventory\misc.lua:20
+msgid "Close"
+msgstr "Fermer"
 
-#. [lua]: wesnoth.wml_actions.harm_unit_loti
-#: .\lua\main.lua:295
-msgid "Hitpoints:</span> "
-msgstr "Points de vie :</span> "
+#: .\lua\inventory\misc.lua:30
+msgid "[no item]"
+msgstr "[pas d'objet]"
 
-#. [lua]: wesnoth.wml_actions.harm_unit_loti
-#: .\lua\main.lua:297
-msgid "Experience:</span> "
-msgstr "Expérience :</span> "
+#: .\lua\inventory\misc.lua:31
+msgid "no ring"
+msgstr "pas d'anneau"
 
-#. [lua]: wesnoth.wml_actions.harm_unit_loti
-#: .\lua\main.lua:300
-msgid "Soul eater score:</span> "
-msgstr "Points de dévoreur d'âmes:</span> "
+#: .\lua\inventory\misc.lua:32
+msgid "no amulet"
+msgstr "pas d'amulette"
 
-#. [lua]: wesnoth.wml_actions.harm_unit_loti
-#: .\lua\main.lua:304
-msgid "Redeem score:</span> "
-msgstr "Points de rédemption :</span> "
+#: .\lua\inventory\misc.lua:33
+msgid "no shield"
+msgstr "pas de bouclier"
 
-#. [lua]: wesnoth.wml_actions.harm_unit_loti
-#: .\lua\main.lua:308
-msgid "Lesser redeem score:</span> "
-msgstr "Point de rédemption faible :</span> "
+#: .\lua\inventory\misc.lua:34
+msgid "no armour"
+msgstr "pas d'armure"
 
-#. [lua]: wesnoth.wml_actions.harm_unit_loti
-#: .\lua\main.lua:312
-msgid "Starving:</span> "
-msgstr "Faim :</span> "
+#: .\lua\inventory\misc.lua:35
+msgid "no helm"
+msgstr "pas de heaume"
 
-#. [lua]: wesnoth.wml_actions.harm_unit_loti
-#: .\lua\main.lua:316
-msgid "Turns until From The Ashes will be usable:</span> "
-msgstr "Tours jusqu'à ce que Des Cendres soit de nouveau utilisable:</span> "
+#: .\lua\inventory\misc.lua:36
+msgid "no gauntlets"
+msgstr "pas de gantelet"
 
-#. [lua]: wesnoth.wml_actions.harm_unit_loti
-#: .\lua\main.lua:321
-msgid "Wrath increasing damage by:</span> "
-msgstr "La colère augmente les dégâts de :</span> "
+#: .\lua\inventory\misc.lua:37
+msgid "no boots"
+msgstr "pas de botte"
 
-#. [lua]: wesnoth.wml_actions.harm_unit_loti
-#: .\lua\main.lua:324
-msgid "Lethargy reducing damage by:</span> "
-msgstr "La léthargie réduit les dégâts de :</span> "
+#: .\lua\inventory\misc.lua:38
+msgid "no sword"
+msgstr "pas d'épée"
 
-#. [lua]: wesnoth.wml_actions.harm_unit_loti
-#: .\lua\main.lua:399
-msgid ", inactive"
-msgstr ", inactif"
+#: .\lua\inventory\misc.lua:39
+msgid "no axe"
+msgstr "pas de hache"
 
-#. [lua]: wesnoth.wml_actions.harm_unit_loti
-#: .\lua\main.lua:401
-msgid ", defense only"
-msgstr ", defense uniquement"
+#: .\lua\inventory\misc.lua:40
+msgid "no staff"
+msgstr "pas de bâton"
 
-#. [lua]: wesnoth.wml_actions.harm_unit_loti
-#: .\lua\main.lua:403
-msgid ", attack only"
-msgstr ", attaque uniquement"
+#: .\lua\inventory\misc.lua:41
+msgid "no crossbow"
+msgstr "pas d'arbalète"
 
-#. [lua]: wesnoth.wml_actions.harm_unit_loti
-#: .\lua\main.lua:407
-msgid "werd damage type"
-msgstr "type de dégâts étrange"
+#: .\lua\inventory\misc.lua:42
+msgid "no bow"
+msgstr "pas d'arc"
+
+#: .\lua\inventory\misc.lua:43
+msgid "no dagger"
+msgstr "pas de dague"
+
+#: .\lua\inventory\misc.lua:44
+msgid "no knife"
+msgstr "pas de couteau"
+
+#: .\lua\inventory\misc.lua:45
+msgid "no mace"
+msgstr "pas de masse"
+
+#: .\lua\inventory\misc.lua:46
+msgid "no polearm"
+msgstr "pas d'arme d'hast"
+
+#: .\lua\inventory\misc.lua:47
+msgid "no metal claws"
+msgstr "pas de griffe en métal"
+
+#: .\lua\inventory\misc.lua:48
+msgid "no sling"
+msgstr "pas de fronde"
+
+#: .\lua\inventory\misc.lua:49
+msgid "no essence"
+msgstr "pas d'essence"
+
+#: .\lua\inventory\misc.lua:50
+msgid "no thunderstick"
+msgstr "pas de bâton de tonnerre"
+
+#: .\lua\inventory\misc.lua:51
+msgid "no spear"
+msgstr "pas de lance"
+
+#: .\lua\inventory\storage.lua:60
+#: .\lua\inventory\storage.lua:91
+#: .\lua\inventory\storage.lua:123
+msgid "Equip"
+msgstr "Equiper"
+
+#: .\lua\inventory\storage.lua:76
+#: .\lua\inventory\storage.lua:104
+#: .\lua\inventory\storage.lua:136
+#: .\lua\inventory\storage.lua:200
+#: .\lua\inventory\storage.lua:227
+#: .\lua\inventory\storage.lua:258
+msgid "Drop to the ground"
+msgstr "Laisser au sol"
+
+#. [option]
+#: .\lua\inventory\storage.lua:79
+#: .\lua\inventory\storage.lua:107
+#: .\lua\inventory\storage.lua:139
+#: .\lua\inventory\storage.lua:203
+#: .\lua\inventory\storage.lua:230
+#: .\lua\inventory\storage.lua:261
+#: .\scenarios\chapter3\17_Udxatfe.cfg:455
+msgid "Nothing"
+msgstr "Rien"
+
+#: .\lua\inventory\storage.lua:185
+#: .\lua\inventory\storage.lua:215
+#: .\lua\inventory\storage.lua:246
+msgid "Unequip"
+msgstr "Déséquiper"
 
 #. [message]
 #: .\scenarios\chapter1\01_Fate_of_a_Farmer.cfg:24
@@ -1865,20 +1973,6 @@ msgstr "Acheter des armes"
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1221
 msgid "Buy armours"
 msgstr "Acheter des armures"
-
-#. [option]
-#: .\scenarios\chapter2\06_Zei.cfg:887
-#: .\scenarios\chapter2\06_Zei.cfg:2242
-#: .\scenarios\chapter2\11_Qyizu.cfg:1368
-#: .\scenarios\chapter3\17_Udxatfe.cfg:1530
-#: .\scenarios\chapter3\17_Udxatfe.cfg:1982
-#: .\scenarios\chapter4\23_Abxoowbus_Trading_Post.cfg:632
-#: .\scenarios\chapter4\28_Travelers.cfg:713
-#: .\scenarios\chapter4\28_Travelers.cfg:1549
-#: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1329
-#: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1265
-msgid "Sell"
-msgstr "Vendre"
 
 #. [message], speaker=trader
 #: .\scenarios\chapter2\06_Zei.cfg:891
@@ -5811,11 +5905,6 @@ msgstr "On dit qu'elle était déjà là quand les premiers colons sont arrivés
 #: .\scenarios\chapter3\17_Udxatfe.cfg:453
 msgid "Excuse me, may I ask you what you’re doing here?"
 msgstr "Excusez-moi, puis-je vous demander ce que vous faites ici ?"
-
-#. [option]
-#: .\scenarios\chapter3\17_Udxatfe.cfg:455
-msgid "Nothing"
-msgstr "Rien"
 
 #. [message], speaker=Vonin
 #: .\scenarios\chapter3\17_Udxatfe.cfg:459
