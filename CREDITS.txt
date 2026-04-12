@@ -20,10 +20,10 @@ Fury sprite
 SX RPG Era
 
 Fury Scourge sprite and portrait
-Melon from Ageless Era
+Melon
 
 Initiate
-From Default L0 Era, sprite by Ken_Oh
+Ken_Oh
 
-Orcish Commander sprite and portrait
-The Golden Age
+Dreadscale
+Amorphous
