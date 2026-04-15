@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2026-03-23 13:56\n"
+"POT-Creation-Date: 2026-04-15 13:01\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4815,7 +4815,6 @@ msgstr ""
 #. [object]
 #: .\scenarios\chapter2\11_Qyizu.cfg:1774
 #: .\utils\item_list.cfg:5074
-#: .\utils\item_list.cfg:10303
 msgid "Rough felt morion"
 msgstr ""
 
@@ -11654,29 +11653,29 @@ msgstr ""
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1521
-#: .\utils\item_list.cfg:11839
+#: .\utils\item_list.cfg:11828
 msgid "Ripper blade-staff of revival"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1522
-#: .\utils\item_list.cfg:11860
-#: .\utils\item_list.cfg:11912
+#: .\utils\item_list.cfg:11849
+#: .\utils\item_list.cfg:11901
 msgid "Avenging blade-staff of the fox"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1523
-#: .\utils\item_list.cfg:11883
+#: .\utils\item_list.cfg:11872
 msgid "Ripper blade-staff of vivacity"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1524
-#: .\utils\item_list.cfg:11898
+#: .\utils\item_list.cfg:11887
 msgid "Burning staff"
 msgstr ""
 
@@ -11688,49 +11687,49 @@ msgstr ""
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1554
-#: .\utils\item_list.cfg:11691
+#: .\utils\item_list.cfg:11680
 msgid "Slippery war bow of the sparrowhawk"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1555
-#: .\utils\item_list.cfg:11704
+#: .\utils\item_list.cfg:11693
 msgid "Long reinforced bow of the fox"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1557
-#: .\utils\item_list.cfg:11724
+#: .\utils\item_list.cfg:11713
 msgid "Long reinforced bow of volley"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1558
-#: .\utils\item_list.cfg:11737
+#: .\utils\item_list.cfg:11726
 msgid "War bow of refuge"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1587
-#: .\utils\item_list.cfg:11927
+#: .\utils\item_list.cfg:11916
 msgid "Ripper steel sword of refuge"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1588
-#: .\utils\item_list.cfg:11952
+#: .\utils\item_list.cfg:11941
 msgid "Ripper steel sword of the fox"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1589
-#: .\utils\item_list.cfg:11972
+#: .\utils\item_list.cfg:11961
 msgid "Ripper symptomatic longsword"
 msgstr ""
 
@@ -11742,7 +11741,7 @@ msgstr ""
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1591
-#: .\utils\item_list.cfg:12002
+#: .\utils\item_list.cfg:11991
 msgid "Ripper thorny great claymore"
 msgstr ""
 
@@ -11754,56 +11753,56 @@ msgstr ""
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1621
-#: .\utils\item_list.cfg:12036
+#: .\utils\item_list.cfg:12025
 msgid "Slippery long crossbow"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1622
-#: .\utils\item_list.cfg:12049
+#: .\utils\item_list.cfg:12038
 msgid "Long crossbow of volley"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1623
-#: .\utils\item_list.cfg:12061
+#: .\utils\item_list.cfg:12050
 msgid "High-calibre slippery medium crossbow"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1624
-#: .\utils\item_list.cfg:12074
+#: .\utils\item_list.cfg:12063
 msgid "Medium crossbow of design"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1653
-#: .\utils\item_list.cfg:11760
+#: .\utils\item_list.cfg:11749
 msgid "Ripper club of revival"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1654
-#: .\utils\item_list.cfg:11782
+#: .\utils\item_list.cfg:11771
 msgid "Winged mace of refuge"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1655
-#: .\utils\item_list.cfg:11805
+#: .\utils\item_list.cfg:11794
 msgid "Mallet of attack"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1656
-#: .\utils\item_list.cfg:11821
+#: .\utils\item_list.cfg:11810
 msgid "Hammer of the fox"
 msgstr ""
 
@@ -11815,35 +11814,35 @@ msgstr ""
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1687
-#: .\utils\item_list.cfg:11633
+#: .\utils\item_list.cfg:11622
 msgid "Avenging battle-axe of increase"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1688
-#: .\utils\item_list.cfg:11649
+#: .\utils\item_list.cfg:11638
 msgid "Avenging burning straight axe"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1689
-#: .\utils\item_list.cfg:11664
+#: .\utils\item_list.cfg:11653
 msgid "Rusty battle-axe"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1690
-#: .\utils\item_list.cfg:11677
+#: .\utils\item_list.cfg:11666
 msgid "Straight axe of monstrosity"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1719
-#: .\utils\item_list.cfg:11323
+#: .\utils\item_list.cfg:11312
 msgid "Severe cuir-bouilli gauntlets of awareness"
 msgstr ""
 
@@ -11856,77 +11855,77 @@ msgstr ""
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1721
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1656
-#: .\utils\item_list.cfg:11364
+#: .\utils\item_list.cfg:11353
 msgid "Mail gloves of vivacity"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1722
-#: .\utils\item_list.cfg:11376
+#: .\utils\item_list.cfg:11365
 msgid "Slippery cuir-bouilli gauntlets of inversion"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1723
-#: .\utils\item_list.cfg:11394
+#: .\utils\item_list.cfg:11383
 msgid "Rough brigandine gloves of the fox"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1752
-#: .\utils\item_list.cfg:11409
+#: .\utils\item_list.cfg:11398
 msgid "Rough mail boots of the fox"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1753
-#: .\utils\item_list.cfg:11426
+#: .\utils\item_list.cfg:11415
 msgid "Scale boots of vivacity"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1754
-#: .\utils\item_list.cfg:11438
+#: .\utils\item_list.cfg:11427
 msgid "Unscratched leather boots of refuge"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1755
-#: .\utils\item_list.cfg:11462
+#: .\utils\item_list.cfg:11451
 msgid "Banded greaves"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1785
-#: .\utils\item_list.cfg:11473
+#: .\utils\item_list.cfg:11462
 msgid "Rough knight helm of the fox"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1786
-#: .\utils\item_list.cfg:11488
+#: .\utils\item_list.cfg:11477
 msgid "Ripper parade helm of the fox"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1788
-#: .\utils\item_list.cfg:11504
+#: .\utils\item_list.cfg:11493
 msgid "Organic mage morion of the fox"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1789
-#: .\utils\item_list.cfg:11524
+#: .\utils\item_list.cfg:11513
 msgid "Rough iron helm of the fox"
 msgstr ""
 
@@ -11938,21 +11937,21 @@ msgstr ""
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1819
-#: .\utils\item_list.cfg:11269
+#: .\utils\item_list.cfg:11258
 msgid "Chainmail of the fox"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1820
-#: .\utils\item_list.cfg:11284
+#: .\utils\item_list.cfg:11273
 msgid "Rough coat of the fox"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1821
-#: .\utils\item_list.cfg:11303
+#: .\utils\item_list.cfg:11292
 msgid "Slippery coat of the fox"
 msgstr ""
 
@@ -11964,35 +11963,35 @@ msgstr ""
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1852
-#: .\utils\item_list.cfg:11557
+#: .\utils\item_list.cfg:11546
 msgid "Unscratched wooden shield of inversion"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1853
-#: .\utils\item_list.cfg:11576
+#: .\utils\item_list.cfg:11565
 msgid "Severe turtle shield of refuge"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1854
-#: .\utils\item_list.cfg:11606
+#: .\utils\item_list.cfg:11595
 msgid "Negative wooden shield"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1884
-#: .\utils\item_list.cfg:12087
+#: .\utils\item_list.cfg:12076
 msgid "Instant lightning"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1885
-#: .\utils\item_list.cfg:12113
+#: .\utils\item_list.cfg:12102
 msgid "Sparkle rain"
 msgstr ""
 
@@ -12000,22 +11999,22 @@ msgstr ""
 #. [object]
 #. [abilities]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1886
+#: .\utils\item_list.cfg:12137
 #: .\utils\item_list.cfg:12148
-#: .\utils\item_list.cfg:12159
 msgid "Stone skin"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1887
-#: .\utils\item_list.cfg:12165
+#: .\utils\item_list.cfg:12154
 msgid "Curse"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1888
-#: .\utils\item_list.cfg:12193
+#: .\utils\item_list.cfg:12182
 msgid "Experience shield"
 msgstr ""
 
@@ -12023,7 +12022,7 @@ msgstr ""
 #. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1917
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1851
-#: .\utils\item_list.cfg:12210
+#: .\utils\item_list.cfg:12199
 msgid "Great potion of rejuvenation"
 msgstr ""
 
@@ -13261,7 +13260,7 @@ msgstr ""
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1457
-#: .\utils\item_list.cfg:14086
+#: .\utils\item_list.cfg:14075
 msgid "Avenging blade-staff of revival"
 msgstr ""
 
@@ -13273,98 +13272,98 @@ msgstr ""
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1459
-#: .\utils\item_list.cfg:14127
+#: .\utils\item_list.cfg:14116
 msgid "Avenging staff of focus"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1460
-#: .\utils\item_list.cfg:14144
+#: .\utils\item_list.cfg:14133
 msgid "Avenging thorny blade-staff"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1489
-#: .\utils\item_list.cfg:14239
+#: .\utils\item_list.cfg:14228
 msgid "Avenging long reinforced bow of the fox"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1490
-#: .\utils\item_list.cfg:14263
+#: .\utils\item_list.cfg:14252
 msgid "Avenging war bow of massacre"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1491
-#: .\utils\item_list.cfg:14280
+#: .\utils\item_list.cfg:14269
 msgid "Long reinforced slippery bow of revival"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1492
-#: .\utils\item_list.cfg:14302
+#: .\utils\item_list.cfg:14291
 msgid "Long reinforced slippery bow of midnight"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1493
-#: .\utils\item_list.cfg:14319
+#: .\utils\item_list.cfg:14308
 msgid "Slippery war bow of disease"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1522
-#: .\utils\item_list.cfg:13954
+#: .\utils\item_list.cfg:13943
 msgid "Avenging longsword of vivacity"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1523
-#: .\utils\item_list.cfg:13972
+#: .\utils\item_list.cfg:13961
 msgid "Ripper longsword of vivacity"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1524
-#: .\utils\item_list.cfg:13987
+#: .\utils\item_list.cfg:13976
 msgid "Avenging steel thorny sword"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1525
-#: .\utils\item_list.cfg:14002
+#: .\utils\item_list.cfg:13991
 msgid "Longsword of awareness"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1554
-#: .\utils\item_list.cfg:14020
+#: .\utils\item_list.cfg:14009
 msgid "Long slippery crossbow of haste"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1555
-#: .\utils\item_list.cfg:14034
+#: .\utils\item_list.cfg:14023
 msgid "Long slippery crossbow of increase"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1556
-#: .\utils\item_list.cfg:14048
+#: .\utils\item_list.cfg:14037
 msgid "Long slippery crossbow of revival"
 msgstr ""
 
@@ -13376,14 +13375,14 @@ msgstr ""
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1558
-#: .\utils\item_list.cfg:14068
+#: .\utils\item_list.cfg:14057
 msgid "Long crossbow of the fox"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1587
-#: .\utils\item_list.cfg:14160
+#: .\utils\item_list.cfg:14149
 msgid "Ripper hammer of monstrosity"
 msgstr ""
 
@@ -13405,182 +13404,182 @@ msgstr ""
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1591
-#: .\utils\item_list.cfg:14224
+#: .\utils\item_list.cfg:14213
 msgid "Avenging burning winged mace"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1620
-#: .\utils\item_list.cfg:14333
+#: .\utils\item_list.cfg:14322
 msgid "Assault ripper axe of vivacity"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1621
-#: .\utils\item_list.cfg:14348
+#: .\utils\item_list.cfg:14337
 msgid "Combat ripper axe of midnight"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1622
-#: .\utils\item_list.cfg:14364
+#: .\utils\item_list.cfg:14353
 msgid "Assault shocking axe"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1623
-#: .\utils\item_list.cfg:14378
+#: .\utils\item_list.cfg:14367
 msgid "Burning straight axe"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1624
-#: .\utils\item_list.cfg:14391
+#: .\utils\item_list.cfg:14380
 msgid "Damaged assault axe"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1653
-#: .\utils\item_list.cfg:13913
+#: .\utils\item_list.cfg:13902
 msgid "Mail gloves of inversion"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1654
-#: .\utils\item_list.cfg:10718
+#: .\utils\item_list.cfg:10707
 msgid "Rough mail gloves of the fox"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1655
-#: .\utils\item_list.cfg:13930
+#: .\utils\item_list.cfg:13919
 msgid "Slippery mail gloves of vivacity"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1657
-#: .\utils\item_list.cfg:13943
+#: .\utils\item_list.cfg:13932
 msgid "Banded gauntlets"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1686
-#: .\utils\item_list.cfg:13791
+#: .\utils\item_list.cfg:13780
 msgid "Slippery mail boots"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1687
-#: .\utils\item_list.cfg:13803
+#: .\utils\item_list.cfg:13792
 msgid "Organic mail boots"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1688
-#: .\utils\item_list.cfg:13815
+#: .\utils\item_list.cfg:13804
 msgid "Mail boots of awareness"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1689
-#: .\utils\item_list.cfg:13832
+#: .\utils\item_list.cfg:13821
 msgid "Ripper mail boots of the fox"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1690
-#: .\utils\item_list.cfg:13095
+#: .\utils\item_list.cfg:13084
 msgid "Rough mail boots"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1719
-#: .\utils\item_list.cfg:13848
+#: .\utils\item_list.cfg:13837
 msgid "Rough desert helm of the fox"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1720
-#: .\utils\item_list.cfg:13864
+#: .\utils\item_list.cfg:13853
 msgid "Rough winged helm"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1721
-#: .\utils\item_list.cfg:13875
+#: .\utils\item_list.cfg:13864
 msgid "Desert helm"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1722
-#: .\utils\item_list.cfg:13886
+#: .\utils\item_list.cfg:13875
 msgid "Organic panache helm"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1723
-#: .\utils\item_list.cfg:13898
+#: .\utils\item_list.cfg:13887
 msgid "Onyx helm of the fox"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1752
-#: .\utils\item_list.cfg:13722
+#: .\utils\item_list.cfg:13711
 msgid "Basic war plate armor"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1753
-#: .\utils\item_list.cfg:13733
+#: .\utils\item_list.cfg:13722
 msgid "Heavy rough plate armor"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1754
-#: .\utils\item_list.cfg:13745
+#: .\utils\item_list.cfg:13734
 msgid "Rough thin chainmail"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1755
-#: .\utils\item_list.cfg:13756
+#: .\utils\item_list.cfg:13745
 msgid "Heavy plate armor of the fox"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1756
-#: .\utils\item_list.cfg:13771
+#: .\utils\item_list.cfg:13760
 msgid "Severe coat of privilege"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1785
-#: .\utils\item_list.cfg:14404
+#: .\utils\item_list.cfg:14393
 msgid "Great rough pavise of the fox"
 msgstr ""
 
@@ -13592,28 +13591,28 @@ msgstr ""
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1787
-#: .\utils\item_list.cfg:14438
+#: .\utils\item_list.cfg:14427
 msgid "Great slippery pavise of the fox"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1788
-#: .\utils\item_list.cfg:14455
+#: .\utils\item_list.cfg:14444
 msgid "Great pavise"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1789
-#: .\utils\item_list.cfg:14467
+#: .\utils\item_list.cfg:14456
 msgid "Blocking pavise of the fox"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1818
-#: .\utils\item_list.cfg:14484
+#: .\utils\item_list.cfg:14473
 msgid "To get close"
 msgstr ""
 
@@ -13625,14 +13624,14 @@ msgstr ""
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1820
-#: .\utils\item_list.cfg:14517
+#: .\utils\item_list.cfg:14506
 msgid "Fire shield"
 msgstr ""
 
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1821
-#: .\utils\item_list.cfg:14534
+#: .\utils\item_list.cfg:14523
 msgid "The Ring"
 msgstr ""
 
@@ -13646,7 +13645,7 @@ msgstr ""
 #. [message], speaker=trader
 #. [object]
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1853
-#: .\utils\item_list.cfg:13000
+#: .\utils\item_list.cfg:12989
 msgid "Great Healing Potion"
 msgstr ""
 
@@ -16944,7 +16943,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:3451
-#: .\utils\item_list.cfg:10987
+#: .\utils\item_list.cfg:10976
 msgid "Flexible and smooth."
 msgstr ""
 
@@ -17046,7 +17045,7 @@ msgstr ""
 #. [object]
 #: .\utils\item_list.cfg:3616
 #: .\utils\item_list.cfg:3640
-#: .\utils\item_list.cfg:10999
+#: .\utils\item_list.cfg:10988
 msgid "Don't pull too much."
 msgstr ""
 
@@ -17159,15 +17158,15 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:3792
-#: .\utils\item_list.cfg:11089
+#: .\utils\item_list.cfg:11078
 msgid "This strange shape allows you to hit quicker."
 msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:3818
 #: .\utils\item_list.cfg:3890
-#: .\utils\item_list.cfg:11011
-#: .\utils\item_list.cfg:11051
+#: .\utils\item_list.cfg:11000
+#: .\utils\item_list.cfg:11040
 msgid "The wood is cracked."
 msgstr ""
 
@@ -17286,7 +17285,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:4200
-#: .\utils\item_list.cfg:12145
+#: .\utils\item_list.cfg:12134
 msgid "Azifer oulandoh!"
 msgstr ""
 
@@ -17922,7 +17921,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:4998
-#: .\utils\item_list.cfg:13823
+#: .\utils\item_list.cfg:13812
 msgid ""
 "<span color='#60A0FF'>Increases physical resistances by 2%</span>\n"
 "<span color='blue'>Max XP decreased by 10 XP.</span>"
@@ -18071,7 +18070,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:5279
-#: .\utils\item_list.cfg:11039
+#: .\utils\item_list.cfg:11028
 msgid "Heal me!"
 msgstr ""
 
@@ -18117,7 +18116,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:5340
-#: .\utils\item_list.cfg:11077
+#: .\utils\item_list.cfg:11066
 msgid "To shoot deers. Or orcs."
 msgstr ""
 
@@ -18247,13 +18246,13 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:5528
-#: .\utils\item_list.cfg:14109
+#: .\utils\item_list.cfg:14098
 msgid "Staff of vivacity"
 msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:5538
-#: .\utils\item_list.cfg:11064
+#: .\utils\item_list.cfg:11053
 msgid "Like a second armor."
 msgstr ""
 
@@ -18362,7 +18361,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:5665
-#: .\utils\item_list.cfg:11207
+#: .\utils\item_list.cfg:11196
 msgid ""
 "<span color='green'>Damage increased by 32 %</span>\n"
 "<span color='blue'>Max XP decreased by 4 XP.</span>"
@@ -18370,7 +18369,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:5672
-#: .\utils\item_list.cfg:11214
+#: .\utils\item_list.cfg:11203
 msgid "Shoot as they approach. Run. Repeat."
 msgstr ""
 
@@ -18626,7 +18625,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:6012
-#: .\utils\item_list.cfg:11146
+#: .\utils\item_list.cfg:11135
 msgid "I'll be back!"
 msgstr ""
 
@@ -18946,7 +18945,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:6629
-#: .\utils\item_list.cfg:11172
+#: .\utils\item_list.cfg:11161
 msgid "Revenge is a kind of wild justice."
 msgstr ""
 
@@ -19091,7 +19090,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:6879
-#: .\utils\item_list.cfg:11110
+#: .\utils\item_list.cfg:11099
 msgid ""
 "<span color='green'>Damage increased by 37 %\n"
 "Damage increased by 1</span>\n"
@@ -19140,7 +19139,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:6943
-#: .\utils\item_list.cfg:11227
+#: .\utils\item_list.cfg:11216
 msgid "You should be put on notice that ripping you off will be tolerated."
 msgstr ""
 
@@ -19330,7 +19329,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:7153
-#: .\utils\item_list.cfg:10952
+#: .\utils\item_list.cfg:10941
 msgid "Ripper club"
 msgstr ""
 
@@ -20072,19 +20071,19 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:8407
-#: .\utils\item_list.cfg:11196
+#: .\utils\item_list.cfg:11185
 msgid "This outburst is extreme!"
 msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:8410
-#: .\utils\item_list.cfg:12496
+#: .\utils\item_list.cfg:12485
 msgid "Ripper blade-staff"
 msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:8421
-#: .\utils\item_list.cfg:11266
+#: .\utils\item_list.cfg:11255
 msgid "I just wanted to rip him apart."
 msgstr ""
 
@@ -20331,7 +20330,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:8728
-#: .\utils\item_list.cfg:11343
+#: .\utils\item_list.cfg:11332
 msgid "An example of severe sadness is depression."
 msgstr ""
 
@@ -20920,7 +20919,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:9953
-#: .\utils\item_list.cfg:11249
+#: .\utils\item_list.cfg:11238
 msgid ""
 "<span color='green'>Damage increased by 57 %</span>\n"
 "<span color='green'>Damage increased by 1</span>\n"
@@ -20931,7 +20930,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:9958
-#: .\utils\item_list.cfg:11254
+#: .\utils\item_list.cfg:11243
 msgid "How about a shiny pair of handcuffs instead?"
 msgstr ""
 
@@ -21034,7 +21033,7 @@ msgstr ""
 #: .\utils\item_list.cfg:10152
 msgid ""
 "<span color='green'>Damage increased by 103 %</span>\n"
-"<span color='red'>33% fewer attacks</span>\n"
+"<span color='red'>25% fewer attacks</span>\n"
 "<span color='orange'>Max HP increased by 4 HP.</span>\n"
 "<span color='#60A0FF'>Increases physical resistances by 1%</span> \n"
 "<span color='#60A0FF'>Resistance to pierce increased by 3%.</span>\n"
@@ -21163,59 +21162,54 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10311
-msgid "The diamond in the rough."
-msgstr ""
-
-#. [object]
-#: .\utils\item_list.cfg:10314
+#: .\utils\item_list.cfg:10303
 msgid "Rough thin morion"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10322
+#: .\utils\item_list.cfg:10311
 msgid "Choose always the way that seems the best, however rough it may be."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10325
+#: .\utils\item_list.cfg:10314
 msgid "Swamp mace"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10334
+#: .\utils\item_list.cfg:10323
 msgid "Just a big root."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10337
+#: .\utils\item_list.cfg:10326
 msgid "Mail gloves of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10349
+#: .\utils\item_list.cfg:10338
 msgid "As sheepish as a fox captured by a fowl."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10352
+#: .\utils\item_list.cfg:10341
 msgid "Aggressive wool morion"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10366
+#: .\utils\item_list.cfg:10355
 msgid ""
 "We need the swift gathering of forces to confront not only military but moral"
 " aggression."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10369
+#: .\utils\item_list.cfg:10358
 msgid "Unscratched heating shield of refuge"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10383
+#: .\utils\item_list.cfg:10372
 msgid ""
 "<span color='#60A0FF'>Increases physical resistances by 2%.</span>\n"
 "<span color='#60A0FF'>Chance to get hit decreased by 20%</span>\n"
@@ -21225,7 +21219,7 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10392
+#: .\utils\item_list.cfg:10381
 msgid ""
 "Each year, millions of people enter the sea and come out unscratched and "
 "unscathed and oblivious to the notion that they’ve had a wilderness "
@@ -21233,32 +21227,32 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10395
+#: .\utils\item_list.cfg:10384
 msgid "Slippery cloak of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10412
+#: .\utils\item_list.cfg:10401
 msgid "Magic makes for a slippery concept."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10415
+#: .\utils\item_list.cfg:10404
 msgid "Slippery great claymore"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10425
+#: .\utils\item_list.cfg:10414
 msgid "Love is a slippery game."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10428
+#: .\utils\item_list.cfg:10417
 msgid "Shiny slippery bow"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10442
+#: .\utils\item_list.cfg:10431
 msgid ""
 "<span color='green'>Damage increased by 53%</span>\n"
 "<span color='green'>Damage increased by 1</span>\n"
@@ -21268,48 +21262,48 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10452
+#: .\utils\item_list.cfg:10441
 msgid ""
 "Don't judge the future of a person based on his present conditions, because "
 "time has the power to change black coal to shiny diamond."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10455
+#: .\utils\item_list.cfg:10444
 msgid "Ripper cloak of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10472
+#: .\utils\item_list.cfg:10461
 msgid ""
 "Criminals should be put on notice that ripping off homeowners and taxpayers "
 "won’t be tolerated."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10475
+#: .\utils\item_list.cfg:10464
 msgid "Avenging war bow"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10486
+#: .\utils\item_list.cfg:10475
 msgid "You know what they say about revenge? You better be ready to dig two graves."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10489
+#: .\utils\item_list.cfg:10478
 msgid "Studded leather gloves of awareness"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10497
+#: .\utils\item_list.cfg:10486
 msgid ""
 "<span color='#60A0FF'>Increases physical resistances by 1%.</span>\n"
 "<span color='blue'>Max XP decreased by 10 XP.</span>"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10503
+#: .\utils\item_list.cfg:10492
 msgid ""
 "Every individual is at once the beneficiary and the victim of the linguistic "
 "tradition into which he has been born — the beneficiary inasmuch as language "
@@ -21320,61 +21314,61 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10506
+#: .\utils\item_list.cfg:10495
 msgid "Cloth of boldness"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10519
+#: .\utils\item_list.cfg:10508
 msgid "Boldness, more boldness, always boldness."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10522
+#: .\utils\item_list.cfg:10511
 msgid "Sharp staff"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10532
+#: .\utils\item_list.cfg:10521
 msgid "Be careful not to hurt yourself."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10535
+#: .\utils\item_list.cfg:10524
 msgid "Knife-staff"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10545
+#: .\utils\item_list.cfg:10534
 msgid "A bit better than just sticking a knife a each end of a staff."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10548
+#: .\utils\item_list.cfg:10537
 msgid "Ripper blade-staff of increase"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10560
+#: .\utils\item_list.cfg:10549
 msgid ""
 "The strategy is to let the virus rip through the population, infecting up to "
 "40 million people, most of whom will recover and then be immune to the virus."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10563
+#: .\utils\item_list.cfg:10552
 msgid "War bow of revival"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10571
+#: .\utils\item_list.cfg:10560
 msgid ""
 "<span color='green'>Damage increased by 75%</span>\n"
 "<span color='blue'>Max XP decreased by 7 XP.</span>"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10578
+#: .\utils\item_list.cfg:10567
 msgid ""
 "When thy flowery hand delivers\n"
 "All the mountain-prisoned rivers,\n"
@@ -21383,12 +21377,12 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10584
+#: .\utils\item_list.cfg:10573
 msgid "Shiny bow of destruction"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10598
+#: .\utils\item_list.cfg:10587
 msgid ""
 "<span color='green'>Damage increased by 51%</span>\n"
 "<span color='green'>Damage increased by 1</span>\n"
@@ -21398,37 +21392,37 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10608
+#: .\utils\item_list.cfg:10597
 msgid "I always wanted to be one of the shiny, happy people."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10611
+#: .\utils\item_list.cfg:10600
 msgid "Cuir-bouilli greaves of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10623
+#: .\utils\item_list.cfg:10612
 msgid "Where the lion's skin falls short it must be eked out with the fox's."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10626
+#: .\utils\item_list.cfg:10615
 msgid "Gnarled staff"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10636
+#: .\utils\item_list.cfg:10625
 msgid "The gnarl makes it stronger."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10639
+#: .\utils\item_list.cfg:10628
 msgid "Coat of awareness"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10651
+#: .\utils\item_list.cfg:10640
 msgid ""
 "<span color='#60A0FF'>Increases physical resistances by 5%.</span>\n"
 "<span color='#FF99CC'>1 extra movement point</span>\n"
@@ -21436,64 +21430,64 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10658
+#: .\utils\item_list.cfg:10647
 msgid "Let yourself really become aware"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10661
+#: .\utils\item_list.cfg:10650
 msgid "Ring of the dog"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10672
+#: .\utils\item_list.cfg:10661
 msgid "Who let the dogs out?"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10675
+#: .\utils\item_list.cfg:10664
 msgid "Terracotta helm"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10683
+#: .\utils\item_list.cfg:10672
 msgid "It should protect your head at least once."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10686
+#: .\utils\item_list.cfg:10675
 msgid "Aggressive linen cloth of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10704
+#: .\utils\item_list.cfg:10693
 msgid "Every general reprisal is a hostile aggression."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10707
+#: .\utils\item_list.cfg:10696
 msgid "Rigid chainmail"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10715
+#: .\utils\item_list.cfg:10704
 msgid "Why use small rings when you can have big ones."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10730
+#: .\utils\item_list.cfg:10719
 msgid ""
 "We carry faithfully what one gives us to bear, on hard shoulders and over "
 "rough mountains."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10733
+#: .\utils\item_list.cfg:10722
 msgid "Rough cuir-bouilli gauntlets of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10745
+#: .\utils\item_list.cfg:10734
 msgid ""
 "Is it a hot-house plant, which must be framed and glassed, lest March, that "
 "bold young fellow, should shake the life out of it in his rough play among "
@@ -21501,106 +21495,106 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10748
+#: .\utils\item_list.cfg:10737
 msgid "Medium crossbow"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10757
+#: .\utils\item_list.cfg:10746
 msgid "Faster than any bow."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10760
+#: .\utils\item_list.cfg:10749
 msgid "Rusty assault axe"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10770
+#: .\utils\item_list.cfg:10759
 msgid "Rusty from the blood of the enemies."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10773
+#: .\utils\item_list.cfg:10762
 msgid "Blunt assault axe"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10783
+#: .\utils\item_list.cfg:10772
 msgid "Blunt from smashing to many helms."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10786
+#: .\utils\item_list.cfg:10775
 msgid "Club of monstrosity"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10798
+#: .\utils\item_list.cfg:10787
 msgid ""
 "This monstrosity is the manifestation of the very weakness within me that "
 "I've been running from my entire life. "
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10801
+#: .\utils\item_list.cfg:10790
 msgid "High-calibre slippery war bow"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10811
+#: .\utils\item_list.cfg:10800
 msgid "I'm a slippery kipper with a brain to match."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10814
+#: .\utils\item_list.cfg:10803
 msgid "Ripper staff of boldness"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10825
+#: .\utils\item_list.cfg:10814
 msgid "My traps rips out ribcages seconds later."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10828
+#: .\utils\item_list.cfg:10817
 msgid "Ripper blade-staff of outburst"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10839
+#: .\utils\item_list.cfg:10828
 msgid "I proceed to rip their spines out."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10842
+#: .\utils\item_list.cfg:10831
 msgid "Organic ring"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10850
+#: .\utils\item_list.cfg:10839
 msgid ""
 "There is a vast body of organic reactions that serve to transform one "
 "substance into another."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10853
+#: .\utils\item_list.cfg:10842
 msgid "Unscratched cloak"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10866
+#: .\utils\item_list.cfg:10855
 msgid "It was left unscratched."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10869
+#: .\utils\item_list.cfg:10858
 msgid "Dress of awareness"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10881
+#: .\utils\item_list.cfg:10870
 msgid ""
 "<span color='#60A0FF'>Increases physical resistances by 6%</span>\n"
 "<span color='#FF99CC'>1 extra movement point</span>\n"
@@ -21608,7 +21602,7 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10888
+#: .\utils\item_list.cfg:10877
 msgid ""
 "The objection I have repeatedly made privately against those who ordinarily "
 "proclaim believes in religions is that they, themselves surrounded and "
@@ -21617,122 +21611,122 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10891
+#: .\utils\item_list.cfg:10880
 msgid "Ripper staff of conflict"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10903
+#: .\utils\item_list.cfg:10892
 msgid "I'll rip your lungs out!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10906
+#: .\utils\item_list.cfg:10895
 msgid "Avenging mace of boldness"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10917
+#: .\utils\item_list.cfg:10906
 msgid ""
 "Doubtless, revenge is not always sweet, once it is consummated we feel "
 "inferior to our victim, or else we are tangled in the subtleties of remorse."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10920
+#: .\utils\item_list.cfg:10909
 msgid "Blade-staff of conflict"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10932
+#: .\utils\item_list.cfg:10921
 msgid "Conflict will never be eliminated from human affairs."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10935
+#: .\utils\item_list.cfg:10924
 msgid "Mail boots of the inversion"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10949
+#: .\utils\item_list.cfg:10938
 msgid ""
 "He thought that his move would rescue the theory of linear progress from the "
 "absurdities of the old inversion theory."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10963
+#: .\utils\item_list.cfg:10952
 msgid "As I, jump on stage, flip rip a show."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10966
+#: .\utils\item_list.cfg:10955
 msgid "Short crossbow"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10975
-#: .\utils\item_list.cfg:11025
+#: .\utils\item_list.cfg:10964
+#: .\utils\item_list.cfg:11014
 msgid "A basic crossbow."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10978
+#: .\utils\item_list.cfg:10967
 msgid "Young wood halberd"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:10990
+#: .\utils\item_list.cfg:10979
 msgid "Fragile crossbow"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11002
+#: .\utils\item_list.cfg:10991
 msgid "Damaged halberd"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11028
+#: .\utils\item_list.cfg:11017
 msgid "Short slippery crossbow of increase"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11042
+#: .\utils\item_list.cfg:11031
 msgid "Damaged crossbow"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11054
+#: .\utils\item_list.cfg:11043
 msgid "Halberd of vivacity"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11067
+#: .\utils\item_list.cfg:11056
 msgid "Long farmer's crossbow"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11080
+#: .\utils\item_list.cfg:11069
 msgid "Curved halberd"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11092
+#: .\utils\item_list.cfg:11081
 msgid "Infallible brillant curved crossbow"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11116
+#: .\utils\item_list.cfg:11105
 msgid "This crossbow has to be thought of as infallible."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11119
+#: .\utils\item_list.cfg:11108
 msgid " Cruel optimistic halberd of promise"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11139
+#: .\utils\item_list.cfg:11128
 msgid ""
 "<span color='green'>Damage increased by 36 %</span>\n"
 "<span color='green'>Damage increased by 1</span>\n"
@@ -21744,76 +21738,76 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11149
+#: .\utils\item_list.cfg:11138
 msgid "Weakened war crossbow"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11158
+#: .\utils\item_list.cfg:11147
 msgid "It used to be a good crossbow. Used to."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11161
+#: .\utils\item_list.cfg:11150
 msgid "Avenging halberd"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11175
+#: .\utils\item_list.cfg:11164
 msgid "High-calibre crossbow"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11184
+#: .\utils\item_list.cfg:11173
 msgid "Having well polished the whole crossbow, he added a golden tip."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11187
+#: .\utils\item_list.cfg:11176
 msgid "Halberd of outburst"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11199
+#: .\utils\item_list.cfg:11188
 msgid "Crossbow of revival"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11217
+#: .\utils\item_list.cfg:11206
 msgid "Ripper halberd"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11230
+#: .\utils\item_list.cfg:11219
 msgid "Shiny halberd"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11257
+#: .\utils\item_list.cfg:11246
 msgid "Ripper thin chainmail"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11281
+#: .\utils\item_list.cfg:11270
 msgid "I divide the world into hedgehogs and foxes."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11300
+#: .\utils\item_list.cfg:11289
 msgid ""
 "This master by his rough theories of revolutionary tactics has contributed "
 "most to form the discipline, energy and power of the cohorts. "
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11320
+#: .\utils\item_list.cfg:11309
 msgid ""
 "The first issue was rushed by horse across pavements slippery with mud and "
 "rain to a waiting express cart, reserved especially for the occasion."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11334
+#: .\utils\item_list.cfg:11323
 msgid ""
 "<span color='#60A0FF'>Increases physical resistances by 2%</span>\n"
 "<span color='#60A0FF'>Resistance to fire increased by 5%</span>\n"
@@ -21823,22 +21817,22 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11346
+#: .\utils\item_list.cfg:11335
 msgid "Ripper studded leather gloves of inversion"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11361
+#: .\utils\item_list.cfg:11350
 msgid "I used to kill pigeons, rip their heads off, 'You dirty rat pigeon!'."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11373
+#: .\utils\item_list.cfg:11362
 msgid "Vivacity has compensations, but there’s no way of knowing what they are."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11391
+#: .\utils\item_list.cfg:11380
 msgid ""
 " Truly, society is like a large piece of frozen water ; there are the rough "
 "places to be shunned, the very slippery ones all ready for a fall, and the "
@@ -21846,12 +21840,12 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11406
+#: .\utils\item_list.cfg:11395
 msgid "The steersman's part is vigilance, Blow it or rough or smooth."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11421
+#: .\utils\item_list.cfg:11410
 msgid ""
 "There are, to whom my satire seems too bold;\n"
 "Scarce to wise Peter complaisant enough,\n"
@@ -21859,7 +21853,7 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11435
+#: .\utils\item_list.cfg:11424
 msgid ""
 "Science leads to great achievements, which, quite rightly, fill of joy those "
 "who seek the truth, but if pursued, teaches us that we must seek other "
@@ -21868,7 +21862,7 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11451
+#: .\utils\item_list.cfg:11440
 msgid ""
 "<span color='#60A0FF'>Increases physical resistances by 1%</span> \n"
 "<span color='#60A0FF'>Resistance to pierce increased by 4%.</span>\n"
@@ -21877,32 +21871,32 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11459
+#: .\utils\item_list.cfg:11448
 msgid ""
 "I think your sister's got a better chance of getting your cart home "
 "unscratched than you do."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11470
+#: .\utils\item_list.cfg:11459
 msgid "Bands make one seem thinner."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11485
+#: .\utils\item_list.cfg:11474
 msgid ""
 "See, he's a salt-of-the-earth guy, and the University nerds don't understand "
 "his salt-of-the-earth way, his rough-and-tumble ways."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11501
-#: .\utils\item_list.cfg:11779
+#: .\utils\item_list.cfg:11490
+#: .\utils\item_list.cfg:11768
 msgid "Rip it free!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11521
+#: .\utils\item_list.cfg:11510
 msgid ""
 "To my delight, I discovered that fascinating combination of rigor/hypothesis,"
 " hard-core theory/intuition, and commercial-level practicality/artistic "
@@ -21910,7 +21904,7 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11536
+#: .\utils\item_list.cfg:11525
 msgid ""
 "I have for a long time been of opinion that the quantity of noise anyone can "
 "comfortably endure is in inverse proportion to his mental powers, and may "
@@ -21918,12 +21912,12 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11539
+#: .\utils\item_list.cfg:11528
 msgid "Aggressive metal targe of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11554
+#: .\utils\item_list.cfg:11543
 msgid ""
 "If thou wert the lion, the fox would beguile thee; if thou wert the lamb, the"
 " fox would eat thee; if thou wert the fox, the lion would suspect thee, when,"
@@ -21931,7 +21925,7 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11573
+#: .\utils\item_list.cfg:11562
 msgid ""
 "Being able to illustrate those experiences for listeners was a triumph, "
 "because it took everything to resist all the urges I have as a human being to"
@@ -21939,7 +21933,7 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11592
+#: .\utils\item_list.cfg:11581
 msgid ""
 "<span color='#60A0FF'>Increases physical resistances by 3%.</span>\n"
 "<span color='#60A0FF'>Chance to get hit decreased by 14%</span>\n"
@@ -21951,51 +21945,51 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11603
+#: .\utils\item_list.cfg:11592
 msgid ""
 "He drove the merchants from the Temple, and all his severe accusations "
 "against the scribes and Pharisees..."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11615
+#: .\utils\item_list.cfg:11604
 msgid ""
 "If positive represents movement to the right, negative represents movement to"
 " the left."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11618
+#: .\utils\item_list.cfg:11607
 msgid "Ripper battle-axe of trickery"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11630
+#: .\utils\item_list.cfg:11619
 msgid ""
 "He tearfully addressed the troops and, ripping open his tunic to expose his "
 "breast, begged them to stand faithfully by him."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11646
+#: .\utils\item_list.cfg:11635
 msgid ""
 "Vengeance too has its venom, though it comes closer to what we are, to what "
 "we feel, to the very law of the self."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11661
+#: .\utils\item_list.cfg:11650
 msgid "Vengeance before Divinity!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11674
+#: .\utils\item_list.cfg:11663
 msgid "The blood of the enemies made it rust."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11688
-#: .\utils\item_list.cfg:14388
+#: .\utils\item_list.cfg:11677
+#: .\utils\item_list.cfg:14377
 msgid ""
 "We have come more and more under the dominance of mechanics and sacrificed "
 "living humanity to the dead rhythm of the machine without most of us even "
@@ -22003,14 +21997,14 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11701
+#: .\utils\item_list.cfg:11690
 msgid ""
 "It’s much more slippery and hard to get your hands on than in other places "
 "where it’s more structured and stratified."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11717
+#: .\utils\item_list.cfg:11706
 msgid ""
 "<span color='green'>Damage increased by 117 %</span>\n"
 "<span color='red'>25% less attacks</span>\n"
@@ -22018,7 +22012,7 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11721
+#: .\utils\item_list.cfg:11710
 msgid ""
 "A prince being thus obliged to know well how to act as a beast must imitate "
 "the fox and the lion, for the lion cannot protect himself from snares, and "
@@ -22026,14 +22020,14 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11734
+#: .\utils\item_list.cfg:11723
 msgid ""
 "We had this really terrific volley and I stepped back to get this really "
 "terrific shot."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11750
+#: .\utils\item_list.cfg:11739
 msgid ""
 "<span color='green'>Damage increased by 75 %</span>\n"
 "<span color='orange'>Max HP increased by 5 HP.</span>\n"
@@ -22041,14 +22035,14 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11757
+#: .\utils\item_list.cfg:11746
 msgid ""
 "To refuges pervaded by charm, as to works of Art that approach perfection, "
 "the more happily constituted minds say 'Yes' without any qualification."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11771
+#: .\utils\item_list.cfg:11760
 msgid ""
 "<span color='green'>Damage increased by 86 %</span>\n"
 "<span color='green'>Damage increased by 2</span>\n"
@@ -22057,7 +22051,7 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11795
+#: .\utils\item_list.cfg:11784
 msgid ""
 "<span color='green'>Damage increased by 76 %</span>\n"
 "<span color='orange'>Max HP increased by 5 HP.</span>\n"
@@ -22065,7 +22059,7 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11802
+#: .\utils\item_list.cfg:11791
 msgid ""
 "I felt happy, felt I had come to a refuge, because a refuge to people like me"
 " is not a place but all places, all places except the one we happen to be in "
@@ -22073,24 +22067,24 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11818
+#: .\utils\item_list.cfg:11807
 msgid "I am appalled and saddened by the attack."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11834
+#: .\utils\item_list.cfg:11823
 msgid ""
 "<span color='green'>Damage increased by 43 %</span>\n"
 "<span color='orange'>Max HP increased by 14 HP.</span>"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11836
+#: .\utils\item_list.cfg:11825
 msgid "One must be a fox to recognise snares, and a lion to frighten wolves."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11849
+#: .\utils\item_list.cfg:11838
 msgid ""
 "<span color='green'>Damage increased by 86 %</span>\n"
 "<span color='green'>Damage increased by 2</span>\n"
@@ -22098,12 +22092,12 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11857
+#: .\utils\item_list.cfg:11846
 msgid "Don't rip..."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11875
+#: .\utils\item_list.cfg:11864
 msgid ""
 "<span color='green'>Damage increased by 86 %</span>\n"
 "<span color='green'>Damage increased by 1</span>\n"
@@ -22112,33 +22106,33 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11880
+#: .\utils\item_list.cfg:11869
 msgid ""
 "If you wish for revenge, an equally hard blow will be dealt back to yourself."
 " "
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11895
-msgid "How about..."
+#: .\utils\item_list.cfg:11884
+msgid "How about...``ripple''?"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11908
+#: .\utils\item_list.cfg:11897
 msgid ""
 "The Spirits of thy Lines infuse a Fire\n"
 "Like the Worlds Soul, which makes me thus aspire "
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11924
+#: .\utils\item_list.cfg:11913
 msgid ""
 "I never take vengeance unless I am forced to do so by an oath or in "
 "self-protection."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11940
+#: .\utils\item_list.cfg:11929
 msgid ""
 "<span color='green'>Damage increased by 93 %</span>\n"
 "<span color='green'>Damage increased by 2</span>\n"
@@ -22147,7 +22141,7 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11949
+#: .\utils\item_list.cfg:11938
 msgid ""
 "When I ripped my pants, I thought that I had everybody by my side, but I went"
 " and blew it all sky-high, and now she won't even spare a passing glance, all"
@@ -22155,7 +22149,7 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11965
+#: .\utils\item_list.cfg:11954
 msgid ""
 "<span color='green'>Damage increased by 93 %</span>\n"
 "<span color='green'>Damage increased by 1</span>\n"
@@ -22163,45 +22157,45 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11969
+#: .\utils\item_list.cfg:11958
 msgid ""
 "When big Larry came round just to put him down, Bob turned into a clown, and "
 "no girl ever wants to dance with a fool who went and ripped his pants."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11982
+#: .\utils\item_list.cfg:11971
 msgid ""
 "Don't miss your chance and you won't end up like the fool who ripped his "
 "pants."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11985
+#: .\utils\item_list.cfg:11974
 msgid "Midnight ripper great claymore"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11998
+#: .\utils\item_list.cfg:11987
 msgid ""
 "It was evening here,\n"
 "But upon earth the very noon of night."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12013
+#: .\utils\item_list.cfg:12002
 msgid ""
 "I'm talking about you running through the woods in the snow with blood hounds"
 " ripping your clothes off!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12016
+#: .\utils\item_list.cfg:12005
 msgid "Long slippery crossbow of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12029
+#: .\utils\item_list.cfg:12018
 msgid ""
 "<span color='green'>Damage increased by 93 %</span>\n"
 "<span color='green'>Damage increased by 1</span>\n"
@@ -22209,7 +22203,7 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12033
+#: .\utils\item_list.cfg:12022
 msgid ""
 " I look at it now and it makes all the sense in the world because the whole "
 "conversation about race is so disjointed and disconnected, and it’s so hard "
@@ -22218,19 +22212,19 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12046
+#: .\utils\item_list.cfg:12035
 msgid ""
 "The coda of the first movement, with its slippery, chromatic bass and the "
 "awesome moans above it, remains a paralyzing experience."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12058
+#: .\utils\item_list.cfg:12047
 msgid "At one hundred yards, volley fire present!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12071
+#: .\utils\item_list.cfg:12060
 msgid ""
 "The question is what one makes of these similarities, and one steps onto a "
 "slippery slope whenever analysis moves from the descriptive to the historic "
@@ -22238,98 +22232,98 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12084
+#: .\utils\item_list.cfg:12073
 msgid "The urge for good design is the same as the urge to go on living. "
 msgstr ""
 
 #. [effect], apply_to=new_attack, type=lightning, range=ranged
-#: .\utils\item_list.cfg:12097
+#: .\utils\item_list.cfg:12086
 msgid "instant lightning"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12110
+#: .\utils\item_list.cfg:12099
 msgid "Falash elhre-too!"
 msgstr ""
 
 #. [effect], apply_to=new_attack, type=lightning, range=ranged
-#: .\utils\item_list.cfg:12123
+#: .\utils\item_list.cfg:12112
 msgid "sparkle rain"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12162
+#: .\utils\item_list.cfg:12151
 msgid "This unit's and adjacent allie's resistance is increased by 10%."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12190
+#: .\utils\item_list.cfg:12179
 msgid ""
 "Adjacent enemies are cursed, dealing 10 less damage and having 10% worse "
 "resistances. "
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12206
+#: .\utils\item_list.cfg:12195
 msgid "Convert damages taken to lost experience."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12207
+#: .\utils\item_list.cfg:12196
 msgid "Allafreth boolk’oh!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12222
+#: .\utils\item_list.cfg:12211
 msgid ""
 "<span color='orange'>This unit's health is restored by 600 HP.</span>\n"
 "<span color='blue'>This unit's experience is increased by 60 XP.</span>"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12226
+#: .\utils\item_list.cfg:12215
 msgid "Great experience Potion"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12237
+#: .\utils\item_list.cfg:12226
 msgid "<span color='blue'>This unit's experience is increased by 47 XP.</span>"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12240
+#: .\utils\item_list.cfg:12229
 msgid "Ring of rest"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12251
+#: .\utils\item_list.cfg:12240
 msgid "<span color='blue'>Max XP decreased by 7 XP.</span>"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12254
+#: .\utils\item_list.cfg:12243
 msgid "Parade helm"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12262
+#: .\utils\item_list.cfg:12251
 msgid "Even better if you're on a horse."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12265
+#: .\utils\item_list.cfg:12254
 msgid "Reinforced short bow of awareness"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12278
+#: .\utils\item_list.cfg:12267
 msgid ""
 "<span color='green'>Damage increased by 57 %</span>\n"
 "<span color='blue'>Max XP decreased by 20 XP.</span>"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12280
+#: .\utils\item_list.cfg:12269
 msgid ""
 "They do not actually risk going out among the people or abandoning illusions "
 "in order to make a genuine idea-impression, because they have a dim nothing "
@@ -22337,24 +22331,24 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12283
+#: .\utils\item_list.cfg:12272
 msgid "Preeminent hamstring cutter"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12297
+#: .\utils\item_list.cfg:12286
 msgid ""
 "Joyously quivers the air of the hour before dawn, the hour when Of cognized "
 "the greatness of Cosmos, and when she prayed in the Garden of Xleyyo."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12300
+#: .\utils\item_list.cfg:12289
 msgid "Avenging winged mace of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12315
+#: .\utils\item_list.cfg:12304
 msgid ""
 "<span color='green'>Damage increased by 76 %</span>\n"
 "<span color='green'>Damage increased by 1</span>\n"
@@ -22363,17 +22357,17 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12319
+#: .\utils\item_list.cfg:12308
 msgid "Revenge is the prime ingredient in the fountain of youth. "
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12322
+#: .\utils\item_list.cfg:12311
 msgid "Ripper blade-staff of creation"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12334
+#: .\utils\item_list.cfg:12323
 msgid ""
 " I think I rather disappointed him by explaining that, no, I certainly "
 "*didn't* believe that she had ripped off books of magic, that I doubted she'd"
@@ -22381,58 +22375,58 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12337
+#: .\utils\item_list.cfg:12326
 msgid "Unscratched wooden targe"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12347
+#: .\utils\item_list.cfg:12336
 msgid "It is not designed to eject undamaged compartments."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12350
+#: .\utils\item_list.cfg:12339
 msgid "Ripper woodman's axe"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12361
+#: .\utils\item_list.cfg:12350
 msgid ""
 "Believing the first cell originated by chance is like believing a tornado "
 "ripping through a junkyard full of wooden parts could produce a cart."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12364
+#: .\utils\item_list.cfg:12353
 msgid "Linen cloth of vivacity"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12377
+#: .\utils\item_list.cfg:12366
 msgid ""
 "One's vivacity has value so long as one attributes value to the vivacity of "
 "others, by means of love, friendship, indignation and compassion."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12380
+#: .\utils\item_list.cfg:12369
 msgid "Avenging medium crossbow"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12391
+#: .\utils\item_list.cfg:12380
 msgid ""
 "To forgive is divine\n"
 "But vengeance is mine, mine, mine."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12395
+#: .\utils\item_list.cfg:12384
 msgid "Hammer of vivacity"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12405
+#: .\utils\item_list.cfg:12394
 msgid ""
 "The reincarnation of the human soul is not the introduction of a new "
 "principle into evolution, but the adaptation of the universal principle to "
@@ -22441,34 +22435,34 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12408
+#: .\utils\item_list.cfg:12397
 msgid "Aggressive studded leather gloves of vivacity"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12419
+#: .\utils\item_list.cfg:12408
 msgid "There is no motive for aggression."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12422
+#: .\utils\item_list.cfg:12411
 msgid "Aggressive cloth of inversion"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12442
+#: .\utils\item_list.cfg:12431
 msgid ""
 "The men who are to protect the community against violent aggression easily "
 "turn into the most dangerous aggressors."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12445
+#: .\utils\item_list.cfg:12434
 msgid "Rough page's shield of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12458
+#: .\utils\item_list.cfg:12447
 msgid ""
 "On a very rough-and-ready basis we might define an eccentric as a man who is "
 "a law unto himself, and a crank as one who, having determined what the law "
@@ -22476,47 +22470,47 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12461
+#: .\utils\item_list.cfg:12450
 msgid "Ripper spiked mace of vivacity"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12472
+#: .\utils\item_list.cfg:12461
 msgid "It will be a very special pleasure to rip you apart."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12475
+#: .\utils\item_list.cfg:12464
 msgid "Avenging cloak of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12493
+#: .\utils\item_list.cfg:12482
 msgid "They say revenge is empty."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12507
+#: .\utils\item_list.cfg:12496
 msgid "Stare at me in this faceless way, go mad with desire, and rip my clothes off."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12510
+#: .\utils\item_list.cfg:12499
 msgid "Longsword"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12519
+#: .\utils\item_list.cfg:12508
 msgid "Longer than your arm."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12522
+#: .\utils\item_list.cfg:12511
 msgid "Slippery war bow of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12535
+#: .\utils\item_list.cfg:12524
 msgid ""
 "<span color='green'>Damage increased by 75 %</span>\n"
 "<span color='green'>Damage increased by 1</span>\n"
@@ -22525,19 +22519,19 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12540
+#: .\utils\item_list.cfg:12529
 msgid ""
 "There is no ``slippery slope'' toward loss of liberty, only a long staircase "
 "where each step down must first be tolerated by the people and their leaders."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12543
+#: .\utils\item_list.cfg:12532
 msgid "Rough wooden targe of refuge"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12556
+#: .\utils\item_list.cfg:12545
 msgid ""
 "<span color='#60A0FF'>Increases physical resistances by 2%</span>\n"
 "<span color='#60A0FF'>Chance to get hit decreased by 10%</span>\n"
@@ -22546,17 +22540,17 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12564
+#: .\utils\item_list.cfg:12553
 msgid "The laws, your curb and whip, in their rough power have uncheck'd theft."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12567
+#: .\utils\item_list.cfg:12556
 msgid "Distinct classic leather"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12583
+#: .\utils\item_list.cfg:12572
 msgid ""
 "<span color='#60A0FF'>Increases physical resistances by 6%</span>\n"
 "<span color='#FF99CC'>1 extra movement point</span>\n"
@@ -22565,65 +22559,65 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12591
+#: .\utils\item_list.cfg:12580
 msgid ""
 "Inward improvements have a worth and dignity in themselves quite distinct "
 "from the power they give over outward things."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12594
-#: .\utils\item_list.cfg:12596
+#: .\utils\item_list.cfg:12583
+#: .\utils\item_list.cfg:12585
 msgid "5000 gold"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12602
+#: .\utils\item_list.cfg:12591
 msgid "Money is gold, and nothing else."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12605
+#: .\utils\item_list.cfg:12594
 msgid "Spiked mace"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12614
+#: .\utils\item_list.cfg:12603
 msgid "To add piercing to smashing."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12617
+#: .\utils\item_list.cfg:12606
 msgid "Rough linen cloth of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12633
-#: .\utils\item_list.cfg:13860
+#: .\utils\item_list.cfg:12622
+#: .\utils\item_list.cfg:13849
 msgid ""
 "Women are soft, mild, pitiful and flexible,\n"
 "Thou stern, obdurate, flinty, rough, remorseless!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12637
+#: .\utils\item_list.cfg:12626
 msgid "Evasive wooden shield"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12646
+#: .\utils\item_list.cfg:12635
 msgid ""
 "He immediately went into evasive maneuvers, spinning one way and then the "
 "other, hitting up to seven Gs!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12649
+#: .\utils\item_list.cfg:12638
 msgid "Avenging battle-axe of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12665
+#: .\utils\item_list.cfg:12654
 msgid ""
 "<span color='green'>Damage increased by 93 %</span>\n"
 "<span color='green'>Ranged damage increased by 1</span>\n"
@@ -22633,59 +22627,59 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12670
+#: .\utils\item_list.cfg:12659
 msgid "To me belongeth vengeance and recompense."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12673
+#: .\utils\item_list.cfg:12662
 msgid "Slippery morion with visor"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12681
+#: .\utils\item_list.cfg:12670
 msgid ""
 "They went chasing after him along the slippery track, but although they could"
 " spy him ahead of them, he always remained just out of reach."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12684
+#: .\utils\item_list.cfg:12673
 msgid "Lightning gun"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12701
+#: .\utils\item_list.cfg:12690
 msgid "Fry them!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12704
+#: .\utils\item_list.cfg:12693
 msgid "Worn hammer"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12713
+#: .\utils\item_list.cfg:12702
 msgid "It has forged many weapons."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12716
+#: .\utils\item_list.cfg:12705
 msgid "Ripper winged mace"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12726
+#: .\utils\item_list.cfg:12715
 msgid "Tonight you will get your member ripped off."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12729
+#: .\utils\item_list.cfg:12718
 msgid "Avenging great claymore of revival"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12739
+#: .\utils\item_list.cfg:12728
 msgid ""
 "<span color='green'>Damage increased by 57 %</span>\n"
 "<span color='green'>Ranged damage increased by 1</span>\n"
@@ -22694,29 +22688,29 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12748
+#: .\utils\item_list.cfg:12737
 msgid ""
 "Revenge, oh, revenge\n"
 "is a pleasure reserved for smart people."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12752
+#: .\utils\item_list.cfg:12741
 msgid "Flamethrower"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12805
+#: .\utils\item_list.cfg:12794
 msgid "Burn them all!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12808
+#: .\utils\item_list.cfg:12797
 msgid "Midnight staff"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12820
+#: .\utils\item_list.cfg:12809
 msgid ""
 "I stood on the bridge at midnight,\n"
 "As the clocks were striking the hour,\n"
@@ -22725,82 +22719,82 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12826
+#: .\utils\item_list.cfg:12815
 msgid "Light brigandine"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12834
+#: .\utils\item_list.cfg:12823
 msgid "Not as good as the standard brigandine but lighter."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12837
+#: .\utils\item_list.cfg:12826
 msgid "Thin chainmail of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12849
+#: .\utils\item_list.cfg:12838
 msgid "Those that have been best able to imitate the fox have succeeded best."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12852
+#: .\utils\item_list.cfg:12841
 msgid "Rusty spiked mace"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12861
+#: .\utils\item_list.cfg:12850
 msgid "The spikes are all rusty."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12864
+#: .\utils\item_list.cfg:12853
 msgid "Mail boots"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12872
+#: .\utils\item_list.cfg:12861
 msgid "Lighter and better than scale boots."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12875
+#: .\utils\item_list.cfg:12864
 msgid "Reinforced short bow"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12884
+#: .\utils\item_list.cfg:12873
 msgid "Better than your usual short bow."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12887
+#: .\utils\item_list.cfg:12876
 msgid "Midnight halberd"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12899
+#: .\utils\item_list.cfg:12888
 msgid "Midnight! the outpost of advancing day!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12902
+#: .\utils\item_list.cfg:12891
 msgid "Twisted morion of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12917
+#: .\utils\item_list.cfg:12906
 msgid "If thou wert the lion, the fox would beguile thee."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12920
+#: .\utils\item_list.cfg:12909
 msgid "Slippery studded leather gloves"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12928
+#: .\utils\item_list.cfg:12917
 msgid ""
 "What a power it is to the child when he is far away in the cold, tempting "
 "world, and voices of sin are filling his ears, and his feet stand on slippery"
@@ -22808,12 +22802,12 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12931
+#: .\utils\item_list.cfg:12920
 msgid "Distinct bow of destruction"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12945
+#: .\utils\item_list.cfg:12934
 msgid ""
 "<span color='green'>Damage increased by 51%</span>\n"
 "<span color='#60A0FF'>Resistance to pierce increased by 3%.</span>\n"
@@ -22823,26 +22817,26 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12955
+#: .\utils\item_list.cfg:12944
 msgid ""
 "A poem on the stars and a treatise on astronomy have distinct aims and "
 "distinct methods."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12958
+#: .\utils\item_list.cfg:12947
 msgid "Steel sword of revival"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12966
+#: .\utils\item_list.cfg:12955
 msgid ""
 "<span color='green'>Damage increased by 50%</span>\n"
 "<span color='blue'>Max XP decreased by 12 XP.</span>"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12973
+#: .\utils\item_list.cfg:12962
 msgid ""
 "Of all the races of the empire, only the Dunefolks could possibly revive the "
 "memory of the most horrific wars ever to sunder the continent and transform "
@@ -22851,12 +22845,12 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12976
+#: .\utils\item_list.cfg:12965
 msgid "Shiny stellar leather"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12989
+#: .\utils\item_list.cfg:12978
 msgid ""
 "<span color='#60A0FF'>Increases physical resistances by 9%</span>\n"
 "<span color='green'>Ranged damage increased by 1</span>\n"
@@ -22865,41 +22859,41 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:12997
+#: .\utils\item_list.cfg:12986
 msgid ""
 "By the time they came back, he was looking as shiny and clean as he had been "
 "in the morning."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13010
+#: .\utils\item_list.cfg:12999
 msgid "<span color='orange'>This unit's health is increased by 470 HP.</span>"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13013
+#: .\utils\item_list.cfg:13002
 msgid "Babe"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13026
+#: .\utils\item_list.cfg:13015
 msgid "Allow to recruit Hell Boars"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13027
+#: .\utils\item_list.cfg:13016
 msgid ""
 "This is a tale about an unprejudiced heart, and how it changed our valley "
 "forever."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13030
+#: .\utils\item_list.cfg:13019
 msgid "Brand new barbarian bow"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13044
+#: .\utils\item_list.cfg:13033
 msgid ""
 "<span color='green'>Damage increased by 83%</span>\n"
 "<span color='green'>Damage increased by 1</span>\n"
@@ -22909,85 +22903,85 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13054
+#: .\utils\item_list.cfg:13043
 msgid "You got a brand new key."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13057
+#: .\utils\item_list.cfg:13046
 msgid "Slippery brigandine boots of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13070
+#: .\utils\item_list.cfg:13059
 msgid "My guts indicate somethin' long and slippery slitherin' toward you!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13073
+#: .\utils\item_list.cfg:13062
 msgid "Ripper spiked mace"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13083
+#: .\utils\item_list.cfg:13072
 msgid "He's the guy who rips it off!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13086
+#: .\utils\item_list.cfg:13075
 msgid "Slippery amulet"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13092
+#: .\utils\item_list.cfg:13081
 msgid ""
 "Something is broken when the food comes on a tray wrapped in slippery fabric,"
 " a carcass of a being whose only chance at life was a cramped cage."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13103
+#: .\utils\item_list.cfg:13092
 msgid "Well, just give me a rough estimate."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13106
+#: .\utils\item_list.cfg:13095
 msgid "Ripper mace"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13116
+#: .\utils\item_list.cfg:13105
 msgid "So, who's gonna get their member ripped off tonight?"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13119
+#: .\utils\item_list.cfg:13108
 msgid "Grenade-launcher"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13130
-#: .\utils\item_list.cfg:14632
+#: .\utils\item_list.cfg:13119
+#: .\utils\item_list.cfg:14621
 msgid "Kaboom!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13133
+#: .\utils\item_list.cfg:13122
 msgid "Mage morion of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13149
+#: .\utils\item_list.cfg:13138
 msgid "If thou wert the lamb, the fox would eat thee."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13152
+#: .\utils\item_list.cfg:13141
 msgid "Imperial shiny helm"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13165
+#: .\utils\item_list.cfg:13154
 msgid ""
 "<span color='#60A0FF'>Increases physical resistances by 4%</span>\n"
 "<span color='green'>Ranged damage increased by 1</span>\n"
@@ -22996,27 +22990,27 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13173
+#: .\utils\item_list.cfg:13162
 msgid "There's room for saying things in bright shiny colours."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13176
+#: .\utils\item_list.cfg:13165
 msgid "Forgotten thin chainmail of seasons"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13194
+#: .\utils\item_list.cfg:13183
 msgid "My memory rests, but never forgets what I lost."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13197
+#: .\utils\item_list.cfg:13186
 msgid "Brand new hamstring cutter"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13217
+#: .\utils\item_list.cfg:13206
 msgid ""
 "<span color='green'>Damage increased by 57 %</span>\n"
 "<span color='green'>Damage increased by 1</span>\n"
@@ -23026,17 +23020,17 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13222
+#: .\utils\item_list.cfg:13211
 msgid "I have a brand new staff."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13225
+#: .\utils\item_list.cfg:13214
 msgid "Secret cleaver of pain of seasons"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13244
+#: .\utils\item_list.cfg:13233
 msgid ""
 "<span color='green'>Damage increased by 47 %</span>\n"
 "<span color='green'>Damage increased by 1</span>\n"
@@ -23046,37 +23040,37 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13249
+#: .\utils\item_list.cfg:13238
 msgid "Everything secret degenerates, even the administration of justice."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13252
+#: .\utils\item_list.cfg:13241
 msgid "Dragon minigun"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13397
+#: .\utils\item_list.cfg:13386
 msgid "It needs more dakka."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13400
+#: .\utils\item_list.cfg:13389
 msgid "Thick scale armor"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13408
+#: .\utils\item_list.cfg:13397
 msgid "As heavy as a plate armor but a bit more flexible."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13411
+#: .\utils\item_list.cfg:13400
 msgid "Wonderful crossbow of the punisher"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13420
+#: .\utils\item_list.cfg:13409
 msgid ""
 "<span color='green'>Damage increased by 112 %</span>\n"
 "<span color='#60A0FF'>Increases physical resistances by 1%</span>\n"
@@ -23084,20 +23078,20 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13425
+#: .\utils\item_list.cfg:13414
 msgid ""
 "A life of love is one of continual growth, where the doors and windows of "
 "experience are always open to the wonder and magic that life offers."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13428
+#: .\utils\item_list.cfg:13417
 msgid "Staff of refuge"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13440
-#: .\utils\item_list.cfg:13710
+#: .\utils\item_list.cfg:13429
+#: .\utils\item_list.cfg:13699
 msgid ""
 "<span color='green'>Damage increased by 21 %</span>\n"
 "<span color='orange'>Max HP increased by 5 HP.</span>\n"
@@ -23105,51 +23099,51 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13448
+#: .\utils\item_list.cfg:13437
 msgid ""
 "At length his lonely cot appears in view,\n"
 "Beneath the shelter of an aged tree."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13452
+#: .\utils\item_list.cfg:13441
 msgid "Ripper leather gloves"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13460
+#: .\utils\item_list.cfg:13449
 msgid "One in three chance of getting your member ripped off."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13463
+#: .\utils\item_list.cfg:13452
 msgid "Rough parade helm"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13471
+#: .\utils\item_list.cfg:13460
 msgid "A rough estimate."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13474
+#: .\utils\item_list.cfg:13463
 msgid "Basic banded armor"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13482
+#: .\utils\item_list.cfg:13471
 msgid ""
 "Basic metal strips fashioned into circular bands, fastened to internal "
 "leather straps."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13485
+#: .\utils\item_list.cfg:13474
 msgid "Staff of Teumiuxe"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13504
+#: .\utils\item_list.cfg:13493
 msgid ""
 "<span color='green'>Damage increased by 108 %.</span>\n"
 "<span color='#60A0FF'>Resistance to arcane increased by 6%.</span>\n"
@@ -23163,122 +23157,122 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13518
+#: .\utils\item_list.cfg:13507
 msgid "Also called ``The staff of protection''."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13521
-#: .\utils\item_list.cfg:13523
+#: .\utils\item_list.cfg:13510
+#: .\utils\item_list.cfg:13512
 msgid "7000 gold"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13529
+#: .\utils\item_list.cfg:13518
 msgid "Well, I have never had the slightest interest in owning gold."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13532
+#: .\utils\item_list.cfg:13521
 msgid "Slippery mail boots of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13545
+#: .\utils\item_list.cfg:13534
 msgid "I'll say, it's SO slippery."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13548
+#: .\utils\item_list.cfg:13537
 msgid "Friendly neighbourhood"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13561
+#: .\utils\item_list.cfg:13550
 msgid "Allow to recruit Spiderlings"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13562
+#: .\utils\item_list.cfg:13551
 msgid "With Great Power Comes Great Responsibility."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13565
+#: .\utils\item_list.cfg:13554
 msgid "Wooden targe of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13578
+#: .\utils\item_list.cfg:13567
 msgid ""
 "If thou wert the fox, the lion would suspect thee, when, peradventure, thou "
 "wert accused by the ass."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13581
+#: .\utils\item_list.cfg:13570
 msgid "Great healing"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13594
+#: .\utils\item_list.cfg:13583
 msgid "Come on! It seems like you are trying to get hurt!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13597
+#: .\utils\item_list.cfg:13586
 msgid "Rough mail gloves"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13605
+#: .\utils\item_list.cfg:13594
 msgid "That’s a rough estimate."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13608
+#: .\utils\item_list.cfg:13597
 msgid "Massive club"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13617
+#: .\utils\item_list.cfg:13606
 msgid "Huge as a leg and twice as heavy."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13620
+#: .\utils\item_list.cfg:13609
 msgid "Advanced guide to magic"
 msgstr ""
 
 #. [effect], apply_to=new_attack, type=fire, range=ranged
-#: .\utils\item_list.cfg:13630
+#: .\utils\item_list.cfg:13619
 msgid "greater fireball"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13655
+#: .\utils\item_list.cfg:13644
 msgid "Fleh’monh!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13658
+#: .\utils\item_list.cfg:13647
 msgid "Light foot"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13671
+#: .\utils\item_list.cfg:13660
 msgid ""
 "This unit rallies the adjacent allies to better dodge, decreasing their "
 "chance to be hit by 10%."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13674
+#: .\utils\item_list.cfg:13663
 msgid "Distinct earthly gauntlets"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13687
+#: .\utils\item_list.cfg:13676
 msgid ""
 "<span color='#60A0FF'>Increases physical resistances by 3%</span>\n"
 "<span color='#60A0FF'>Resistance to pierce increased by 3%.</span>\n"
@@ -23287,53 +23281,53 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13695
+#: .\utils\item_list.cfg:13684
 msgid ""
 "Writers generally use the word affection to refer to distinct states of "
 "feeling, both lasting and spasmodic."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13698
+#: .\utils\item_list.cfg:13687
 msgid "Halberd of refuge"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13718
+#: .\utils\item_list.cfg:13707
 msgid ""
 "Old homes! old hearts! Upon my soul forever\n"
 "Their peace and gladness lie like tears and laughter."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13730
+#: .\utils\item_list.cfg:13719
 msgid "They added plates over plates that had been damaged."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13741
+#: .\utils\item_list.cfg:13730
 msgid ""
 "Scarce to wise Peter complaisant enough,\n"
 "And something said of Chartres much too rough."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13753
+#: .\utils\item_list.cfg:13742
 msgid "You'll find us rough, sir, but you'll find us ready."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13768
+#: .\utils\item_list.cfg:13757
 msgid "A rabbit, fox, and bear who rise to the top of the organized crime racket."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13788
+#: .\utils\item_list.cfg:13777
 msgid "An infectious disease caused by severe acute respiratory syndrome virus."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13800
+#: .\utils\item_list.cfg:13789
 msgid ""
 "As a child walking over a slippery and dangerous path cries out, ``Father, I "
 "am falling!'' and has but a moment to catch his father's hand, so every "
@@ -23342,7 +23336,7 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13812
+#: .\utils\item_list.cfg:13801
 msgid ""
 "The first step to enlightenment in organic craftsmanship is to realize the "
 "key role that functional groups play in simplifying the subject, and the "
@@ -23351,58 +23345,60 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13829
+#: .\utils\item_list.cfg:13818
 msgid ""
 "The conscious mind allows itself to be trained like a parrot, but the "
 "unconscious does not."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13845
+#: .\utils\item_list.cfg:13834
 msgid ""
 "Apparently, when you bought that medium drink, you entered a binding contract"
 " that enables them to rip off your member."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13872
+#: .\utils\item_list.cfg:13861
 msgid ""
 "Not once or twice in our rough island story, The path of duty was the way to "
 "glory."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13883
+#: .\utils\item_list.cfg:13872
 msgid "Yellow for camouflage, smooth from sand."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13895
+#: .\utils\item_list.cfg:13884
 msgid "What is organic craftsmanship, and why should I study it?"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13910
+#: .\utils\item_list.cfg:13899
 msgid "Brer Fox, he lay low."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13927
-msgid "In order to avoid the "
+#: .\utils\item_list.cfg:13916
+msgid ""
+"In order to avoid the ``nutty'' theory of inversion, he invented the even "
+"odder notion of stomachs turning into brains with new guts forming below."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13940
+#: .\utils\item_list.cfg:13929
 msgid "Of course he would have needed a very slippery floor to do that."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13951
+#: .\utils\item_list.cfg:13940
 msgid "One band of leather, one band of metal. And you repeat."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13966
+#: .\utils\item_list.cfg:13955
 msgid ""
 "Only the hope\n"
 "Of my vengeance\n"
@@ -23411,47 +23407,49 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13984
+#: .\utils\item_list.cfg:13973
 msgid ""
 "You can't just go running around ripping off other people's members, to make "
 "a giant member ship."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:13999
+#: .\utils\item_list.cfg:13988
 msgid ""
 "Justice, like beauty, is in the eye of the beholder. Some see an innocent "
 "victim. Others will see evil incarnate getting exactly what's deserved."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14009
+#: .\utils\item_list.cfg:13998
 msgid ""
 "<span color='green'>Damage increased by 87 %.</span>\n"
 "<span color='blue'>Max XP decreased by 20 XP.</span>"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14017
+#: .\utils\item_list.cfg:14006
 msgid ""
 "Genius is not so much a light as it is a constant awareness of the "
 "surrounding gloom."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14031
+#: .\utils\item_list.cfg:14020
 msgid ""
 "The empirical and historical data I present provide a clear challenge to "
 "slippery slope arguments."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14045
-msgid "The expression "
+#: .\utils\item_list.cfg:14034
+msgid ""
+"The expression ``hydrostatic paradox'' indicates the slippery nature of the "
+"subject."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14057
+#: .\utils\item_list.cfg:14046
 msgid ""
 "<span color='green'>Damage increased by 93 %</span>\n"
 "<span color='green'>Damage increased by 1</span>\n"
@@ -23459,26 +23457,26 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14065
+#: .\utils\item_list.cfg:14054
 msgid "It's the slippery roads."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14080
+#: .\utils\item_list.cfg:14069
 msgid ""
 "<span color='green'>Damage increased by 93 %</span>\n"
 "<span color='orange'>Max HP increased by 12 HP.</span>"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14083
+#: .\utils\item_list.cfg:14072
 msgid ""
 "I don't keer w'at you do wid me, Brer Fox, so you don't fling me in dat "
 "brier-patch."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14097
+#: .\utils\item_list.cfg:14086
 msgid ""
 "<span color='green'>Damage increased by 101 %</span>\n"
 "<span color='green'>Ranged damage increased by 1</span>\n"
@@ -23487,19 +23485,19 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14106
+#: .\utils\item_list.cfg:14095
 msgid "In its purest form, an act of retribution provides symmetry."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14117
+#: .\utils\item_list.cfg:14106
 msgid ""
 "<span color='green'>Damage increased by 102 %</span>\n"
 "<span color='blue'>Max XP increased by 20 XP.</span>"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14124
+#: .\utils\item_list.cfg:14113
 msgid ""
 "A vivacity of extreme hardship, of ceaseless struggle with nature, will "
 "develop very different powers from those evolved amid the luxuriant plenty of"
@@ -23507,39 +23505,39 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14141
+#: .\utils\item_list.cfg:14130
 msgid "A danger on retaliation lies on the furthering cycle of violence."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14157
+#: .\utils\item_list.cfg:14146
 msgid ""
 "For the wicked, revelations can be far more terrifying, when dark secrets are"
 " exposed and sinners are punished for their trespasses."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14171
+#: .\utils\item_list.cfg:14160
 msgid "Look at him rip!..."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14174
+#: .\utils\item_list.cfg:14163
 msgid "Ripper spikes mace of monstrosity"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14185
+#: .\utils\item_list.cfg:14174
 msgid "If I rip with my eyeballs, I'm gonna need bee's venom to enlarge them."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14188
+#: .\utils\item_list.cfg:14177
 msgid "Ripper mallet of revival"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14199
+#: .\utils\item_list.cfg:14188
 msgid ""
 "<span color='green'>Damage increased by 114 %</span>\n"
 "<span color='green'>Damage increased by 2</span>\n"
@@ -23548,27 +23546,27 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14207
+#: .\utils\item_list.cfg:14196
 msgid "Don't worry about this rip."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14210
+#: .\utils\item_list.cfg:14199
 msgid "Ripper symtomatic mallet"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14221
+#: .\utils\item_list.cfg:14210
 msgid "I just uh accidentally ripped it pulling it out of the box."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14236
+#: .\utils\item_list.cfg:14225
 msgid "Repudiate the repudiators."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14254
+#: .\utils\item_list.cfg:14243
 msgid ""
 "<span color='green'>Damage increased by 117 %</span>\n"
 "<span color='green'>Ranged damage increased by 1</span>\n"
@@ -23578,17 +23576,17 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14260
+#: .\utils\item_list.cfg:14249
 msgid "An eye for an eye, and a tooth for a tooth!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14277
+#: .\utils\item_list.cfg:14266
 msgid "Revenge may just be the ultimate card."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14290
+#: .\utils\item_list.cfg:14279
 msgid ""
 "<span color='green'>Damage increased by 117 %</span>\n"
 "<span color='green'>Damage increased by 2</span>\n"
@@ -23597,143 +23595,143 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14299
+#: .\utils\item_list.cfg:14288
 msgid "The next who wins with equal pain the slippery height, falls too."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14316
+#: .\utils\item_list.cfg:14305
 msgid "Well, you're a slippery seal, huh?"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14330
+#: .\utils\item_list.cfg:14319
 msgid "It's a slippery one."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14345
+#: .\utils\item_list.cfg:14334
 msgid ""
 "You tell me right now where my bloody cart is, or I'm going to rip that box "
 "head of yours in half!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14361
+#: .\utils\item_list.cfg:14350
 msgid "Rip the system."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14375
+#: .\utils\item_list.cfg:14364
 msgid ""
 "Our research has shown that by applying large electric fields we can suppress"
 " flames very rapidly."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14401
+#: .\utils\item_list.cfg:14390
 msgid "It has been used for a lot of assaults already."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14417
+#: .\utils\item_list.cfg:14406
 msgid ""
 "Ay, beauty's princely majesty is such,\n"
 "Confounds the tongue, and makes the senses rough."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14421
+#: .\utils\item_list.cfg:14410
 msgid "Heavy great pavise of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14435
+#: .\utils\item_list.cfg:14424
 msgid ""
 "For my part, either I do not know what heaviness is, or the terrestrial globe"
 " is neither heavy nor light, as likewise all other globes of the universe."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14452
+#: .\utils\item_list.cfg:14441
 msgid "It's slippery out there."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14464
+#: .\utils\item_list.cfg:14453
 msgid "You can even stand behind it."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14481
+#: .\utils\item_list.cfg:14470
 msgid ""
 "The cross section of a shadow is a two-dimensional silhouette, or reverse "
 "projection of the object blocking the light."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14497
+#: .\utils\item_list.cfg:14486
 msgid "Can't touch this."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14500
+#: .\utils\item_list.cfg:14489
 msgid "Brother Bear"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14513
+#: .\utils\item_list.cfg:14502
 msgid "Allow to recruit Cave Bear."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14514
+#: .\utils\item_list.cfg:14503
 msgid "If you play dead, they will leave you alone. Or eat you. It's 50/50."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14531
+#: .\utils\item_list.cfg:14520
 msgid "Not really useful against a Fire Wraith."
 msgstr ""
 
 #. [effect], apply_to=new_attack, type=fire, range=ranged
-#: .\utils\item_list.cfg:14544
+#: .\utils\item_list.cfg:14533
 msgid "fire ring"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14582
+#: .\utils\item_list.cfg:14571
 msgid "Yek Itylek!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14585
-#: .\utils\item_list.cfg:14587
+#: .\utils\item_list.cfg:14574
+#: .\utils\item_list.cfg:14576
 msgid "10000 gold"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14593
+#: .\utils\item_list.cfg:14582
 msgid "I can't imagine a worse crowd to deal with than a bunch of gold bugs."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14596
+#: .\utils\item_list.cfg:14585
 msgid "Shrapnel"
 msgstr ""
 
 #. [effect], apply_to=new_attack, type=blade, range=ranged
-#: .\utils\item_list.cfg:14606
+#: .\utils\item_list.cfg:14595
 msgid "metal fragments"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14635
+#: .\utils\item_list.cfg:14624
 msgid "Ripper branch of carving"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14653
+#: .\utils\item_list.cfg:14642
 msgid ""
 "<span color='green'>Damage increased by 4%</span>\n"
 "<span color='green'>Damage increased by 1</span>\n"
@@ -23742,142 +23740,142 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14657
+#: .\utils\item_list.cfg:14646
 msgid "First I gonna rip your limbs out, one by one."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14660
+#: .\utils\item_list.cfg:14649
 msgid "Reflux of pain"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14673
+#: .\utils\item_list.cfg:14662
 msgid "Pain, all I know is pain."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14676
+#: .\utils\item_list.cfg:14665
 msgid "Heavy brigandine"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14684
+#: .\utils\item_list.cfg:14673
 msgid "Feathers as heavy as lead."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14687
+#: .\utils\item_list.cfg:14676
 msgid "Tusked helm of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14699
+#: .\utils\item_list.cfg:14688
 msgid "Roas' me, Brer Fox, but don't fling me in dat brier-patch."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14702
+#: .\utils\item_list.cfg:14691
 msgid "Great persevering pavise of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14721
+#: .\utils\item_list.cfg:14710
 msgid "Do not, on any account whatever, abandon what thou hast begun in me."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14724
+#: .\utils\item_list.cfg:14713
 msgid "Ripper felt morion"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14732
+#: .\utils\item_list.cfg:14721
 msgid "I feel like a part of my heart just got ripped out."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14735
+#: .\utils\item_list.cfg:14724
 msgid "Charm"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14748
+#: .\utils\item_list.cfg:14737
 msgid "Love me, love me, say that you love me!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14751
+#: .\utils\item_list.cfg:14740
 msgid "Sledgehammer"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14762
+#: .\utils\item_list.cfg:14751
 msgid "To drive posts in. And enemies."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14765
+#: .\utils\item_list.cfg:14754
 msgid "The Wall"
 msgstr ""
 
 #. [effect], apply_to=new_attack, type=fire, range=ranged
-#: .\utils\item_list.cfg:14775
+#: .\utils\item_list.cfg:14764
 msgid "flame wall"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14814
+#: .\utils\item_list.cfg:14803
 msgid "Aah’za Mooraah’!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14817
+#: .\utils\item_list.cfg:14806
 msgid "Reinforced bow"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14827
+#: .\utils\item_list.cfg:14816
 msgid "Shoots further, but harder to bend."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14830
+#: .\utils\item_list.cfg:14819
 msgid "Great slippery pavise"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14840
+#: .\utils\item_list.cfg:14829
 msgid "It is not a slippery slope to rampant inter-species coupling."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14843
+#: .\utils\item_list.cfg:14832
 msgid "Ripper desert helm"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14852
+#: .\utils\item_list.cfg:14841
 msgid "I could rip up the carpet."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14855
+#: .\utils\item_list.cfg:14844
 msgid "Twisted assault axe"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14865
+#: .\utils\item_list.cfg:14854
 msgid "To cut twisted trees."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14868
+#: .\utils\item_list.cfg:14857
 msgid "Rough harness gauntlets"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14876
+#: .\utils\item_list.cfg:14865
 msgid ""
 "On your emblem, which a roaring sea\n"
 "Shields with its rough waves,\n"
@@ -23886,61 +23884,61 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14882
+#: .\utils\item_list.cfg:14871
 msgid "Great pavise of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14895
+#: .\utils\item_list.cfg:14884
 msgid ""
 "When the fox hath once got in his nose,\n"
 "He'll soon find means to make the body follow."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14899
+#: .\utils\item_list.cfg:14888
 msgid "Great ripper shocking claymore"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14910
-#: .\utils\item_list.cfg:15781
+#: .\utils\item_list.cfg:14899
+#: .\utils\item_list.cfg:15770
 msgid ""
 "If ripping throats gets that weapon back, I'll rip as many throats as I have "
 "to!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14913
+#: .\utils\item_list.cfg:14902
 msgid "Slippery long crossbow of volley"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14923
+#: .\utils\item_list.cfg:14912
 msgid ""
 "If you get influenced by anybody else's negative thoughts, it can be a "
 "slippery slope down."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14926
+#: .\utils\item_list.cfg:14915
 msgid "Ripper cloth of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14943
+#: .\utils\item_list.cfg:14932
 msgid ""
 "Fascists would pull your eyes out with teaspoons, they'd rip your nails out "
 "with tweezers."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14946
+#: .\utils\item_list.cfg:14935
 msgid "Distinct chainmail"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14963
+#: .\utils\item_list.cfg:14952
 msgid ""
 "<span color='#60A0FF'>Increases physical resistances by 15%.</span>\n"
 "<span color='#60A0FF'>Resistance to pierce increased by 3%.</span>\n"
@@ -23949,7 +23947,7 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14967
+#: .\utils\item_list.cfg:14956
 msgid ""
 "A modern theory of knowledge which takes account of the relational as "
 "distinct from the merely relative character of all historical knowledge must "
@@ -23959,64 +23957,64 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14970
+#: .\utils\item_list.cfg:14959
 msgid "Romulus and Remus"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14983
+#: .\utils\item_list.cfg:14972
 msgid "Allow to recruit Dire Wolves"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14984
+#: .\utils\item_list.cfg:14973
 msgid "Alea jacta est."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14987
+#: .\utils\item_list.cfg:14976
 msgid "Battle-axe"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:14997
+#: .\utils\item_list.cfg:14986
 msgid "For enemies, not trees."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15000
+#: .\utils\item_list.cfg:14989
 msgid "Rough chainmail of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15012
+#: .\utils\item_list.cfg:15001
 msgid ""
 "Like a rough orator, that brings more truth\n"
 "Than rhetoric, to make good his accusation."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15016
+#: .\utils\item_list.cfg:15005
 msgid "BFG"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15029
+#: .\utils\item_list.cfg:15018
 msgid "Allow to recruit Ogres"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15030
+#: .\utils\item_list.cfg:15019
 msgid "That's what I call big."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15033
+#: .\utils\item_list.cfg:15022
 msgid "Unscratched mail gloves"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15042
+#: .\utils\item_list.cfg:15031
 msgid ""
 "The bee collects honey from flowers in such a way as to do the least damage "
 "or destruction to them, and he leaves them whole, undamaged and fresh, just "
@@ -24024,69 +24022,69 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15045
+#: .\utils\item_list.cfg:15034
 msgid "Encyclopedia Universalis"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15058
+#: .\utils\item_list.cfg:15047
 msgid "Adjacent allied units gain 1XP at the beginning of your turn"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15059
+#: .\utils\item_list.cfg:15048
 msgid "Spiritual food."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15062
+#: .\utils\item_list.cfg:15051
 msgid "Ripper mage morion of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15079
+#: .\utils\item_list.cfg:15068
 msgid "Basically, I just like to get up in front of a crowd and rip it up."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15082
+#: .\utils\item_list.cfg:15071
 msgid "Ripper blade-staff of survival"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15094
+#: .\utils\item_list.cfg:15083
 msgid "Let it rip."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15097
+#: .\utils\item_list.cfg:15086
 msgid "Rough thin chainmail of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15109
+#: .\utils\item_list.cfg:15098
 msgid ""
 "Not once or twice in our rough island story, \n"
 "The path of duty was the way to glory."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15113
+#: .\utils\item_list.cfg:15102
 msgid "Curved short slippery bow of increase"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15124
+#: .\utils\item_list.cfg:15113
 msgid "The day a monkey is destined to die all trees become slippery."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15127
+#: .\utils\item_list.cfg:15116
 msgid "Audacious black widow helm of seasons"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15148
+#: .\utils\item_list.cfg:15137
 msgid ""
 "The nonchalance of boys who are sure of a dinner and would disdain as much as"
 " a lord to do or say aught to conciliate one is the healthy attitude of human"
@@ -24094,44 +24092,44 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15151
-#: .\utils\item_list.cfg:15153
+#: .\utils\item_list.cfg:15140
+#: .\utils\item_list.cfg:15142
 msgid "15000 gold"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15159
+#: .\utils\item_list.cfg:15148
 msgid "Whoever has the gold, makes the rules!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15162
-#: .\utils\item_list.cfg:15164
+#: .\utils\item_list.cfg:15151
+#: .\utils\item_list.cfg:15153
 msgid "20000 gold"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15170
+#: .\utils\item_list.cfg:15159
 msgid "I use mercury, and get it from the gold buyer."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15173
+#: .\utils\item_list.cfg:15162
 msgid "Slippery leather gloves"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15181
+#: .\utils\item_list.cfg:15170
 msgid "Uh it is pretty slippery, isn't it?"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15184
+#: .\utils\item_list.cfg:15173
 msgid "Avenging staff of revival"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15194
+#: .\utils\item_list.cfg:15183
 msgid ""
 "<span color='green'>Damage increased by 45 %</span>\n"
 "<span color='#60A0FF'>Chance to get hit decreased by 5%</span>\n"
@@ -24140,34 +24138,34 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15203
+#: .\utils\item_list.cfg:15192
 msgid "Revenge is Sweet."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15206
+#: .\utils\item_list.cfg:15195
 msgid "Winged mace of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15219
+#: .\utils\item_list.cfg:15208
 msgid ""
 "<span color='green'>Damage increased by 76 %</span>\n"
 "<span color='orange'>Max HP increased by 6 HP.</span>"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15221
+#: .\utils\item_list.cfg:15210
 msgid "The fox knows many things; the hedgehog one great thing."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15224
+#: .\utils\item_list.cfg:15213
 msgid "Slippery mail gloves of the fox"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15237
+#: .\utils\item_list.cfg:15226
 msgid ""
 "It rolls down yonder, then you hurl yourself down this slippery gully, and "
 "see how many of them there snake-bashin' clubs you can knock down before the "
@@ -24175,82 +24173,82 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15240
+#: .\utils\item_list.cfg:15229
 msgid "Severe cloak of privilege"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15257
+#: .\utils\item_list.cfg:15246
 msgid ""
 "My judgment remains extremely severe on my own actions as well as those of "
 "the majority of the party during that period."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15260
+#: .\utils\item_list.cfg:15249
 msgid "Rough amulet"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15266
+#: .\utils\item_list.cfg:15255
 msgid ""
 "'Tis but the fate of place, and the rough brake\n"
 "That virtue must go through."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15270
+#: .\utils\item_list.cfg:15259
 msgid "Avenging blade-staff of precision"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15283
+#: .\utils\item_list.cfg:15272
 msgid ""
 "'Tis more noble to forgive, and more manly to despise, than to revenge an "
 "Injury."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15286
+#: .\utils\item_list.cfg:15275
 msgid "Avenging staff of survival"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15298
+#: .\utils\item_list.cfg:15287
 msgid "If he is avenged sevenfold, Then I seventy-sevenfold."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15301
+#: .\utils\item_list.cfg:15290
 msgid "Remarkable hamstring cutter"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15316
+#: .\utils\item_list.cfg:15305
 msgid ""
 "Coincidence is a remarkable concurrence of events or circumstances that have "
 "no apparent causal connection with one another."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15319
+#: .\utils\item_list.cfg:15308
 msgid "Field staff"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15330
+#: .\utils\item_list.cfg:15319
 msgid ""
 "Practicality is the quality of thought and action based on experience with "
 "practice rather than theory."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15333
+#: .\utils\item_list.cfg:15322
 msgid "Chainmail of monstrosity"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15343
+#: .\utils\item_list.cfg:15332
 msgid ""
 "Admittedly, there might be some refuge in challenging the asker as to whether"
 " such a monstrosity would still properly be called a chainmail, thereby "
@@ -24258,64 +24256,64 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15346
+#: .\utils\item_list.cfg:15335
 msgid "Exceptional rockshell gloves"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15362
+#: .\utils\item_list.cfg:15351
 msgid ""
 "Exception refers to anything excluded from or not in conformance with a "
 "general rule, principle, class, etc."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15365
+#: .\utils\item_list.cfg:15354
 msgid "Long reinforced bow"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15375
+#: .\utils\item_list.cfg:15364
 msgid "You need long, strong arms to use that."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15378
+#: .\utils\item_list.cfg:15367
 msgid "The Black Death"
 msgstr ""
 
 #. [effect], apply_to=new_attack, type=cold, range=ranged
-#: .\utils\item_list.cfg:15388
+#: .\utils\item_list.cfg:15377
 msgid "pestilence"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15408
+#: .\utils\item_list.cfg:15397
 msgid "Plague wave!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15411
+#: .\utils\item_list.cfg:15400
 msgid "Voodoo magic"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15424
+#: .\utils\item_list.cfg:15413
 msgid "Allow to recruit Soulless"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15425
+#: .\utils\item_list.cfg:15414
 msgid "Oungawa, Oungawa."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15428
+#: .\utils\item_list.cfg:15417
 msgid "Slippery war bow of trickery"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15439
+#: .\utils\item_list.cfg:15428
 msgid ""
 "It is therefore necessary that memorable things should be committed to "
 "writing, (the witness of times, the light and the life of truth,) and not "
@@ -24323,12 +24321,12 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15442
+#: .\utils\item_list.cfg:15431
 msgid "Audacious mace-staff of the banished"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15463
+#: .\utils\item_list.cfg:15452
 msgid ""
 "<span color='green'>Damage increased by 106%\n"
 "Ranged damage increased by 1\n"
@@ -24340,27 +24338,27 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15471
+#: .\utils\item_list.cfg:15460
 msgid "Be audacious yet flexible."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15474
+#: .\utils\item_list.cfg:15463
 msgid "Ripper symptomatic steel sword"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15484
+#: .\utils\item_list.cfg:15473
 msgid "Well the brothers go rip dung riot on the whole bloody place."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15487
+#: .\utils\item_list.cfg:15476
 msgid "Assault ripper axe of outburst"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15498
+#: .\utils\item_list.cfg:15487
 msgid ""
 "Split me open\n"
 "With devotion\n"
@@ -24370,12 +24368,12 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15505
+#: .\utils\item_list.cfg:15494
 msgid "Optimistic hamstring-cutter of tears"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15525
+#: .\utils\item_list.cfg:15514
 msgid ""
 "<span color='green'>Damage increased by 92%\n"
 "Damage increased by 1\n"
@@ -24388,17 +24386,17 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15534
+#: .\utils\item_list.cfg:15523
 msgid "Optimists generally believe that people and events are inherently good."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15537
+#: .\utils\item_list.cfg:15526
 msgid "Audacious skull staff of seasons"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15556
+#: .\utils\item_list.cfg:15545
 msgid ""
 "<span color='green'>Damage increased by 80%\n"
 "Ranged damage increased by 1</span>\n"
@@ -24410,49 +24408,49 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15564
+#: .\utils\item_list.cfg:15553
 msgid ""
 "You have the nerve, the – the – audacity to dictate to me who I shall have in"
 " my house."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15567
+#: .\utils\item_list.cfg:15556
 msgid "Avenging wide scythe of carving"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15577
+#: .\utils\item_list.cfg:15566
 msgid "Revenge is profitable, gratitude is expensive."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15580
+#: .\utils\item_list.cfg:15569
 msgid "Avenging blade-staff of monstrosity"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15593
+#: .\utils\item_list.cfg:15582
 msgid "If a man put out the eye of another man, his eye shall be put out."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15596
+#: .\utils\item_list.cfg:15585
 msgid "Banded armor"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15604
+#: .\utils\item_list.cfg:15593
 msgid "Metal bands over metal bands."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15607
+#: .\utils\item_list.cfg:15596
 msgid "Distinct fish helm"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15624
+#: .\utils\item_list.cfg:15613
 msgid ""
 "<span color='#60A0FF'>Increases physical resistances by 4%.</span>\n"
 "<span color='#60A0FF'>Resistance to pierce increased by 3%.</span>\n"
@@ -24461,7 +24459,7 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15628
+#: .\utils\item_list.cfg:15617
 msgid ""
 "One man draws out the wire, another straights it, a third cuts it, a fourth "
 "points it, a fifth grinds it at the top for receiving the head: to make the "
@@ -24473,12 +24471,12 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15631
+#: .\utils\item_list.cfg:15620
 msgid "Elated quarterer"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15650
+#: .\utils\item_list.cfg:15639
 msgid ""
 "<span color='green'>Damage increased by 138%</span>\n"
 "<span color='red'>25% less attacks</span>\n"
@@ -24488,42 +24486,42 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15655
+#: .\utils\item_list.cfg:15644
 msgid "Others were not so elated."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15658
+#: .\utils\item_list.cfg:15647
 msgid "Twisted guide to magic"
 msgstr ""
 
 #. [effect], apply_to=new_attack, type=fire, range=ranged
-#: .\utils\item_list.cfg:15668
+#: .\utils\item_list.cfg:15657
 msgid "fire skull"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15692
+#: .\utils\item_list.cfg:15681
 msgid "Gnyark, gnyark, gnyark."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15695
+#: .\utils\item_list.cfg:15684
 msgid "Harness"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15703
+#: .\utils\item_list.cfg:15692
 msgid "So heavy that you are supposed to be on a horse."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15706
+#: .\utils\item_list.cfg:15695
 msgid "Long shiny bow of butcher"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15726
+#: .\utils\item_list.cfg:15715
 msgid ""
 "<span color='green'>Damage increased by 129%\n"
 "Ranged damage increased by 1</span>\n"
@@ -24534,52 +24532,52 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15732
+#: .\utils\item_list.cfg:15721
 msgid "Ha ha! I pushed the big shiny button!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15735
+#: .\utils\item_list.cfg:15724
 msgid "Notched staff"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15745
+#: .\utils\item_list.cfg:15734
 msgid "It was used to block a sword."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15748
+#: .\utils\item_list.cfg:15737
 msgid "Period banded armor"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15756
+#: .\utils\item_list.cfg:15745
 msgid "It belongs in a museum."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15759
+#: .\utils\item_list.cfg:15748
 msgid "Rigid banded armor"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15767
+#: .\utils\item_list.cfg:15756
 msgid "The pieces of metal might be a bit too long."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15770
+#: .\utils\item_list.cfg:15759
 msgid "Ripper blade-staff of conflict"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15784
+#: .\utils\item_list.cfg:15773
 msgid "Ripper longsword of refuge"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15801
+#: .\utils\item_list.cfg:15790
 msgid ""
 "<span color='green'>Damage increased by 87%\n"
 "Damage increased by 2</span>\n"
@@ -24589,49 +24587,49 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15808
+#: .\utils\item_list.cfg:15797
 msgid ""
 "So we walk in to the house and they're (their families and friends) just "
 "ripped."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15811
+#: .\utils\item_list.cfg:15800
 msgid "Rough longsword"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15820
+#: .\utils\item_list.cfg:15809
 msgid "It could use some polishing."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15823
+#: .\utils\item_list.cfg:15812
 msgid "Rusty chainmail"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15831
+#: .\utils\item_list.cfg:15820
 msgid "It will take a long time to clean all those rings."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15834
+#: .\utils\item_list.cfg:15823
 msgid "Ruthless ring"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15842
+#: .\utils\item_list.cfg:15831
 msgid "You can block hits with it."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15845
+#: .\utils\item_list.cfg:15834
 msgid "Shiny hunter greaves"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15862
+#: .\utils\item_list.cfg:15851
 msgid ""
 "<span color='#60A0FF'>Increases physical resistances by 4%.</span>\n"
 "<span color='green'>Ranged damage increased by 1</span>\n"
@@ -24640,16 +24638,16 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15866
+#: .\utils\item_list.cfg:15855
 msgid "So shiny!"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15869
+#: .\utils\item_list.cfg:15858
 msgid "Tarnished chainmail"
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:15877
+#: .\utils\item_list.cfg:15866
 msgid "It spent a long time in a basement."
 msgstr ""

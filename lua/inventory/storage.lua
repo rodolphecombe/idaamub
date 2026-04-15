@@ -74,9 +74,6 @@ local function get_tab()
 								label = _"Sell"
 							},wml.tag.option {
 								label = _"Drop to the ground"
-							},
-							wml.tag.option {
-								label = _"Nothing"
 							}
 						}
 					}
@@ -102,9 +99,6 @@ local function get_tab()
 								label = _"Transmute"
 							},wml.tag.option {
 								label = _"Drop to the ground"
-							},
-							wml.tag.option {
-								label = _"Nothing"
 							}
 						}
 					}
@@ -134,9 +128,6 @@ local function get_tab()
 								label = _"Sell"
 							},wml.tag.option {
 								label = _"Drop to the ground"
-							},
-							wml.tag.option {
-								label = _"Nothing"
 							}
 						}
 					}
@@ -161,9 +152,6 @@ local function get_tab()
 							definition = "dropdown_menu_thin",
 							wml.tag.option {
 								label = _"Drop to the ground"
-							},
-							wml.tag.option {
-								label = _"Nothing"
 							}
 						}
 					}
@@ -198,9 +186,6 @@ local function get_tab()
 								label = _"Sell"
 							},wml.tag.option {
 								label = _"Drop to the ground"
-							},
-							wml.tag.option {
-								label = _"Nothing"
 							}
 						}
 					}
@@ -225,9 +210,6 @@ local function get_tab()
 								label = _"Transmute"
 							},wml.tag.option {
 								label = _"Drop to the ground"
-							},
-							wml.tag.option {
-								label = _"Nothing"
 							}
 						}
 					}
@@ -256,9 +238,6 @@ local function get_tab()
 								label = _"Sell"
 							},wml.tag.option {
 								label = _"Drop to the ground"
-							},
-							wml.tag.option {
-								label = _"Nothing"
 							}
 						}
 					}
@@ -282,9 +261,6 @@ local function get_tab()
 							definition = "dropdown_menu_thin",
 							wml.tag.option {
 								label = _"Drop to the ground"
-							},
-							wml.tag.option {
-								label = _"Nothing"
 							}
 						}
 					}
