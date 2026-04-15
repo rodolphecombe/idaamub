@@ -272,17 +272,11 @@ function wesnoth.wml_actions.harm_unit_loti(cfg)
 	end
 end
 
-local _ = wesnoth.textdomain "wesnoth-loi"
+local _ = wesnoth.textdomain "wesnoth-loti-era"
 
 -- Compute any "special" state that a unit may have.
 -- The vast majority of units won't have anything reported by this section.
 local function unit_information_part_1()
-    local max_devour_count = wml.variables["unit.variables.max_devour_count"]
-    local devour_count = wml.variables["unit.variables.devour_count"]
-    local max_redeem_count = wml.variables["unit.variables.max_redeem_count"]
-    local redeem_count = wml.variables["unit.variables.redeem_count"]
-    local max_lesser_redeem_count = wml.variables["unit.variables.max_lesser_redeem_count"]
-    local lesser_redeem_count = wml.variables["unit.variables.lesser_redeem_count"]
     local starving = wml.variables["unit.variables.starving"]
     local from_the_ashes_used = wml.variables["unit.variables.from_the_ashes_used"]
     local from_the_ashes_cooldown = wml.variables["unit.variables.from_the_ashes_cooldown"]
@@ -296,18 +290,6 @@ local function unit_information_part_1()
     .. string.format("%u/%u", wml.variables["unit.hitpoints"], wml.variables["unit.max_hitpoints"]) .. " \n"
     result = result .. span .. _"Experience:</span> "
     .. string.format("%u/%u", wml.variables["unit.experience"], wml.variables["unit.max_experience"]) .. " \n"
-    if max_devour_count ~= nil and max_devour_count > 0 then
-      result = result .. span .. _"Soul eater score:</span> "
-      .. string.format("%u/%u", devour_count, max_devour_count) .. " \n"
-    end
-    if max_redeem_count ~= nil and max_redeem_count > 0 then
-      result = result .. span .. _"Redeem score:</span> "
-      .. string.format("%u/%u", redeem_count, max_redeem_count) .. " \n"
-    end
-    if max_lesser_redeem_count ~= nil and max_lesser_redeem_count > 0 then
-      result = result .. span .. _"Lesser redeem score:</span> "
-      .. string.format("%u/%u", lesser_redeem_count, max_lesser_redeem_count) .. " \n"
-    end
     if starving ~= nil and starving > 0 then
       result = result .. span .. _"Starving:</span> "
       .. starving .. " \n"
