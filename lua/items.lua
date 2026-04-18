@@ -136,11 +136,13 @@ loti.item.storage.transmute = function(item_number, crafted_sort)
 				local object = loti.item.type[item_number]
 				local description = loti.item.describe_item(item_number, crafted_sort)
 				local gold_created = math.floor(object.price/10)
+				local _ = wesnoth.textdomain "wesnoth-loi"
 				local res = gui.show_narration ({
 								title = object.name,
 								portrait = object.image,
 								message = description .. "\n\n" .. _"Transmute this item for "..gold_created.._" gold?"
 							}, {_"Transmute", _"No"})
+				local _ = wesnoth.textdomain "wesnoth-loti-era"
 				if res ==1 then
 					local side = wesnoth.sides[wesnoth.current.side]
 					side.gold = side.gold + gold_created
@@ -164,11 +166,13 @@ loti.item.storage.sell = function(item_number, crafted_sort)
 				local object = loti.item.type[item_number]
 				local description = loti.item.describe_item(item_number, crafted_sort)
 				local gold_created = math.floor(object.price/3)
+				local _ = wesnoth.textdomain "wesnoth-loi"
 				local res = gui.show_narration ({
 								title = object.name,
 								portrait = object.image,
 								message = description .. "\n\n" .. _"Sell this item for "..gold_created.._" gold?"
 							}, {_"Sell", _"No"})
+				local _ = wesnoth.textdomain "wesnoth-loti-era"
 				if res ==1 then
 					local side = wesnoth.sides[wesnoth.current.side]
 					side.gold = side.gold + gold_created
@@ -404,11 +408,13 @@ loti.item.on_unit.transmute = function(unit, item_number, crafted_sort, skip_upd
 	local object = loti.item.type[item_number]
 	local description = loti.item.describe_item(item_number, crafted_sort)
 	local gold_created = math.floor(object.value/10)
+	local _ = wesnoth.textdomain "wesnoth-loi"
 	local res = gui.show_narration ({
 					title = object.name,
 					portrait = object.image,
 					message = description .. "\n\n" .. _"Transmute this item for "..gold_created.._" gold?"
 				}, {_"Transmute", _"No"})
+	local _ = wesnoth.textdomain "wesnoth-loti-era"
 	if res ==1 then
 		local side = wesnoth.sides[wesnoth.current.side]
 		side.gold = side.gold + gold_created
@@ -424,11 +430,13 @@ loti.item.on_unit.sell = function(unit, item_number, crafted_sort, skip_update)
 	local object = loti.item.type[item_number]
 	local description = loti.item.describe_item(item_number, crafted_sort)
 	local gold_created = math.floor(object.value/3)
+	local _ = wesnoth.textdomain "wesnoth-loi"
 	local res = gui.show_narration ({
 					title = object.name,
 					portrait = object.image,
 					message = description .. "\n\n" .. _"Sell this item for "..gold_created.._" gold?"
 				}, {_"Sell", _"No"})
+	local _ = wesnoth.textdomain "wesnoth-loti-era"
 	if res ==1 then
 		local side = wesnoth.sides[wesnoth.current.side]
 		side.gold = side.gold + gold_created
@@ -613,11 +621,13 @@ loti.item.on_the_ground.transmute = function(item_number, x, y, crafted_sort)
 
 	local description = loti.item.describe_item(item_number, crafted_sort)
 	local gold_created = math.floor(item.price/10)
+	local _ = wesnoth.textdomain "wesnoth-loi"
 	local res = gui.show_narration ({
 					title = item.name,
 					portrait = item.image,
 					message = description .. "\n\n" .. _"Transmute this item for "..gold_created.._" gold?"
 				}, {_"Transmute", _"No"})
+	local _ = wesnoth.textdomain "wesnoth-loti-era"
 	if res ==1 then
 		local side = wesnoth.sides[wesnoth.current.side]
 		side.gold = side.gold + gold_created
@@ -664,11 +674,13 @@ loti.item.on_the_ground.sell = function(item_number, x, y, crafted_sort)
 
 	local description = loti.item.describe_item(item_number, crafted_sort)
 	local gold_created = math.floor(item.price/3)
+	local _ = wesnoth.textdomain "wesnoth-loi"
 	local res = gui.show_narration ({
 					title = item.name,
 					portrait = item.image,
 					message = description .. "\n\n" .. _"Sell this item for "..gold_created.._" gold?"
 				}, {_"Sell", _"No"})
+	local _ = wesnoth.textdomain "wesnoth-loti-era"
 	if res ==1 then
 		local side = wesnoth.sides[wesnoth.current.side]
 		side.gold = side.gold + gold_created
