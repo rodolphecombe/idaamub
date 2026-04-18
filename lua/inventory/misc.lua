@@ -3,7 +3,7 @@
 -- Utility functions for plugins of the inventory dialog.
 --
 
-local _ = wesnoth.textdomain "wesnoth-loti-era"
+local _ = wesnoth.textdomain "wesnoth-loi"
 local util = {}
 
 -- Create a "Close" button in the bottom-right corner of the dialog.
