@@ -20,7 +20,7 @@ local function show_picking_dialogue(item, sort, replaced_item, cant_equip, coun
 					title = item.name,
 					portrait = item.image,
 					message = description .. "\n\n" .. _"Use this potion?"
-				}, {_"Use it.", _"Store it. Currently having "..count.._" such items stored.", _"Transmute it to gold. Currently having "..count.._" such items stored.", "Sell it. Currently having "..count.._" such items stored.", _"Leave it on the ground."})
+				}, {_"Use it.", _"Store it. Currently having "..count.._" such items stored.", _"Transmute it to gold. Currently having "..count.._" such items stored.", _"Sell it. Currently having "..count.._" such items stored.", _"Leave it on the ground."})
 				if res == 1 then
 					return 0
 				elseif res == 2 then
@@ -54,7 +54,7 @@ local function show_picking_dialogue(item, sort, replaced_item, cant_equip, coun
 					title = item.name,
 					portrait = item.image,
 					message = description .. "\n\n" .. _"Use this potion?"
-				}, {_"Use it.", _"Store it. Currently having "..count.._" such items stored.","Sell it. Currently having "..count.._" such items stored.", _"Leave it on the ground."})
+				}, {_"Use it.", _"Store it. Currently having "..count.._" such items stored.",_"Sell it. Currently having "..count.._" such items stored.", _"Leave it on the ground."})
 				if res == 1 then
 					return 0
 				elseif res == 2 then
@@ -65,11 +65,13 @@ local function show_picking_dialogue(item, sort, replaced_item, cant_equip, coun
 					return 4
 				end
 			else 
+				local _ = wesnoth.textdomain "wesnoth-loti-era"
 				local res = gui.show_narration ({
 					title = item.name,
 					portrait = item.image,
 					message = description .. "\n\n" .. _"Use this potion?"
 				}, {_"Use it.", _"Store it. Currently having "..count.._" such items stored.", _"Leave it on the ground."})
+				local _ = wesnoth.textdomain "wesnoth-loi"
 				if res == 1 then
 					return 0
 				elseif res == 2 then
@@ -88,7 +90,7 @@ local function show_picking_dialogue(item, sort, replaced_item, cant_equip, coun
 					title = item.name,
 					portrait = item.image,
 					message = description .. "\n\n" .. "<span color='red'>" .. cant_equip .. "</span>"
-				}, {_"Store it. Currently having "..count.._" such items stored.", _"Transmute it to gold. Currently having "..count.._" such items stored.", "Sell it. Currently having "..count.._" such items stored.", _"Leave it on the ground."})
+				}, {_"Store it. Currently having "..count.._" such items stored.", _"Transmute it to gold. Currently having "..count.._" such items stored.", _"Sell it. Currently having "..count.._" such items stored.", _"Leave it on the ground."})
 				if res == 1 then
 					return 1
 				elseif res == 2 then
@@ -127,11 +129,13 @@ local function show_picking_dialogue(item, sort, replaced_item, cant_equip, coun
 					return 4
 				end
 			else 
+				local _ = wesnoth.textdomain "wesnoth-loti-era"
 				local res = gui.show_narration ({
 					title = item.name,
 					portrait = item.image,
 					message = description .. "\n\n" .. "<span color='red'>" .. cant_equip .. "</span>"
 				}, {_"Store it. Currently having "..count.._" such items stored.", _"Leave it on the ground."})
+				local _ = wesnoth.textdomain "wesnoth-loi"
 				if res == 1 then
 					return 1
 				else
@@ -148,7 +152,7 @@ local function show_picking_dialogue(item, sort, replaced_item, cant_equip, coun
 				title = item.name,
 				portrait = item.image,
 				message = description .. "\n\n" .. _ "Item of the same type that will be unequipped: " .. replaced_item .. "\n" .. _"Take this item?"
-				}, {_"Take it.", _"Store it. Currently having "..count.._" such items stored.", _"Transmute it to gold. Currently having "..count.._" such items stored.", "Sell it. Currently having "..count.._" such items stored.", _"Leave it on the ground."})
+				}, {_"Take it.", _"Store it. Currently having "..count.._" such items stored.", _"Transmute it to gold. Currently having "..count.._" such items stored.", _"Sell it. Currently having "..count.._" such items stored.", _"Leave it on the ground."})
 			if res == 1 then
 				return 0
 			elseif res == 2 then
@@ -182,7 +186,7 @@ local function show_picking_dialogue(item, sort, replaced_item, cant_equip, coun
 				title = item.name,
 				portrait = item.image,
 				message = description .. "\n\n" .. _ "Item of the same type that will be unequipped: " .. replaced_item .. "\n" .. _"Take this item?"
-				}, {_"Take it.", _"Store it. Currently having "..count.._" such items stored.","Sell it. Currently having "..count.._" such items stored.", _"Leave it on the ground."})
+				}, {_"Take it.", _"Store it. Currently having "..count.._" such items stored.",_"Sell it. Currently having "..count.._" such items stored.", _"Leave it on the ground."})
 			if res == 1 then
 				return 0
 			elseif res == 2 then
@@ -193,11 +197,13 @@ local function show_picking_dialogue(item, sort, replaced_item, cant_equip, coun
 				return 4
 			end
 		else 
+			local _ = wesnoth.textdomain "wesnoth-loti-era"
 			local res = gui.show_narration ({
 				title = item.name,
 				portrait = item.image,
 				message = description .. "\n\n" .. _ "Item of the same type that will be unequipped: " .. replaced_item .. "\n" .. _"Take this item?"
 				}, {_"Take it.", _"Store it. Currently having "..count.._" such items stored.", _"Leave it on the ground."})
+			local _ = wesnoth.textdomain "wesnoth-loi"
 			if res == 1 then
 				return 0
 			elseif res == 2 then
@@ -210,6 +216,7 @@ local function show_picking_dialogue(item, sort, replaced_item, cant_equip, coun
 end
 
 function loti.util.item_pick_menu (mpsafety, unit)
+	local _ = wesnoth.textdomain "wesnoth-loti-era"
 	local hex_items = loti.item.on_the_ground.list_with_sorts (unit.x, unit.y)
 	local label_item_irrelevant = _"irrelevant"
 --
