@@ -470,6 +470,32 @@ local function unhide_listbox(dialog)
 	dialog[listbox_id]:focus()
 end
 
+local translated_item_sort = {
+	potion = _"Potion",
+	limited = _"Limited",
+	ring = _"Ring",
+	amulet = _"Amulet",
+	cloak = _"Cloak",
+	armour = _"Armour",
+	helm = _"Helm",
+	gauntlets = _"Gauntlets",
+	boots = _"Boots",
+	sword = _"Sword",
+	axe = _"Axe",
+	staff = _"Staff",
+	xbow = _"Crossbow",
+	bow = _"Bow",
+	dagger = _"Dagger",
+	knife = _"Knife",
+	mace = _"Mace",
+	polearm = _"Polearm",
+	claws = _"Metal claws",
+	sling = _"Sling",
+	essence = _"Essence",
+	thunderstick = _"Thunderstick",
+	spear = _"Spear"
+}
+
 -- Show the menu that selects subsection of Item Storage: "sword", "spear", etc.
 local function show_item_sorts(dialog)
 	local sorts = loti.item.storage.list_sorts()
@@ -484,8 +510,7 @@ local function show_item_sorts(dialog)
 	    item_sort=a[i]
             count=sorts[a[i]]
 		if not too_progressed or item_sort == "potion" then
-			-- TODO: print human-readable translatable name of item_sort.
-			local text = item_sort .. " (" .. count .. ")"
+			local text = translated_item_sort[item_sort] .. " (" .. count .. ")"
 
 			listbox_row = listbox_row + 1
 			dialog[listbox_id][listbox_row].storage_text.label = text
