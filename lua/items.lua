@@ -965,13 +965,27 @@ loti.item.describe_item = function(number, sort, set_items)
 				if effect.times == "per level" then
 					ending = _" per level" .. "</span>"
 				else
-					ending = _"</span>"
+					ending = "</span>"
 				end
 				if effect.increase_total then
 					if effect.increase_total > 0 then
-						line = _"<span color='#60A0FF'>" .. tostring(effect.increase_total) .. _" more hitpoints" .. ending
+						line = "<span color='#60A0FF'>" .. tostring(effect.increase_total) .. _" more hitpoints" .. ending
 					else
-						line = _"<span color='#FF60A0'>" .. tostring(effect.increase_total * -1) .. _" fewer hitpoints" .. ending
+						line = "<span color='#FF60A0'>" .. tostring(effect.increase_total * -1) .. _" fewer hitpoints" .. ending
+					end
+				end
+			elseif effect.apply_to == "max_experience" then
+				local ending
+				if effect.times == "per level" then
+					ending = _" per level" .. "</span>"
+				else
+					ending = "</span>"
+				end
+				if effect.increase then
+					if effect.increase > 0 then
+						line = "<span color='blue'>Max experience increased by " .. tostring(effect.increase) .. _" XP" .. ending
+					else
+						line = "<span color='blue'>Max experience decreased by " .. tostring(effect.increase * -1) .. _"  XP" .. ending
 					end
 				end
 			elseif effect.apply_to == "defense" and wml.get_child(effect, "defense") then
