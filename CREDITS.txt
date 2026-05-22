@@ -20,13 +20,18 @@ Fury sprite
 From SX RPG Era
 
 Fury Scourge sprite and portrait
-Melon from Ageless Era
+Melon
 
 Initiate
-From Default L0 Era, sprite by Ken_Oh
+Ken_Oh
 
+<<<<<<< HEAD
+Dreadscale
+Amorphous
+=======
 Diseased Herb Spirit
 From Panther Lord
 
 Orcish Commander sprite and portrait
 From The Golden Age
+>>>>>>> 1.19

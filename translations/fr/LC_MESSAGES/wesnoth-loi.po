@@ -2859,7 +2859,7 @@ msgstr "Vous n'avez pas assez d'argent."
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1950
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1986
 msgid "We now have $food_counter| food."
-msgstr "Vous avez maintenant $food_counter| de nourriture."
+msgstr "Nous avons maintenant $food_counter| de nourriture."
 
 #. [option]
 #: .\scenarios\chapter2\06_Zei.cfg:1911

@@ -262,10 +262,16 @@ Increase turn limit for novice difficulty for two scenarios.
 Cancelling a purchase now brings back to the menu.
 
 0.9.7 (maintenance)
-Fix Friendly neighbourhood not working.
+Add missing LoI suffix to Young Giant Spider in several places.
+Fix help menu.
+Increase starting gold for chapter 1 in challenging difficulty.
+Fix non-orc units being of side 2 in scenario 3.
 
 0.9.8 (translation)
 Added spanish translation.
 
 0.9.9 (translation)
 Added French translation.
+
+0.10.0
+Added chapter 6.
