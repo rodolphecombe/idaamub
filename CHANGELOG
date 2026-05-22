@@ -270,3 +270,6 @@ Fix Friendly neighbourhood not working.
 
 0.9.9 (translation)
 Added French translation.
+
+0.9.10 (maintenance)
+Fixed item dropping being broken.
