@@ -469,13 +469,13 @@ local function unhide_listbox(dialog)
 	dialog[listbox_id].visible = true
 	dialog[listbox_id]:focus()
 end
-
+local _ = wesnoth.textdomain "wesnoth-loi"
 local translated_item_sort = {
 	potion = _"Potion",
 	limited = _"Limited",
 	ring = _"Ring",
 	amulet = _"Amulet",
-	cloak = _"Cloak",
+	shield = _"Shield",
 	armour = _"Armour",
 	helm = _"Helm",
 	gauntlets = _"Gauntlets",
@@ -495,7 +495,7 @@ local translated_item_sort = {
 	thunderstick = _"Thunderstick",
 	spear = _"Spear"
 }
-
+local _ = wesnoth.textdomain "wesnoth-loti-era"
 -- Show the menu that selects subsection of Item Storage: "sword", "spear", etc.
 local function show_item_sorts(dialog)
 	local sorts = loti.item.storage.list_sorts()
