@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2026-05-26 13:10\n"
+"POT-Creation-Date: 2026-05-28 13:15\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -696,7 +696,7 @@ msgstr ""
 #. [message], speaker=Io
 #: .\scenarios\chapter1\01_Fate_of_a_Farmer.cfg:453
 msgid ""
-"To bad I am such a bad leader.\n"
+"Too bad I am such a bad leader.\n"
 "I am afraid I won't be able to manage more than 10 allies at once."
 msgstr ""
 
@@ -1099,19 +1099,20 @@ msgstr ""
 #. [message], speaker=narrator
 #: .\scenarios\chapter1\03_Bridge_to_Zei.cfg:560
 msgid ""
-"North : Arable Highlands\n"
-"West : Crypt of the Sacred Blood\n"
-"South : Zei"
+"North: Arable Highlands\n"
+"West: Crypt of the Sacred Blood\n"
+"South: Zei"
 msgstr ""
 
 #. [message], speaker=narrator
 #: .\scenarios\chapter1\03_Bridge_to_Zei.cfg:580
-msgid "South : Crypt of the Sacred Blood"
+#: .\scenarios\chapter1\05_Reaching_Zei.cfg:507
+msgid "South: Crypt of the Sacred Blood"
 msgstr ""
 
 #. [message], speaker=narrator
 #: .\scenarios\chapter1\03_Bridge_to_Zei.cfg:598
-msgid "West : Crypt of the Sacred Blood"
+msgid "West: Crypt of the Sacred Blood"
 msgstr ""
 
 #. [message], speaker=unit
@@ -1488,6 +1489,7 @@ msgstr ""
 #: .\scenarios\chapter2\06_Zei.cfg:2016
 #: .\scenarios\chapter3\17_Udxatfe.cfg:1018
 #: .\scenarios\chapter3\17_Udxatfe.cfg:1196
+#: .\scenarios\chapter3\22_Ice_Prison.cfg:594
 #: .\scenarios\chapter4\28_Travelers.cfg:1800
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1046
 #: .\scenarios\chapter5\38_Isut.cfg:765
@@ -1664,12 +1666,7 @@ msgstr ""
 #: .\scenarios\chapter1\05_Reaching_Zei.cfg:490
 msgid ""
 "This is where the two roads split. The pass is north-west from here while the"
-" main road continue north-east."
-msgstr ""
-
-#. [message], speaker=narrator
-#: .\scenarios\chapter1\05_Reaching_Zei.cfg:507
-msgid "South: Crypt of the Sacred Blood"
+" main road continues north-east."
 msgstr ""
 
 #. [message], speaker=narrator
@@ -1799,7 +1796,7 @@ msgstr ""
 #. [message], speaker=Io
 #: .\scenarios\chapter2\06_Zei.cfg:307
 msgid ""
-"Unfortunately they have. They butchered some of my friends before we were "
+"Unfortunately, they have. They butchered some of my friends before we were "
 "able to stop them."
 msgstr ""
 
@@ -1831,7 +1828,7 @@ msgstr ""
 #. [message], speaker=Guardian
 #: .\scenarios\chapter2\06_Zei.cfg:337
 #: .\scenarios\chapter3\17_Udxatfe.cfg:818
-msgid "Yes I am."
+msgid "Yes, I am."
 msgstr ""
 
 #. [message], speaker=Csia
@@ -1900,7 +1897,7 @@ msgstr ""
 
 #. [option]
 #: .\scenarios\chapter2\06_Zei.cfg:437
-msgid "Can we do anything to help ?"
+msgid "Can we do anything to help?"
 msgstr ""
 
 #. [message], speaker=Csia
@@ -1997,7 +1994,7 @@ msgstr ""
 #. [message], speaker=Io
 #: .\scenarios\chapter2\06_Zei.cfg:535
 msgid ""
-"Thank you my friends and farewell. I'll come back as soon as I will have "
+"Thank you, my friends and farewell. I'll come back as soon as I will have "
 "avenged Gu."
 msgstr ""
 
@@ -2884,7 +2881,7 @@ msgstr ""
 #. [message], speaker=Aldrsil
 #: .\scenarios\chapter2\06_Zei.cfg:1528
 msgid ""
-"Yes it was. I was stationed at the northern watchtower when the orcs began "
+"Yes, it was. I was stationed at the northern watchtower when the orcs began "
 "attacking in waves."
 msgstr ""
 
@@ -3072,7 +3069,7 @@ msgstr ""
 
 #. [message], speaker=Siok
 #: .\scenarios\chapter2\06_Zei.cfg:1727
-msgid "Finally salvation. Let's see what problems still await us."
+msgid "Finally, salvation. Let's see what problems still await us."
 msgstr ""
 
 #. [message], speaker=narrator
@@ -3126,7 +3123,7 @@ msgstr ""
 #: .\scenarios\chapter2\06_Zei.cfg:1803
 msgid ""
 "Who knows what those creatures from hell were thinking they would find at "
-"Uteaqniq's Roost. At least, they didn't stay long."
+"Uteaqniq's Roost? At least, they didn't stay long."
 msgstr ""
 
 #. [message], speaker=Io
@@ -3277,7 +3274,7 @@ msgstr ""
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1992
 #: .\scenarios\chapter6\39_Oofs_Fortress.cfg:1443
 #: .\scenarios\chapter6\43_Western_Village.cfg:1204
-msgid "Unfortunately not."
+msgid "Unfortunately, not."
 msgstr ""
 
 #. [message], speaker=Vygwynyc
@@ -3381,7 +3378,7 @@ msgstr ""
 #. [message], speaker=trader
 #: .\scenarios\chapter2\06_Zei.cfg:2161
 msgid ""
-"The divine fire is in you my child. Your destiny might incline you to "
+"The divine fire is in you, my child. Your destiny might incline you to "
 "accomplish great things, but let's begin by dealing with the most urgent "
 "matters first."
 msgstr ""
@@ -3700,7 +3697,7 @@ msgstr ""
 #. [message], speaker=Csia
 #: .\scenarios\chapter2\07_Yooradweak_s_pass.cfg:643
 msgid ""
-"A tunnel run through the mountain. It begins in Uvju's cross and end on the "
+"A tunnel runs through the mountain. It begins in Uvju's cross and end on the "
 "other side of the pass."
 msgstr ""
 
@@ -4000,7 +3997,7 @@ msgstr ""
 
 #. [message], speaker=unit
 #: .\scenarios\chapter2\08_Inside_Uvju_s_cross.cfg:1150
-msgid "The are more mold than paper on this shelf."
+msgid "There is more mold than paper on this shelf."
 msgstr ""
 
 #. [message], speaker=unit
@@ -4331,7 +4328,7 @@ msgstr ""
 #. [message], speaker=Csia
 #: .\scenarios\chapter2\10_Great_Hall.cfg:1113
 msgid ""
-"Don't be stupid son. A infinite number of something does not exist. There "
+"Don't be stupid son. An infinite number of something does not exist. There "
 "could be a lot of them though."
 msgstr ""
 
@@ -4345,7 +4342,7 @@ msgstr ""
 #. [message], speaker=Lujeje
 #: .\scenarios\chapter2\10_Great_Hall.cfg:1121
 msgid ""
-"There has too be a finite number of spiders, because there is no infinite "
+"There has to be a finite number of spiders, because there is no infinite "
 "source of food and those things need to eat."
 msgstr ""
 
@@ -4481,7 +4478,7 @@ msgstr ""
 
 #. [option]
 #: .\scenarios\chapter2\11_Qyizu.cfg:558
-msgid "Yes but be careful not to get hurt."
+msgid "Yes, but be careful not to get hurt."
 msgstr ""
 
 #. [message], speaker=unit
@@ -4650,7 +4647,8 @@ msgstr ""
 #: .\scenarios\chapter2\11_Qyizu.cfg:862
 msgid ""
 "They were looking for magical items. And where do you think the magical items"
-" the orcs are stealing go? They end up in the pocket of a Commander Isut."
+" that the orcs are stealing go? They end up in the pocket of a Commander "
+"Isut."
 msgstr ""
 
 #. [message], speaker=Amin
@@ -5504,7 +5502,7 @@ msgstr ""
 
 #. [message], speaker=Io
 #: .\scenarios\chapter2\13_Miners_life.cfg:711
-msgid "Wow! It looks like there's a little welcoming commitee waiting for us. "
+msgid "Wow! It looks like there's a little welcoming committee waiting for us. "
 msgstr ""
 
 #. [message], speaker=unit
@@ -5726,7 +5724,7 @@ msgstr ""
 #: .\scenarios\chapter2\13_Miners_life.cfg:1231
 msgid ""
 "You would do us a great favor if you could get rid of those orcs. The "
-"elevator is'nt far from here so we can go down right after you are done."
+"elevator isn't far from here so we can go down right after you are done."
 msgstr ""
 
 #. [message], speaker=unit
@@ -5802,7 +5800,7 @@ msgstr ""
 
 #. [message], speaker=Io
 #: .\scenarios\chapter2\14b_Down_the_Elevator.cfg:127
-msgid "Well, it looks like we have a little welcoming comitee."
+msgid "Well, it looks like we have a little welcoming committee."
 msgstr ""
 
 #. [message], speaker=unit
@@ -5967,7 +5965,7 @@ msgstr ""
 
 #. [option]
 #: .\scenarios\chapter2\14_Mine_maze.cfg:1375
-msgid "Yes but be careful not to get killed. The combined blast will be powerful."
+msgid "Yes, but be careful not to get killed. The combined blast will be powerful."
 msgstr ""
 
 #. [message], speaker=Io
@@ -6067,7 +6065,9 @@ msgstr ""
 
 #. [message], speaker=Hufifa
 #: .\scenarios\chapter2\15_Ups_and_Downs.cfg:447
-msgid "Of course I am! Have you heard of another dwarf kidnapped by those damn orcs?"
+msgid ""
+"Of course, I am! Have you heard of another dwarf kidnapped by those damn "
+"orcs?"
 msgstr ""
 
 #. [message], speaker=Hufifa
@@ -6621,7 +6621,7 @@ msgstr ""
 #: .\scenarios\chapter3\17_Udxatfe.cfg:559
 msgid ""
 "Damn men! My uncle’d rather listen to those morons from the legion than "
-"believe his own niece!."
+"believe his own niece!"
 msgstr ""
 
 #. [message], speaker=Addogyc
@@ -6707,8 +6707,8 @@ msgstr ""
 #. [message], speaker=Aenyc
 #: .\scenarios\chapter3\17_Udxatfe.cfg:657
 msgid ""
-"If her information are true, we are hugely indebted to her. The guardian will"
-" have to replan our next move."
+"If her information is true, we are hugely indebted to her. The guardian will "
+"have to replan our next move."
 msgstr ""
 
 #. [message], speaker=unit
@@ -6831,7 +6831,7 @@ msgstr ""
 
 #. [message], speaker=Guardian
 #: .\scenarios\chapter3\17_Udxatfe.cfg:947
-msgid "You seems like capable people."
+msgid "You seem like capable people."
 msgstr ""
 
 #. [message], speaker=Guardian
@@ -6964,14 +6964,14 @@ msgstr ""
 
 #. [message], speaker=narrator
 #: .\scenarios\chapter3\17_Udxatfe.cfg:1204
-msgid "<span font='italic'>Starts singing</span>"
+msgid "<i>Starts singing</i>"
 msgstr ""
 
 #. [message], speaker=Asaem
 #: .\scenarios\chapter3\17_Udxatfe.cfg:1208
 msgid ""
 "In this inn where we met, I bumped into 5 to 6 soldiers. At least 4 wanted to"
-" hit me. Instead they trampled my black cat."
+" hit me. Instead, they trampled my black cat."
 msgstr ""
 
 #. [message], speaker=Asaem
@@ -7568,7 +7568,7 @@ msgstr ""
 #: .\scenarios\chapter3\17_Udxatfe.cfg:2303
 #: .\scenarios\chapter4\28_Travelers.cfg:1094
 #: .\scenarios\chapter6\39_Oofs_Fortress.cfg:1187
-msgid "What kind of polarm do you want to buy?"
+msgid "What kind of polearm do you want to buy?"
 msgstr ""
 
 #. [message], speaker=trader
@@ -7929,12 +7929,12 @@ msgstr ""
 
 #. [message], speaker=Derrreddoc
 #: .\scenarios\chapter3\17_Udxatfe.cfg:2726
-msgid "Of course they are. But I won't give it to you for free."
+msgid "Of course, they are. But I won't give it to you for free."
 msgstr ""
 
 #. [message], speaker=Io
 #: .\scenarios\chapter3\17_Udxatfe.cfg:2745
-msgid "I wonder how pratical a yack would be."
+msgid "I wonder how practical a yack would be."
 msgstr ""
 
 #. [message], speaker=Derrreddoc
@@ -7944,7 +7944,7 @@ msgstr ""
 
 #. [message], speaker=Meoddaent
 #: .\scenarios\chapter3\17_Udxatfe.cfg:2771
-msgid "Sorry, this sector is forbidden to civilians. Let me mount the guardpost."
+msgid "Sorry, this sector is forbidden to civilians. Let me mount the guard post."
 msgstr ""
 
 #. [message], speaker=Io
@@ -8072,7 +8072,7 @@ msgstr ""
 #. [message], speaker=second_unit
 #: .\scenarios\chapter3\18b_Frozen_Cave.cfg:371
 #: .\scenarios\chapter3\19_Frozen_Maze.cfg:591
-msgid "What are those thing?"
+msgid "What are those things?"
 msgstr ""
 
 #. [message], speaker=Lujeje
@@ -8238,8 +8238,10 @@ msgid "Let's go."
 msgstr ""
 
 #. [message], speaker=unit
+#. [message], speaker=Io
 #: .\scenarios\chapter3\18_In_the_Snow.cfg:327
-msgid "Wait for us"
+#: .\scenarios\chapter3\18_In_the_Snow.cfg:365
+msgid "Wait for us."
 msgstr ""
 
 #. [message], speaker=unit
@@ -8247,11 +8249,6 @@ msgstr ""
 #: .\scenarios\chapter3\18_In_the_Snow.cfg:351
 #: .\scenarios\chapter3\20_Ice_Cave.cfg:978
 msgid "Let's continue."
-msgstr ""
-
-#. [message], speaker=Io
-#: .\scenarios\chapter3\18_In_the_Snow.cfg:365
-msgid "Wait for us."
 msgstr ""
 
 #. [message], speaker=Runin
@@ -8378,7 +8375,7 @@ msgstr ""
 #. [message], speaker=Io
 #: .\scenarios\chapter3\19b_Northern_Lights.cfg:355
 msgid ""
-"<span font-style='italic'>starts singing</span>\n"
+"<i>starts singing</i>\n"
 "One day, my ancestor Gurdil was sent to dig in the forest. There was "
 "supposedly mithril there, but if there was, we don't know where it was."
 msgstr ""
@@ -8462,7 +8459,7 @@ msgstr ""
 
 #. [message], speaker=Io
 #: .\scenarios\chapter3\19b_Northern_Lights.cfg:459
-msgid "Well, cleary, this path is not leading to the ice caves."
+msgid "Well, clearly, this path is not leading to the ice caves."
 msgstr ""
 
 #. [message], speaker=Io
@@ -8503,7 +8500,9 @@ msgstr ""
 
 #. [message], speaker=Io
 #: .\scenarios\chapter3\19_Frozen_Maze.cfg:541
-msgid "Be prepared. I think we are entering to the core of the ice trolls territory."
+msgid ""
+"Be prepared. I think we are entering to the core of the ice troll's "
+"territory."
 msgstr ""
 
 #. [message], speaker=Io
@@ -8574,12 +8573,12 @@ msgstr ""
 
 #. [message], speaker=Io
 #: .\scenarios\chapter3\19_Frozen_Maze.cfg:710
-msgid "So...cold..."
+msgid "So... cold..."
 msgstr ""
 
 #. [message], speaker=Io
 #: .\scenarios\chapter3\19_Frozen_Maze.cfg:714
-msgid "Can't...think..."
+msgid "Can't... think..."
 msgstr ""
 
 #. [scenario], id=20_Ice_Cave
@@ -8666,7 +8665,7 @@ msgstr ""
 #: .\scenarios\chapter3\20_Ice_Cave.cfg:676
 msgid ""
 "This ice cave must have created this being out of ice and magic. It must have"
-" imitate the beings that cross it."
+" imitated the beings that cross it."
 msgstr ""
 
 #. [message], speaker=Lujeje
@@ -8723,8 +8722,8 @@ msgstr ""
 #. [message], speaker=narrator
 #: .\scenarios\chapter3\20_Ice_Cave.cfg:858
 msgid ""
-"South-west : Udxatfe\n"
-"North-east : Abxoowbu’s trading post"
+"South-west: Udxatfe\n"
+"North-east: Abxoowbu’s trading post"
 msgstr ""
 
 #. [message], speaker=unit
@@ -8748,13 +8747,13 @@ msgstr ""
 #: .\scenarios\chapter3\20_Ice_Cave.cfg:926
 msgid ""
 "It would be good to kill whoever is sending all those ice beings at us before"
-" going further. Otherwise we might have to fight two battles at once."
+" going further. Otherwise, we might have to fight two battles at once."
 msgstr ""
 
 #. [message], speaker=Io
 #: .\scenarios\chapter3\20_Ice_Cave.cfg:934
 msgid ""
-"I'm glad that we killed the Ice Guard. Otherwise we might have had to fight "
+"I'm glad that we killed the Ice Guard. Otherwise, we might have had to fight "
 "two battles at once."
 msgstr ""
 
@@ -8771,8 +8770,8 @@ msgstr ""
 #. [message], speaker=Io
 #: .\scenarios\chapter3\20_Ice_Cave.cfg:968
 msgid ""
-"This cave is bigger than I thought. But we now have an hint on where Teumiuxe"
-" is."
+"This cave is bigger than I thought. But we now have a hint on where Teumiuxe "
+"is."
 msgstr ""
 
 #. [message], speaker=Io
@@ -8919,11 +8918,6 @@ msgstr ""
 msgid ""
 "I'm Teumiuxe, the great mage of the 10th legion, third in line for the "
 "throne."
-msgstr ""
-
-#. [option]
-#: .\scenarios\chapter3\22_Ice_Prison.cfg:594
-msgid "What are you doing here ?"
 msgstr ""
 
 #. [message], speaker=Teumiuxe
@@ -9156,7 +9150,7 @@ msgstr ""
 #: .\scenarios\chapter4\23_Abxoowbus_Trading_Post.cfg:398
 msgid ""
 "But he has his ways to collect valuable pieces of information. If he is "
-"willing to, he might gives us some insight on where my staff might be."
+"willing to, he might give us some insight on where my staff might be."
 msgstr ""
 
 #. [message], speaker=Io
@@ -9458,13 +9452,17 @@ msgid "Cut great axe"
 msgstr ""
 
 #. [message], speaker=trader
+#. [object]
 #: .\scenarios\chapter4\23_Abxoowbus_Trading_Post.cfg:1002
-msgid "Intact studded leather gloves"
+#: .\utils\item_list.cfg:7655
+msgid "Unscratched studded leather gloves"
 msgstr ""
 
 #. [message], speaker=trader
+#. [object]
 #: .\scenarios\chapter4\23_Abxoowbus_Trading_Post.cfg:1003
-msgid "Leather gloves of monstruosity"
+#: .\utils\item_list.cfg:7667
+msgid "Leather gloves of monstrosity"
 msgstr ""
 
 #. [message], speaker=trader
@@ -9480,8 +9478,10 @@ msgid "Avenging studded leather gloves"
 msgstr ""
 
 #. [message], speaker=trader
+#. [object]
 #: .\scenarios\chapter4\23_Abxoowbus_Trading_Post.cfg:1033
-msgid "Agressive cuir-bouilli greaves of the fox"
+#: .\utils\item_list.cfg:7590
+msgid "Aggressive cuir-bouilli greaves of the fox"
 msgstr ""
 
 #. [message], speaker=trader
@@ -9588,8 +9588,10 @@ msgid "Negative metal targe"
 msgstr ""
 
 #. [message], speaker=trader
+#. [object]
 #: .\scenarios\chapter4\23_Abxoowbus_Trading_Post.cfg:1129
-msgid "Agressive wooden shield of the fox"
+#: .\utils\item_list.cfg:8162
+msgid "Aggressive wooden shield of the fox"
 msgstr ""
 
 #. [message], speaker=trader
@@ -9646,7 +9648,7 @@ msgstr ""
 #: .\scenarios\chapter4\23_Abxoowbus_Trading_Post.cfg:1413
 msgid ""
 "Unfortunately, this is the shortest way to the eastern swamp, and this is "
-"were my staff seems to be."
+"where my staff seems to be."
 msgstr ""
 
 #. [message], speaker=unit
@@ -9674,7 +9676,7 @@ msgstr ""
 
 #. [objective], condition=win
 #: .\scenarios\chapter4\24_Deep_Water.cfg:38
-msgid "Stop the agressive fishes before leaving"
+msgid "Stop the aggressive fishes before leaving"
 msgstr ""
 
 #. [side], type=Sea Serpent
@@ -9708,8 +9710,8 @@ msgstr ""
 #. [message]
 #: .\scenarios\chapter4\24_Deep_Water.cfg:365
 msgid ""
-"It was formed a long time ago, when an spell went entropic made an underwater"
-" cave rise above the ground."
+"It was formed a long time ago, when a spell went entropic made an underwater "
+"cave rise above the ground."
 msgstr ""
 
 #. [message]
@@ -9742,7 +9744,7 @@ msgstr ""
 #. [message], speaker=second_unit
 #: .\scenarios\chapter4\24_Deep_Water.cfg:405
 msgid ""
-"They seem agressive. I am afraid we will have to fight them on top of the "
+"They seem aggressive. I am afraid we will have to fight them on top of the "
 "saurians."
 msgstr ""
 
@@ -9926,7 +9928,7 @@ msgstr ""
 
 #. [message], speaker=Io
 #: .\scenarios\chapter4\26b_Troll_Fort.cfg:271
-msgid "Those ruins looks weird. They don't look like something trolls would build."
+msgid "Those ruins look weird. They don't look like something trolls would build."
 msgstr ""
 
 #. [message], speaker=Teumiuxe
@@ -10082,9 +10084,9 @@ msgstr ""
 #. [message], speaker=Teumiuxe
 #: .\scenarios\chapter4\26_Echo_Chamber.cfg:364
 msgid ""
-"The road north leads to the legionaries fort. It is a dead end but I am "
+"The road north leads to the legionaries' fort. It is a dead end but I am "
 "afraid it is now full of trolls. \n"
-"The road south continue to the exit of the cave."
+"The road south continues to the exit of the cave."
 msgstr ""
 
 #. [message], speaker=unit
@@ -10208,7 +10210,7 @@ msgstr ""
 #: .\scenarios\chapter4\27_Saurian_Pond.cfg:363
 msgid ""
 "No, we had to deal with them. But now we need to deal with the other "
-"creatures. Otherwise the cave will be even more dangerous in the following "
+"creatures. Otherwise, the cave will be even more dangerous in the following "
 "weeks, the time needed for things to calm down."
 msgstr ""
 
@@ -10287,7 +10289,9 @@ msgid ""
 msgstr ""
 
 #. [scenario], id=28_Travelers
+#. [side], type=Duelist
 #: .\scenarios\chapter4\28_Travelers.cfg:4
+#: .\scenarios\chapter4\28_Travelers.cfg:299
 msgid "Travelers"
 msgstr ""
 
@@ -10301,14 +10305,9 @@ msgstr ""
 msgid "Leave south."
 msgstr ""
 
-#. [side], type=Duelist
-#: .\scenarios\chapter4\28_Travelers.cfg:299
-msgid "Travellers"
-msgstr ""
-
 #. [message], speaker=Io
 #: .\scenarios\chapter4\28_Travelers.cfg:406
-msgid "Finally back outside. I was getting tired of the trolls."
+msgid "Finally, back outside. I was getting tired of the trolls."
 msgstr ""
 
 #. [message], speaker=Teumiuxe
@@ -10322,7 +10321,7 @@ msgstr ""
 #. [message], speaker=Io
 #: .\scenarios\chapter4\28_Travelers.cfg:420
 msgid ""
-"So what you are telling me is that we should expect more trolls out here, "
+"So, what you are telling me is that we should expect more trolls out here, "
 "shouldn't we?"
 msgstr ""
 
@@ -10364,8 +10363,8 @@ msgstr ""
 #. [message], speaker=Io
 #: .\scenarios\chapter4\28_Travelers.cfg:456
 msgid ""
-"Anyway, we need to find out if it comes from friends or foes, if it is a good"
-" or a bad news."
+"Anyway, we need to find out if it comes from friends or foes, if it is good "
+"or bad news."
 msgstr ""
 
 #. [message], speaker=Io
@@ -10439,7 +10438,7 @@ msgstr ""
 #. [message], speaker=Io
 #: .\scenarios\chapter4\28_Travelers.cfg:542
 msgid ""
-"My friends, It seems our mission is getting more dangerous. From what we "
+"My friends, it seems our mission is getting more dangerous. From what we "
 "learnt here, we won't have to face only the goblins to get the staff back."
 msgstr ""
 
@@ -10906,7 +10905,7 @@ msgstr ""
 #: .\scenarios\chapter4\28_Travelers.cfg:1360
 msgid ""
 "This morning, we found one buzy ztealing in Koezaran’s tent. He told uz that "
-"the bandit leader claim the property of the women and goodz of our camp and "
+"the bandit leader claims the property of the women and goodz of our camp and "
 "that they will come back tonight in force to help themzelvez."
 msgstr ""
 
@@ -11301,7 +11300,7 @@ msgstr ""
 #: .\scenarios\chapter4\30_Bandit_Camp.cfg:414
 msgid ""
 "This looks like a forward camp. It must be there for this exact purpose: "
-"spotting travellers and calling troops to capture or kill them."
+"spotting travelers and calling troops to capture or kill them."
 msgstr ""
 
 #. [message], speaker=Io
@@ -11447,13 +11446,13 @@ msgstr ""
 #. [message]
 #: .\scenarios\chapter4\31_Corrupted_Temple.cfg:1378
 msgid ""
-"Well, I never heard about a goblin living in this swamp. So he's either "
+"Well, I never heard about a goblin living in this swamp. So, he's either "
 "hiding well or don't actually live there. Let's hope for the first one."
 msgstr ""
 
 #. [message], speaker=Io
 #: .\scenarios\chapter4\31_Corrupted_Temple.cfg:1382
-msgid "Is it more bandits I see here."
+msgid "Is it more bandits I see here?"
 msgstr ""
 
 #. [message]
@@ -11468,7 +11467,7 @@ msgstr ""
 #: .\scenarios\chapter4\31_Corrupted_Temple.cfg:1406
 msgid ""
 "South: The Scavenger's Trading Post\n"
-"North-east : Black Forest"
+"North-east: Black Forest"
 msgstr ""
 
 #. [message], speaker=second_unit
@@ -11561,7 +11560,7 @@ msgstr ""
 #. [message], speaker=Io
 #: .\scenarios\chapter4\31_Corrupted_Temple.cfg:1644
 #: .\scenarios\chapter4\31_Corrupted_Temple.cfg:1674
-msgid "<span font-style='italic'>To himself</span> I hope he is indeed in the swamp."
+msgid "<i>To himself</i> I hope he is indeed in the swamp."
 msgstr ""
 
 #. [message], speaker=unit
@@ -11571,9 +11570,7 @@ msgstr ""
 
 #. [message], speaker=ofite
 #: .\scenarios\chapter4\31_Corrupted_Temple.cfg:1708
-msgid ""
-"<span font-style='italic'>dying</span> I am of no importance, only the temple"
-" is."
+msgid "<i>dying</i> I am of no importance, only the temple is."
 msgstr ""
 
 #. [message], speaker=ofite
@@ -11592,7 +11589,7 @@ msgstr ""
 #: .\scenarios\chapter4\31_Corrupted_Temple.cfg:1720
 msgid ""
 "I tried once in vain. The presence of a powerful guardian is synonymous with "
-"desecration. Please, you must… <span font-style='italic'>dies</span>"
+"desecration. Please, you must… <i>dies</i>"
 msgstr ""
 
 #. [message], speaker=unit
@@ -11626,12 +11623,12 @@ msgstr ""
 
 #. [message], speaker=second_unit
 #: .\scenarios\chapter4\31_Corrupted_Temple.cfg:1802
-msgid "Weird. This one looks exactly like the previous one we killed."
+msgid "Weird. These looks exactly like the previous one we killed."
 msgstr ""
 
 #. [message], speaker=second_unit
 #: .\scenarios\chapter4\31_Corrupted_Temple.cfg:1809
-msgid "This time I'm sure. I already killed this one."
+msgid "This time, I'm sure. I already killed this one."
 msgstr ""
 
 #. [message]
@@ -11672,7 +11669,7 @@ msgstr ""
 
 #. [option]
 #: .\scenarios\chapter4\31_Corrupted_Temple.cfg:1881
-msgid "No, leave it be. I don't trust witch horses."
+msgid "No, leave it be. I don't trust witch's horses."
 msgstr ""
 
 #. [message], speaker=unit
@@ -12042,8 +12039,10 @@ msgid "Hammer of the fox"
 msgstr ""
 
 #. [message], speaker=trader
+#. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1671
-msgid "Ripper battleaxe of trickery"
+#: .\utils\item_list.cfg:11571
+msgid "Ripper battle-axe of trickery"
 msgstr ""
 
 #. [message], speaker=trader
@@ -12193,8 +12192,10 @@ msgid "Slippery coat of the fox"
 msgstr ""
 
 #. [message], speaker=trader
+#. [object]
 #: .\scenarios\chapter4\32_Eastern_Swamp.cfg:1826
-msgid "Agressive metal targe of the fox"
+#: .\utils\item_list.cfg:11499
+msgid "Aggressive metal targe of the fox"
 msgstr ""
 
 #. [message], speaker=trader
@@ -12402,7 +12403,7 @@ msgstr ""
 #: .\scenarios\chapter4\33_Goblins_Lair.cfg:1585
 msgid ""
 "The goblins seem to be working on them. They may be the ones assembling and "
-"reparing them."
+"repairing them."
 msgstr ""
 
 #. [message], speaker=unit
@@ -12552,7 +12553,7 @@ msgstr ""
 #. [message], speaker=second_unit
 #: .\scenarios\chapter4\33_Goblins_Lair.cfg:2575
 msgid ""
-"It looks like the machines around here stopped. This goblin must have has "
+"It looks like the machines around here stopped. This goblin must have had "
 "some king of switch on him."
 msgstr ""
 
@@ -12588,7 +12589,7 @@ msgstr ""
 #. [message], speaker=Io
 #: .\scenarios\chapter4\34_Hive.cfg:914
 msgid ""
-"From what we know, if we find him, we find the sceptre. Let's start "
+"From what we know, if we find him, we find the scepter. Let's start "
 "searching."
 msgstr ""
 
@@ -12684,7 +12685,7 @@ msgstr ""
 #: .\scenarios\chapter4\34_Hive.cfg:1823
 msgid ""
 "There is some kind of force field preventing me from getting closer to the "
-"sceptre."
+"scepter."
 msgstr ""
 
 #. [message], speaker=unit
@@ -12726,7 +12727,7 @@ msgstr ""
 #. [message], speaker=Io
 #: .\scenarios\chapter4\34_Hive.cfg:1951
 msgid ""
-"It is so frustrating. I feel we are close to finding the sceptre, but these "
+"It is so frustrating. I feel we are close to finding the scepter, but these "
 "goblins and their machines won't allow us to get it back."
 msgstr ""
 
@@ -12769,7 +12770,7 @@ msgstr ""
 
 #. [message], speaker=Io
 #: .\scenarios\chapter5\35b_Flooded_Tunnels.cfg:961
-msgid "Looks like those tunnels have been abandonned for a while."
+msgid "Looks like those tunnels have been abandoned for a while."
 msgstr ""
 
 #. [message], speaker=Io
@@ -12781,7 +12782,7 @@ msgstr ""
 
 #. [message], speaker=Io
 #: .\scenarios\chapter5\35b_Flooded_Tunnels.cfg:969
-msgid "Lets look for a way out and hope it takes us closer to our goal."
+msgid "Let's look for a way out and hope it takes us closer to our goal."
 msgstr ""
 
 #. [message], speaker=Io
@@ -13195,8 +13196,8 @@ msgstr ""
 #. [message], speaker=Io
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:720
 msgid ""
-"The elevator lead us here. I have no idea were we are. I hope we are no too "
-"far from an exit."
+"The elevator leads us here. I have no idea where we are. I hope we are no too"
+" far from an exit."
 msgstr ""
 
 #. [message], speaker=Io
@@ -13417,7 +13418,7 @@ msgstr ""
 #. [message], speaker=Oboavlidlu
 #: .\scenarios\chapter5\35_Scavengers_Trading_Post.cfg:1114
 msgid ""
-"Mylord Oddaty and I supplied a group of treasure hunters that were examining "
+"Milord Oddaty and I supplied a group of treasure hunters that were examining "
 "the flooded tunnels west. Maybe you are also going in that direction?"
 msgstr ""
 
@@ -14462,7 +14463,7 @@ msgstr ""
 #: .\scenarios\chapter5\38_Isut.cfg:655
 #: .\scenarios\chapter5\38_Isut.cfg:695
 msgid ""
-"They seems to wander aimlessly now at least, which means the fortress should "
+"They seem to wander aimlessly now at least, which means the fortress should "
 "be safe."
 msgstr ""
 
@@ -14485,7 +14486,7 @@ msgstr ""
 
 #. [message], speaker=Io
 #: .\scenarios\chapter5\38_Isut.cfg:687
-msgid "Aren't Isut undead supposed to haven fallen into dust or something?"
+msgid "Aren't Isut undead supposed to have fallen into dust or something?"
 msgstr ""
 
 #. [message]
@@ -14593,7 +14594,7 @@ msgstr ""
 
 #. [message], speaker=Io
 #: .\scenarios\chapter5\38_Isut.cfg:1054
-msgid "No! We arrive too late, the fortress has already fallen!"
+msgid "No! We arrive too late; the fortress has already fallen!"
 msgstr ""
 
 #. [scenario], id=39_Oofs_Fortress
@@ -14631,7 +14632,7 @@ msgstr ""
 
 #. [message], speaker=Io
 #: .\scenarios\chapter6\39_Oofs_Fortress.cfg:205
-msgid "It looks like it had a bad day. Probaly more like a bad week."
+msgid "It looks like it had a bad day. Probably more like a bad week."
 msgstr ""
 
 #. [message], speaker=Io
@@ -14811,7 +14812,7 @@ msgstr ""
 #. [object]
 #: .\scenarios\chapter6\39_Oofs_Fortress.cfg:552
 #: .\utils\item_list.cfg:15626
-msgid "Ragnarok"
+msgid "Ragnarök"
 msgstr ""
 
 #. [message], speaker=trader
@@ -14907,7 +14908,7 @@ msgstr ""
 #. [object]
 #: .\scenarios\chapter6\39_Oofs_Fortress.cfg:942
 #: .\utils\item_list.cfg:15780
-msgid "Ripper thin chaimail of inversion"
+msgid "Ripper thin chainmail of inversion"
 msgstr ""
 
 #. [message], speaker=trader
@@ -14921,7 +14922,7 @@ msgstr ""
 #. [object]
 #: .\scenarios\chapter6\39_Oofs_Fortress.cfg:944
 #: .\utils\item_list.cfg:15798
-msgid "Thin chaimail of vivacity"
+msgid "Thin chainmail of vivacity"
 msgstr ""
 
 #. [message], speaker=trader
@@ -15375,7 +15376,7 @@ msgstr ""
 #. [message], speaker=Io
 #: .\scenarios\chapter6\39_Oofs_Fortress.cfg:1739
 msgid ""
-"My friends, the next step of our mission are the Hall of Skulls and the "
+"My friends, the next step of our mission is the Hall of Skulls and the "
 "western Dunefolk village."
 msgstr ""
 
@@ -15713,8 +15714,8 @@ msgstr ""
 #. [message], speaker=Rboekmocqu
 #: .\scenarios\chapter6\41_Sand_River.cfg:571
 msgid ""
-"Nowadays, I don't trust anyone, be it king, Legion, Dunefolk, even Traveller."
-" Gold's da only thing I trust."
+"Nowadays, I don't trust anyone, be it king, Legion, Dunefolk, even Traveler. "
+"Gold's da only thing I trust."
 msgstr ""
 
 #. [message], speaker=Rboekmocqu
@@ -16589,8 +16590,8 @@ msgstr ""
 msgid ""
 "A lich is the physical embodiment of black magic’s first goal: the quest to "
 "achieve immortality. Though a great deal is sacrificed in the rebirth, in "
-"becoming a lich one cheats death of that which truly gives it terror. For it "
-"is the mind that is retained, and the spirit which follows, though the body "
+"becoming a lich, one cheats death of that which truly gives it terror. For it"
+" is the mind that is retained, and the spirit which follows, though the body "
 "may wither away.\n"
 "\n"
 "It is not known, save perhaps by the inner circles of necromancy, whether "
@@ -16598,8 +16599,8 @@ msgid ""
 "question can be raised at all is a testament to the magnitude of what their "
 "order has achieved.\n"
 "\n"
-"This lich transformed in the Ice Cave, conferring it specails powers based on"
-" cold."
+"This lich transformed in the Ice Cave, conferring it special powers based on "
+"cold."
 msgstr ""
 
 #. [attack], type=cold, range=melee
@@ -16614,7 +16615,7 @@ msgid ""
 "them was not able to keep a clear mind because of their beauty. But when they"
 " turned against the gods they were cursed and turned into monstrosities. "
 "Their gaze is so terrible that any being looking at them will be paralyzed in"
-" fear. They are sourrounded by a dark aura that weakens and kills enemies."
+" fear. They are surrounded by a dark aura that weakens and kills enemies."
 msgstr ""
 
 #. [attack], type=arcane, range=ranged
@@ -16804,7 +16805,7 @@ msgstr ""
 #. [unit_type], id=Ice Swordsman LoI, race=elemental
 #: .\units\Ice_Swordsman.cfg:17
 msgid ""
-"Born into the cold of the icecave, this unit is an experienced warrior "
+"Born into the cold of the ice cave, this unit is an experienced warrior "
 "equipped with a sturdy broadsword made of ice."
 msgstr ""
 
@@ -17016,9 +17017,9 @@ msgstr ""
 #. [unit_type], id=Purple Crystal LoI, race=abstraction
 #: .\units\Purple_Crystal.cfg:31
 msgid ""
-"When too much mana concentrate in one place, a Purple Crystal natural emerge."
-" It is a sudden event, very different from the slow accumulation of mana "
-"whose result is Green Crystals. \n"
+"When too much mana concentrates in one place, a Purple Crystal natural "
+"emerge. It is a sudden event, very different from the slow accumulation of "
+"mana whose result is Green Crystals. \n"
 "\n"
 "Crystals are bound to their mana geyser, so they cannot go out of the cave "
 "they were born in. Crystals are crystalline in nature and so have unusual "
@@ -17118,8 +17119,8 @@ msgid ""
 "have a size similar to Giant Scorpions. They then metamorphose a first time "
 "to become what we call Young Giant Spiders, that are twice the size of the "
 "Spiderling, then a second time to become Giant Spiders. Although its younger "
-"version tend to hide from sight, it is a formidable opponent that should not "
-"be taken lightly."
+"version tends to hide from sight, it is a formidable opponent that should not"
+" be taken lightly."
 msgstr ""
 
 #. [dummy], id=cold plague loi
@@ -17496,7 +17497,7 @@ msgstr ""
 
 #. [message], speaker=unit
 #: .\utils\deaths.cfg:403
-msgid "I haven't last an hour here!"
+msgid "I haven't lasted an hour here!"
 msgstr ""
 
 #. [message], speaker=unit
@@ -17796,7 +17797,7 @@ msgstr ""
 
 #. [option]
 #: .\utils\help.cfg:221
-msgid "Scenario 2 (Helping neighboors)"
+msgid "Scenario 2 (Helping neighbors)"
 msgstr ""
 
 #. [message], speaker=narrator
@@ -17814,7 +17815,7 @@ msgstr ""
 
 #. [option]
 #: .\utils\help.cfg:237
-msgid "Scenario 3 (Going to Zei)"
+msgid "Scenario 3 (Bridge to Zei)"
 msgstr ""
 
 #. [message], speaker=narrator
@@ -17856,8 +17857,8 @@ msgid ""
 "units south of your keep. Then use the hexes where you can fight with "
 "numerical superiority to avoid losing units.\n"
 "There are two roads to complete this scenario. you can go west through the "
-"mountains too complete this scenario quickly, or you can go east to defeat "
-"the orcish leaders and complete the bonus objective.  \n"
+"mountains to complete this scenario quickly, or you can go east to defeat the"
+" orcish leaders and complete the bonus objective.  \n"
 "Do not forget to equip Lujeje at turn 1. \n"
 "Complete the bonus objective to keep Lujeje."
 msgstr ""
@@ -18069,7 +18070,7 @@ msgstr ""
 #: .\utils\help.cfg:528
 msgid ""
 "This transition scenario is short and easy. Simply try not to get killed by a"
-" hidden shamans. \n"
+" hidden shaman. \n"
 "There is a bonus scenario if you go in the snow left after the bridge."
 msgstr ""
 
@@ -18081,9 +18082,9 @@ msgstr ""
 #. [message], speaker=narrator
 #: .\utils\help.cfg:543
 msgid ""
-"This bonus scenario correspond to a side quest you gather in Udxatfe. If you "
-"do not have it, simply go north and east. Otherwise, go north, then kill all "
-"the enemies in the cave."
+"This bonus scenario corresponds to a side quest you gather in Udxatfe. If you"
+" do not have it, simply go north and east. Otherwise, go north, then kill all"
+" the enemies in the cave."
 msgstr ""
 
 #. [option]
@@ -18126,8 +18127,8 @@ msgid ""
 " so, place your unit around the hex in front of the gate. Once you are ready,"
 " place a unit on that hex to open the door and kill the first two trolls to "
 "be able to attack two units at once.\n"
-"The enemy leader recruit a bit less than one unit a turn, so you will be able"
-" to progress by killing at least one unit a turn.\n"
+"The enemy leader recruits a bit less than one unit a turn, so you will be "
+"able to progress by killing at least one unit a turn.\n"
 "Once you reach 10 28, split your team in two. One team will kill enemies "
 "between 9 28 and 7 21 while the other team will take the path on the right to"
 " progress. \n"
@@ -18148,7 +18149,7 @@ msgid ""
 "able to progress without big difficulties as you should have enough space to "
 "kill at least two enemies a turn. \n"
 "Once you reach this spot, kill the enemy leader twice while remaining careful"
-" not to get killed by a bat flying over the chasm.."
+" not to get killed by a bat flying over the chasm."
 msgstr ""
 
 #. [option]
@@ -18177,8 +18178,8 @@ msgid ""
 " scenario so there is no need to rush with the risk of having ice trolls "
 "attacking you from behind.\n"
 "There will be a new heroin to recruit in scenario 27, but she will ask for a "
-"lot of gold, so if you want her in your team, you might want not to spend to "
-"much gold in this scenario. "
+"lot of gold, so if you want her in your team, you might want not to spend too"
+" much gold in this scenario. "
 msgstr ""
 
 #. [option]
@@ -18229,8 +18230,8 @@ msgstr ""
 #. [message], speaker=narrator
 #: .\utils\help.cfg:714
 msgid ""
-"This is a puzzle level. Here are the combination of tiles on which you need "
-"to walk.\n"
+"This is a puzzle level. Here is the combination of tiles on which you need to"
+" walk.\n"
 "First room: 5,19 and 7,19.\n"
 "Second room: 5,14 and 7,14, then 3,12.\n"
 "Third room: 5,9 and 7,9, then 9,7.\n"
@@ -18396,7 +18397,7 @@ msgid ""
 " discover a secret part of the level.\n"
 "First, go east to discover the engine, then walk on 69 10, 72 7, 69 4 and 66 "
 "7 to activate it. It will make the lever at 54 7 operational. Pull it to make"
-" a second level appear and pull that one too. It will reveal an hidden room "
+" a second level appear and pull that one too. It will reveal a hidden room "
 "with chests in it."
 msgstr ""
 
@@ -19070,16 +19071,16 @@ msgid ""
 " the same objects many companies had offered them in exchange for their "
 "weapons and jewels. \n"
 "\n"
-"With time, the Dunefolks made Uteaqniq one of their privileged associate, and"
-" even went as far as giving him some weapons, despite having refused other "
-"interested partners. Uteaqniq’s wealth never stopped growing during those "
+"With time, the Dunefolks made Uteaqniq one of their privileged associates, "
+"and even went as far as giving him some weapons, despite having refused other"
+" interested partners. Uteaqniq’s wealth never stopped growing during those "
 "time, and at the time of the punishment of Dunefolks, he had become one of "
 "the most fortunate citizens of Idaamub."
 msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:3612
-msgid "Opressor bow"
+msgid "Oppressor bow"
 msgstr ""
 
 #. [object]
@@ -19281,8 +19282,8 @@ msgid ""
 "\n"
 "Later, Eqo, the ``goblin pretender'', became the first person to live in "
 "Uvju’s Cross. Decided to spend tremendous amounts to renovate the ceilings "
-"and rooms that were falling into ruins, he brought in more than forty goblins"
-" engineers working nights and days to prevent the building from collapsing.\n"
+"and rooms that were falling into ruins, he brought in more than forty goblin "
+"engineers working nights and days to prevent the building from collapsing.\n"
 "\n"
 "In the end, it was here, in the first fortress of Idaamub, that the 10th "
 "Legion gave battle to the traitor great mage, Iwpocneulu, and Uvju’s Cross "
@@ -19819,12 +19820,12 @@ msgstr ""
 
 #. [abilities]
 #: .\utils\item_list.cfg:4784
-msgid "Rage : resistance"
+msgid "Rage: resistance"
 msgstr ""
 
 #. [abilities]
 #: .\utils\item_list.cfg:4785
-msgid "Rage : %damage+"
+msgid "Rage: %damage+"
 msgstr ""
 
 #. [object]
@@ -19919,7 +19920,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:4900
-msgid "One of the best leather armor! Probably."
+msgid "One of the best leather armors! Probably."
 msgstr ""
 
 #. [object]
@@ -20010,7 +20011,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:5040
-msgid "It look like it was made from a leech."
+msgid "It looks like it was made from a leech."
 msgstr ""
 
 #. [object]
@@ -20143,7 +20144,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:5372
-msgid "Sakkah Yatoragh !"
+msgid "Sakkah Yatoragh!"
 msgstr ""
 
 #. [object]
@@ -20259,7 +20260,7 @@ msgstr ""
 #. [object]
 #: .\utils\item_list.cfg:5530
 #: .\utils\item_list.cfg:11065
-msgid "To shoot deers. Or orcs."
+msgid "To shoot deer. Or orcs."
 msgstr ""
 
 #. [object]
@@ -20761,7 +20762,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:6255
-msgid "Brand new brigandine"
+msgid "Brand-new brigandine"
 msgstr ""
 
 #. [object]
@@ -20959,7 +20960,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:6749
-msgid "Having well polished the whole bow, he added a golden tip."
+msgid "Having well-polished the whole bow, he added a golden tip."
 msgstr ""
 
 #. [object]
@@ -20990,7 +20991,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:6835
-msgid "Hardly a week passes that some one does not revive a new cult."
+msgid "Hardly a week passes that someone does not revive a new cult."
 msgstr ""
 
 #. [object]
@@ -21086,7 +21087,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:7001
-msgid "Infallible brillant curved bow"
+msgid "Infallible brilliant curved bow"
 msgstr ""
 
 #. [object]
@@ -21136,8 +21137,8 @@ msgstr ""
 #. [object]
 #: .\utils\item_list.cfg:7090
 msgid ""
-"Good design is a attitude that combines technology, cognitive science, human "
-"need and beauty to produce something."
+"Good design is an attitude that combines technology, cognitive science, human"
+" need and beauty to produce something."
 msgstr ""
 
 #. [object]
@@ -21442,7 +21443,7 @@ msgstr ""
 #. [object]
 #: .\utils\item_list.cfg:7531
 msgid ""
-"Because we had seven skeletons I thought we were going to get seven "
+"Because we had seven skeletons, I thought we were going to get seven "
 "certificates"
 msgstr ""
 
@@ -21461,11 +21462,6 @@ msgstr ""
 #. [object]
 #: .\utils\item_list.cfg:7587
 msgid "Be refuges unto yourselves."
-msgstr ""
-
-#. [object]
-#: .\utils\item_list.cfg:7590
-msgid "Aggressive cuir-bouilli greaves of the fox"
 msgstr ""
 
 #. [object]
@@ -21501,20 +21497,10 @@ msgid "This is a war of aggression."
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:7655
-msgid "Unscratched studded leather gloves"
-msgstr ""
-
-#. [object]
 #: .\utils\item_list.cfg:7664
 msgid ""
 "I submit that the backbone of the cow has been transplanted unscratched into "
 "those gloves, where it has proved pitifully inadequate."
-msgstr ""
-
-#. [object]
-#: .\utils\item_list.cfg:7667
-msgid "Leather gloves of monstrosity"
 msgstr ""
 
 #. [object]
@@ -21701,7 +21687,7 @@ msgstr ""
 #. [object]
 #: .\utils\item_list.cfg:8119
 msgid ""
-"Four years ago my partner - my friend - was killed and I took about as much "
+"Four years ago, my partner - my friend - was killed and I took about as much "
 "revenge as any man can take."
 msgstr ""
 
@@ -21721,11 +21707,6 @@ msgstr ""
 #. [object]
 #: .\utils\item_list.cfg:8159
 msgid "Negative represents opposites."
-msgstr ""
-
-#. [object]
-#: .\utils\item_list.cfg:8162
-msgid "Aggressive wooden shield of the fox"
 msgstr ""
 
 #. [object]
@@ -21792,7 +21773,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:8289
-msgid "Brand new quarterstaff of massacre"
+msgid "Brand-new quarterstaff of massacre"
 msgstr ""
 
 #. [object]
@@ -21823,7 +21804,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:8336
-msgid "This is what you get from spending to much time inside"
+msgid "This is what you get from spending too much time inside"
 msgstr ""
 
 #. [object]
@@ -22196,7 +22177,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:8847
-msgid "A storm strongly imply severe and dangerous weather."
+msgid "A storm strongly implies severe and dangerous weather."
 msgstr ""
 
 #. [object]
@@ -22507,7 +22488,7 @@ msgstr ""
 #. [object]
 #: .\utils\item_list.cfg:9679
 msgid ""
-"So rip the stage rip the state rip the system, I was born to rage against "
+"So, rip the stage rip the state rip the system, I was born to rage against "
 "them."
 msgstr ""
 
@@ -23069,7 +23050,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:10548
-msgid "A bit better than just sticking a knife a each end of a staff."
+msgid "A bit better than just sticking a knife at each end of a staff."
 msgstr ""
 
 #. [object]
@@ -23252,7 +23233,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:10818
-msgid "My traps rips out ribcages seconds later."
+msgid "My traps rip out ribcages seconds later."
 msgstr ""
 
 #. [object]
@@ -23313,9 +23294,8 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:10907
-#: .\utils\item_list.cfg:17945
 msgid ""
-"Doubtless, revenge is not always sweet, once it is consummated we feel "
+"Doubtless, revenge is not always sweet, once it is consummated, we feel "
 "inferior to our victim, or else we are tangled in the subtleties of remorse."
 msgstr ""
 
@@ -23399,7 +23379,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:11080
-msgid "Infallible brillant curved crossbow"
+msgid "Infallible brilliant curved crossbow"
 msgstr ""
 
 #. [object]
@@ -23435,7 +23415,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:11160
-msgid "Having well polished the whole crossbow, he added a golden tip."
+msgid "Having well-polished the whole crossbow, he added a golden tip."
 msgstr ""
 
 #. [object]
@@ -23500,7 +23480,7 @@ msgstr ""
 #. [object]
 #: .\utils\item_list.cfg:11355
 msgid ""
-" Truly, society is like a large piece of frozen water ; there are the rough "
+" Truly, society is like a large piece of frozen water; there are the rough "
 "places to be shunned, the very slippery ones all ready for a fall, and the "
 "holes which seem made expressly to drown you."
 msgstr ""
@@ -23569,11 +23549,6 @@ msgid ""
 msgstr ""
 
 #. [object]
-#: .\utils\item_list.cfg:11499
-msgid "Aggressive metal targe of the fox"
-msgstr ""
-
-#. [object]
 #: .\utils\item_list.cfg:11514
 msgid ""
 "If thou wert the lion, the fox would beguile thee; if thou wert the lamb, the"
@@ -23601,11 +23576,6 @@ msgstr ""
 msgid ""
 "If positive represents movement to the right, negative represents movement to"
 " the left."
-msgstr ""
-
-#. [object]
-#: .\utils\item_list.cfg:11571
-msgid "Ripper battle-axe of trickery"
 msgstr ""
 
 #. [object]
@@ -23817,7 +23787,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:12083
-msgid "This unit's and adjacent allie's resistance is increased by 10%."
+msgid "This unit's and adjacent allies' resistance is increased by 10%."
 msgstr ""
 
 #. [object]
@@ -24171,7 +24141,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:12623
-msgid "Tonight you will get your member ripped off."
+msgid "Tonight, you will get your member ripped off."
 msgstr ""
 
 #. [object]
@@ -24310,8 +24280,8 @@ msgstr ""
 msgid ""
 "Of all the races of the empire, only the Dunefolks could possibly revive the "
 "memory of the most horrific wars ever to sunder the continent and transform "
-"it into into what I'm afraid is generally regarded as an incomprehensibly "
-"dull and pointless game."
+"it into what I'm afraid is generally regarded as an incomprehensibly dull and"
+" pointless game."
 msgstr ""
 
 #. [object]
@@ -24345,12 +24315,12 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:12912
-msgid "Brand new barbarian bow"
+msgid "Brand-new barbarian bow"
 msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:12931
-msgid "You got a brand new bow."
+msgid "You got a brand-new bow."
 msgstr ""
 
 #. [object]
@@ -24443,13 +24413,13 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:13070
-msgid "Brand new hamstring cutter"
+msgid "Brand-new hamstring cutter"
 msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:13090
 msgid ""
-"We danced until the night became a brand new day, Two lovers playing scenes "
+"We danced until the night became a brand-new day, Two lovers playing scenes "
 "from some romantic play."
 msgstr ""
 
@@ -24763,7 +24733,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:13779
-msgid "Of course he would have needed a very slippery floor to do that."
+msgid "Of course, he would have needed a very slippery floor to do that."
 msgstr ""
 
 #. [object]
@@ -25046,7 +25016,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:14464
-msgid "First I gonna rip your limbs out, one by one."
+msgid "First, I gonna rip your limbs out, one by one."
 msgstr ""
 
 #. [object]
@@ -25607,7 +25577,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:15269
-msgid "Well the brothers go rip dung riot on the whole bloody place."
+msgid "Well, the brothers go rip dung riot on the whole bloody place."
 msgstr ""
 
 #. [object]
@@ -25782,7 +25752,7 @@ msgstr ""
 #. [object]
 #: .\utils\item_list.cfg:15558
 msgid ""
-"So we walk in to the house and they're (their families and friends) just "
+"So, we walk in to the house and they're (their families and friends) just "
 "ripped."
 msgstr ""
 
@@ -26237,7 +26207,7 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:16504
-msgid "You can bearly move but you won't get hurt."
+msgid "You can barely move but you won't get hurt."
 msgstr ""
 
 #. [object]
@@ -26330,12 +26300,12 @@ msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:16634
-msgid "Brand new lunar gloves"
+msgid "Brand-new lunar gloves"
 msgstr ""
 
 #. [object]
 #: .\utils\item_list.cfg:16651
-msgid "I had some brand new gloves. "
+msgid "I had some brand-new gloves. "
 msgstr ""
 
 #. [object]
@@ -26843,9 +26813,9 @@ msgstr ""
 #. [object]
 #: .\utils\item_list.cfg:17611
 msgid ""
-"In our tenure on this planet we've accumulated dangerous evolutionary baggage"
-" — propensities for aggression and ritual, submission to leaders, hostility "
-"to outsiders — all of which puts our survival in some doubt."
+"In our tenure on this planet, we've accumulated dangerous evolutionary "
+"baggage — propensities for aggression and ritual, submission to leaders, "
+"hostility to outsiders — all of which puts our survival in some doubt."
 msgstr ""
 
 #. [object]
@@ -26959,6 +26929,13 @@ msgstr ""
 #. [object]
 #: .\utils\item_list.cfg:17930
 msgid "You know what they say about revenge?"
+msgstr ""
+
+#. [object]
+#: .\utils\item_list.cfg:17945
+msgid ""
+"Doubtless, revenge is not always sweet, once it is consummated we feel "
+"inferior to our victim, or else we are tangled in the subtleties of remorse."
 msgstr ""
 
 #. [object]
