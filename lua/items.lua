@@ -83,6 +83,7 @@ loti.item.storage.add = function(item_number, crafted_sort)
 		else
 			wml.fire("message", {  x = "$x1", y = "$y1" , message=_ "I sure needed that." })
 		end
+		wml.variables["food_counter"] = has_food+1
 		return
 	end
 
