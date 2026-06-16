@@ -1800,12 +1800,16 @@ msgstr "Pouvons-nous faire quelque chose pour aider ?"
 #. [message], speaker=Csia
 #: .\scenarios\chapter2\06_Zei.cfg:441
 msgid "The guardian of Udxatfe must be informed of what happened. But I need all the guards of Zei to defend the city. "
-msgstr "Le gardien d'Udxatfe doit être informé de ce qui s'est passé. Mais je besoin de tous les gardes de Zei pour défendre la ville."
+msgstr "Le gardien d'Udxatfe doit être informé de ce qui s'est passé. Mais j'ai besoin de tous les gardes de Zei pour défendre la ville."
 
 #. [message], speaker=Csia
 #: .\scenarios\chapter2\06_Zei.cfg:451
 msgid "You look like you can defend yourself. I need you to come with me and my men to Udxatfe. Any problem with that?"
+<<<<<<< Updated upstream
 msgstr "On dirait que vous savez vous défendre. J'ai besoin que vous veniez avec moi et mes hommes à Udxatfe. Un problème avec ça ?"
+=======
+msgstr "On dirait que vous savez vous défendre. J'ai besoin que vous veniez avec moi et mes hommes à Udxatfe. Un problème avec ça?"
+>>>>>>> Stashed changes
 
 #. [option]
 #: .\scenarios\chapter2\06_Zei.cfg:453
@@ -1973,7 +1977,11 @@ msgstr "On peut faire quelque chose pour vous aider ?"
 #. [message], speaker=Addthynec
 #: .\scenarios\chapter2\06_Zei.cfg:688
 msgid "I wanted to go to the beach to fish, but it seems the orcs left behind some of those horrible mudcrawlers."
+<<<<<<< Updated upstream
 msgstr "Je voulais aller à la plage pour pêcher, mais il semblerait que les orcs ai laissé derrière eux quelques-uns de ces horribles colosses de boue."
+=======
+msgstr "Je voulais aller à la plage pour pêcher, mais il semblerait que les orcs aient laissé derrière eux quelques uns de ces horribles colosses de boue."
+>>>>>>> Stashed changes
 
 #. [message], speaker=Addthynec
 #: .\scenarios\chapter2\06_Zei.cfg:692
@@ -3320,7 +3328,7 @@ msgstr "Les habitants devraient pouvoir pêcher maintenant."
 #. [scenario], id=07_Yooradweak_s_pass
 #: .\scenarios\chapter2\07_Yooradweak_s_pass.cfg:4
 msgid "Yooradweak's pass"
-msgstr "Col de Yooradweak"
+msgstr "Le Col de Yooradweak"
 
 #. [objective], condition=win
 #: .\scenarios\chapter2\07_Yooradweak_s_pass.cfg:43
@@ -3635,7 +3643,7 @@ msgstr "Si des hommes entraînés n'ont pas été capable de traverser la croix 
 #. [scenario], id=08_Inside_Uvju_s_cross
 #: .\scenarios\chapter2\08_Inside_Uvju_s_cross.cfg:4
 msgid "Inside Uvju's cross"
-msgstr "Dans la croix d'Uvju"
+msgstr "Dans la Croix d'Uvju"
 
 #. [objective], condition=win
 #: .\scenarios\chapter2\08_Inside_Uvju_s_cross.cfg:40

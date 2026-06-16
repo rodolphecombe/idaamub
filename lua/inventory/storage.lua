@@ -495,6 +495,7 @@ local translated_item_sort = {
 	spear = _"Spear"
 }
 local _ = wesnoth.textdomain "wesnoth-loti-era"
+
 -- Show the menu that selects subsection of Item Storage: "sword", "spear", etc.
 local function show_item_sorts(dialog)
 	local sorts = loti.item.storage.list_sorts()

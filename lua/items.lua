@@ -76,6 +76,7 @@ loti.item.storage.add = function(item_number, crafted_sort)
 		side.gold = side.gold + item.gold_quantity
 		return
 	end
+	local _ = wesnoth.textdomain "wesnoth-loi"
 	if item.sort == "food" then
 		local has_food = wml.variables["food_counter"]
 		if has_food>0 then
@@ -86,7 +87,7 @@ loti.item.storage.add = function(item_number, crafted_sort)
 		wml.variables["food_counter"] = has_food+1
 		return
 	end
-
+	local _ = wesnoth.textdomain "wesnoth-loti-era"
 	local list = wml.variables["item_storage"] or {}
 
 	table.insert(list, {
