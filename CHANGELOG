@@ -265,7 +265,12 @@ Cancelling a purchase now brings back to the menu.
 Fix Friendly neighbourhood not working.
 
 0.9.8 (translation)
+<<<<<<< Updated upstream
 Added spanish translation.
+=======
+Add Spanish translation by Sebas
+Fixed Friendly neighbourhood not working.
+>>>>>>> Stashed changes
 
 0.9.9 (translation)
 Added French translation.
@@ -275,3 +280,9 @@ Fixed item dropping being broken.
 
 0.9.11 (maintenance)
 Fixed food picking being broken.
+
+0.9.12 (maintenance)
+Fixed Ice Golem image not showing.
+
+0.9.13 (maintenance)
+Fixed Ice Wyvern iamge not showing.
