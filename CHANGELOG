@@ -266,6 +266,7 @@ Add missing LoI suffix to Young Giant Spider in several places.
 Fix help menu.
 Increase starting gold for chapter 1 in challenging difficulty.
 Fix non-orc units being of side 2 in scenario 3.
+Fix Friendly neighbourhood not working
 
 0.9.8 (translation)
 Added spanish translation.
@@ -278,6 +279,12 @@ Fixed item dropping being broken.
 
 0.9.11 (maintenance)
 Fixed food picking being broken.
+
+0.9.12 (maintenance)
+Fixed Ice Golem image not showing.
+
+0.9.13 (maintenance)
+Fixed Ice Wyvern image not showing.
 
 0.10.0
 Added chapter 6.
