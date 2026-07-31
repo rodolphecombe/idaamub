@@ -287,3 +287,6 @@ Fixed opening the item storage returning an error.
 
 0.9.15 (maintenance)
 Fix Scavenger's Trading Post trigerring at the wrong position on the map 
+
+0.9.16 (maintenance)
+Fix Deshra being of player side in Scavenger's Trading Post
