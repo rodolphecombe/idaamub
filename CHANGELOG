@@ -266,7 +266,6 @@ Fix Friendly neighbourhood not working
 
 0.9.8 (translation)
 Add Spanish translation by Sebas
-Fixed Friendly neighbourhood not working.
 
 0.9.9 (translation)
 Added French translation.
@@ -285,3 +284,6 @@ Fixed Ice Wyvern iamge not showing.
 
 0.9.14 (maintenance)
 Fixed opening the item storage returning an error.
+
+0.9.15 (maintenance)
+Fix Scavenger's Trading Post trigerring at the wrong position on the map 
