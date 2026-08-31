@@ -10766,7 +10766,7 @@ msgstr "Vous avez l'air grièvement blessé. Qu'est-ce qui vous est arrivé ? "
 #. [message], speaker=ofite
 #: .\scenarios\chapter4\31_Corrupted_Temple.cfg:1700
 msgid "<i>dying</i> I am of no importance, only the temple is."
-msgstr "<i>mourant<i> Je n'ai aucune importance, seul le temple en a. "
+msgstr "<i>mourant</i> Je n'ai aucune importance, seul le temple en a. "
 
 #. [message], speaker=ofite
 #: .\scenarios\chapter4\31_Corrupted_Temple.cfg:1704
@@ -10826,7 +10826,7 @@ msgstr "Ce n'est probablement pas un vrai animal. Les sorcières là doivent les
 #. [message]
 #: .\scenarios\chapter4\31_Corrupted_Temple.cfg:1809
 msgid "Kill the witches before killing the Vine Tigers, otherwise we will never see the end of it."
-msgstr "Tuer les sorcières avant de tuer les Tigres de Liane, sinon nous n'en verrons jamais la fin."
+msgstr "Tuez les sorcières avant de tuer les Tigres de Liane, sinon nous n'en verrons jamais la fin."
 
 #. [message], speaker=unit
 #: .\scenarios\chapter4\31_Corrupted_Temple.cfg:1830
@@ -13215,7 +13215,7 @@ msgstr "Si on en croit les rapports, Isut doit déjà être à la forteresse, ce
 #. [message], speaker=Io
 #: .\scenarios\chapter5\37_Old_Temple.cfg:451
 msgid "I guess we will find out if we meet them. Although that would probably be a good idea to defeat them: I would rather not have undead behind AND in front of us."
-msgstr "J'imagine qu'on le découvrira quand on le rencontrera. Bien que ce serait une bonne idée de le vaincre : Je préfèrerais ne pas avoir des morts-vivants derrière ET devant nous. "
+msgstr "J'imagine qu'on le découvrira quand on le rencontrera. Bien que ce serait une bonne idée de le vaincre : je préfèrerais ne pas avoir des morts-vivants derrière ET devant nous. "
 
 #. [message], speaker=Io
 #: .\scenarios\chapter5\37_Old_Temple.cfg:476
@@ -14197,8 +14197,8 @@ msgstr "Je suis désolé mais nous n'avons pas besoin d'un cheval."
 
 #. [option]
 #: .\scenarios\chapter6\39_Oofs_Fortress.cfg:1523
-msgid "Here, take this"
-msgstr "Voilà, prenez"
+msgid "Here, take this."
+msgstr "Voilà, prenez."
 
 #. [message]
 #: .\scenarios\chapter6\39_Oofs_Fortress.cfg:1537
@@ -14768,7 +14768,7 @@ msgstr "C'est bizarre, le portail est ouvert, il n'y a personne qui le garde et 
 #. [message], speaker=Io
 #: .\scenarios\chapter6\42_Desert_Bridges.cfg:791
 msgid "Let's hope it is because they had sent every soldier out to stop us from arriving to the village."
-msgstr "Espérons que c'est parce qu'ils avaient envoyé tous les soldats pour nous empêcher d'atteindre le village."
+msgstr "Espérons que ce soit parce qu'ils avaient envoyé tous les soldats pour nous empêcher d'atteindre le village."
 
 #. [message], speaker=unit
 #: .\scenarios\chapter6\42_Desert_Bridges.cfg:813
@@ -14875,7 +14875,7 @@ msgstr "Quand ils sont réapparus, notre génération de guerrier venait juste d
 #. [message], speaker=trader
 #: .\scenarios\chapter6\43_Western_Village.cfg:278
 msgid "To survive we concluded an... ill-advised alliance. We would like to redeem ourselves. "
-msgstr "Pour survivre nous avons conclu un... alliance malavisée. Nous aimerions nous racheter."
+msgstr "Pour survivre nous avons conclu une... alliance malavisée. Nous aimerions nous racheter."
 
 #. [message], speaker=trader
 #: .\scenarios\chapter6\43_Western_Village.cfg:282
@@ -23546,7 +23546,7 @@ msgstr "On s'arrache."
 #. [object]
 #: .\utils\item_list.cfg:14895
 msgid "Rough thin chainmail of the fox"
-msgstr "Cotte de mailles fine éventreuse du renard"
+msgstr "Cotte de mailles fine rude du renard"
 
 #. [object]
 #: .\utils\item_list.cfg:14907

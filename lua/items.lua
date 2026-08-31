@@ -985,9 +985,9 @@ loti.item.describe_item = function(number, sort, set_items)
 				end
 				if effect.increase then
 					if effect.increase > 0 then
-						line = "<span color='blue'>Max experience increased by " .. tostring(effect.increase) .. _" XP" .. ending
+						line = _"<span color='blue'>Max experience increased by " .. tostring(effect.increase) .. _" XP" .. ending
 					else
-						line = "<span color='blue'>Max experience decreased by " .. tostring(effect.increase * -1) .. _"  XP" .. ending
+						line = _"<span color='blue'>Max experience decreased by " .. tostring(effect.increase * -1) .. _"  XP" .. ending
 					end
 				end
 			elseif effect.apply_to == "defense" and wml.get_child(effect, "defense") then
