@@ -265,7 +265,7 @@ Cancelling a purchase now brings back to the menu.
 Fix Friendly neighbourhood not working
 
 0.9.8 (translation)
-Added spanish translation.
+Add Spanish translation by Sebas
 
 0.9.9 (translation)
 Added French translation.
@@ -280,4 +280,13 @@ Fixed food picking being broken.
 Fixed Ice Golem image not showing.
 
 0.9.13 (maintenance)
-Fixed Ice Wyvern iamge not showing.
+Fixed Ice Wyvern image not showing.
+
+0.9.14 (maintenance)
+Fixed opening the item storage returning an error.
+
+0.9.15 (maintenance)
+Fix Scavenger's Trading Post trigerring at the wrong position on the map 
+
+0.9.16 (maintenance)
+Fix Deshra being of player side in Scavenger's Trading Post
