@@ -290,3 +290,6 @@ Fix Scavenger's Trading Post trigerring at the wrong position on the map
 
 0.9.16 (maintenance)
 Fix Deshra being of player side in Scavenger's Trading Post
+
+0.9.17 (maintenance)
+Fix units being able to equip items on the turn they are recruites
