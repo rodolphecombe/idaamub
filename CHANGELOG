@@ -262,6 +262,10 @@ Increase turn limit for novice difficulty for two scenarios.
 Cancelling a purchase now brings back to the menu.
 
 0.9.7 (maintenance)
+Add missing LoI suffix to Young Giant Spider in several places.
+Fix help menu.
+Increase starting gold for chapter 1 in challenging difficulty.
+Fix non-orc units being of side 2 in scenario 3.
 Fix Friendly neighbourhood not working
 
 0.9.8 (translation)
@@ -292,4 +296,7 @@ Fix Scavenger's Trading Post trigerring at the wrong position on the map
 Fix Deshra being of player side in Scavenger's Trading Post
 
 0.9.17 (maintenance)
-Fix units being able to equip items on the turn they are recruites
+Fix units being able to equip items on the turn they are recruited
+
+0.10.0
+Added chapter 6.

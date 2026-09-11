@@ -1,29 +1,37 @@
 Io, Gu and Inkeeper Portraits
-The Ravagers campaign
+From The Ravagers
 
 Female archers Portraits
-Archaic Era
+From Archaic Era
 
 Spiderling, Young Giant Spider, Scorpion Soldier and Direrat sprites
 Renlie_Cocoa
 
-Levers
+Levers and Hellboar sprites
 Duncan Dill
 
 Dark Wose units
-The Dragon Saga by revansurik
+From The Dragon Saga by revansurik
 
 Deshra sprite
 johndh
 
 Fury sprite
-SX RPG Era
+From SX RPG Era
 
 Fury Scourge sprite and portrait
-Melon from Ageless Era
+Melon
 
 Initiate
-From Default L0 Era, sprite by Ken_Oh
+Ken_Oh
+
+<<<<<<< HEAD
+Dreadscale
+Amorphous
+=======
+Diseased Herb Spirit
+From Panther Lord
 
 Orcish Commander sprite and portrait
-The Golden Age
+From The Golden Age
+>>>>>>> 1.19
